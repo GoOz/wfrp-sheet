@@ -1,0 +1,367 @@
+/* BASICS */
+@font-face {
+  font-family: 'Luminari';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Luminari'), url('../fonts/Luminari-Regular.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New roman", serif;
+}
+
+input, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+output {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+}
+.sr-only {
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* MAIN LAYOUT */
+.app {
+  width: 100dvw;
+  height: 100dvh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+}
+
+.page {
+  width: 100dvw;
+  height: 100dvh;
+  scroll-snap-align: start;
+  background-color: black;
+}
+
+.page > * {
+  background-color: white;
+}
+
+.first {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr;
+  gap: .125rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "info info info info info info talents talents talents"
+    "charac charac charac points points points talents talents talents"
+    "charac charac charac Mouvement Mouvement Mouvement talents talents talents"
+    "skills skills skills skills skills skills ambitions ambitions ambitions"
+    "skills skills skills skills skills skills party party party"
+    "skills skills skills skills skills skills party party party";
+}
+
+/* FORM ELEMENTS */
+fieldset {
+  margin: 0;
+  padding: .5rem;
+  border: 0;
+  min-width: 0;
+  overflow: auto;
+}
+
+legend {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-block-end: .5rem;
+  padding: 0;
+  font-weight: bold;
+  font-family: Luminari, Times, serif;
+}
+
+.field {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  column-gap: .5rem;
+  padding-inline: .5rem;
+  align-items: center;
+}
+.field label {
+  white-space: nowrap;
+}
+
+input, output {
+  width: 100%;
+  border: none;
+  padding-block: 0;
+}
+:is(input, select, [contenteditable]):is(:focus, :focus-visible) {
+  outline: 0;
+  background-color: hsla(0, 0%, 70%, .3);
+}
+input:invalid {
+  background-color: hsla(0, 100%, 70%, .3);
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  border: 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+/* TABLES */
+table {
+  border-collapse: collapse;
+  border-style: hidden;
+  border-top: 1px solid black;
+  width: 100%;
+}
+
+table :is(td, th) {
+  border: 1px solid black;
+  text-align: center;
+  padding: .25rem .125rem;
+  font-weight: normal;
+  font-size: .8em;
+  height: 1.5em;
+}
+
+table.left-aligned tbody :is(th, td:first-child) {
+  text-align: start;
+  font-size: .7em;
+  white-space: nowrap;
+}
+
+table :is(input, output) {
+  width: calc(100% - .25rem);
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+table .medium {
+  min-width: 35%;
+}
+table .narrow {
+  min-width: 10%;
+}
+
+table.layout-fixed {
+  table-layout: fixed;
+}
+
+
+/* FIRST PAGE */
+
+/* Info */
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "name name species class"
+    "career career career-tier career-tier"
+    "career-path career-path career-path status"
+    "age height hair eyes";
+  grid-area: info;
+  background-color: black;
+  border-top: .5rem solid white;
+  border-bottom: .5rem solid white;
+  border-left: 1rem solid white;
+  border-right: 1rem solid white;
+  padding: 0;
+  font-size: 0.9em;
+  font-family: Luminari, Times, serif;
+}
+.info > * {
+  background-color: white;
+}
+.info label {
+  font-weight: bold;
+}
+.eyes { grid-area: eyes; }
+.hair { grid-area: hair; }
+.height { grid-area: height; }
+.age { grid-area: age; }
+.career-path { grid-area: career-path; }
+.status { grid-area: status; }
+.career-tier { grid-area: career-tier; }
+.career { grid-area: career; }
+.species { grid-area: species; }
+.name { grid-area: name; }
+.class { grid-area: class; }
+
+/* Characteristics */
+.charac {
+  grid-area: charac;
+}
+
+/* Points */
+.points { grid-area: points; }
+
+.points-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: black;
+  align-items: stretch;
+  gap: .125rem;
+}
+
+.points-wrapper > fieldset {
+  flex: 1 1 50%;
+  min-width: 20%;
+  padding-inline: .125rem;
+  background-color: white;
+}
+
+.points-wrapper > fieldset:first-child {
+  flex-basis: 20%;
+}
+
+.points-wrapper > fieldset:last-child {
+  flex-basis: 30%;
+}
+
+.points-wrapper input {
+  font-size: .875em;
+}
+
+.counter input[type="number"] {
+  width: 25%;
+  min-width: 0;
+  padding: 0;
+}
+
+/* Movement */
+.movement {
+  grid-area: Mouvement;
+}
+.movement-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid black;
+}
+.movement-wrapper > div {
+  flex: 1 1 33%;
+  display: inline-flex;
+  align-items: stretch;
+}
+.movement-wrapper > div:not(:first-child),
+.movement-wrapper > div :is(input, output) {
+  border-left: 1px solid black;
+}
+
+.movement-wrapper > div label {
+  padding-inline: .25rem;
+  font-size: .8em;
+  align-self: center;
+}
+
+.movement-wrapper > div :is(input, output) {
+  text-align: center;
+  height: 1em;
+}
+
+/* Skills */
+.skills {
+  grid-area: skills;
+  background-color: black;
+}
+.skills-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: .125rem;
+  height: 100%;
+}
+.skills-wrapper > fieldset {
+  background-color: white;
+  flex: 1 1 33%;
+}
+
+/* Talents */
+.talents {
+  grid-area: talents;
+}
+.talents fieldset {
+  height: 100%;
+  box-sizing: border-box;
+}
+.talents tbody :is(td:first-child, td:last-child) {
+  text-align: start;
+}
+.talents .narrow {
+  position: relative;
+}
+.talents .narrow::before {
+  position: absolute;
+  content: '';
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  height: 600%;
+  top: 0;
+  pointer-events: none;
+}
+
+.talents .narrow::before {
+  left: -1px;
+  right: -1px;
+}
+
+/* Ambitions & party */
+.ambitions {
+  grid-area: ambitions;
+}
+.party {
+  grid-area: party;
+}
+
+.ambitions,
+.party {
+  overflow: auto;
+}
+
+.ambitions-wrapper,
+.party-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid black;
+  padding: .5rem;
+  gap: .5rem;
+}
+.item-label {
+  flex: 0 0 20%;
+  font-size: .8em;
+}
+.item-desc {
+  flex: 1 1 100%;
+  font-size: .8em;
+}
+

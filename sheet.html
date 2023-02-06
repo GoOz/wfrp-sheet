@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feuille de personnage Warhammer Fantasy Role Play</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#b7b7b7">
+  <meta name="theme-color" content="#b7b7b7">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <h1 class="sr-only">Feuille de personnage</h1>
+  <form class="app" id="app-form" action="#" method="POST">
+    <div class="page first">
+      <fieldset class="info simple">
+        <legend class="sr-only">Information du personnage</legend>
+        <div class="name field">
+          <label id="name-label" for="name">Nom</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="species field">
+          <label id="species-label" for="species">Race</label>
+          <input type="text" id="species" name="species" />
+        </div>
+        <div class="class field">
+          <label id="class-label" for="class">Classe</label>
+          <input type="text" id="class" name="class" />
+        </div>
+        <div class="career field">
+          <label id="career-label" for="career">Carrière</label>
+          <input type="text" id="career" name="career" />
+        </div>
+        <div class="career-tier field">
+          <label id="career-tier-label" for="career-tier">Niveau de carrière</label>
+          <input type="text" id="career-tier" name="career-tier" />
+        </div>
+        <div class="career-path field">
+          <label id="career-path-label" for="career-path">Schéma de carrière</label>
+          <input type="text" id="career-path" name="career-path" />
+        </div>
+        <div class="status field">
+          <label id="status-label" for="status">Statut</label>
+          <input type="text" id="status" name="status" />
+        </div>
+        <div class="age field">
+          <label id="age-label" for="age">Âge</label>
+          <input type="text" id="age" name="age" />
+        </div>
+        <div class="height field">
+          <label id="height-label" for="height">Taille</label>
+          <input type="text" id="height" name="height" />
+        </div>
+        <div class="hair field">
+          <label id="hair-label" for="hair">Cheveux</label>
+          <input type="text" id="hair" name="hair" />
+        </div>
+        <div class="eyes field">
+          <label id="eyes-label" for="eyes">Yeux</label>
+          <input type="text" id="eyes" name="eyes" />
+        </div>
+      </fieldset>
+      <fieldset class="charac addition">
+        <legend>Caractéristiques</legend>
+        <table class="left-aligned">
+          <thead>
+            <td></td>
+            <th scolpe="col"><abbr title="Corps à corps">CC</abbr></th>
+            <th scolpe="col"><abbr title="Capacité de Tir">CT</abbr></th>
+            <th scolpe="col"><abbr title="Force">F</abbr></th>
+            <th scolpe="col"><abbr title="Endurance">E</abbr></th>
+            <th scolpe="col"><abbr title="Initiative">I</abbr></th>
+            <th scolpe="col"><abbr title="Agilité">Ag</abbr></th>
+            <th scolpe="col"><abbr title="Dextérité">Dex</abbr></th>
+            <th scolpe="col"><abbr title="Intelligence">Int</abbr></th>
+            <th scolpe="col"><abbr title="Force mentale">FM</abbr></th>
+            <th scolpe="col"><abbr title="Social">Soc</abbr></th>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Initiales</th>
+              <td><input type="number" id="cc-i" name="cc-i"></td>
+              <td><input type="number" id="ct-i" name="ct-i"></td>
+              <td><input type="number" id="f-i" name="f-i"></td>
+              <td><input type="number" id="e-i" name="e-i"></td>
+              <td><input type="number" id="i-i" name="i-i"></td>
+              <td><input type="number" id="ag-i" name="ag-i"></td>
+              <td><input type="number" id="dex-i" name="dex-i"></td>
+              <td><input type="number" id="int-i" name="int-i"></td>
+              <td><input type="number" id="fm-i" name="fm-i"></td>
+              <td><input type="number" id="soc-i" name="soc-i"></td>
+            </tr>
+            <tr>
+              <th scope="row">Augmentation</th>
+              <td><input type="number" id="cc-a" name="cc-a"></td>
+              <td><input type="number" id="ct-a" name="ct-a"></td>
+              <td><input type="number" id="f-a" name="f-a"></td>
+              <td><input type="number" id="e-a" name="e-a"></td>
+              <td><input type="number" id="i-a" name="i-a"></td>
+              <td><input type="number" id="ag-a" name="ag-a"></td>
+              <td><input type="number" id="dex-a" name="dex-a"></td>
+              <td><input type="number" id="int-a" name="int-a"></td>
+              <td><input type="number" id="fm-a" name="fm-a"></td>
+              <td><input type="number" id="soc-a" name="soc-a"></td>
+            </tr>
+            <tr>
+              <th scope="row">Courantes</th>
+              <td><output id="current-cc" name="current-cc" for="cc-i cc-a"></output></td>
+              <td><output id="current-ct" name="current-ct" for="ct-i ct-a"></output></td>
+              <td><output id="current-f" name="current-f" for="f-i f-a"></output></td>
+              <td><output id="current-e" name="current-e" for="e-i e-a"></output></td>
+              <td><output id="current-i" name="current-i" for="i-i i-a"></output></td>
+              <td><output id="current-ag" name="current-ag" for="ag-i ag-a"></output></td>
+              <td><output id="current-dex" name="current-dex" for="dex-i dex-a"></output></td>
+              <td><output id="current-int" name="current-int" for="int-i int-a"></output></td>
+              <td><output id="current-fm" name="current-fm" for="fm-i fm-a"></output></td>
+              <td><output id="current-soc" name="current-soc" for="soc-i soc-a"></output></td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+      <div class="points">
+        <div class="points-wrapper">
+          <fieldset class="counter simple">
+            <legend>Destin</legend>
+            <table class="left-aligned">
+              <tbody>
+                <tr>
+                  <th scope="row">Destin</th>
+                  <td><input type="number" id="fate-current" name="fate-current">/<input type="number" id="fate-total" name="fate-total"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chance</th>
+                  <td><input type="number" id="fortune-current" name="fortune-current">/<input type="number" id="fortune-total" name="fortune-total"></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="counter simple">
+            <legend>Résilience</legend>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col"><abbr title="Résilience">Rés.</abbr></th>
+                  <th scope="col"><abbr title="Détermination">Déter.</abbr></th>
+                  <th scope="col"><abbr title="Motivation">Motiv.</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="resilience-current" name="resilience-current">/<input type="number" id="resilience-total" name="resilience-total"></td>
+                  <td><input type="number" id="resolve-current" name="resolve-current">/<input type="number" id="resolve-total" name="resolve-total"></td>
+                  <td><input type="text" id="motivation" name="motivation"></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="addition">
+            <legend>Expérience</legend>
+            <table class="layout-fixed">
+              <thead>
+                <tr>
+                  <th scope="col"><abbr title="Actuelle">Act.</abbr></th>
+                  <th scope="col"><abbr title="Dépensée">Dép.</abbr></th>
+                  <th scope="col"><abbr title="Totale">Tot.</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="current-xp" name="current-xp"></td>
+                  <td><input type="number" id="spent-xp" name="spent-xp"></td>
+                  <td><output id="total-xp" name="total-xp" for="current-xp spent-xp"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+      </div>
+      <div class="movement">
+        <fieldset class="addition">
+          <legend>Mouvement</legend>
+          <div class="movement-wrapper">
+            <div>
+              <label for="movement">Mouvement</label>
+              <input type="number" name="movement" id="movement">
+            </div>
+            <div>
+              <label for="walk">Marche</label>
+              <output for="movement" id="walk" name="walk">
+            </div>
+            <div>
+              <label for="run">Course</label>
+              <output for="movement" id="run" name="run">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="skills">
+        <div class="skills-wrapper">
+          <fieldset class="addition">
+            <legend>Compétences de base</legend>
+            <table class="left-aligned">
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th colspan="2" scope="col"><abbr title="Caractéristique">Carac.</abbr></th>
+                  <th scope="col"><abbr title="Augmentation">Aug</abbr></th>
+                  <th scope="col"><abbr title="Compétence">Comp</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Art</td>
+                  <td><abbr title="Dextérité">Dex</abbr></td>
+                  <td><output name="art-current" for="dex-i dex-a" id="art-current"></output></td>
+                  <td><input type="number" name="art-aug" id="art-aug"></td>
+                  <td><output for="art-current art-aug"></output></td>
+                </tr>
+                  <td>Athlétisme</td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="athletics-current" name="athletics-current" for="ag-i ag-a"></output></td>
+                  <td><input type="number" name="athletics-aug" id="athletics-aug"></td>
+                  <td><output for="athletics-current athletics-aug"></output></td>
+                </tr>
+                  <td>Calme</td>
+                  <td><abbr title="Force mentale">FM</abbr></td>
+                  <td><output id="cool-current" name="cool-current" for="fm-i fm-a"></output></td>
+                  <td><input type="number" name="cool-aug" id="cool-aug"></td>
+                  <td><output for="cool-current cool-aug"></output></td>
+                </tr>
+                  <td>Charme</td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="charm-current" name="charm-current" for="soc-i soc-a"></output></td>
+                  <td><input type="number" name="charm-aug" id="charm-aug"></td>
+                  <td><output for="charm-current charm-aug"></output></td>
+                </tr>
+                  <td>Chevaucher</td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="ride-current" name="ride-current" for="ag-i ag-a"></output></td>
+                  <td><input type="number" name="ride-aug" id="ride-aug"></td>
+                  <td><output for="ride-current ride-aug"></output></td>
+                </tr>
+                  <td>Commandement</td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="leadership-current" name="leadership-current" for="soc-i soc-a"></output></td>
+                  <td><input type="number" name="leadership-aug" id="leadership-aug"></td>
+                  <td><output for="leadership-current leadership-aug"></output></td>
+                </tr>
+                  <td>Conduite d’attelage</td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="drive-current" name="drive-current" for="ag-i ag-a"></output></td>
+                  <td><input type="number" name="drive-aug" id="drive-aug"></td>
+                  <td><output for="drive-current drive-aug"></output></td>
+                </tr>
+                  <td>Corps à corps (base)</td>
+                  <td><abbr title="Corps à corps">CC</abbr></td>
+                  <td><output id="melee-basic-current" name="melee-basic-current" for="cc-i cc-a"></output></td>
+                  <td><input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
+                  <td><output for="melee-basic-current melee-basic-aug"></output></td>
+                </tr>
+                  <td>Corps à corps</td>
+                  <td><abbr title="Corps à corps">CC</abbr></td>
+                  <td><output id="melee-current" name="melee-current" for="cc-i cc-a"></output></td>
+                  <td><input type="number" name="melee-aug" id="melee-aug"></td>
+                  <td><output for="melee-current melee-aug"></output></td>
+                </tr>
+                  <td>Discrétion</td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="stealth-current" name="stealth-current" for="ag-i ag-a"></output></td>
+                  <td><input type="number" name="stealth-aug" id="stealth-aug"></td>
+                  <td><output for="stealth-current stealth-aug"></output></td>
+                </tr>
+                  <td>Divertissement</td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="entertain-current" name="entertain-current" for="soc-i soc-a"></output></td>
+                  <td><input type="number" name="entertain-aug" id="entertain-aug"></td>
+                  <td><output for="entertain-current entertain-aug"></output></td>
+                </tr>
+                  <td>Emprise animaux</td>
+                  <td><abbr title="Force mentale">FM</abbr></td>
+                  <td><output id="charm-animal-current" name="charm-animal-current" for="fm-i fm-a"></output></td>
+                  <td><input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
+                  <td><output for="charm-animal-current charm-animal-aug"></output></td>
+                </tr>
+                  <td>Escalade</td>
+                  <td><abbr title="Force">F</abbr></td>
+                  <td><output id="climb-current" name="climb-current" for="f-i f-a"></output></td>
+                  <td><input type="number" name="climb-aug" id="climb-aug"></td>
+                  <td><output for="climb-current climb-aug"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="addition">
+            <legend>Compétences de base</legend>
+            <table class="left-aligned">
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th colspan="2" scope="col"><abbr title="Caractéristique">Carac.</abbr></th>
+                  <th scope="col"><abbr title="Augmentation">Aug</abbr></th>
+                  <th scope="col"><abbr title="Compétence">Comp</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Esquive</td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="dodge-current" name="dodge-current" for="ag-i ag-a"></output></td>
+                  <td><input type="number" name="dodge-aug" id="dodge-aug"></td>
+                  <td><output for="dodge-current dodge-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Intimidation</td>
+                  <td><abbr title="Force">F</abbr></td>
+                  <td><output id="intimidate-current" name="intimidate-current" for="f-i f-a"></output></td>
+                  <td><input type="number" name="intimidate-aug" id="intimidate-aug"></td>
+                  <td><output for="intimidate-current intimidate-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Intuition</td>
+                  <td><abbr title="Initiative">I</abbr></td>
+                  <td><output id="intuition-current" name="intuition-current" for="i-i i-a"></output></td>
+                  <td><input type="number" name="intuition-aug" id="intuition-aug"></td>
+                  <td><output for="intuition-current intuition-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Marchandage</td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="haggle-current" name="haggle-current" for="soc-i soc-a"></output></td>
+                  <td><input type="number" name="haggle-aug" id="haggle-aug"></td>
+                  <td><output for="haggle-current haggle-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Orientation</td>
+                  <td><abbr title="Initiative">I</abbr></td>
+                  <td><output id="navigation-current" name="navigation-current" for="i-i i-a"></output></td>
+                  <td><input type="number" name="navigation-aug" id="navigation-aug"></td>
+                  <td><output for="navigation-current navigation-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Pari</td>
+                  <td><abbr title="Intelligence">Int</abbr></td>
+                  <td><output id="gamble-current" name="gamble-current" for="int-i int-a"></output></td>
+                  <td><input type="number" name="gamble-aug" id="gamble-aug"></td>
+                  <td><output for="gamble-current gamble-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Perception</td>
+                  <td><abbr title="Initiative">I</abbr></td>
+                  <td><output id="perception-current" name="perception-current" for="i-i i-a"></output></td>
+                  <td><input type="number" name="perception-aug" id="perception-aug"></td>
+                  <td><output for="perception-current perception-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Ragot</td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="gossip-current" name="gossip-current" for="soc-i soc-a"></output></td>
+                  <td><input type="number" name="gossip-aug" id="gossip-aug"></td>
+                  <td><output for="gossip-current gossip-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Ramer</td>
+                  <td><abbr title="Force">F</abbr></td>
+                  <td><output id="row-current" name="row-current" for="f-i f-a"></output></td>
+                  <td><input type="number" name="row-aug" id="row-aug"></td>
+                  <td><output for="row-current row-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Résistance</td>
+                  <td><abbr title="Endurance">E</abbr></td>
+                  <td><output id="endurance-current" name="endurance-current" for="e-i e-a"></output></td>
+                  <td><input type="number" name="endurance-aug" id="endurance-aug"></td>
+                  <td><output for="endurance-current endurance-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Résistance à l’alcool</td>
+                  <td><abbr title="Endurance">E</abbr></td>
+                  <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="e-i e-a"></output></td>
+                  <td><input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
+                  <td><output for="consume-alcohol-current consume-alcohol-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Subornation</td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="bribery-current" name="bribery-current" for="soc-i soc-a"></output></td>
+                  <td><input type="number" name="bribery-aug" id="bribery-aug"></td>
+                  <td><output for="bribery-current bribery-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>Survie en extérieur</td>
+                  <td><abbr title="Intelligence">Int</abbr></td>
+                  <td><output id="outdoor-survival-current" name="outdoor-survival-current" for="int-i int-a"></output></td>
+                  <td><input type="number" name="outdoor-survival-aug" id="outdoor-survival-aug"></td>
+                  <td><output for="outdoor-survival-current outdoor-survival-aug"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="addition">
+            <legend><abbr title="Compétences">Comp.</abbr> groupées et avancées</legend>
+            <table class="left-aligned">
+              <thead>
+                <tr>
+                  <th scope="col" class="medium">Nom</th>
+                  <th colspan="2" scope="col"><abbr title="Caractéristique">Carac.</abbr></th>
+                  <th scope="col"><abbr title="Augmentation">Aug</abbr></th>
+                  <th scope="col"><abbr title="Compétence">Comp</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-0" id="custom-skill-name-0">
+                  </td>
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-0" id="custom-skill-charac-0" data-input="custom-skill-current-0">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td>
+                    <output id="custom-skill-current-0" name="custom-skill-current-0" for=""></output>
+                  </td>
+                  <td><input type="text" name="custom-skill-aug-0" id="custom-skill-aug-0"></td>
+                  <td><output for="custom-skill-current-0 custom-skill-aug-0"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-1" id="custom-skill-name-1">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-1" id="custom-skill-charac-1" data-input="custom-skill-current-1">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-1" name="custom-skill-current-1" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-1" id="custom-skill-aug-1"></td>
+                  <td><output for="custom-skill-current-1 custom-skill-aug-1"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-2" id="custom-skill-name-2">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-2" id="custom-skill-charac-2" data-input="custom-skill-current-2">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-2" name="custom-skill-current-2" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-2" id="custom-skill-aug-2"></td>
+                  <td><output for="custom-skill-current-2 custom-skill-aug-2"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-3" id="custom-skill-name-3">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-3" id="custom-skill-charac-3" data-input="custom-skill-current-3">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-3" name="custom-skill-current-3" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-3" id="custom-skill-aug-3"></td>
+                  <td><output for="custom-skill-current-3 custom-skill-aug-3"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-4" id="custom-skill-name-4">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-4" id="custom-skill-charac-4" data-input="custom-skill-current-4">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-4" name="custom-skill-current-4" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-4" id="custom-skill-aug-4"></td>
+                  <td><output for="custom-skill-current-4 custom-skill-aug-4"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-5" id="custom-skill-name-5">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-5" id="custom-skill-charac-5" data-input="custom-skill-current-5">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-5" name="custom-skill-current-5" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-5" id="custom-skill-aug-5"></td>
+                  <td><output for="custom-skill-current-5 custom-skill-aug-5"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-6" id="custom-skill-name-6">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-6" id="custom-skill-charac-6" data-input="custom-skill-current-6">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-6" name="custom-skill-current-6" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-6" id="custom-skill-aug-6"></td>
+                  <td><output for="custom-skill-current-6 custom-skill-aug-6"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-7" id="custom-skill-name-7">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-7" id="custom-skill-charac-7" data-input="custom-skill-current-7">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-7" name="custom-skill-current-7" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-7" id="custom-skill-aug-7"></td>
+                  <td><output for="custom-skill-current-7 custom-skill-aug-7"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-8" id="custom-skill-name-8">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-8" id="custom-skill-charac-8" data-input="custom-skill-current-8">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-8" name="custom-skill-current-8" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-8" id="custom-skill-aug-8"></td>
+                  <td><output for="custom-skill-current-8 custom-skill-aug-8"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-9" id="custom-skill-name-9">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-9" id="custom-skill-charac-9" data-input="custom-skill-current-9">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-9" name="custom-skill-current-9" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-9" id="custom-skill-aug-9"></td>
+                  <td><output for="custom-skill-current-9 custom-skill-aug-9"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-10" id="custom-skill-name-10">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-10" id="custom-skill-charac-10" data-input="custom-skill-current-10">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-10" name="custom-skill-current-10" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-10" id="custom-skill-aug-10"></td>
+                  <td><output for="custom-skill-current-10 custom-skill-aug-10"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-11" id="custom-skill-name-11">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-11" id="custom-skill-charac-11" data-input="custom-skill-current-11">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-11" name="custom-skill-current-11" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-11" id="custom-skill-aug-11"></td>
+                  <td><output for="custom-skill-current-11 custom-skill-aug-11"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div contenteditable></div>
+                    <input type="hidden" name="custom-skill-name-12" id="custom-skill-name-12">
+                  <td>
+                    <select class="charac-select" name="custom-skill-charac-12" id="custom-skill-charac-12" data-input="custom-skill-current-12">
+                      <option value="" selected>-</option>
+                      <option value="cc">CC</option>
+                      <option value="ct">CT</option>
+                      <option value="f">F</option>
+                      <option value="e">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="fm">FM</option>
+                      <option value="soc">Soc</option>
+                    </select>
+                  </td>
+                  <td><output id="custom-skill-current-12" name="custom-skill-current-12" for=""></output></td>
+                  <td><input type="text" name="custom-skill-aug-12" id="custom-skill-aug-12"></td>
+                  <td><output for="custom-skill-current-12 custom-skill-aug-12"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+      </div>
+      <div class="talents" id="talents">
+        <fieldset class="simple">
+          <legend>Talents</legend>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Nom</th>
+                <th scope="col" class="narrow"><abbr title="Nombre de fois pris">Nbre pris</abbr></th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div contenteditable></div>
+                  <input type="hidden" name="talents-name-0" id="talents-name-0">
+                </td>
+                <td><input type="number" name="talents-counter-0" id="talents-counter-0"></td>
+                <td>
+                  <div contenteditable></div>
+                  <input type="hidden" name="talents-desc-0" id="talents-desc-0">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <template id="talent-row">
+            <tr>
+              <td>
+                <div contenteditable></div>
+                <input type="hidden" name="" id="">
+              </td>
+              <td><input type="number" name="" id=""></td>
+              <td>
+                <div contenteditable></div>
+                <input type="hidden" name="" id="">
+              </td>
+            </tr>
+          </template>
+        </fieldset>
+      </div>
+      <div class="ambitions">
+        <fieldset>
+          <legend>Ambitions</legend>
+          <div class="ambitions-wrapper">
+            <div class="item">
+              <div class="item-label">À court terme</div>
+              <div class="item-desc">
+                <div contenteditable></div>
+                <input type="hidden" name="ambitions-short" id="ambitions-short">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-label">À long terme</div>
+              <div class="item-desc">
+                <div contenteditable></div>
+                <input type="hidden" name="ambitions-long" id="ambitions-long">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="party">
+        <fieldset>
+          <legend>Groupe</legend>
+          <div class="party-wrapper">
+            <div class="item">
+              <div class="item-label">Nom du groupe</div>
+              <div class="item-desc">
+                <div contenteditable></div>
+                <input type="hidden" name="party-name" id="party-name">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-label">À court terme</div>
+              <div class="item-desc">
+                <div contenteditable></div>
+                <input type="hidden" name="party-short" id="party-short">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-label">À long terme</div>
+              <div class="item-desc">
+                <div contenteditable></div>
+                <input type="hidden" name="party-long" id="party-long">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-label">Membres</div>
+              <div class="item-desc">
+                <div contenteditable></div>
+                <input type="hidden" name="party-members" id="party-members">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="page second">
+
+    </div>
+    <button type="submit" hidden>submit</button>
+  </form>
+  <script src="js/app.js"></script>
+</body>
+</html>
