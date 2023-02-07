@@ -1,4 +1,9 @@
 /* BASICS */
+:root {
+  --grey: #b7b7b7;
+  --lightgrey: lightgrey;
+}
+
 @font-face {
   font-family: 'Luminari';
   font-style: normal;
@@ -9,6 +14,11 @@
 body {
   margin: 0;
   font-family: Georgia, "Times New roman", serif;
+  background-color: var(--grey);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: Luminari, Times, serif;
 }
 
 input, select {
@@ -42,6 +52,72 @@ output {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* INDEX PAGE */
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 38rem;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.tabs {
+  background-color: white;
+  border-radius: .25rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1 0 50%;
+  text-align: center;
+  padding: .75rem 0;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.tab:is(:hover, :focus, :active, :not(.active)) {
+  background-color: var(--lightgrey);
+}
+.tab:is(:not(.active)) {
+  opacity: .5;
+}
+
+.tab-panel {
+  border-top: 1px solid var(--grey);
+  box-sizing: border-box;
+  flex: 1 0 100%;
+  padding: 1rem;
+}
+
+.tab-panel:not(:target) {
+  display: none;
+}
+
+.button {
+  display: inline-block;
+  padding: .5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: .25rem;
+  background-color: var(--lightgrey);
+}
+
+.button:is(:hover, :focus, :active) {
+  background-color: var(--grey);
 }
 
 /* MAIN LAYOUT */

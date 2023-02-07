@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feuille de personnage Warhammer Fantasy Role Play</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#b7b7b7">
+  <meta name="theme-color" content="#b7b7b7">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="wrapper">
+    <img class="logo" src="android-chrome-192x192.png" alt="">
+    <div class="tabs">
+      <a class="tab active" href="#fr">🇫🇷 Version française</a>
+      <a class="tab" href="#en">🇬🇧 English version</a>
+      <div id="fr" class="tab-panel">
+        <h1>Bienvenue</h1>
+        <h2>Présentation de l'application</h2>
+        <p>Cette application est un outil en ligne pour gérer votre fiche de personnage pour le jeu de rôle <strong lang="en">Warhammer Fantasy Role Play</strong>.</p>
+        <p>Elle est garantie sans publicité, sans <span lang="en">tracker</span> et sans stockage sur serveur de données, personnelles ou non.</p>
+        <p>Toute donnée renseignée est stockée en <span lang="en">localStorage</span>, c'est à dire dans le stockage de votre navigateur, sur votre machine.</p>
+        <h2>Fonctionnaliltés de l'application</h2>
+        <ul>
+          <li>Remplissage automatique de cellules</li>
+          <li>Calculs automatiques des valeurs finales (initiales + augmentations)</li>
+          <li>Plus encore à venir…</li>
+        </ul>
+        <p class="text-align-center"><a class="button" href="sheet.html">Voir la fiche de personnage</a></p>
+      </div>
+      <div id="en" class="tab-panel">
+        <h1>Welcome</h1>
+        <h2>App's presentation</h2>
+        <p>This app is an online tool to help you manage your <strong>Warhammer Fantasy Role Play</strong> game's character sheet.</p>
+        <p>No Ads, no tracker and no data storage on a server, whether it's personal data or not.</p>
+        <p>All your data is stored on your localStorage, meaning it stays in your browser's storage, on your computer.</p>
+        <h2>App's features</h2>
+        <ul>
+          <li>Auto-filling cells</li>
+          <li>Auto-calculated final values (initial + advances)</li>
+          <li>More to come…</li>
+        </ul>
+        <p class="text-align-center"><a class="button" href="sheet.html">See the character sheet</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      window.location.hash = '#fr';
+      const tabToggles = document.querySelectorAll('.tab');
+      document.addEventListener('click', handleTabs);
+
+      function handleTabs (event) {
+        if (
+          !Array.from(tabToggles).includes(event.target) ||
+          event.target.classList.contains('active')
+        ) {
+          return false;
+        }
+
+        tabToggles.forEach(tab => {
+          if (tab === event.target) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
