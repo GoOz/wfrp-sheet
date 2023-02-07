@@ -119,6 +119,11 @@ output {
 .button:is(:hover, :focus, :active) {
   background-color: var(--grey);
 }
+.forkme {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 /* MAIN LAYOUT */
 .app {
