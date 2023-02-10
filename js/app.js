@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const customData = document.querySelectorAll('.custom');
   const toggleHardy = document.getElementById('hardy-bonus');
   const encumbranceSrc = document.querySelectorAll('.encumbrance-src');
+  const encumbranceMax = document.getElementById('encumbrance-max')
 
   // Event Listeners
   simpleInputs.forEach(input => {
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     item.addEventListener('input', handleEncumbrance);
     item.addEventListener('change', handleEncumbrance);
   });
+  encumbranceMax.addEventListener('input', updateTotalEncumbrance);
 
   // Fill the sheet with stored data
   fillFromStorage();
@@ -133,8 +135,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Store data from addition inputs and update related outputs
   function handleAdditionInput(event) {
     localStorage.setItem(event.target.id, event.target.value);
-    const outputs = document.querySelectorAll(`output[for~=${event.target.id}]`);
+    const outputs = document.querySelectorAll(`output[for~=${event.target.id}]:not(.bonus)`);
     updateOutputs(outputs);
+    updateBonuses();
   }
 
   // Duplicate data from contenteditable elements to hidden inputs and store them
@@ -265,6 +268,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
       bonus.value = current.toString()[0];
     });
+
+    const outputs = document.querySelectorAll('[for^="bonus-"]');
+    updateOutputs(outputs);
   }
 
   // Update outputs from related inputs value
