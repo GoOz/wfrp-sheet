@@ -116,6 +116,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         src.dispatchEvent(new Event('change', {'bubbles': true}));
       });
       updateOutputs(outputs);
+
+      updateTitle();
     }
   }
 
@@ -304,5 +306,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         output.value = current;
       }
     });
+  }
+
+  function updateTitle() {
+    if (localStorage.getItem('name')) {
+      const base = document.title;
+      const name = localStorage.getItem('name');
+      document.title = `${name} - ${base}`;
+    }
   }
 });
