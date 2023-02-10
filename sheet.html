@@ -677,7 +677,8 @@
         </template>
       </fieldset>
       <fieldset class="ambitions">
-        <legend>Ambitions</legend>
+        <legend class="sr-only">Ambitions</legend>
+        <div class="fake-legend" aria-hidden>Ambitions</div>
         <div class="blocktext-wrapper">
           <div class="item">
             <div class="item-label" id="ambitions-short-label">À court terme</div>
@@ -696,7 +697,8 @@
         </div>
       </fieldset>
       <fieldset class="party">
-        <legend>Groupe</legend>
+        <legend class="sr-only">Groupe</legend>
+        <div class="fake-legend" aria-hidden>Groupe</div>
         <div class="blocktext-wrapper">
           <div class="item">
             <div class="item-label" id="party-name-label">Nom du groupe</div>
@@ -785,7 +787,8 @@
         <output class="hidden" id="encumbrance-armour-total"></output>
       </fieldset>
       <fieldset class="armour-points simple">
-        <legend>Points d'armure (PA)</legend>
+        <legend class="sr-only">Points d'armure (PA)</legend>
+        <div class="fake-legend" aria-hidden>Points d'armure (PA)</div>
         <div class="armour-points-box">
           <div class="armour-points-stat">
             <label for="ap-head">Tête</label>
@@ -991,14 +994,16 @@
         <div class="change">1CO = 20/- = 240sc</div>
       </fieldset>
       <fieldset class="psychology">
-        <legend id="psychology-label">Psychologie</legend>
+        <legend class="sr-only" id="psychology-label">Psychologie</legend>
+        <div class="fake-legend" aria-hidden>Psychologie</div>
         <div class="psychology-content">
           <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
           <input type="hidden" name="psychology" id="psychology">
         </div>
       </fieldset>
       <fieldset class="corruption simple">
-        <legend>Corruption et mutation</legend>
+        <legend class="sr-only">Corruption et mutation</legend>
+        <div class="fake-legend" aria-hidden>Corruption et mutation</div>
         <div class="corruption-wrapper">
           <div>
             <label for="treshold">Seuil</label>

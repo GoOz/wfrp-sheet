@@ -216,6 +216,8 @@ fieldset {
 
 legend {
   float: left;
+}
+.fake-legend, legend {
   position: sticky;
   top: 0;
   background-color: var(--bgcolor);
@@ -487,7 +489,7 @@ table.layout-fixed {
   box-sizing: border-box;
 }
 
-:is(.ambitions,.party) :is(legend) {
+:is(.ambitions,.party) .fake-legend {
   flex: 0 0 auto;
 }
 
@@ -534,7 +536,7 @@ table.layout-fixed {
   display: flex;
   flex-direction: column;
 }
-.armour-points legend {
+.armour-points .fake-legend {
   margin: 0;
   flex: 0 0 auto;
 }
@@ -617,7 +619,7 @@ table.layout-fixed {
   height: 100%;
   box-sizing: border-box;
 }
-.psychology legend {
+.psychology .fake-legend {
   flex: 0 0 auto;
 }
 .psychology-content {
@@ -650,7 +652,7 @@ table.layout-fixed {
 
 .corruption-wrapper {
   display: flex;
-  width: 100%;
+  width: 100%;.fake-legend
   flex-direction: row;
   flex-wrap: nowrap;
   border-top: 1px solid var(--contrast);

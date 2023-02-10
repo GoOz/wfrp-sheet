@@ -1,6 +1,6 @@
 ⚠️ THIS IS STILL A WORK IN PROGRESS AND NOT READY TO USE AS IS ⚠️
 
-# wfrp-sheet
+# Warhammer Fantasy RolePlay (4th edition) sheet
 Online character sheet for Warhammer Fantasy Role Play TTRPG
 
 ## Welcome
@@ -15,6 +15,7 @@ All your data is stored on your localStorage, meaning it stays in your browser's
 ### App's features
   - Auto-filling cells
   - Auto-calculated final values (initial + advances)
+  - Dark mode
   - More to come…
 
 ## Dev
