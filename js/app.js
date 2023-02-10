@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+  const encumbranceMessage = [
+    [
+      "Pas de pénalité"
+    ],
+    [
+      "Surchargé Niv. 1",
+      "-1 mouvement (Min: 3)",
+      "-10 en agilité",
+      "+1 fatigue du voyage"
+    ],
+    [
+      "Surchargé Niv. 2",
+      "-2 mouvement (Min: 2)",
+      "-20 en agilité",
+      "+2 fatigue du voyage"
+    ],
+    [
+      "Surchargé Niv. 3",
+      "Vous ne pouvez plus vous déplacer"
+    ]
+  ]
+
   checkStorage();
 
   // Collections
@@ -6,8 +28,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const additionInputs = document.querySelectorAll('.addition');
   const contentEditable = document.querySelectorAll('[contenteditable]');
   const characSelects = document.querySelectorAll('.charac-select');
-  const outputs = document.querySelectorAll('output');
-  const talents = document.getElementById('talents');
+  const outputs = document.querySelectorAll('output:not(.bonus, .hidden, encumbrance-total)');
+  const bonuses = document.querySelectorAll('output.bonus');
+  const customData = document.querySelectorAll('.custom');
+  const toggleHardy = document.getElementById('hardy-bonus');
+  const encumbranceSrc = document.querySelectorAll('.encumbrance-src');
 
   // Event Listeners
   simpleInputs.forEach(input => {
@@ -22,7 +47,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   characSelects.forEach(select => {
     select.addEventListener('change', handleCharacSelect);
   });
-  talents.addEventListener('input', handleTalentsInput);
+  customData.forEach(custom => {
+    custom.addEventListener('input', handleCustomInput);
+  });
+  toggleHardy.addEventListener('change', handleToggleHardy);
+  encumbranceSrc.forEach(item => {
+    item.addEventListener('input', handleEncumbrance);
+    item.addEventListener('change', handleEncumbrance);
+  });
 
   // Fill the sheet with stored data
   fillFromStorage();
@@ -44,42 +76,56 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Fill inputs from locaStorage data
   async function fillFromStorage() {
     if (navigator.storage) {
-      // Generate talents custom rows if data available
-      const talentsTbody = document.querySelector('.talents tbody');
-      let i = 1;
-      while (
-        localStorage.getItem(`talents-name-${i}`) !== null ||
-        localStorage.getItem(`talents-counter-${i}`) !== null ||
-        localStorage.getItem(`talents-desc-${i}`) !== null
-      ) {
-        addNewTalentRow(talentsTbody, i);
-        i++
-      }
+      // Generate custom data rows if data available
+      const custom = document.querySelectorAll('.custom');
 
-      // Add a blank row for new addition
-      addNewTalentRow(talentsTbody, i);
+      custom.forEach(custom => {
+        const tbody = custom.querySelector('tbody');
+        const type = custom.id;
+        let i = 1;
+        while (
+          localStorage.getItem(`${type}-name-${i}`) !== null
+        ) {
+          addNewRow(tbody, i);
+          i++
+        }
+
+        // Add a blank row for new addition
+        addNewRow(tbody, i);
+      })
 
       // Fill every inputs in the page
       const inputs = document.querySelectorAll('input, select');
       await inputs.forEach(input => {
         const item = localStorage.getItem(input.id);
         input.value = item ?? null;
-        if (input.type === 'hidden') {
+        if (item && input.type === 'hidden') {
           input.previousElementSibling.textContent = item;
         }
         if (item && input.tagName === 'SELECT') {
           input.dispatchEvent(new Event('change', { 'bubbles': true }));
         }
+        if (item && item === "true" && input.type === 'checkbox') {
+          input.checked = true;
+        }
       });
 
       // Once all data is filled, proceed with updating outputs
+      updateBonuses();
+      encumbranceSrc.forEach(src => {
+        src.dispatchEvent(new Event('change', {'bubbles': true}));
+      });
       updateOutputs(outputs);
     }
   }
 
   // Store data from simple inputs
   function handleSimpleInput(event) {
-    localStorage.setItem(event.target.id, event.target.value);
+    if (event.target.type === "checkbox") {
+      localStorage.setItem(event.target.id, event.target.checked);
+    } else {
+      localStorage.setItem(event.target.id, event.target.value);
+    }
   }
 
   // Store data from addition inputs and update related outputs
@@ -104,31 +150,96 @@ document.addEventListener('DOMContentLoaded', (event) => {
     localStorage.setItem(event.target.id, event.target.value);
   }
 
-  // Store custom talents data and add new blank row
-  function handleTalentsInput(event) {
+  // Store custom data and add new blank row
+  function handleCustomInput(event) {
     const tbody = event.target.closest('tbody');
     const totalRows = tbody.children;
     const currentRow = event.target.closest('tr');
 
     // If current inputted row is the last row then create a new row.
     if (currentRow === totalRows[totalRows.length - 1]) {
-      addNewTalentRow(tbody, totalRows.length);
+      addNewRow(tbody, totalRows.length);
     }
   }
 
+  // Add wounds points if hardy talent is ON
+  function handleToggleHardy() {
+    const wounds = document.getElementById('wounds');
+    updateOutputs([wounds]);
+  }
+
+  // Calculate stuff encumbrance
+  function handleEncumbrance(event) {
+    const type = event.target.tagName === 'FIELDSET'
+      ? event.target
+      : event.target.closest('fieldset');
+    const weights = type.querySelectorAll(`tbody [id^=${type.id}-encumbrance-]`);
+    const output = type.querySelector(`#encumbrance-${type.id}-total`);
+
+    let total = 0;
+    for (let i = 0; i < weights.length; i++) {
+      let value = Number(weights[i].value);
+      const worn = type.querySelector(`#${type.id}-worn-${i}`).checked;
+
+      if (worn === true) {
+        value = Math.max(0, value - 1);
+      }
+
+      total += value;
+    }
+
+    output.value = total;
+
+    updateOutputs(outputs)
+    updateTotalEncumbrance();
+  }
+
+  // Calculate if total encumbrance is above max encumbrance
+  function updateTotalEncumbrance() {
+    const armour = Number(document.getElementById('encumbrance-armour-total').value);
+    const trappings = Number(document.getElementById('encumbrance-trappings-total').value);
+    const weapons = Number(document.getElementById('encumbrance-weapons-total').value);
+    const max = Number(document.getElementById('encumbrance-max').value);
+    const total = document.getElementById('encumbrance-total');
+    const messageBox = document.getElementById('encumbrance-state');
+
+    total.value = armour + trappings + weapons;
+
+    let messageType = 0;
+    if (Number(total.value) <= max) {
+      total.classList.remove('error');
+    } else if (Number(total.value) <= max * 2) {
+      total.classList.add('error');
+      messageType = 1;
+    } else if (Number(total.value) <= max * 3) {
+      total.classList.add('error');
+      messageType = 2;
+    } else if (Number(total.value) > max * 3) {
+      total.classList.add('error');
+      messageType = 3;
+    }
+
+    messageBox.querySelector('p').textContent = encumbranceMessage[messageType][0];
+    let content = '';
+    for (let i = 1; i < encumbranceMessage[messageType].length; i++) {
+      content += `<li>${encumbranceMessage[messageType][i]}</li>`
+    }
+    messageBox.querySelector('ul').innerHTML = content;
+  }
+
   // Add new blank talent row
-  function addNewTalentRow(parent, n) {
-    const template = document.getElementById('talent-row');
+  function addNewRow(parent, n) {
+    const type = parent.closest('fieldset').id;
+    const template = document.getElementById(`${type}-row`);
     const clone = template.content.cloneNode(true);
 
     let inputs = clone.querySelectorAll('input');
     let contentEditable = clone.querySelectorAll('[contentEditable]');
-    inputs[0].name = `talents-name-${n}`
-    inputs[0].id = `talents-name-${n}`
-    inputs[1].name = `talents-counter-${n}`
-    inputs[1].id = `talents-counter-${n}`
-    inputs[2].name = `talents-desc-${n}`
-    inputs[2].id = `talents-desc-${n}`
+
+    inputs.forEach(input => {
+      input.name = input.name + n;
+      input.id = input.id + n;
+    });
 
     inputs.forEach(input => {
       input.addEventListener('input', handleSimpleInput);
@@ -140,13 +251,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     parent.appendChild(clone);
   }
 
+  // Generate bonuses from final characteristics
+  function updateBonuses() {
+    bonuses.forEach(bonus => {
+      const inputs = bonus.getAttribute('for').split(' ');
+      let current = 0;
+      for (let i = 0; i < inputs.length; i++) {
+        const input = document.getElementById(`${inputs[i]}`);
+        const value = input.value !== '' ? parseInt(input.value,10) : 0;
+        current += value;
+      }
+      bonus.value = current.toString()[0];
+    });
+  }
+
   // Update outputs from related inputs value
   function updateOutputs(outputs) {
     outputs.forEach(output => {
       let current = 0;
       const inputs = output.getAttribute('for').split(' ');
+      // console.log(inputs);
       if (inputs[0] === '') {
-        return false;
+        return;
       }
 
       for (let i = 0; i < inputs.length; i++) {
@@ -157,10 +283,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } else if (output.id === 'run') {
           current = value * 4;
         } else {
-          current = current + value;
+          current += value;
         }
       }
-      output.value = current;
+
+      if (output.id === 'strength-bonus') {
+        const species = document.getElementById('species');
+        output.value = species.value !== 'halfling' ? current : 0;
+      } else if (output.id === 'toughness-bonus') {
+        output.value = current * 2;
+      } else if (output.id === 'wounds') {
+        if (toggleHardy.checked) {
+          const toughness = document.getElementById('bonus-t');
+          const value = toughness.value !== '' ? parseInt(toughness.value,10) : 0;
+          output.value = current + value;
+        } else {
+          output.value = current;
+        }
+      } else {
+        output.value = current;
+      }
     });
   }
 });

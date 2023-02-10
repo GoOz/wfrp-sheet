@@ -25,7 +25,14 @@
         </div>
         <div class="species field">
           <label id="species-label" for="species">Race</label>
-          <input type="text" id="species" name="species" />
+          <select id="species" name="species">
+            <option value="">-</option>
+            <option value="human">Humaine</option>
+            <option value="halfling">Halfling</option>
+            <option value="dwarf">Naine</option>
+            <option value="high elf">Haut elfe</option>
+            <option value="wood elf">Elfe sylvain</option>
+          </select>
         </div>
         <div class="class field">
           <label id="class-label" for="class">Classe</label>
@@ -84,20 +91,20 @@
             <tr>
               <th scope="row">Initiales</th>
               <td>
-                <label class="sr-only" for="cc-i"><abbr title="Corps à corps">CC</abbr> initial</label>
-                <input type="number" id="cc-i" name="cc-i">
+                <label class="sr-only" for="ws-i"><abbr title="Corps à corps">CC</abbr> initial</label>
+                <input type="number" id="ws-i" name="ws-i">
               </td>
               <td>
-                <label class="sr-only" for="ct-i"><abbr title="Capacité de Tir">CT</abbr> initial</label>
-                <input type="number" id="ct-i" name="ct-i">
+                <label class="sr-only" for="bs-i"><abbr title="Capacité de Tir">CT</abbr> initial</label>
+                <input type="number" id="bs-i" name="bs-i">
               </td>
               <td>
-                <label class="sr-only" for="f-i"><abbr title="Force">F</abbr> initial</label>
-                <input type="number" id="f-i" name="f-i">
+                <label class="sr-only" for="s-i"><abbr title="Force">F</abbr> initial</label>
+                <input type="number" id="s-i" name="s-i">
               </td>
               <td>
-                <label class="sr-only" for="e-i"><abbr title="Endurance">E</abbr> initial</label>
-                <input type="number" id="e-i" name="e-i">
+                <label class="sr-only" for="t-i"><abbr title="Endurance">E</abbr> initial</label>
+                <input type="number" id="t-i" name="t-i">
               </td>
               <td>
                 <label class="sr-only" for="i-i"><abbr title="Initiative">I</abbr> initial</label>
@@ -116,31 +123,31 @@
                 <input type="number" id="int-i" name="int-i">
               </td>
               <td>
-                <label class="sr-only" for="fm-i"><abbr title="Force mentale">FM</abbr> initial</label>
-                <input type="number" id="fm-i" name="fm-i">
+                <label class="sr-only" for="wp-i"><abbr title="Force mentale">FM</abbr> initial</label>
+                <input type="number" id="wp-i" name="wp-i">
               </td>
               <td>
-                <label class="sr-only" for="soc-i"><abbr title="Social">Soc</abbr> initial</label>
-                <input type="number" id="soc-i" name="soc-i">
+                <label class="sr-only" for="fel-i"><abbr title="Social">Soc</abbr> initial</label>
+                <input type="number" id="fel-i" name="fel-i">
               </td>
             </tr>
             <tr>
               <th scope="row">Augmentation</th>
               <td>
-                <label class="sr-only" for="cc-a"><abbr title="Corps à corps">CC</abbr> augmentation</label>
-                <input type="number" id="cc-a" name="cc-a">
+                <label class="sr-only" for="ws-a"><abbr title="Corps à corps">CC</abbr> augmentation</label>
+                <input type="number" id="ws-a" name="ws-a">
               </td>
               <td>
-                <label class="sr-only" for="ct-a"><abbr title="Capacité de Tir">CT</abbr> augmentation</label>
-                <input type="number" id="ct-a" name="ct-a">
+                <label class="sr-only" for="bs-a"><abbr title="Capacité de Tir">CT</abbr> augmentation</label>
+                <input type="number" id="bs-a" name="bs-a">
               </td>
               <td>
-                <label class="sr-only" for="f-a"><abbr title="Force">F</abbr> augmentation</label>
-                <input type="number" id="f-a" name="f-a">
+                <label class="sr-only" for="s-a"><abbr title="Force">F</abbr> augmentation</label>
+                <input type="number" id="s-a" name="s-a">
               </td>
               <td>
-                <label class="sr-only" for="e-a"><abbr title="Endurance">E</abbr> augmentation</label>
-                <input type="number" id="e-a" name="e-a">
+                <label class="sr-only" for="t-a"><abbr title="Endurance">E</abbr> augmentation</label>
+                <input type="number" id="t-a" name="t-a">
               </td>
               <td>
                 <label class="sr-only" for="i-a"><abbr title="Initiative">I</abbr> augmentation</label>
@@ -159,26 +166,39 @@
                 <input type="number" id="int-a" name="int-a">
               </td>
               <td>
-                <label class="sr-only" for="fm-a"><abbr title="Force mentale">FM</abbr> augmentation</label>
-                <input type="number" id="fm-a" name="fm-a">
+                <label class="sr-only" for="wp-a"><abbr title="Force mentale">FM</abbr> augmentation</label>
+                <input type="number" id="wp-a" name="wp-a">
               </td>
               <td>
-                <label class="sr-only" for="soc-a"><abbr title="Social">Soc</abbr> augmentation</label>
-                <input type="number" id="soc-a" name="soc-a">
+                <label class="sr-only" for="fel-a"><abbr title="Social">Soc</abbr> augmentation</label>
+                <input type="number" id="fel-a" name="fel-a">
               </td>
             </tr>
             <tr>
               <th scope="row">Courantes</th>
-              <td><output id="current-cc" name="current-cc" for="cc-i cc-a"></output></td>
-              <td><output id="current-ct" name="current-ct" for="ct-i ct-a"></output></td>
-              <td><output id="current-f" name="current-f" for="f-i f-a"></output></td>
-              <td><output id="current-e" name="current-e" for="e-i e-a"></output></td>
+              <td><output id="current-ws" name="current-ws" for="ws-i ws-a"></output></td>
+              <td><output id="current-bs" name="current-bs" for="bs-i bs-a"></output></td>
+              <td><output id="current-s" name="current-s" for="s-i s-a"></output></td>
+              <td><output id="current-t" name="current-t" for="t-i t-a"></output></td>
               <td><output id="current-i" name="current-i" for="i-i i-a"></output></td>
               <td><output id="current-ag" name="current-ag" for="ag-i ag-a"></output></td>
               <td><output id="current-dex" name="current-dex" for="dex-i dex-a"></output></td>
               <td><output id="current-int" name="current-int" for="int-i int-a"></output></td>
-              <td><output id="current-fm" name="current-fm" for="fm-i fm-a"></output></td>
-              <td><output id="current-soc" name="current-soc" for="soc-i soc-a"></output></td>
+              <td><output id="current-wp" name="current-wp" for="wp-i wp-a"></output></td>
+              <td><output id="current-fel" name="current-fel" for="fel-i fel-a"></output></td>
+            </tr>
+            <tr class="hidden">
+              <th scope="row">Bonus</th>
+              <td><output class="bonus" id="bonus-ws" name="bonus-ws" for="ws-i ws-a"></output></td>
+              <td><output class="bonus" id="bonus-bs" name="bonus-bs" for="bs-i bs-a"></output></td>
+              <td><output class="bonus" id="bonus-s" name="bonus-s" for="s-i s-a"></output></td>
+              <td><output class="bonus" id="bonus-t" name="bonus-t" for="t-i t-a"></output></td>
+              <td><output class="bonus" id="bonus-i" name="bonus-i" for="i-i i-a"></output></td>
+              <td><output class="bonus" id="bonus-ag" name="bonus-ag" for="ag-i ag-a"></output></td>
+              <td><output class="bonus" id="bonus-dex" name="bonus-dex" for="dex-i dex-a"></output></td>
+              <td><output class="bonus" id="bonus-int" name="bonus-int" for="int-i int-a"></output></td>
+              <td><output class="bonus" id="bonus-wp" name="bonus-wp" for="wp-i wp-a"></output></td>
+              <td><output class="bonus" id="bonus-fel" name="bonus-fel" for="fel-i fel-a"></output></td>
             </tr>
           </tbody>
         </table>
@@ -260,25 +280,23 @@
           </fieldset>
         </div>
       </div>
-      <div class="movement">
-        <fieldset class="addition">
-          <legend>Mouvement</legend>
-          <div class="movement-wrapper">
-            <div>
-              <label for="movement">Mouvement</label>
-              <input type="number" name="movement" id="movement">
-            </div>
-            <div>
-              <label for="walk">Marche</label>
-              <output for="movement" id="walk" name="walk">
-            </div>
-            <div>
-              <label for="run">Course</label>
-              <output for="movement" id="run" name="run">
-            </div>
+      <fieldset class="movement addition">
+        <legend>Mouvement</legend>
+        <div class="movement-wrapper">
+          <div>
+            <label for="movement">Mouvement</label>
+            <input type="number" name="movement" id="movement">
           </div>
-        </fieldset>
-      </div>
+          <div>
+            <label for="walk">Marche</label>
+            <output for="movement" id="walk" name="walk">
+          </div>
+          <div>
+            <label for="run">Course</label>
+            <output for="movement" id="run" name="run">
+          </div>
+        </div>
+      </fieldset>
       <div class="skills">
         <div class="skills-wrapper">
           <fieldset class="addition">
@@ -312,7 +330,7 @@
                 </tr>
                   <td>Calme</td>
                   <td><abbr title="Force mentale">FM</abbr></td>
-                  <td><output id="cool-current" name="cool-current" for="fm-i fm-a"></output></td>
+                  <td><output id="cool-current" name="cool-current" for="wp-i wp-a"></output></td>
                   <td>
                     <label class="sr-only" for="cool-aug">Calme augmentation</label>
                     <input type="number" name="cool-aug" id="cool-aug"></td>
@@ -320,7 +338,7 @@
                 </tr>
                   <td>Charme</td>
                   <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="charm-current" name="charm-current" for="soc-i soc-a"></output></td>
+                  <td><output id="charm-current" name="charm-current" for="fel-i fel-a"></output></td>
                   <td>
                     <label class="sr-only" for="charm-aug">Charme augmentation</label>
                     <input type="number" name="charm-aug" id="charm-aug"></td>
@@ -336,7 +354,7 @@
                 </tr>
                   <td>Commandement</td>
                   <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="leadership-current" name="leadership-current" for="soc-i soc-a"></output></td>
+                  <td><output id="leadership-current" name="leadership-current" for="fel-i fel-a"></output></td>
                   <td>
                     <label class="sr-only" for="leadership-aug">Commandement augmentation</label>
                     <input type="number" name="leadership-aug" id="leadership-aug"></td>
@@ -352,7 +370,7 @@
                 </tr>
                   <td>Corps à corps (base)</td>
                   <td><abbr title="Corps à corps">CC</abbr></td>
-                  <td><output id="melee-basic-current" name="melee-basic-current" for="cc-i cc-a"></output></td>
+                  <td><output id="melee-basic-current" name="melee-basic-current" for="ws-i ws-a"></output></td>
                   <td>
                     <label class="sr-only" for="melee-basic-aug">Corps à corps (base) augmentation</label>
                     <input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
@@ -360,7 +378,7 @@
                 </tr>
                   <td>Corps à corps</td>
                   <td><abbr title="Corps à corps">CC</abbr></td>
-                  <td><output id="melee-current" name="melee-current" for="cc-i cc-a"></output></td>
+                  <td><output id="melee-current" name="melee-current" for="ws-i ws-a"></output></td>
                   <td>
                     <label class="sr-only" for="melee-aug">Corps à corps augmentation</label>
                     <input type="number" name="melee-aug" id="melee-aug"></td>
@@ -376,7 +394,7 @@
                 </tr>
                   <td>Divertissement</td>
                   <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="entertain-current" name="entertain-current" for="soc-i soc-a"></output></td>
+                  <td><output id="entertain-current" name="entertain-current" for="fel-i fel-a"></output></td>
                   <td>
                     <label class="sr-only" for="entertain-aug">Divertissement augmentation</label>
                     <input type="number" name="entertain-aug" id="entertain-aug"></td>
@@ -384,7 +402,7 @@
                 </tr>
                   <td>Emprise animaux</td>
                   <td><abbr title="Force mentale">FM</abbr></td>
-                  <td><output id="charm-animal-current" name="charm-animal-current" for="fm-i fm-a"></output></td>
+                  <td><output id="charm-animal-current" name="charm-animal-current" for="wp-i wp-a"></output></td>
                   <td>
                     <label class="sr-only" for="charm-animal-aug">Emprise animaux augmentation</label>
                     <input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
@@ -392,7 +410,7 @@
                 </tr>
                   <td>Escalade</td>
                   <td><abbr title="Force">F</abbr></td>
-                  <td><output id="climb-current" name="climb-current" for="f-i f-a"></output></td>
+                  <td><output id="climb-current" name="climb-current" for="s-i s-a"></output></td>
                   <td>
                     <label class="sr-only" for="climb-aug">Escalade augmentation</label>
                     <input type="number" name="climb-aug" id="climb-aug"></td>
@@ -425,7 +443,7 @@
                 <tr>
                   <td>Intimidation</td>
                   <td><abbr title="Force">F</abbr></td>
-                  <td><output id="intimidate-current" name="intimidate-current" for="f-i f-a"></output></td>
+                  <td><output id="intimidate-current" name="intimidate-current" for="s-i s-a"></output></td>
                   <td>
                     <label class="sr-only" for="intimidate-aug">Intimidation augmentation</label>
                     <input type="number" name="intimidate-aug" id="intimidate-aug"></td>
@@ -443,7 +461,7 @@
                 <tr>
                   <td>Marchandage</td>
                   <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="haggle-current" name="haggle-current" for="soc-i soc-a"></output></td>
+                  <td><output id="haggle-current" name="haggle-current" for="fel-i fel-a"></output></td>
                   <td>
                     <label class="sr-only" for="haggle-aug">Marchandage augmentation</label>
                     <input type="number" name="haggle-aug" id="haggle-aug"></td>
@@ -479,7 +497,7 @@
                 <tr>
                   <td>Ragot</td>
                   <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="gossip-current" name="gossip-current" for="soc-i soc-a"></output></td>
+                  <td><output id="gossip-current" name="gossip-current" for="fel-i fel-a"></output></td>
                   <td>
                     <label class="sr-only" for="gossip-aug">Ragot augmentation</label>
                     <input type="number" name="gossip-aug" id="gossip-aug"></td>
@@ -488,7 +506,7 @@
                 <tr>
                   <td>Ramer</td>
                   <td><abbr title="Force">F</abbr></td>
-                  <td><output id="row-current" name="row-current" for="f-i f-a"></output></td>
+                  <td><output id="row-current" name="row-current" for="s-i s-a"></output></td>
                   <td>
                     <label class="sr-only" for="row-aug">Ramer augmentation</label>
                     <input type="number" name="row-aug" id="row-aug"></td>
@@ -497,7 +515,7 @@
                 <tr>
                   <td>Résistance</td>
                   <td><abbr title="Endurance">E</abbr></td>
-                  <td><output id="endurance-current" name="endurance-current" for="e-i e-a"></output></td>
+                  <td><output id="endurance-current" name="endurance-current" for="t-i t-a"></output></td>
                   <td>
                     <label class="sr-only" for="endurance-aug">Résistance augmentation</label>
                     <input type="number" name="endurance-aug" id="endurance-aug"></td>
@@ -506,7 +524,7 @@
                 <tr>
                   <td>Résistance à l’alcool</td>
                   <td><abbr title="Endurance">E</abbr></td>
-                  <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="e-i e-a"></output></td>
+                  <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="t-i t-a"></output></td>
                   <td>
                     <label class="sr-only" for="consume-alcohol-aug">Résistance à l’alcool augmentation</label>
                     <input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
@@ -515,7 +533,7 @@
                 <tr>
                   <td>Subornation</td>
                   <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="bribery-current" name="bribery-current" for="soc-i soc-a"></output></td>
+                  <td><output id="bribery-current" name="bribery-current" for="fel-i fel-a"></output></td>
                   <td>
                     <label class="sr-only" for="bribery-aug">Subornation augmentation</label>
                     <input type="number" name="bribery-aug" id="bribery-aug"></td>
@@ -556,15 +574,15 @@
                     <label class="sr-only" for="custom-skill-charac-0">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-0" id="custom-skill-charac-0" data-input="custom-skill-current-0">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -585,15 +603,15 @@
                     <label class="sr-only" for="custom-skill-charac-1">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-1" id="custom-skill-charac-1" data-input="custom-skill-current-1">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -611,15 +629,15 @@
                     <label class="sr-only" for="custom-skill-charac-2">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-2" id="custom-skill-charac-2" data-input="custom-skill-current-2">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -638,15 +656,15 @@
                     <label class="sr-only" for="custom-skill-charac-3">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-3" id="custom-skill-charac-3" data-input="custom-skill-current-3">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -665,15 +683,15 @@
                     <label class="sr-only" for="custom-skill-charac-4">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-4" id="custom-skill-charac-4" data-input="custom-skill-current-4">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -692,15 +710,15 @@
                     <label class="sr-only" for="custom-skill-charac-5">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-5" id="custom-skill-charac-5" data-input="custom-skill-current-5">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -719,15 +737,15 @@
                     <label class="sr-only" for="custom-skill-charac-6">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-6" id="custom-skill-charac-6" data-input="custom-skill-current-6">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -746,15 +764,15 @@
                     <label class="sr-only" for="custom-skill-charac-7">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-7" id="custom-skill-charac-7" data-input="custom-skill-current-7">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -773,15 +791,15 @@
                     <label class="sr-only" for="custom-skill-charac-8">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-8" id="custom-skill-charac-8" data-input="custom-skill-current-8">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -800,15 +818,15 @@
                     <label class="sr-only" for="custom-skill-charac-9">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-9" id="custom-skill-charac-9" data-input="custom-skill-current-9">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -827,15 +845,15 @@
                     <label class="sr-only" for="custom-skill-charac-10">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-10" id="custom-skill-charac-10" data-input="custom-skill-current-10">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -854,15 +872,15 @@
                     <label class="sr-only" for="custom-skill-charac-11">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-11" id="custom-skill-charac-11" data-input="custom-skill-current-11">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -881,15 +899,15 @@
                     <label class="sr-only" for="custom-skill-charac-12">Caractéristique de base</label>
                     <select class="charac-select" name="custom-skill-charac-12" id="custom-skill-charac-12" data-input="custom-skill-current-12">
                       <option value="" selected>-</option>
-                      <option value="cc">CC</option>
-                      <option value="ct">CT</option>
-                      <option value="f">F</option>
-                      <option value="e">E</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
                       <option value="i">I</option>
                       <option value="ag">Ag</option>
                       <option value="dex">Dex</option>
                       <option value="int">Int</option>
-                      <option value="fm">FM</option>
+                      <option value="wp">FM</option>
                       <option value="soc">Soc</option>
                     </select>
                   </td>
@@ -905,115 +923,693 @@
           </fieldset>
         </div>
       </div>
-      <div class="talents" id="talents">
-        <fieldset class="simple">
-          <legend>Talents</legend>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">
-                  <span id="talents-name-label">Nom <span class="sr-only">du talent</span></span>
-                </th>
-                <th scope="col" class="narrow">
-                  <abbr id="talents-counter-label" title="Nombre de fois pris">Nbre pris</abbr>
-                </th>
-                <th scope="col">
-                  <span id="talents-desc-label">Description <span class="sr-only">du talent</span></span>
-                </th>
-              </tr>
-            </thead>
+      <fieldset class="talents simple custom" id="talents">
+        <legend>Talents</legend>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">
+                <span id="talents-name-label">Nom <span class="sr-only">du talent</span></span>
+              </th>
+              <th scope="col" class="narrow">
+                <abbr id="talents-counter-label" title="Nombre de fois pris">Nbre pris</abbr>
+              </th>
+              <th scope="col">
+                <span id="talents-desc-label">Description <span class="sr-only">du talent</span></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
+                <input type="hidden" name="talents-name-0" id="talents-name-0">
+              </td>
+              <td>
+                <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-0" id="talents-counter-0">
+              </td>
+              <td>
+                <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
+                <input type="hidden" name="talents-desc-0" id="talents-desc-0">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <template id="talents-row">
+          <tr>
+            <td>
+              <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
+              <input type="hidden" name="talents-name-" id="talents-name-">
+            </td>
+            <td>
+              <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-" id="talents-counter-">
+            </td>
+            <td>
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
+              <input type="hidden" name="talents-desc-" id="talents-desc-">
+            </td>
+          </tr>
+        </template>
+      </fieldset>
+      <fieldset class="ambitions">
+        <legend>Ambitions</legend>
+        <div class="ambitions-wrapper">
+          <div class="item">
+            <div class="item-label" id="ambitions-short-label">À court terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-short-label"></div>
+              <input type="hidden" name="ambitions-short" id="ambitions-short">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="ambitions-long-label">À long terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-long-label"></div>
+              <input type="hidden" name="ambitions-long" id="ambitions-long">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="party">
+        <legend>Groupe</legend>
+        <div class="party-wrapper">
+          <div class="item">
+            <div class="item-label" id="party-name-label">Nom du groupe</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-labelledBy="party-name-label"></div>
+              <input type="hidden" name="party-name" id="party-name">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="party-short-label">À court terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-short-label"></div>
+              <input type="hidden" name="party-short" id="party-short">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="party-long-label">À long terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-long-label"></div>
+              <input type="hidden" name="party-long" id="party-long">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="party-members-label">Membres</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-members-label"></div>
+              <input type="hidden" name="party-members" id="party-members">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="page second">
+      <fieldset class="armour simple encumbrance-src" id="armour">
+        <legend>Armure</legend>
+        <table>
+          <thead>
+            <th scope="col"><span id="armour-name-label">Nom</span></th>
+            <th scope="col"><span id="armour-location-label">Localisation</span></th>
+            <th scope="col" class="narrow"><span id="armour-encumbrance-label"><abbr title="Encombrement">Enc</abbr></span></th>
+            <th scope="col" class="narrow"><span id="armour-ap-label"><abbr title="Points d'armure">PA</abbr></span></th>
+            <th scope="col"><span id="armour-qualities-label">Atouts / Défauts</span></th>
+            <th scope="col" class="narrow"><span id="armour-worn-label">Porté</span></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="armour-name-0" id="armour-name-0" aria-labelledBy="armour-name-label">
+              </td>
+              <td>
+                <input type="text" name="armour-location-0" id="armour-location-0" aria-labelledBy="armour-location-label">
+              </td>
+              <td>
+                <input type="number" name="armour-encumbrance-0" id="armour-encumbrance-0" aria-labelledBy="armour-encumbrance-label">
+              </td>
+              <td>
+                <input type="number" name="armour-ap-0" id="armour-ap-0" aria-labelledBy="armour-ap-label">
+              </td>
+              <td><input type="text" name="armour-qualities-0" id="armour-qualities-0" aria-labelledBy="armour-qualities-label"></td>
+              <td>
+                <input type="checkbox" name="armour-worn-0" id="armour-worn-0" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="armour-name-1" id="armour-name-1" aria-labelledBy="armour-name-label">
+              </td>
+              <td>
+                <input type="text" name="armour-location-1" id="armour-location-1" aria-labelledBy="armour-location-label">
+              </td>
+              <td>
+                <input type="number" name="armour-encumbrance-1" id="armour-encumbrance-1" aria-labelledBy="armour-encumbrance-label">
+              </td>
+              <td>
+                <input type="number" name="armour-ap-1" id="armour-ap-1" aria-labelledBy="armour-ap-label">
+              </td>
+              <td><input type="text" name="armour-qualities-1" id="armour-qualities-1" aria-labelledBy="armour-qualities-label"></td>
+              <td>
+                <input type="checkbox" name="armour-worn-1" id="armour-worn-1" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="armour-name-2" id="armour-name-2" aria-labelledBy="armour-name-label">
+              </td>
+              <td>
+                <input type="text" name="armour-location-2" id="armour-location-2" aria-labelledBy="armour-location-label">
+              </td>
+              <td>
+                <input type="number" name="armour-encumbrance-2" id="armour-encumbrance-2" aria-labelledBy="armour-encumbrance-label">
+              </td>
+              <td>
+                <input type="number" name="armour-ap-2" id="armour-ap-2" aria-labelledBy="armour-ap-label">
+              </td>
+              <td><input type="text" name="armour-qualities-2" id="armour-qualities-2" aria-labelledBy="armour-qualities-label"></td>
+              <td>
+                <input type="checkbox" name="armour-worn-2" id="armour-worn-2" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="armour-name-3" id="armour-name-3" aria-labelledBy="armour-name-label">
+              </td>
+              <td>
+                <input type="text" name="armour-location-3" id="armour-location-3" aria-labelledBy="armour-location-label">
+              </td>
+              <td>
+                <input type="number" name="armour-encumbrance-3" id="armour-encumbrance-3" aria-labelledBy="armour-encumbrance-label">
+              </td>
+              <td>
+                <input type="number" name="armour-ap-3" id="armour-ap-3" aria-labelledBy="armour-ap-label">
+              </td>
+              <td><input type="text" name="armour-qualities-3" id="armour-qualities-3" aria-labelledBy="armour-qualities-label"></td>
+              <td>
+                <input type="checkbox" name="armour-worn-3" id="armour-worn-3" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="armour-name-4" id="armour-name-4" aria-labelledBy="armour-name-label">
+              </td>
+              <td>
+                <input type="text" name="armour-location-4" id="armour-location-4" aria-labelledBy="armour-location-label">
+              </td>
+              <td>
+                <input type="number" name="armour-encumbrance-4" id="armour-encumbrance-4" aria-labelledBy="armour-encumbrance-label">
+              </td>
+              <td>
+                <input type="number" name="armour-ap-4" id="armour-ap-4" aria-labelledBy="armour-ap-label">
+              </td>
+              <td><input type="text" name="armour-qualities-4" id="armour-qualities-4" aria-labelledBy="armour-qualities-label"></td>
+              <td>
+                <input type="checkbox" name="armour-worn-4" id="armour-worn-4" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <output class="hidden" id="encumbrance-armour-total"></output>
+      </fieldset>
+      <fieldset class="armour-points simple">
+        <legend>Points d'armure (PA)</legend>
+        <div class="armour-points-box">
+          <div class="armour-points-stat">
+            <label for="ap-head">Tête</label>
+            <input type="numer" name="ap-head" id="ap-head" aria-describedBy="ap-head-desc">
+            <span id="ap-head-desc">01-09</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-left-arm">Bras faible</label>
+            <input type="numer" name="ap-left-arm" id="ap-left-arm" aria-describedBy="ap-left-arm-desc">
+            <span id="ap-left-arm-desc">10-24</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-right-arm">Bras fort</label>
+            <input type="numer" name="ap-right-arm" id="ap-right-arm" aria-describedBy="ap-right-arm-desc">
+            <span id="ap-right-arm-desc">25-44</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-body">Corps</label>
+            <input type="numer" name="ap-body" id="ap-body" aria-describedBy="ap-body-desc">
+            <span id="ap-body-desc">45-79</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-left-leg">Jambe gauche</label>
+            <input type="numer" name="ap-left-leg" id="ap-left-leg" aria-describedBy="ap-left-leg-desc">
+            <span id="ap-left-leg-desc">80-89</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-right-leg">Jambe droite</label>
+            <input type="numer" name="ap-right-leg" id="ap-right-leg" aria-describedBy="ap-right-leg-desc">
+            <span id="ap-right-leg-desc">90-00</span>
+          </div>
+          <div class="armour-points-stat armour-points-stat--shield">
+            <label for="ap-shield">Bouclier</label>
+            <input type="numer" name="ap-shield" id="ap-shield" aria-describedBy="ap-shield-desc">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="wounds simple">
+        <legend>Blessures</legend>
+        <div class="wounds-wrapper">
+          <table class="left-aligned wounds-total">
             <tbody>
               <tr>
+                <th scope="row" class="narrow">
+                  <abbr title="Bonus de force">BF</abbr>
+                </th>
                 <td>
-                  <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
-                  <input type="hidden" name="talents-name-0" id="talents-name-0">
+                  <output for="bonus-s" id="strength-bonus" name="strength-bonus">
                 </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">
+                  <abbr title="Bonus d'endurance fois deux">BEx2</abbr>
+                </th>
                 <td>
-                  <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-0" id="talents-counter-0">
+                  <output for="bonus-t" id="toughness-bonus" name="toughness-bonus">
                 </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">
+                  <abbr title="Bonus de force mentale">BFM</abbr>
+                </th>
                 <td>
-                  <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
-                  <input type="hidden" name="talents-desc-0" id="talents-desc-0">
+                  <output for="bonus-wp" id="will-power-bonus" name="will-power-bonus">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">Dur à cuire</th>
+                <td>
+                  <label class="sr-only" for="hardy-bonus">Talent dur à cuire</label>
+                  <input type="checkbox" name="hardy-bonus" id="hardy-bonus" value="hardy bonus">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">Blessures</th>
+                <td>
+                  <output for="strength-bonus toughness-bonus will-power-bonus" id="wounds" name="wounds">
                 </td>
               </tr>
             </tbody>
           </table>
-          <template id="talent-row">
+          <div class="wounds-current simple">
+            <label class="sr-only" for="current-wounds">Points de blessures actuels</label>
+            <input type="text" name="current-wounds" id="current-wounds">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="trappings simple custom encumbrance-src" id="trappings">
+        <legend>Possessions</legend>
+        <table>
+          <thead>
+            <th scope="col"><span id="trappings-name-label">Nom</span></th>
+            <th scope="col" class="narrow"><span id="trappings-encumbrance-label"><abbr title="Encombrement">Enc</abbr></span></th>
+            <th scope="col" class="narrow"><span id="trappings-worn-label">Porté</span></th>
+          </thead>
+          <tbody>
             <tr>
               <td>
-                <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
-                <input type="hidden" name="" id="">
+                <div contenteditable role="textbox" aria-labelledby="trappings-name-label"></div>
+                <input type="hidden" name="trappings-name-0" id="trappings-name-0" >
               </td>
               <td>
-                <input aria-labelledby="talents-counter-label" type="number" name="" id="">
+                <input type="number" name="trappings-encumbrance-0" id="trappings-encumbrance-0" aria-labelledBy="trappings-encumbrance-label">
               </td>
               <td>
-                <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
-                <input type="hidden" name="" id="">
+                <input type="checkbox" name="trappings-worn-0" id="trappings-worn-0" aria-labelledBy="trappings-worn-label">
               </td>
             </tr>
-          </template>
-        </fieldset>
-      </div>
-      <div class="ambitions">
-        <fieldset>
-          <legend>Ambitions</legend>
-          <div class="ambitions-wrapper">
-            <div class="item">
-              <div class="item-label" id="ambitions-short-label">À court terme</div>
-              <div class="item-desc">
-                <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-short-label"></div>
-                <input type="hidden" name="ambitions-short" id="ambitions-short">
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-label" id="ambitions-long-label">À long terme</div>
-              <div class="item-desc">
-                <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-long-label"></div>
-                <input type="hidden" name="ambitions-long" id="ambitions-long">
-              </div>
-            </div>
+          </tbody>
+        </table>
+        <output class="hidden" id="encumbrance-trappings-total"></output>
+        <template id="trappings-row">
+          <tr>
+            <td>
+              <div contenteditable role="textbox" aria-labelledby="trappings-name-label"></div>
+              <input type="hidden" name="trappings-name-" id="trappings-name-">
+            </td>
+            <td>
+              <input aria-labelledby="trappings-encumbrance-label" type="number" name="trappings-encumbrance-" id="trappings-encumbrance-">
+            </td>
+            <td>
+              <input type="checkbox" name="trappings-worn-" id="trappings-worn-" aria-labelledBy="trappings-worn-label">
+            </td>
+          </tr>
+        </template>
+      </fieldset>
+      <fieldset class="encumbrance simple">
+        <legend>Encombrement</legend>
+        <table class="left-aligned">
+          <tbody>
+            <tr>
+              <th scope="row" class="narrow">Armes</th>
+              <td>
+                <output for="encumbrance-weapons-total" id="encumbrance-weapons" name="encumbrance-weapons"></output>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow">Armures</th>
+              <td>
+                <output for="encumbrance-armour-total" id="encumbrance-armour" name="encumbrance-armour"></output>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow">Possessions</th>
+              <td>
+                <output for="encumbrance-trappings-total" id="encumbrance-trappings" name="encumbrance-trappings"></output>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow" id="encumbrance-max-label">
+                <abbr title="Encombrement maximum">Enc. max</abbr>
+              </th>
+              <td>
+                <input type="number" id="encumbrance-max" name="encumbrance-max" aria-labelledBy="encumbrance-max-label">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow">Total</th>
+              <td>
+                <output class="encumbrance-total" for="" id="encumbrance-total" name="encumbrance-total"></output>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="encumbrance-state" class="encumbrance-state">
+          <p>Pas de pénalité</p>
+          <ul></ul>
+        </div>
+      </fieldset>
+      <fieldset class="wealth simple">
+        <legend>Richesses</legend>
+        <table class="layout-fixed">
+          <thead>
+            <tr>
+              <th scope="col" id="copper-label">
+                <abbr title="Sous de cuivre">sc</abbr>
+              </th>
+              <th scope="col" id="silver-label">
+                <abbr title="Pistoles d'argent">/-</abbr>
+              </th>
+              <th scope="col" id="gold-label">
+                <abbr title="Couronnes d'or">CO</abbr>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="number" id="copper" name="copper" aria-labelledby="copper-label">
+              </td>
+              <td>
+                <input type="number" id="silver" name="silver" aria-labelledby="silver-label">
+              </td>
+              <td>
+                <input type="number" id="gold" name="gold" aria-labelledby="gold-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="change">1CO = 20/- = 240sc</div>
+      </fieldset>
+      <fieldset class="psychology">
+        <legend id="psychology-label">Psychologie</legend>
+        <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
+        <input type="hidden" name="psychology" id="psychology">
+      </fieldset>
+      <fieldset class="corruption simple">
+        <legend>Corruption et mutation</legend>
+        <div class="corruption-wrapper">
+          <div>
+            <label for="treshold">Seuil</label>
+            <input type="number" name="treshold" id="treshold">
           </div>
-        </fieldset>
-      </div>
-      <div class="party">
-        <fieldset>
-          <legend>Groupe</legend>
-          <div class="party-wrapper">
-            <div class="item">
-              <div class="item-label" id="party-name-label">Nom du groupe</div>
-              <div class="item-desc">
-                <div contenteditable role="textbox" aria-labelledBy="party-name-label"></div>
-                <input type="hidden" name="party-name" id="party-name">
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-label" id="party-short-label">À court terme</div>
-              <div class="item-desc">
-                <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-short-label"></div>
-                <input type="hidden" name="party-short" id="party-short">
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-label" id="party-long-label">À long terme</div>
-              <div class="item-desc">
-                <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-long-label"></div>
-                <input type="hidden" name="party-long" id="party-long">
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-label" id="party-members-label">Membres</div>
-              <div class="item-desc">
-                <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-members-label"></div>
-                <input type="hidden" name="party-members" id="party-members">
-              </div>
-            </div>
+          <div>
+            <label for="corruption">Points de corruption</label>
+            <input type="number" name="corruption" id="corruption">
           </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="page second">
-
+        </div>
+        <div class="corruption-wrapper">
+          <span id="mutation-label">Mutations</span>
+          <div>
+            <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="mutation-label"></div>
+            <input type="hidden" name="mutation" id="mutation">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="weapons simple encumbrance-src" id="weapons">
+        <legend>Armes</legend>
+        <table>
+          <thead>
+            <th scope="col"><span id="weapons-name-label">Nom</span></th>
+            <th scope="col"><span id="weapons-group-label">Groupe</span></th>
+            <th scope="col" class="narrow"><span id="weapons-encumbrance-label"><abbr title="Encombrement">Enc</abbr></span></th>
+            <th scope="col"><span id="weapons-range-label">Portée/Allonge</span></th>
+            <th scope="col"><span id="weapons-damage-label">Dégâts</span></th>
+            <th scope="col"><span id="weapons-qualities-label">Atouts/Défauts</span></th>
+            <th scope="col" class="narrow"><span id="weapons-worn-label">Porté</span></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="weapons-name-0" id="weapons-name-0" aria-labelledBy="weapons-name-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-group-0" id="weapons-group-0" aria-labelledBy="weapons-group-label">
+              </td>
+              <td>
+                <input type="number" name="weapons-encumbrance-0" id="weapons-encumbrance-0" aria-labelledBy="weapons-encumbrance-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-range-0" id="weapons-range-0" aria-labelledBy="weapons-range-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-damage-0" id="weapons-damage-0" aria-labelledBy="weapons-damage-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-qualities-0" id="weapons-qualities-0" aria-labelledBy="weapons-qualities-label">
+              </td>
+              <td>
+                <input type="checkbox" name="weapons-worn-0" id="weapons-worn-0" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="weapons-name-1" id="weapons-name-1" aria-labelledBy="weapons-name-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-group-1" id="weapons-group-1" aria-labelledBy="weapons-group-label">
+              </td>
+              <td>
+                <input type="number" name="weapons-encumbrance-1" id="weapons-encumbrance-1" aria-labelledBy="weapons-encumbrance-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-range-1" id="weapons-range-1" aria-labelledBy="weapons-range-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-damage-1" id="weapons-damage-1" aria-labelledBy="weapons-damage-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-qualities-1" id="weapons-qualities-1" aria-labelledBy="weapons-qualities-label">
+              </td>
+              <td>
+                <input type="checkbox" name="weapons-worn-1" id="weapons-worn-1" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="weapons-name-2" id="weapons-name-2" aria-labelledBy="weapons-name-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-group-2" id="weapons-group-2" aria-labelledBy="weapons-group-label">
+              </td>
+              <td>
+                <input type="number" name="weapons-encumbrance-2" id="weapons-encumbrance-2" aria-labelledBy="weapons-encumbrance-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-range-2" id="weapons-range-2" aria-labelledBy="weapons-range-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-damage-2" id="weapons-damage-2" aria-labelledBy="weapons-damage-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-qualities-2" id="weapons-qualities-2" aria-labelledBy="weapons-qualities-label">
+              </td>
+              <td>
+                <input type="checkbox" name="weapons-worn-2" id="weapons-worn-2" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="weapons-name-3" id="weapons-name-3" aria-labelledBy="weapons-name-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-group-3" id="weapons-group-3" aria-labelledBy="weapons-group-label">
+              </td>
+              <td>
+                <input type="number" name="weapons-encumbrance-3" id="weapons-encumbrance-3" aria-labelledBy="weapons-encumbrance-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-range-3" id="weapons-range-3" aria-labelledBy="weapons-range-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-damage-3" id="weapons-damage-3" aria-labelledBy="weapons-damage-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-qualities-3" id="weapons-qualities-3" aria-labelledBy="weapons-qualities-label">
+              </td>
+              <td>
+                <input type="checkbox" name="weapons-worn-3" id="weapons-worn-3" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="weapons-name-4" id="weapons-name-4" aria-labelledBy="weapons-name-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-group-4" id="weapons-group-4" aria-labelledBy="weapons-group-label">
+              </td>
+              <td>
+                <input type="number" name="weapons-encumbrance-4" id="weapons-encumbrance-4" aria-labelledBy="weapons-encumbrance-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-range-4" id="weapons-range-4" aria-labelledBy="weapons-range-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-damage-4" id="weapons-damage-4" aria-labelledBy="weapons-damage-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-qualities-4" id="weapons-qualities-4" aria-labelledBy="weapons-qualities-label">
+              </td>
+              <td>
+                <input type="checkbox" name="weapons-worn-4" id="weapons-worn-4" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <output class="hidden" id="encumbrance-weapons-total"></output>
+      </fieldset>
+      <fieldset class="spells simple" id="spells">
+        <legend>Sorts et prières</legend>
+        <div class="spells-wrapper">
+          <label for="sin">Péché</label>
+          <input type="number" name="sin" id="sin">
+        </div>
+        <table>
+          <thead>
+            <th scope="col"><span id="spells-name-label">Nom</span></th>
+            <th scope="col"><span id="spells-cn-label"><abbr title="Niveau d'incantation">NI</abbr></span></th>
+            <th scope="col"><span id="spells-range-label">Portée</span></th>
+            <th scope="col"><span id="spells-target-label">Cible</span></th>
+            <th scope="col"><span id="spells-duration-label">Durée</span></th>
+            <th scope="col"><span id="spells-effects-label">Effets</span></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="spells-name-0" id="spells-name-0" aria-labelledBy="spells-name-label">
+              </td>
+              <td>
+                <input type="text" name="spells-cn-0" id="spells-cn-0" aria-labelledBy="spells-cn-label">
+              </td>
+              <td>
+                <input type="text" name="spells-range-0" id="spells-range-0" aria-labelledBy="spells-range-label">
+              </td>
+              <td>
+                <input type="text" name="spells-target-0" id="spells-target-0" aria-labelledBy="spells-target-label">
+              </td>
+              <td>
+                <input type="text" name="spells-duration-0" id="spells-duration-0" aria-labelledBy="spells-duration-label">
+              </td>
+              <td>
+                <input type="text" name="spells-effects-0" id="spells-effects-0" aria-labelledBy="spells-effects-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="spells-name-1" id="spells-name-1" aria-labelledBy="spells-name-label">
+              </td>
+              <td>
+                <input type="text" name="spells-cn-1" id="spells-cn-1" aria-labelledBy="spells-cn-label">
+              </td>
+              <td>
+                <input type="text" name="spells-range-1" id="spells-range-1" aria-labelledBy="spells-range-label">
+              </td>
+              <td>
+                <input type="text" name="spells-target-1" id="spells-target-1" aria-labelledBy="spells-target-label">
+              </td>
+              <td>
+                <input type="text" name="spells-duration-1" id="spells-duration-1" aria-labelledBy="spells-duration-label">
+              </td>
+              <td>
+                <input type="text" name="spells-effects-1" id="spells-effects-1" aria-labelledBy="spells-effects-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="spells-name-2" id="spells-name-2" aria-labelledBy="spells-name-label">
+              </td>
+              <td>
+                <input type="text" name="spells-cn-2" id="spells-cn-2" aria-labelledBy="spells-cn-label">
+              </td>
+              <td>
+                <input type="text" name="spells-range-2" id="spells-range-2" aria-labelledBy="spells-range-label">
+              </td>
+              <td>
+                <input type="text" name="spells-target-2" id="spells-target-2" aria-labelledBy="spells-target-label">
+              </td>
+              <td>
+                <input type="text" name="spells-duration-2" id="spells-duration-2" aria-labelledBy="spells-duration-label">
+              </td>
+              <td>
+                <input type="text" name="spells-effects-2" id="spells-effects-2" aria-labelledBy="spells-effects-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="spells-name-3" id="spells-name-3" aria-labelledBy="spells-name-label">
+              </td>
+              <td>
+                <input type="text" name="spells-cn-3" id="spells-cn-3" aria-labelledBy="spells-cn-label">
+              </td>
+              <td>
+                <input type="text" name="spells-range-3" id="spells-range-3" aria-labelledBy="spells-range-label">
+              </td>
+              <td>
+                <input type="text" name="spells-target-3" id="spells-target-3" aria-labelledBy="spells-target-label">
+              </td>
+              <td>
+                <input type="text" name="spells-duration-3" id="spells-duration-3" aria-labelledBy="spells-duration-label">
+              </td>
+              <td>
+                <input type="text" name="spells-effects-3" id="spells-effects-3" aria-labelledBy="spells-effects-label">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="spells-name-4" id="spells-name-4" aria-labelledBy="spells-name-label">
+              </td>
+              <td>
+                <input type="text" name="spells-cn-4" id="spells-cn-4" aria-labelledBy="spells-cn-label">
+              </td>
+              <td>
+                <input type="text" name="spells-range-4" id="spells-range-4" aria-labelledBy="spells-range-label">
+              </td>
+              <td>
+                <input type="text" name="spells-target-4" id="spells-target-4" aria-labelledBy="spells-target-label">
+              </td>
+              <td>
+                <input type="text" name="spells-duration-4" id="spells-duration-4" aria-labelledBy="spells-duration-label">
+              </td>
+              <td>
+                <input type="text" name="spells-effects-4" id="spells-effects-4" aria-labelledBy="spells-effects-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
     </div>
   </form>
   <script src="js/app.js"></script>

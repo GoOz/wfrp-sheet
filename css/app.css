@@ -21,7 +21,7 @@ body {
   font-family: Luminari, Times, serif;
 }
 
-input, select {
+input:not([type="checkbox"]), select {
   font-family: inherit;
   font-size: inherit;
   border-radius: 0;
@@ -54,8 +54,16 @@ output {
   white-space: nowrap !important;
 }
 
+.hidden {
+  display: none;
+}
+
 .text-align-center {
   text-align: center;
+}
+
+.error {
+  color: red;
 }
 
 /* INDEX PAGE */
@@ -134,10 +142,13 @@ output {
 }
 
 .page {
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  height: 100vh;
   scroll-snap-align: start;
   background-color: black;
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
 }
 
 .page > * {
@@ -159,10 +170,25 @@ output {
     "skills skills skills skills skills skills party party party";
 }
 
+.second {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr .75fr;
+  gap: .125rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "armour armour armour armour armour-points armour-points wounds wounds"
+    "armour armour armour armour armour-points armour-points wounds wounds"
+    "trappings trappings trappings encumbrance armour-points armour-points psychology psychology"
+    "trappings trappings trappings encumbrance wealth wealth corruption corruption"
+    "weapons weapons weapons weapons spells spells spells spells"
+    "weapons weapons weapons weapons spells spells spells spells";
+}
+
 /* FORM ELEMENTS */
 fieldset {
   margin: 0;
-  padding: .5rem;
+  padding: 0 .5rem .5rem;
   border: 0;
   min-width: 0;
   overflow: auto;
@@ -170,12 +196,15 @@ fieldset {
 
 legend {
   float: left;
+  position: sticky;
+  top: 0;
+  background-color: white;
   width: 100%;
   text-align: center;
   font-size: 1em;
   line-height: 1.5;
   margin-block-end: .5rem;
-  padding: 0;
+  padding: .5rem 0 0;
   font-weight: bold;
   font-family: Luminari, Times, serif;
 }
@@ -191,12 +220,12 @@ legend {
   white-space: nowrap;
 }
 
-input, output {
+input:not([type="checkbox"]), output {
   width: 100%;
   border: none;
   padding-block: 0;
 }
-:is(input, select, [contenteditable]):is(:focus, :focus-visible) {
+:is(input:not([type="checkbox"]), select, [contenteditable]):is(:focus, :focus-visible) {
   outline: 0;
   background-color: hsla(0, 0%, 70%, .3);
 }
@@ -241,7 +270,7 @@ table.left-aligned tbody :is(th, td:first-child) {
   white-space: nowrap;
 }
 
-table :is(input, output) {
+table :is(input:not([type="checkbox"]), output) {
   width: calc(100% - .25rem);
   min-width: 1.2rem;
   text-align: center;
@@ -457,3 +486,217 @@ table.layout-fixed {
   font-size: .8em;
 }
 
+/* SECOND PAGE */
+
+/* Armour */
+.armour { grid-area: armour; }
+
+/* Armour points */
+.armour-points {
+  grid-area: armour-points;
+  --box-padding-top: 1.5rem;
+}
+.armour-points legend {
+  margin: 0;
+}
+.armour-points-box {
+  box-sizing: border-box;
+  position: relative;
+  height: calc(100% - var(--box-padding-top));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  row-gap: .25rem;
+  padding-block-start: .5rem;
+  clear: left;
+}
+.armour-points-box::before {
+  content: '';
+  position: absolute;
+  inset: calc(.5rem + var(--box-padding-top)) .5rem .5rem .5rem;
+  background-image: url('../img/silhouette.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: .3;
+  z-index: 0;
+}
+.armour-points-stat {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  gap: .25rem;
+}
+.armour-points-stat input {
+  border: 1px solid black;
+  width: 1rem;
+  text-align: center;
+}
+.armour-points-stat label {
+  font-weight: bold;
+  font-size: .7em;
+}
+.armour-points-stat span {
+  font-size: .7em;
+}
+.armour-points-stat--shield {
+  flex-basis: 100%;
+  background: transparent url('../img/shield.svg') no-repeat top center;
+  background-size: 2rem;
+  top: -.5rem;
+  gap: .5rem;
+  padding-block-start: .25rem;
+}
+.armour-points-stat--shield input {
+  border: 0;
+  background-color: transparent;
+}
+
+/* Trappings */
+.trappings { grid-area: trappings; }
+
+/* Psychology */
+.psychology { grid-area: psychology; }
+
+.psychology > div[contenteditable] {
+  clear: left;
+  height: 100%;
+  max-height: calc(100% - 2.5rem);
+  overflow: auto;
+  font-size: .8em;
+}
+
+/* Corruption */
+.corruption { grid-area: corruption; }
+
+.corruption-content {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100% - 2.5rem);
+  overflow: auto;
+}
+
+.corruption-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid black;
+}
+.corruption-wrapper > div {
+  flex: 1 1 50%;
+  display: inline-flex;
+  align-items: stretch;
+}
+.corruption-wrapper > div:not(:first-child),
+.corruption-wrapper input {
+  border-left: 1px solid black;
+}
+.corruption-wrapper input {
+  text-align: center;
+}
+.corruption-wrapper :is(label, span) {
+  padding-inline: .25rem;
+  font-size: .8em;
+  align-self: center;
+}
+.corruption-wrapper span {
+  flex: 0 0 auto;
+  align-self: start;
+}
+.corruption-wrapper [contenteditable] {
+  width: 100%;
+  font-size: .8em;
+  padding: .125rem;
+}
+
+/* Wealth */
+.wealth { grid-area: wealth; }
+
+.wealth input {
+  font-size: 1.3em;
+}
+
+.wealth .change {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Encumbrance */
+.encumbrance { grid-area: encumbrance; }
+
+.encumbrance-state {
+  padding: .25rem;
+}
+.encumbrance-state p {
+  font-size: .9em;
+  text-align: center;
+  margin: 0 0 .25rem 0;
+}
+.encumbrance-state ul {
+  margin: 0;
+  padding: 0 0 0 .5rem;
+  font-size: .8em;
+}
+
+/* Wounds */
+.wounds { grid-area: wounds; }
+
+.wounds-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: relative;
+}
+
+.wounds-total {
+  flex: 0 0 40%;
+}
+
+.wounds-current {
+  flex: 0 0 60%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+.wounds-current input {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Weapons */
+.weapons { grid-area: weapons; }
+
+/* Spells */
+.spells {
+  position: relative;
+  grid-area: spells;
+}
+
+.spells-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid black;
+  border-top: 0;
+}
+.spells-wrapper label {
+  font-size: .8em;
+  padding: .125rem .25rem;
+  border-right: 1px solid black;
+}
+.spells-wrapper input {
+  width: 2rem;
+  font-size: .8em;
+  text-align: center;
+}
