@@ -461,15 +461,28 @@ table.layout-fixed {
 .ambitions,
 .party {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.ambitions-wrapper,
-.party-wrapper {
+:is(.ambitions,.party) :is(legend) {
+  flex: 0 0 auto;
+}
+
+:is(.ambitions,.party) .blocktext-wrapper {
+  flex: 1 1 100%;
+}
+
+.blocktext-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 .item {
+  flex: 0 1 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -484,6 +497,10 @@ table.layout-fixed {
 .item-desc {
   flex: 1 1 100%;
   font-size: .8em;
+}
+.item-desc div[contenteditable] {
+  height: 100%;
+  overflow: auto;
 }
 
 /* SECOND PAGE */
@@ -560,25 +577,47 @@ table.layout-fixed {
 /* Trappings */
 .trappings { grid-area: trappings; }
 
-/* Psychology */
-.psychology { grid-area: psychology; }
+.trappings tr > :first-child {
+  text-align: left;
+}
 
-.psychology > div[contenteditable] {
-  clear: left;
+/* Psychology */
+.psychology {
+  grid-area: psychology;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  max-height: calc(100% - 2.5rem);
+  box-sizing: border-box;
+}
+.psychology legend {
+  flex: 0 0 auto;
+}
+.psychology-content {
+  clear: left;
+  flex: 1 1 100%;
+}
+.psychology div[contenteditable] {
+  height: 100%;
   overflow: auto;
   font-size: .8em;
 }
 
 /* Corruption */
-.corruption { grid-area: corruption; }
-
-.corruption-content {
-  width: 100%;
+.corruption {
+  grid-area: corruption;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  max-height: calc(100% - 2.5rem);
-  overflow: auto;
+  box-sizing: border-box;
+}
+
+.corruption > * {
+  flex: 0 0 auto;
+}
+
+.corruption > .corruption-mutation {
+  flex: 1 1 100%;
+  overflow: hidden;
 }
 
 .corruption-wrapper {
@@ -608,11 +647,14 @@ table.layout-fixed {
 .corruption-wrapper span {
   flex: 0 0 auto;
   align-self: start;
+  padding-block: .125rem;
 }
 .corruption-wrapper [contenteditable] {
   width: 100%;
+  height: 100%;
   font-size: .8em;
   padding: .125rem;
+  overflow: auto;
 }
 
 /* Wealth */

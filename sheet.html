@@ -551,7 +551,7 @@
               </tbody>
             </table>
           </fieldset>
-          <fieldset class="addition">
+          <fieldset class="addition custom" id="custom-skill">
             <legend><abbr title="Compétences">Comp.</abbr> groupées et avancées</legend>
             <table class="left-aligned">
               <thead>
@@ -572,7 +572,7 @@
                   </td>
                   <td>
                     <label class="sr-only" for="custom-skill-charac-0">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-0" id="custom-skill-charac-0" data-input="custom-skill-current-0">
+                    <select class="charac-select" name="custom-skill-charac-0" id="custom-skill-charac-0" data-input="custom-skill-initial-0">
                       <option value="" selected>-</option>
                       <option value="ws">CC</option>
                       <option value="bs">CT</option>
@@ -587,337 +587,42 @@
                     </select>
                   </td>
                   <td>
-                    <output id="custom-skill-current-0" name="custom-skill-current-0" for=""></output>
+                    <output id="custom-skill-initial-0" name="custom-skill-initial-0" for=""></output>
                   </td>
                   <td>
                     <label class="sr-only" for="custom-skill-aug-0">Augmentation de compétence personnalisée</label>
                     <input type="text" name="custom-skill-aug-0" id="custom-skill-aug-0">
                   </td>
-                  <td><output for="custom-skill-current-0 custom-skill-aug-0"></output></td>
+                  <td><output id="custom-skill-current-0" for="custom-skill-initial-0 custom-skill-aug-0"></output></td>
                 </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-1" id="custom-skill-name-1">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-1">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-1" id="custom-skill-charac-1" data-input="custom-skill-current-1">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-1" name="custom-skill-current-1" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-1">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-1" id="custom-skill-aug-1"></td>
-                  <td><output for="custom-skill-current-1 custom-skill-aug-1"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-2" id="custom-skill-name-2">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-2">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-2" id="custom-skill-charac-2" data-input="custom-skill-current-2">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-2" name="custom-skill-current-2" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-2">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-2" id="custom-skill-aug-2">
-                  </td>
-                  <td><output for="custom-skill-current-2 custom-skill-aug-2"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-3" id="custom-skill-name-3">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-3">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-3" id="custom-skill-charac-3" data-input="custom-skill-current-3">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-3" name="custom-skill-current-3" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-3">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-3" id="custom-skill-aug-3">
-                  </td>
-                  <td><output for="custom-skill-current-3 custom-skill-aug-3"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-4" id="custom-skill-name-4">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-4">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-4" id="custom-skill-charac-4" data-input="custom-skill-current-4">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-4" name="custom-skill-current-4" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-4">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-4" id="custom-skill-aug-4">
-                  </td>
-                  <td><output for="custom-skill-current-4 custom-skill-aug-4"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-5" id="custom-skill-name-5">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-5">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-5" id="custom-skill-charac-5" data-input="custom-skill-current-5">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-5" name="custom-skill-current-5" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-5">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-5" id="custom-skill-aug-5">
-                  </td>
-                  <td><output for="custom-skill-current-5 custom-skill-aug-5"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-6" id="custom-skill-name-6">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-6">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-6" id="custom-skill-charac-6" data-input="custom-skill-current-6">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-6" name="custom-skill-current-6" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-6">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-6" id="custom-skill-aug-6">
-                  </td>
-                  <td><output for="custom-skill-current-6 custom-skill-aug-6"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-7" id="custom-skill-name-7">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-7">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-7" id="custom-skill-charac-7" data-input="custom-skill-current-7">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-7" name="custom-skill-current-7" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-7">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-7" id="custom-skill-aug-7">
-                  </td>
-                  <td><output for="custom-skill-current-7 custom-skill-aug-7"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-8" id="custom-skill-name-8">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-8">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-8" id="custom-skill-charac-8" data-input="custom-skill-current-8">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-8" name="custom-skill-current-8" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-8">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-8" id="custom-skill-aug-8">
-                  </td>
-                  <td><output for="custom-skill-current-8 custom-skill-aug-8"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-9" id="custom-skill-name-9">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-9">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-9" id="custom-skill-charac-9" data-input="custom-skill-current-9">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-9" name="custom-skill-current-9" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-9">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-9" id="custom-skill-aug-9">
-                  </td>
-                  <td><output for="custom-skill-current-9 custom-skill-aug-9"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-10" id="custom-skill-name-10">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-10">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-10" id="custom-skill-charac-10" data-input="custom-skill-current-10">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-10" name="custom-skill-current-10" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-10">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-10" id="custom-skill-aug-10">
-                  </td>
-                  <td><output for="custom-skill-current-10 custom-skill-aug-10"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-11" id="custom-skill-name-11">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-11">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-11" id="custom-skill-charac-11" data-input="custom-skill-current-11">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-11" name="custom-skill-current-11" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-11">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-11" id="custom-skill-aug-11">
-                  </td>
-                  <td><output for="custom-skill-current-11 custom-skill-aug-11"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-12" id="custom-skill-name-12">
-                  <td>
-                    <label class="sr-only" for="custom-skill-charac-12">Caractéristique de base</label>
-                    <select class="charac-select" name="custom-skill-charac-12" id="custom-skill-charac-12" data-input="custom-skill-current-12">
-                      <option value="" selected>-</option>
-                      <option value="ws">CC</option>
-                      <option value="bs">CT</option>
-                      <option value="s">F</option>
-                      <option value="t">E</option>
-                      <option value="i">I</option>
-                      <option value="ag">Ag</option>
-                      <option value="dex">Dex</option>
-                      <option value="int">Int</option>
-                      <option value="wp">FM</option>
-                      <option value="soc">Soc</option>
-                    </select>
-                  </td>
-                  <td><output id="custom-skill-current-12" name="custom-skill-current-12" for=""></output></td>
-                  <td>
-                    <label class="sr-only" for="custom-skill-aug-12">Augmentation de compétence personnalisée</label>
-                    <input type="text" name="custom-skill-aug-12" id="custom-skill-aug-12">
-                  </td>
-                  <td><output for="custom-skill-current-12 custom-skill-aug-12"></output></td>
-                </tr>
+                <template id="custom-skill-row">
+                  <tr>
+                    <td>
+                      <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
+                      <input type="hidden" name="custom-skill-name-" id="custom-skill-name-">
+                    <td>
+                      <label class="sr-only" for="custom-skill-charac-">Caractéristique de base</label>
+                      <select class="charac-select" name="custom-skill-charac-" id="custom-skill-charac-" data-input="custom-skill-initial-">
+                        <option value="" selected>-</option>
+                        <option value="ws">CC</option>
+                        <option value="bs">CT</option>
+                        <option value="s">F</option>
+                        <option value="t">E</option>
+                        <option value="i">I</option>
+                        <option value="ag">Ag</option>
+                        <option value="dex">Dex</option>
+                        <option value="int">Int</option>
+                        <option value="wp">FM</option>
+                        <option value="soc">Soc</option>
+                      </select>
+                    </td>
+                    <td><output id="custom-skill-initial-" name="custom-skill-initial-" for=""></output></td>
+                    <td>
+                      <label class="sr-only" for="custom-skill-aug-">Augmentation de compétence personnalisée</label>
+                      <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
+                    <td><output id="custom-skill-current-" for=""></output></td>
+                  </tr>
+                </template>
               </tbody>
             </table>
           </fieldset>
@@ -973,7 +678,7 @@
       </fieldset>
       <fieldset class="ambitions">
         <legend>Ambitions</legend>
-        <div class="ambitions-wrapper">
+        <div class="blocktext-wrapper">
           <div class="item">
             <div class="item-label" id="ambitions-short-label">À court terme</div>
             <div class="item-desc">
@@ -992,7 +697,7 @@
       </fieldset>
       <fieldset class="party">
         <legend>Groupe</legend>
-        <div class="party-wrapper">
+        <div class="blocktext-wrapper">
           <div class="item">
             <div class="item-label" id="party-name-label">Nom du groupe</div>
             <div class="item-desc">
@@ -1025,7 +730,7 @@
       </fieldset>
     </div>
     <div class="page second">
-      <fieldset class="armour simple encumbrance-src" id="armour">
+      <fieldset class="armour simple encumbrance-src custom" id="armour">
         <legend>Armure</legend>
         <table>
           <thead>
@@ -1055,78 +760,26 @@
                 <input type="checkbox" name="armour-worn-0" id="armour-worn-0" aria-labelledBy="armour-worn-label">
               </td>
             </tr>
-            <tr>
-              <td>
-                <input type="text" name="armour-name-1" id="armour-name-1" aria-labelledBy="armour-name-label">
-              </td>
-              <td>
-                <input type="text" name="armour-location-1" id="armour-location-1" aria-labelledBy="armour-location-label">
-              </td>
-              <td>
-                <input type="number" name="armour-encumbrance-1" id="armour-encumbrance-1" aria-labelledBy="armour-encumbrance-label">
-              </td>
-              <td>
-                <input type="number" name="armour-ap-1" id="armour-ap-1" aria-labelledBy="armour-ap-label">
-              </td>
-              <td><input type="text" name="armour-qualities-1" id="armour-qualities-1" aria-labelledBy="armour-qualities-label"></td>
-              <td>
-                <input type="checkbox" name="armour-worn-1" id="armour-worn-1" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="armour-name-2" id="armour-name-2" aria-labelledBy="armour-name-label">
-              </td>
-              <td>
-                <input type="text" name="armour-location-2" id="armour-location-2" aria-labelledBy="armour-location-label">
-              </td>
-              <td>
-                <input type="number" name="armour-encumbrance-2" id="armour-encumbrance-2" aria-labelledBy="armour-encumbrance-label">
-              </td>
-              <td>
-                <input type="number" name="armour-ap-2" id="armour-ap-2" aria-labelledBy="armour-ap-label">
-              </td>
-              <td><input type="text" name="armour-qualities-2" id="armour-qualities-2" aria-labelledBy="armour-qualities-label"></td>
-              <td>
-                <input type="checkbox" name="armour-worn-2" id="armour-worn-2" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="armour-name-3" id="armour-name-3" aria-labelledBy="armour-name-label">
-              </td>
-              <td>
-                <input type="text" name="armour-location-3" id="armour-location-3" aria-labelledBy="armour-location-label">
-              </td>
-              <td>
-                <input type="number" name="armour-encumbrance-3" id="armour-encumbrance-3" aria-labelledBy="armour-encumbrance-label">
-              </td>
-              <td>
-                <input type="number" name="armour-ap-3" id="armour-ap-3" aria-labelledBy="armour-ap-label">
-              </td>
-              <td><input type="text" name="armour-qualities-3" id="armour-qualities-3" aria-labelledBy="armour-qualities-label"></td>
-              <td>
-                <input type="checkbox" name="armour-worn-3" id="armour-worn-3" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="armour-name-4" id="armour-name-4" aria-labelledBy="armour-name-label">
-              </td>
-              <td>
-                <input type="text" name="armour-location-4" id="armour-location-4" aria-labelledBy="armour-location-label">
-              </td>
-              <td>
-                <input type="number" name="armour-encumbrance-4" id="armour-encumbrance-4" aria-labelledBy="armour-encumbrance-label">
-              </td>
-              <td>
-                <input type="number" name="armour-ap-4" id="armour-ap-4" aria-labelledBy="armour-ap-label">
-              </td>
-              <td><input type="text" name="armour-qualities-4" id="armour-qualities-4" aria-labelledBy="armour-qualities-label"></td>
-              <td>
-                <input type="checkbox" name="armour-worn-4" id="armour-worn-4" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
+            <template id="armour-row">
+              <tr>
+                <td>
+                  <input type="text" name="armour-name-" id="armour-name-" aria-labelledBy="armour-name-label">
+                </td>
+                <td>
+                  <input type="text" name="armour-location-" id="armour-location-" aria-labelledBy="armour-location-label">
+                </td>
+                <td>
+                  <input type="number" name="armour-encumbrance-" id="armour-encumbrance-" aria-labelledBy="armour-encumbrance-label">
+                </td>
+                <td>
+                  <input type="number" name="armour-ap-" id="armour-ap-" aria-labelledBy="armour-ap-label">
+                </td>
+                <td><input type="text" name="armour-qualities-" id="armour-qualities-" aria-labelledBy="armour-qualities-label"></td>
+                <td>
+                  <input type="checkbox" name="armour-worn-" id="armour-worn-" aria-labelledBy="armour-worn-label">
+                </td>
+              </tr>
+            </template>
           </tbody>
         </table>
         <output class="hidden" id="encumbrance-armour-total"></output>
@@ -1336,8 +989,10 @@
       </fieldset>
       <fieldset class="psychology">
         <legend id="psychology-label">Psychologie</legend>
-        <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
-        <input type="hidden" name="psychology" id="psychology">
+        <div class="psychology-content">
+          <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
+          <input type="hidden" name="psychology" id="psychology">
+        </div>
       </fieldset>
       <fieldset class="corruption simple">
         <legend>Corruption et mutation</legend>
@@ -1351,7 +1006,7 @@
             <input type="number" name="corruption" id="corruption">
           </div>
         </div>
-        <div class="corruption-wrapper">
+        <div class="corruption-wrapper corruption-mutation">
           <span id="mutation-label">Mutations</span>
           <div>
             <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="mutation-label"></div>
@@ -1359,7 +1014,7 @@
           </div>
         </div>
       </fieldset>
-      <fieldset class="weapons simple encumbrance-src" id="weapons">
+      <fieldset class="weapons simple encumbrance-src custom" id="weapons">
         <legend>Armes</legend>
         <table>
           <thead>
@@ -1395,103 +1050,36 @@
                 <input type="checkbox" name="weapons-worn-0" id="weapons-worn-0" aria-labelledBy="armour-worn-label">
               </td>
             </tr>
-            <tr>
-              <td>
-                <input type="text" name="weapons-name-1" id="weapons-name-1" aria-labelledBy="weapons-name-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-group-1" id="weapons-group-1" aria-labelledBy="weapons-group-label">
-              </td>
-              <td>
-                <input type="number" name="weapons-encumbrance-1" id="weapons-encumbrance-1" aria-labelledBy="weapons-encumbrance-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-range-1" id="weapons-range-1" aria-labelledBy="weapons-range-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-damage-1" id="weapons-damage-1" aria-labelledBy="weapons-damage-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-qualities-1" id="weapons-qualities-1" aria-labelledBy="weapons-qualities-label">
-              </td>
-              <td>
-                <input type="checkbox" name="weapons-worn-1" id="weapons-worn-1" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="weapons-name-2" id="weapons-name-2" aria-labelledBy="weapons-name-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-group-2" id="weapons-group-2" aria-labelledBy="weapons-group-label">
-              </td>
-              <td>
-                <input type="number" name="weapons-encumbrance-2" id="weapons-encumbrance-2" aria-labelledBy="weapons-encumbrance-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-range-2" id="weapons-range-2" aria-labelledBy="weapons-range-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-damage-2" id="weapons-damage-2" aria-labelledBy="weapons-damage-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-qualities-2" id="weapons-qualities-2" aria-labelledBy="weapons-qualities-label">
-              </td>
-              <td>
-                <input type="checkbox" name="weapons-worn-2" id="weapons-worn-2" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="weapons-name-3" id="weapons-name-3" aria-labelledBy="weapons-name-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-group-3" id="weapons-group-3" aria-labelledBy="weapons-group-label">
-              </td>
-              <td>
-                <input type="number" name="weapons-encumbrance-3" id="weapons-encumbrance-3" aria-labelledBy="weapons-encumbrance-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-range-3" id="weapons-range-3" aria-labelledBy="weapons-range-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-damage-3" id="weapons-damage-3" aria-labelledBy="weapons-damage-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-qualities-3" id="weapons-qualities-3" aria-labelledBy="weapons-qualities-label">
-              </td>
-              <td>
-                <input type="checkbox" name="weapons-worn-3" id="weapons-worn-3" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="weapons-name-4" id="weapons-name-4" aria-labelledBy="weapons-name-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-group-4" id="weapons-group-4" aria-labelledBy="weapons-group-label">
-              </td>
-              <td>
-                <input type="number" name="weapons-encumbrance-4" id="weapons-encumbrance-4" aria-labelledBy="weapons-encumbrance-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-range-4" id="weapons-range-4" aria-labelledBy="weapons-range-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-damage-4" id="weapons-damage-4" aria-labelledBy="weapons-damage-label">
-              </td>
-              <td>
-                <input type="text" name="weapons-qualities-4" id="weapons-qualities-4" aria-labelledBy="weapons-qualities-label">
-              </td>
-              <td>
-                <input type="checkbox" name="weapons-worn-4" id="weapons-worn-4" aria-labelledBy="armour-worn-label">
-              </td>
-            </tr>
+            <template id="weapons-row">
+              <tr>
+                <td>
+                  <input type="text" name="weapons-name-" id="weapons-name-" aria-labelledBy="weapons-name-label">
+                </td>
+                <td>
+                  <input type="text" name="weapons-group-" id="weapons-group-" aria-labelledBy="weapons-group-label">
+                </td>
+                <td>
+                  <input type="number" name="weapons-encumbrance-" id="weapons-encumbrance-" aria-labelledBy="weapons-encumbrance-label">
+                </td>
+                <td>
+                  <input type="text" name="weapons-range-" id="weapons-range-" aria-labelledBy="weapons-range-label">
+                </td>
+                <td>
+                  <input type="text" name="weapons-damage-" id="weapons-damage-" aria-labelledBy="weapons-damage-label">
+                </td>
+                <td>
+                  <input type="text" name="weapons-qualities-" id="weapons-qualities-" aria-labelledBy="weapons-qualities-label">
+                </td>
+                <td>
+                  <input type="checkbox" name="weapons-worn-" id="weapons-worn-" aria-labelledBy="armour-worn-label">
+                </td>
+              </tr>
+            </template>
           </tbody>
         </table>
         <output class="hidden" id="encumbrance-weapons-total"></output>
       </fieldset>
-      <fieldset class="spells simple" id="spells">
+      <fieldset class="spells simple custom" id="spells">
         <legend>Sorts et prières</legend>
         <div class="spells-wrapper">
           <label for="sin">Péché</label>
@@ -1527,86 +1115,28 @@
                 <input type="text" name="spells-effects-0" id="spells-effects-0" aria-labelledBy="spells-effects-label">
               </td>
             </tr>
-            <tr>
-              <td>
-                <input type="text" name="spells-name-1" id="spells-name-1" aria-labelledBy="spells-name-label">
-              </td>
-              <td>
-                <input type="text" name="spells-cn-1" id="spells-cn-1" aria-labelledBy="spells-cn-label">
-              </td>
-              <td>
-                <input type="text" name="spells-range-1" id="spells-range-1" aria-labelledBy="spells-range-label">
-              </td>
-              <td>
-                <input type="text" name="spells-target-1" id="spells-target-1" aria-labelledBy="spells-target-label">
-              </td>
-              <td>
-                <input type="text" name="spells-duration-1" id="spells-duration-1" aria-labelledBy="spells-duration-label">
-              </td>
-              <td>
-                <input type="text" name="spells-effects-1" id="spells-effects-1" aria-labelledBy="spells-effects-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="spells-name-2" id="spells-name-2" aria-labelledBy="spells-name-label">
-              </td>
-              <td>
-                <input type="text" name="spells-cn-2" id="spells-cn-2" aria-labelledBy="spells-cn-label">
-              </td>
-              <td>
-                <input type="text" name="spells-range-2" id="spells-range-2" aria-labelledBy="spells-range-label">
-              </td>
-              <td>
-                <input type="text" name="spells-target-2" id="spells-target-2" aria-labelledBy="spells-target-label">
-              </td>
-              <td>
-                <input type="text" name="spells-duration-2" id="spells-duration-2" aria-labelledBy="spells-duration-label">
-              </td>
-              <td>
-                <input type="text" name="spells-effects-2" id="spells-effects-2" aria-labelledBy="spells-effects-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="spells-name-3" id="spells-name-3" aria-labelledBy="spells-name-label">
-              </td>
-              <td>
-                <input type="text" name="spells-cn-3" id="spells-cn-3" aria-labelledBy="spells-cn-label">
-              </td>
-              <td>
-                <input type="text" name="spells-range-3" id="spells-range-3" aria-labelledBy="spells-range-label">
-              </td>
-              <td>
-                <input type="text" name="spells-target-3" id="spells-target-3" aria-labelledBy="spells-target-label">
-              </td>
-              <td>
-                <input type="text" name="spells-duration-3" id="spells-duration-3" aria-labelledBy="spells-duration-label">
-              </td>
-              <td>
-                <input type="text" name="spells-effects-3" id="spells-effects-3" aria-labelledBy="spells-effects-label">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" name="spells-name-4" id="spells-name-4" aria-labelledBy="spells-name-label">
-              </td>
-              <td>
-                <input type="text" name="spells-cn-4" id="spells-cn-4" aria-labelledBy="spells-cn-label">
-              </td>
-              <td>
-                <input type="text" name="spells-range-4" id="spells-range-4" aria-labelledBy="spells-range-label">
-              </td>
-              <td>
-                <input type="text" name="spells-target-4" id="spells-target-4" aria-labelledBy="spells-target-label">
-              </td>
-              <td>
-                <input type="text" name="spells-duration-4" id="spells-duration-4" aria-labelledBy="spells-duration-label">
-              </td>
-              <td>
-                <input type="text" name="spells-effects-4" id="spells-effects-4" aria-labelledBy="spells-effects-label">
-              </td>
-            </tr>
+            <template id="spells-row">
+              <tr>
+                <td>
+                  <input type="text" name="spells-name-" id="spells-name-" aria-labelledBy="spells-name-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-cn-" id="spells-cn-" aria-labelledBy="spells-cn-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-range-" id="spells-range-" aria-labelledBy="spells-range-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-target-" id="spells-target-" aria-labelledBy="spells-target-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-duration-" id="spells-duration-" aria-labelledBy="spells-duration-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-effects-" id="spells-effects-" aria-labelledBy="spells-effects-label">
+                </td>
+              </tr>
+            </template>
           </tbody>
         </table>
       </fieldset>

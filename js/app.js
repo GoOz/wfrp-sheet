@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const additionInputs = document.querySelectorAll('.addition');
   const contentEditable = document.querySelectorAll('[contenteditable]');
   const characSelects = document.querySelectorAll('.charac-select');
-  const outputs = document.querySelectorAll('output:not(.bonus, .hidden, encumbrance-total)');
   const bonuses = document.querySelectorAll('output.bonus');
   const customData = document.querySelectorAll('.custom');
   const toggleHardy = document.getElementById('hardy-bonus');
@@ -86,7 +85,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const type = custom.id;
         let i = 1;
         while (
-          localStorage.getItem(`${type}-name-${i}`) !== null
+          localStorage.getItem(`${type}-name-${i}`) !== null &&
+          localStorage.getItem(`${type}-name-${i}`) !== ''
         ) {
           addNewRow(tbody, i);
           i++
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       encumbranceSrc.forEach(src => {
         src.dispatchEvent(new Event('change', {'bubbles': true}));
       });
-      updateOutputs(outputs);
+      updateOutputs();
 
       updateTitle();
     }
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function handleCharacSelect(event) {
     const output = document.getElementById(event.target.dataset.input);
     output.setAttribute('for', `${event.target.value}-i ${event.target.value}-a`);
-    updateOutputs(outputs);
+    updateOutputs();
     localStorage.setItem(event.target.id, event.target.value);
   }
 
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     output.value = total;
 
-    updateOutputs(outputs)
+    updateOutputs()
     updateTotalEncumbrance();
   }
 
@@ -238,16 +238,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const template = document.getElementById(`${type}-row`);
     const clone = template.content.cloneNode(true);
 
-    let inputs = clone.querySelectorAll('input');
-    let contentEditable = clone.querySelectorAll('[contentEditable]');
+    const inputs = clone.querySelectorAll('input, output');
+    const selects = clone.querySelectorAll('select');
+    const contentEditable = clone.querySelectorAll('[contentEditable]');
+    const labels = clone.querySelectorAll('label');
 
     inputs.forEach(input => {
       input.name = input.name + n;
       input.id = input.id + n;
+      if (input.tagName === 'OUTPUT' && input.id === `${type}-current-${n}`) {
+        input.htmlFor = `${type}-initial-${n} ${type}-aug-${n}`;
+      }
+    });
+
+    selects.forEach(input => {
+      input.name = input.name + n;
+      input.id = input.id + n;
+      input.dataset.input = input.dataset.input + n;
+    });
+
+    labels.forEach(label => {
+      label.htmlFor = label.htmlFor + n;
     });
 
     inputs.forEach(input => {
       input.addEventListener('input', handleSimpleInput);
+    });
+    selects.forEach(select => {
+      select.addEventListener('change', handleCharacSelect);
     });
     contentEditable.forEach(content => {
       content.addEventListener('input', handleContentEditable);
@@ -275,10 +293,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Update outputs from related inputs value
   function updateOutputs(outputs) {
+    if (outputs === undefined) {
+      outputs = document.querySelectorAll('output:not(.bonus, .hidden, encumbrance-total)');
+    }
     outputs.forEach(output => {
       let current = 0;
       const inputs = output.getAttribute('for').split(' ');
-      // console.log(inputs);
       if (inputs[0] === '') {
         return;
       }
