@@ -2,6 +2,16 @@
 :root {
   --grey: #b7b7b7;
   --lightgrey: lightgrey;
+  --bgcolor: white;
+  --contrast: black;
+  --dropdown: url('../img/dropdown-light.svg');
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgcolor: #171717;
+    --contrast: #C8C8C8;
+    --dropdown: url('../img/dropdown-dark.svg');
+  }
 }
 
 @font-face {
@@ -15,6 +25,7 @@ body {
   margin: 0;
   font-family: Georgia, "Times New roman", serif;
   background-color: var(--grey);
+  color: var(--contrast);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -27,10 +38,19 @@ input:not([type="checkbox"]), select {
   border-radius: 0;
   -webkit-appearance: none;
   padding-inline: .125rem;
+  background-color: var(--bgcolor);
+  color: var(--contrast);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--bgcolor);
 }
 
 select {
-  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+  background-image: var(--dropdown);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: .5rem;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
@@ -79,7 +99,7 @@ output {
 }
 
 .tabs {
-  background-color: white;
+  background-color: var(--bgcolor);
   border-radius: .25rem;
   display: flex;
   flex-direction: row;
@@ -91,7 +111,7 @@ output {
   flex: 1 0 50%;
   text-align: center;
   padding: .75rem 0;
-  color: black;
+  color: var(--contrast);
   text-decoration: none;
   font-weight: bold;
 }
@@ -117,9 +137,9 @@ output {
   display: inline-block;
   padding: .5rem;
   text-decoration: none;
-  color: black;
+  color: var(--contrast);
   font-weight: bold;
-  border: 1px solid black;
+  border: 1px solid var(--contrast);
   border-radius: .25rem;
   background-color: var(--lightgrey);
 }
@@ -145,14 +165,14 @@ output {
   width: 100%;
   height: 100vh;
   scroll-snap-align: start;
-  background-color: black;
+  background-color: var(--contrast);
   @supports (height: 100dvh) {
     height: 100dvh;
   }
 }
 
 .page > * {
-  background-color: white;
+  background-color: var(--bgcolor);
 }
 
 .first {
@@ -198,7 +218,7 @@ legend {
   float: left;
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: var(--bgcolor);
   width: 100%;
   text-align: center;
   font-size: 1em;
@@ -251,12 +271,12 @@ select {
 table {
   border-collapse: collapse;
   border-style: hidden;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--contrast);
   width: 100%;
 }
 
 table :is(td, th) {
-  border: 1px solid black;
+  border: 1px solid var(--contrast);
   text-align: center;
   padding: .25rem .125rem;
   font-weight: normal;
@@ -302,17 +322,17 @@ table.layout-fixed {
     "career-path career-path career-path status"
     "age height hair eyes";
   grid-area: info;
-  background-color: black;
-  border-top: .5rem solid white;
-  border-bottom: .5rem solid white;
-  border-left: 1rem solid white;
-  border-right: 1rem solid white;
+  background-color: var(--contrast);
+  border-top: .5rem solid var(--bgcolor);
+  border-bottom: .5rem solid var(--bgcolor);
+  border-left: 1rem solid var(--bgcolor);
+  border-right: 1rem solid var(--bgcolor);
   padding: 0;
   font-size: 0.9em;
   font-family: Luminari, Times, serif;
 }
 .info > * {
-  background-color: white;
+  background-color: var(--bgcolor);
 }
 .info label {
   font-weight: bold;
@@ -343,7 +363,7 @@ table.layout-fixed {
   height: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
-  background-color: black;
+  background-color: var(--contrast);
   align-items: stretch;
   gap: .125rem;
 }
@@ -352,7 +372,7 @@ table.layout-fixed {
   flex: 1 1 50%;
   min-width: 20%;
   padding-inline: .125rem;
-  background-color: white;
+  background-color: var(--bgcolor);
 }
 
 .points-wrapper > fieldset:first-child {
@@ -382,7 +402,7 @@ table.layout-fixed {
   width: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--contrast);
 }
 .movement-wrapper > div {
   flex: 1 1 33%;
@@ -391,7 +411,7 @@ table.layout-fixed {
 }
 .movement-wrapper > div:not(:first-child),
 .movement-wrapper > div :is(input, output) {
-  border-left: 1px solid black;
+  border-left: 1px solid var(--contrast);
 }
 
 .movement-wrapper > div label {
@@ -408,7 +428,7 @@ table.layout-fixed {
 /* Skills */
 .skills {
   grid-area: skills;
-  background-color: black;
+  background-color: var(--contrast);
 }
 .skills-wrapper {
   display: flex;
@@ -417,7 +437,7 @@ table.layout-fixed {
   height: 100%;
 }
 .skills-wrapper > fieldset {
-  background-color: white;
+  background-color: var(--bgcolor);
   flex: 1 1 33%;
 }
 
@@ -438,8 +458,8 @@ table.layout-fixed {
 .talents .narrow::before {
   position: absolute;
   content: '';
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 1px solid var(--contrast);
+  border-right: 1px solid var(--contrast);
   height: 600%;
   top: 0;
   pointer-events: none;
@@ -486,7 +506,7 @@ table.layout-fixed {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--contrast);
   padding: .5rem;
   gap: .5rem;
 }
@@ -511,15 +531,18 @@ table.layout-fixed {
 /* Armour points */
 .armour-points {
   grid-area: armour-points;
-  --box-padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .armour-points legend {
   margin: 0;
+  flex: 0 0 auto;
 }
 .armour-points-box {
+  flex: 1 1 100%;
   box-sizing: border-box;
   position: relative;
-  height: calc(100% - var(--box-padding-top));
+  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -531,7 +554,7 @@ table.layout-fixed {
 .armour-points-box::before {
   content: '';
   position: absolute;
-  inset: calc(.5rem + var(--box-padding-top)) .5rem .5rem .5rem;
+  inset: .5rem;
   background-image: url('../img/silhouette.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -550,7 +573,7 @@ table.layout-fixed {
   gap: .25rem;
 }
 .armour-points-stat input {
-  border: 1px solid black;
+  border: 1px solid var(--contrast);
   width: 1rem;
   text-align: center;
 }
@@ -563,8 +586,7 @@ table.layout-fixed {
 }
 .armour-points-stat--shield {
   flex-basis: 100%;
-  background: transparent url('../img/shield.svg') no-repeat top center;
-  background-size: 2rem;
+  position: relative;
   top: -.5rem;
   gap: .5rem;
   padding-block-start: .25rem;
@@ -572,6 +594,12 @@ table.layout-fixed {
 .armour-points-stat--shield input {
   border: 0;
   background-color: transparent;
+}
+.shield {
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Trappings */
@@ -625,7 +653,7 @@ table.layout-fixed {
   width: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--contrast);
 }
 .corruption-wrapper > div {
   flex: 1 1 50%;
@@ -634,7 +662,7 @@ table.layout-fixed {
 }
 .corruption-wrapper > div:not(:first-child),
 .corruption-wrapper input {
-  border-left: 1px solid black;
+  border-left: 1px solid var(--contrast);
 }
 .corruption-wrapper input {
   text-align: center;
@@ -703,8 +731,8 @@ table.layout-fixed {
 
 .wounds-current {
   flex: 0 0 60%;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 1px solid var(--contrast);
+  border-left: 1px solid var(--contrast);
 }
 .wounds-current input {
   box-sizing: border-box;
@@ -729,13 +757,13 @@ table.layout-fixed {
   right: 0;
   display: inline-flex;
   align-items: stretch;
-  border: 1px solid black;
+  border: 1px solid var(--contrast);
   border-top: 0;
 }
 .spells-wrapper label {
   font-size: .8em;
   padding: .125rem .25rem;
-  border-right: 1px solid black;
+  border-right: 1px solid var(--contrast);
 }
 .spells-wrapper input {
   width: 2rem;
