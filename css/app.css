@@ -117,11 +117,12 @@ output {
   text-decoration: none;
   font-weight: bold;
 }
-.tab:is(:hover, :focus, :active, :not(.active)) {
-  background-color: var(--lightgrey);
-}
-.tab:is(:not(.active)) {
+.tab:not(.active) {
   opacity: .5;
+  background-color: var(--lightgrey)
+}
+.tab:not(.active):is(:hover, :focus, :active) {
+  opacity: .8;
 }
 
 .tab-panel {
