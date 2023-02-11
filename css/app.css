@@ -8,6 +8,8 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --grey: #242424;
+    --lightgrey: #444;
     --bgcolor: #171717;
     --contrast: #C8C8C8;
     --dropdown: url('../img/dropdown-dark.svg');
