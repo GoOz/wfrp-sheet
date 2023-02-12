@@ -14,6 +14,14 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+  <svg id="sprite">
+    <symbol id="highlight-inactive" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M12,18.5015 C11.4471,18.5015 10.9989,18.9497 10.9989,19.5026 C10.9989,20.0555 11.4471,20.5037 12,20.5037 C12.5529,20.5037 13.0011,20.0555 13.0011,19.5026 C13.0011,18.9497 12.5529,18.5015 12,18.5015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z M11.999,3.50244 C10.6871,3.50244 9.62366,4.56593 9.62366,5.87781 C9.62366,8.43944 10.5512,11.9861 11.0989,13.8473 C11.2125,14.2332 11.573,14.5039 12.0006,14.5039 C12.4275,14.5039 12.7869,14.2344 12.9006,13.8501 L13.0583294,13.3056653 C13.6088628,11.3652034 14.3744,8.23351909 14.3744,5.87781 C14.3744,4.56593 13.3109,3.50244 11.999,3.50244 Z"></path>
+    </symbol>
+    <symbol id="highlight-active" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z"></path>
+    </symbol>
+  </svg>
   <h1 class="sr-only">Feuille de personnage</h1>
   <form class="app" id="app-form" action="#" method="POST">
     <div class="page first">
@@ -312,7 +320,23 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Art</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="art-hl" id="art-hl" class="sr-only highlight-toggle">
+                        <label for="art-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Art
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Dextérité">Dex</abbr></td>
                   <td><output name="art-current" for="dex-i dex-a" id="art-current"></output></td>
                   <td>
@@ -320,7 +344,24 @@
                     <input type="number" name="art-aug" id="art-aug"></td>
                   <td><output for="art-current art-aug"></output></td>
                 </tr>
-                  <td>Athlétisme</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="athletics-hl" id="athletics-hl" class="sr-only highlight-toggle">
+                        <label for="athletics-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Athlétisme
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Agilité">Ag</abbr></td>
                   <td><output id="athletics-current" name="athletics-current" for="ag-i ag-a"></output></td>
                   <td>
@@ -328,7 +369,24 @@
                     <input type="number" name="athletics-aug" id="athletics-aug"></td>
                   <td><output for="athletics-current athletics-aug"></output></td>
                 </tr>
-                  <td>Calme</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="cool-hl" id="cool-hl" class="sr-only highlight-toggle">
+                        <label for="cool-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Calme
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Force mentale">FM</abbr></td>
                   <td><output id="cool-current" name="cool-current" for="wp-i wp-a"></output></td>
                   <td>
@@ -336,7 +394,24 @@
                     <input type="number" name="cool-aug" id="cool-aug"></td>
                   <td><output for="cool-current cool-aug"></output></td>
                 </tr>
-                  <td>Charme</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="charm-hl" id="charm-hl" class="sr-only highlight-toggle">
+                        <label for="charm-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Charme
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Social">Soc</abbr></td>
                   <td><output id="charm-current" name="charm-current" for="fel-i fel-a"></output></td>
                   <td>
@@ -344,7 +419,24 @@
                     <input type="number" name="charm-aug" id="charm-aug"></td>
                   <td><output for="charm-current charm-aug"></output></td>
                 </tr>
-                  <td>Chevaucher</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="ride-hl" id="ride-hl" class="sr-only highlight-toggle">
+                        <label for="ride-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Chevaucher
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Agilité">Ag</abbr></td>
                   <td><output id="ride-current" name="ride-current" for="ag-i ag-a"></output></td>
                   <td>
@@ -352,7 +444,24 @@
                     <input type="number" name="ride-aug" id="ride-aug"></td>
                   <td><output for="ride-current ride-aug"></output></td>
                 </tr>
-                  <td>Commandement</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="leadership-hl" id="leadership-hl" class="sr-only highlight-toggle">
+                        <label for="leadership-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Commandement
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Social">Soc</abbr></td>
                   <td><output id="leadership-current" name="leadership-current" for="fel-i fel-a"></output></td>
                   <td>
@@ -360,7 +469,24 @@
                     <input type="number" name="leadership-aug" id="leadership-aug"></td>
                   <td><output for="leadership-current leadership-aug"></output></td>
                 </tr>
-                  <td>Conduite d’attelage</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="drive-hl" id="drive-hl" class="sr-only highlight-toggle">
+                        <label for="drive-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Conduite d’attelage
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Agilité">Ag</abbr></td>
                   <td><output id="drive-current" name="drive-current" for="ag-i ag-a"></output></td>
                   <td>
@@ -368,7 +494,24 @@
                     <input type="number" name="drive-aug" id="drive-aug"></td>
                   <td><output for="drive-current drive-aug"></output></td>
                 </tr>
-                  <td>Corps à corps (base)</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="melee-basic-hl" id="melee-basic-hl" class="sr-only highlight-toggle">
+                        <label for="melee-basic-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Corps à corps (base)
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Corps à corps">CC</abbr></td>
                   <td><output id="melee-basic-current" name="melee-basic-current" for="ws-i ws-a"></output></td>
                   <td>
@@ -376,7 +519,24 @@
                     <input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
                   <td><output for="melee-basic-current melee-basic-aug"></output></td>
                 </tr>
-                  <td>Corps à corps</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="melee-hl" id="melee-hl" class="sr-only highlight-toggle">
+                        <label for="melee-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Corps à corps
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Corps à corps">CC</abbr></td>
                   <td><output id="melee-current" name="melee-current" for="ws-i ws-a"></output></td>
                   <td>
@@ -384,7 +544,24 @@
                     <input type="number" name="melee-aug" id="melee-aug"></td>
                   <td><output for="melee-current melee-aug"></output></td>
                 </tr>
-                  <td>Discrétion</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="stealth-hl" id="stealth-hl" class="sr-only highlight-toggle">
+                        <label for="stealth-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Discrétion
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Agilité">Ag</abbr></td>
                   <td><output id="stealth-current" name="stealth-current" for="ag-i ag-a"></output></td>
                   <td>
@@ -392,7 +569,24 @@
                     <input type="number" name="stealth-aug" id="stealth-aug"></td>
                   <td><output for="stealth-current stealth-aug"></output></td>
                 </tr>
-                  <td>Divertissement</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="entertain-hl" id="entertain-hl" class="sr-only highlight-toggle">
+                        <label for="entertain-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Divertissement
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Social">Soc</abbr></td>
                   <td><output id="entertain-current" name="entertain-current" for="fel-i fel-a"></output></td>
                   <td>
@@ -400,7 +594,24 @@
                     <input type="number" name="entertain-aug" id="entertain-aug"></td>
                   <td><output for="entertain-current entertain-aug"></output></td>
                 </tr>
-                  <td>Emprise animaux</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="charm-animal-hl" id="charm-animal-hl" class="sr-only highlight-toggle">
+                        <label for="charm-animal-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Emprise animaux
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Force mentale">FM</abbr></td>
                   <td><output id="charm-animal-current" name="charm-animal-current" for="wp-i wp-a"></output></td>
                   <td>
@@ -408,7 +619,24 @@
                     <input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
                   <td><output for="charm-animal-current charm-animal-aug"></output></td>
                 </tr>
-                  <td>Escalade</td>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="climb-hl" id="climb-hl" class="sr-only highlight-toggle">
+                        <label for="climb-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Escalade
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Force">F</abbr></td>
                   <td><output id="climb-current" name="climb-current" for="s-i s-a"></output></td>
                   <td>
@@ -432,7 +660,23 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Esquive</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="dodge-hl" id="dodge-hl" class="sr-only highlight-toggle">
+                        <label for="dodge-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Esquive
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Agilité">Ag</abbr></td>
                   <td><output id="dodge-current" name="dodge-current" for="ag-i ag-a"></output></td>
                   <td>
@@ -441,7 +685,23 @@
                   <td><output for="dodge-current dodge-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Intimidation</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="intimidate-hl" id="intimidate-hl" class="sr-only highlight-toggle">
+                        <label for="intimidate-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Intimidation
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Force">F</abbr></td>
                   <td><output id="intimidate-current" name="intimidate-current" for="s-i s-a"></output></td>
                   <td>
@@ -450,7 +710,23 @@
                   <td><output for="intimidate-current intimidate-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Intuition</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="intuition-hl" id="intuition-hl" class="sr-only highlight-toggle">
+                        <label for="intuition-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Intuition
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Initiative">I</abbr></td>
                   <td><output id="intuition-current" name="intuition-current" for="i-i i-a"></output></td>
                   <td>
@@ -459,7 +735,23 @@
                   <td><output for="intuition-current intuition-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Marchandage</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="haggle-hl" id="haggle-hl" class="sr-only highlight-toggle">
+                        <label for="haggle-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Marchandage
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Social">Soc</abbr></td>
                   <td><output id="haggle-current" name="haggle-current" for="fel-i fel-a"></output></td>
                   <td>
@@ -468,7 +760,23 @@
                   <td><output for="haggle-current haggle-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Orientation</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="navigation-hl" id="navigation-hl" class="sr-only highlight-toggle">
+                        <label for="navigation-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Orientation
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Initiative">I</abbr></td>
                   <td><output id="navigation-current" name="navigation-current" for="i-i i-a"></output></td>
                   <td>
@@ -477,7 +785,23 @@
                   <td><output for="navigation-current navigation-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Pari</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="gamble-hl" id="gamble-hl" class="sr-only highlight-toggle">
+                        <label for="gamble-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Pari
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Intelligence">Int</abbr></td>
                   <td><output id="gamble-current" name="gamble-current" for="int-i int-a"></output></td>
                   <td>
@@ -486,7 +810,23 @@
                   <td><output for="gamble-current gamble-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Perception</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="perception-hl" id="perception-hl" class="sr-only highlight-toggle">
+                        <label for="perception-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Perception
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Initiative">I</abbr></td>
                   <td><output id="perception-current" name="perception-current" for="i-i i-a"></output></td>
                   <td>
@@ -495,7 +835,23 @@
                   <td><output for="perception-current perception-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Ragot</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="gossip-hl" id="gossip-hl" class="sr-only highlight-toggle">
+                        <label for="gossip-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Ragot
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Social">Soc</abbr></td>
                   <td><output id="gossip-current" name="gossip-current" for="fel-i fel-a"></output></td>
                   <td>
@@ -504,7 +860,23 @@
                   <td><output for="gossip-current gossip-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Ramer</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="row-hl" id="row-hl" class="sr-only highlight-toggle">
+                        <label for="row-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Ramer
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Force">F</abbr></td>
                   <td><output id="row-current" name="row-current" for="s-i s-a"></output></td>
                   <td>
@@ -513,7 +885,23 @@
                   <td><output for="row-current row-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Résistance</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="endurance-hl" id="endurance-hl" class="sr-only highlight-toggle">
+                        <label for="endurance-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Résistance
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Endurance">E</abbr></td>
                   <td><output id="endurance-current" name="endurance-current" for="t-i t-a"></output></td>
                   <td>
@@ -522,7 +910,23 @@
                   <td><output for="endurance-current endurance-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Résistance à l’alcool</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="consume-alcohol-hl" id="consume-alcohol-hl" class="sr-only highlight-toggle">
+                        <label for="consume-alcohol-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Résistance à l’alcool
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Endurance">E</abbr></td>
                   <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="t-i t-a"></output></td>
                   <td>
@@ -531,7 +935,23 @@
                   <td><output for="consume-alcohol-current consume-alcohol-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Subornation</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="bribery-hl" id="bribery-hl" class="sr-only highlight-toggle">
+                        <label for="bribery-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Subornation
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Social">Soc</abbr></td>
                   <td><output id="bribery-current" name="bribery-current" for="fel-i fel-a"></output></td>
                   <td>
@@ -540,7 +960,23 @@
                   <td><output for="bribery-current bribery-aug"></output></td>
                 </tr>
                 <tr>
-                  <td>Survie en extérieur</td>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="outdoor-survival-hl" id="outdoor-survival-hl" class="sr-only highlight-toggle">
+                        <label for="outdoor-survival-hl">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Survie en extérieur
+                      </div>
+                    </div>
+                  </td>
                   <td><abbr title="Intelligence">Int</abbr></td>
                   <td><output id="outdoor-survival-current" name="outdoor-survival-current" for="int-i int-a"></output></td>
                   <td>
@@ -567,8 +1003,22 @@
               <tbody>
                 <tr>
                   <td>
-                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                    <input type="hidden" name="custom-skill-name-0" id="custom-skill-name-0">
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="custom-skill-hl-0" id="custom-skill-hl-0" class="sr-only highlight-toggle">
+                        <label for="custom-skill-hl-0">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
+                        <input type="hidden" name="custom-skill-name-0" id="custom-skill-name-0">
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <label class="sr-only" for="custom-skill-charac-0">Caractéristique de base</label>
@@ -598,8 +1048,22 @@
                 <template id="custom-skill-row">
                   <tr>
                     <td>
-                      <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                      <input type="hidden" name="custom-skill-name-" id="custom-skill-name-">
+                      <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="custom-skill-hl-" id="custom-skill-hl-" class="sr-only highlight-toggle">
+                        <label for="custom-skill-hl-">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
+                        <input type="hidden" name="custom-skill-name-" id="custom-skill-name-">
+                      </div>
+                    </div>
                     <td>
                       <label class="sr-only" for="custom-skill-charac-">Caractéristique de base</label>
                       <select class="charac-select" name="custom-skill-charac-" id="custom-skill-charac-" data-input="custom-skill-initial-">

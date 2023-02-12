@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const toggleHardy = document.getElementById('hardy-bonus');
   const encumbranceSrc = document.querySelectorAll('.encumbrance-src');
   const encumbranceMax = document.getElementById('encumbrance-max')
+  const highlights = document.querySelectorAll('.highlight-toggle')
 
   // Event Listeners
   simpleInputs.forEach(input => {
@@ -56,6 +57,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     item.addEventListener('change', handleEncumbrance);
   });
   encumbranceMax.addEventListener('input', updateTotalEncumbrance);
+  highlights.forEach(item => {
+    item.addEventListener('input', toggleHighlight);
+  });
 
   // Fill the sheet with stored data
   fillFromStorage();
@@ -120,6 +124,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       updateOutputs();
 
       updateTitle();
+
+      highlights.forEach(item => {
+        item.dispatchEvent(new Event('input', {'bubbles': true}));
+      });
     }
   }
 
@@ -134,7 +142,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Store data from addition inputs and update related outputs
   function handleAdditionInput(event) {
-    localStorage.setItem(event.target.id, event.target.value);
+    handleSimpleInput(event);
     const outputs = document.querySelectorAll(`output[for~=${event.target.id}]:not(.bonus)`);
     updateOutputs(outputs);
     updateBonuses();
@@ -242,6 +250,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const selects = clone.querySelectorAll('select');
     const contentEditable = clone.querySelectorAll('[contentEditable]');
     const labels = clone.querySelectorAll('label');
+    const highlights = clone.querySelectorAll('.highlight-toggle');
 
     inputs.forEach(input => {
       input.name = input.name + n;
@@ -269,6 +278,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
     contentEditable.forEach(content => {
       content.addEventListener('input', handleContentEditable);
+    });
+    highlights.forEach(item => {
+      item.addEventListener('input', toggleHighlight);
     });
 
     parent.appendChild(clone);
@@ -339,6 +351,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const base = document.title;
       const name = localStorage.getItem('name');
       document.title = `${name} - ${base}`;
+    }
+  }
+
+  function toggleHighlight(event) {
+    const parent = event.target.closest('tr');
+    const value = event.target.checked;
+
+    if(value === true) {
+      parent.classList.add('highlighted');
+    } else {
+      parent.classList.remove('highlighted');
     }
   }
 });

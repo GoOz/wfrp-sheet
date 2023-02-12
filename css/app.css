@@ -5,6 +5,8 @@
   --bgcolor: white;
   --contrast: black;
   --dropdown: url('../img/dropdown-light.svg');
+  --hover: hsla(0, 0%, 0%, .1);
+  --highlight: hsla(55, 100%, 78%, 0.7);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -13,6 +15,8 @@
     --bgcolor: #171717;
     --contrast: #C8C8C8;
     --dropdown: url('../img/dropdown-dark.svg');
+    --hover: hsla(100, 100%, 100%, .2);
+    --highlight: hsla(55, 100%, 19%, 0.7);
   }
 }
 
@@ -46,6 +50,10 @@ input:not([type="checkbox"]), select {
 
 input[type="checkbox"] {
   accent-color: var(--bgcolor);
+}
+
+input[type="checkbox"].highlight-toggle {
+  margin: 0;
 }
 
 select {
@@ -86,6 +94,10 @@ output {
 
 .error {
   color: red;
+}
+
+#sprite {
+  display: none;
 }
 
 /* INDEX PAGE */
@@ -333,6 +345,7 @@ input:not([type="checkbox"]), output {
   width: 100%;
   border: none;
   padding-block: 0;
+  background-color: transparent;
 }
 :is(input:not([type="checkbox"]), select, [contenteditable]):is(:focus, :focus-visible) {
   outline: 0;
@@ -362,6 +375,14 @@ table {
   border-style: hidden;
   border-top: 1px solid var(--contrast);
   width: 100%;
+}
+
+table tbody tr:hover {
+  background-color: var(--hover);
+}
+
+table .highlighted {
+  background-color: var(--highlight);
 }
 
 table :is(td, th) {
@@ -528,6 +549,54 @@ table.layout-fixed {
 .skills-wrapper > fieldset {
   background-color: var(--bgcolor);
   flex: 1 1 33%;
+}
+
+.skills :is(tr:focus-within, tr:hover) .hl-wrapper-checkbox {
+  flex-basis: 1rem;
+  padding-inline-start: .25rem;
+}
+.hl-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.hl-wrapper-checkbox {
+  flex: 0 0 0;
+  padding: 0;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+  direction: rtl;
+}
+.hl-wrapper-checkbox svg {
+  width: 1rem;
+  height: 1rem;
+}
+.hl-wrapper-checkbox .highlight-toggle:focus + label {
+  background-color: var(--hover);
+}
+.hl-wrapper-checkbox .highlight-toggle + label {
+  border-radius: .25rem;
+  display: inline-flex;
+  cursor: pointer;
+}
+.hl-wrapper-checkbox .highlight-toggle + label svg :last-child {
+  display: none;
+}
+.hl-wrapper-checkbox .highlight-toggle + label svg :first-child {
+  display: inline-block;
+}
+.hl-wrapper-checkbox .highlight-toggle:checked + label svg :first-child {
+  display: none;
+}
+.hl-wrapper-checkbox .highlight-toggle:checked + label svg :last-child {
+  display: inline-block;
+}
+.hl-wrapper-name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Talents */
