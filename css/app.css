@@ -286,85 +286,6 @@ hr::after {
     "weapons weapons weapons weapons spells spells spells spells";
 }
 
-@media (orientation: portrait) {
-  .first {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr 1fr 1fr 1fr;
-    grid-auto-flow: column;
-    grid-template-areas:
-    "info info info info info info"
-    "charac charac charac points points points"
-    "charac charac charac Mouvement Mouvement Mouvement"
-    "skills skills skills skills skills skills"
-    "skills skills skills skills skills skills"
-    "skills skills skills skills skills skills"
-    "talents talents talents ambitions ambitions ambitions"
-    "talents talents talents party party party"
-    "talents talents talents party party party";
-  }
-  .second {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr .75fr 1fr 1fr 1fr 1fr;
-    grid-auto-flow: column;
-    grid-template-areas:
-      "armour armour armour armour armour-points armour-points"
-      "armour armour armour armour armour-points armour-points"
-      "trappings trappings psychology psychology armour-points armour-points"
-      "trappings trappings corruption corruption armour-points armour-points"
-      "trappings trappings wealth encumbrance wounds wounds"
-      "trappings trappings wealth encumbrance wounds wounds"
-      "weapons weapons weapons weapons weapons weapons"
-      "weapons weapons weapons weapons weapons weapons"
-      "spells spells spells spells spells spells"
-      "spells spells spells spells spells spells";
-  }
-}
-
-@media (max-width: 48em) {
-  .page {
-    height: auto;
-    scroll-snap-align: none;
-  }
-  .first {
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: auto auto auto auto auto auto auto auto;
-    grid-auto-flow: column;
-    grid-template-areas:
-    "info info info"
-    "charac charac charac"
-    "points points points"
-    "Mouvement Mouvement Mouvement"
-    "skills skills skills"
-    "talents talents talents"
-    "ambitions ambitions ambitions"
-    "party party party";
-  }
-  .second {
-    border-top: .125rem solid var(--contrast);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto auto;
-    grid-auto-flow: column;
-    grid-template-areas:
-      "armour armour armour"
-      "armour-points armour-points armour-points"
-      "trappings trappings trappings"
-      "psychology psychology wealth"
-      "corruption corruption encumbrance"
-      "wounds wounds wounds"
-      "weapons weapons weapons"
-      "spells spells spells";
-  }
-  .skills-wrapper {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 25em) {
-  .first, .second, .info {
-    display: block;
-  }
-}
-
 /* FORM ELEMENTS */
 fieldset {
   margin: 0;
@@ -1058,3 +979,84 @@ table.layout-fixed {
   margin-block: .5rem;
 }
 
+@media (orientation: portrait) {
+  .first {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-areas:
+    "info info info info info info"
+    "charac charac charac points points points"
+    "charac charac charac Mouvement Mouvement Mouvement"
+    "skills skills skills skills skills skills"
+    "skills skills skills skills skills skills"
+    "skills skills skills skills skills skills"
+    "talents talents talents ambitions ambitions ambitions"
+    "talents talents talents party party party"
+    "talents talents talents party party party";
+  }
+  .second {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr .75fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "armour armour armour armour armour-points armour-points"
+      "armour armour armour armour armour-points armour-points"
+      "trappings trappings psychology psychology armour-points armour-points"
+      "trappings trappings corruption corruption armour-points armour-points"
+      "trappings trappings wealth encumbrance wounds wounds"
+      "trappings trappings wealth encumbrance wounds wounds"
+      "weapons weapons weapons weapons weapons weapons"
+      "weapons weapons weapons weapons weapons weapons"
+      "spells spells spells spells spells spells"
+      "spells spells spells spells spells spells";
+  }
+}
+
+@media (max-width: 48em) {
+  .page {
+    height: auto;
+    scroll-snap-align: none;
+  }
+  .first {
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-auto-flow: column;
+    grid-template-areas:
+    "info info info"
+    "charac charac charac"
+    "points points points"
+    "Mouvement Mouvement Mouvement"
+    "skills skills skills"
+    "talents talents talents"
+    "ambitions ambitions ambitions"
+    "party party party";
+  }
+  .second {
+    border-top: .125rem solid var(--contrast);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "armour armour armour"
+      "armour-points armour-points armour-points"
+      "trappings trappings trappings"
+      "psychology psychology wealth"
+      "corruption corruption encumbrance"
+      "wounds wounds wounds"
+      "weapons weapons weapons"
+      "spells spells spells";
+  }
+  .skills-wrapper {
+    flex-direction: column;
+  }
+  .modal {
+    inset: 5%;
+  }
+}
+
+@media (max-width: 25em) {
+  .first, .second, .info, .info .field {
+    display: block;
+  }
+}
