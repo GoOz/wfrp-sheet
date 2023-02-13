@@ -97,6 +97,26 @@ output {
   height: 1em;
 }
 
+hr {
+  position: relative;
+  margin-block: 2rem;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--bgcolor), var(--lightgrey), var(--bgcolor));
+  overflow: visible;
+}
+hr::after {
+  content: '§';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transform-origin: 50% 50%;
+  padding: 1rem;
+  background-color: var(--bgcolor);
+  color: var(--contrast);
+}
+
 [inert] {
   opacity: .2;
   pointer-events: none;
