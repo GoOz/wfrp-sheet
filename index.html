@@ -29,6 +29,10 @@
         <ul>
           <li>Remplissage automatique de cellules</li>
           <li>Calculs automatiques des valeurs finales (initiales + augmentations)</li>
+          <li>Mise en page adaptative</li>
+          <li>Thème sombre</li>
+          <li>Surlignage de compétences de carrière</li>
+          <li>Import/Export de données</li>
           <li>Plus encore à venir…</li>
         </ul>
         <p class="text-align-center"><a class="button" href="sheet.html">Voir la fiche de personnage</a></p>
@@ -43,6 +47,10 @@
         <ul>
           <li>Auto-filling cells</li>
           <li>Auto-calculated final values (initial + advances)</li>
+          <li>Responsive layout</li>
+          <li>Dark mode</li>
+          <li>Highlight career skills</li>
+          <li>Import/Export data</li>
           <li>More to come…</li>
         </ul>
         <p class="text-align-center"><a class="button" href="sheet.html">See the character sheet</a></p>
@@ -53,25 +61,6 @@
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
       window.location.hash = '#fr';
-      const tabToggles = document.querySelectorAll('.tab');
-      document.addEventListener('click', handleTabs);
-
-      function handleTabs (event) {
-        if (
-          !Array.from(tabToggles).includes(event.target) ||
-          event.target.classList.contains('active')
-        ) {
-          return false;
-        }
-
-        tabToggles.forEach(tab => {
-          if (tab === event.target) {
-            tab.classList.add('active');
-          } else {
-            tab.classList.remove('active');
-          }
-        });
-      }
     });
   </script>
 </body>

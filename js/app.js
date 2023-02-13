@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+  setTheme();
   const encumbranceMessage = [
     [
       "Pas de pénalité"
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   checkStorage();
 
   // Collections
+  const form = document.getElementById('app-form');
   const simpleInputs = document.querySelectorAll('.simple');
   const additionInputs = document.querySelectorAll('.addition');
   const contentEditable = document.querySelectorAll('[contenteditable]');
@@ -34,8 +36,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const encumbranceSrc = document.querySelectorAll('.encumbrance-src');
   const encumbranceMax = document.getElementById('encumbrance-max')
   const highlights = document.querySelectorAll('.highlight-toggle')
+  const settingsTheme = document.getElementById('theme')
+  const exportButton = document.getElementById('export-button');
+  const importButton = document.getElementById('import-button');
 
   // Event Listeners
+  simpleInputs.forEach(input => {
+    input.addEventListener('change', handleSimpleInput);
+  });
   simpleInputs.forEach(input => {
     input.addEventListener('input', handleSimpleInput);
   });
@@ -60,9 +68,54 @@ document.addEventListener('DOMContentLoaded', (event) => {
   highlights.forEach(item => {
     item.addEventListener('input', toggleHighlight);
   });
+  settingsTheme.addEventListener('change', setTheme);
+  exportButton.addEventListener('click', exportData);
+  importButton.addEventListener('click', importData);
 
   // Fill the sheet with stored data
   fillFromStorage();
+
+  // Tabs
+  const tabToggles = document.querySelectorAll('.tab');
+  document.addEventListener('click', handleTabs);
+
+  function handleTabs (event) {
+    if (
+      !Array.from(tabToggles).includes(event.target) ||
+      event.target.classList.contains('active')
+    ) {
+      return false;
+    }
+
+    tabToggles.forEach(tab => {
+      if (tab === event.target) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+  }
+
+  // Modal
+  const modal = document.getElementById('modal');
+  const pages = document.querySelectorAll('.page');
+  const openModalButton = document.getElementById('open-modal');
+  const closeModalButton = document.getElementById('close-modal');
+
+  openModalButton.addEventListener('click', openModal);
+  closeModalButton.addEventListener('click', closeModal);
+
+  function openModal() {
+    pages.forEach(page => {page.setAttribute('inert', true)});
+    openModalButton.setAttribute('inert', true);
+    modal.classList.add('open');
+    closeModalButton.focus();
+  }
+  function closeModal() {
+    pages.forEach(page => {page.removeAttribute('inert')});
+    openModalButton.removeAttribute('inert');
+    modal.classList.remove('open');
+  }
 
   // Methods
   // --------------------
@@ -103,8 +156,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Fill every inputs in the page
       const inputs = document.querySelectorAll('input, select');
       await inputs.forEach(input => {
-        const item = localStorage.getItem(input.id);
-        input.value = item ?? null;
+        const identifier = input.type === 'radio' ? input.name : input.id;
+        const item = localStorage.getItem(identifier);
+
+        if (input.type === 'radio') {
+          if (input.value === item) {
+            input.checked = true;
+          };
+        } else {
+          input.value = item ?? null;
+        }
         if (item && input.type === 'hidden') {
           input.previousElementSibling.textContent = item;
         }
@@ -131,10 +192,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
+  // Sets the theme
+  function setTheme(event) {
+    const stored = localStorage.getItem('color-scheme') ?? '';
+    const value = event !== undefined ? event.target.value : stored;
+    if (value === 'light') {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+    } else if (value === 'dark') {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+    } else {
+      document.body.classList.remove('light');
+      document.body.classList.remove('dark');
+    }
+  }
+
   // Store data from simple inputs
   function handleSimpleInput(event) {
     if (event.target.type === "checkbox") {
       localStorage.setItem(event.target.id, event.target.checked);
+    } else if (event.target.type === "radio") {
+      localStorage.setItem(event.target.name, event.target.value);
     } else {
       localStorage.setItem(event.target.id, event.target.value);
     }
@@ -362,6 +441,50 @@ document.addEventListener('DOMContentLoaded', (event) => {
       parent.classList.add('highlighted');
     } else {
       parent.classList.remove('highlighted');
+    }
+  }
+
+  function exportData() {
+    const formData = new FormData(form)
+    const json = Object.fromEntries(formData);
+    const jsonString = JSON.stringify(json);
+    const today = new Date();
+    const date = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
+    const name = json.name.split(' ').join('_');
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(
+      new Blob([jsonString], {type:"application/json"})
+    );
+    link.download = `${name}_${date}_backup.json`;
+    link.click();
+  }
+
+  async function importData() {
+    const fileInput = document.getElementById('import-db');
+    const errorMessage = document.getElementById('import-db-error');
+    const successMessage = document.getElementById('import-db-success');
+    const selectedFile = fileInput.files[0] ?? undefined;
+
+    if (!selectedFile) {
+      errorMessage.textContent = "Aucun fichier selectionné."
+    } else if (selectedFile.type !== "application/json") {
+      fileInput.value = '';
+      errorMessage.textContent = "Le fichier doit être un fichier json."
+    } else {
+      const raw = await selectedFile.text();
+      try {
+        data = JSON.parse(raw);
+      } catch(e) {
+        console.error(e);
+        errorMessage.textContent = "Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier json provenant de l'app et, le cas échéant, contactez l'administrateur."
+      }
+      for (const key in data) {
+        localStorage.setItem(key, data[key]);
+      }
+      fillFromStorage();
+      setTheme();
+      successMessage.textContent = "Données importées. 🎉"
     }
   }
 });

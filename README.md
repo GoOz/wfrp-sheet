@@ -15,7 +15,10 @@ All your data is stored on your localStorage, meaning it stays in your browser's
 ### App's features
   - Auto-filling cells
   - Auto-calculated final values (initial + advances)
+  - Responsive layout
   - Dark mode
+  - Highlight career skills
+  - Import/Export data
   - More to come…
 
 ## Dev

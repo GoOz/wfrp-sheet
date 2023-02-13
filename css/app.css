@@ -1,12 +1,23 @@
 /* BASICS */
-:root {
-  --grey: #b7b7b7;
-  --lightgrey: lightgrey;
-  --bgcolor: white;
-  --contrast: black;
-  --dropdown: url('../img/dropdown-light.svg');
-  --hover: hsla(0, 0%, 0%, .1);
-  --highlight: hsla(55, 100%, 78%, 0.7);
+@media (prefers-color-scheme: light) {
+  :root {
+    --grey: #b7b7b7;
+    --lightgrey: lightgrey;
+    --bgcolor: white;
+    --contrast: black;
+    --dropdown: url('../img/dropdown-light.svg');
+    --hover: hsla(0, 0%, 0%, .1);
+    --highlight: hsla(55, 100%, 78%, 0.7);
+  }
+  .dark {
+    --grey: #242424;
+    --lightgrey: #444;
+    --bgcolor: #171717;
+    --contrast: #C8C8C8;
+    --dropdown: url('../img/dropdown-dark.svg');
+    --hover: hsla(100, 100%, 100%, .2);
+    --highlight: hsla(55, 100%, 19%, 0.7);
+  }
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,6 +28,15 @@
     --dropdown: url('../img/dropdown-dark.svg');
     --hover: hsla(100, 100%, 100%, .2);
     --highlight: hsla(55, 100%, 19%, 0.7);
+  }
+  .light {
+    --grey: #b7b7b7;
+    --lightgrey: lightgrey;
+    --bgcolor: white;
+    --contrast: black;
+    --dropdown: url('../img/dropdown-light.svg');
+    --hover: hsla(0, 0%, 0%, .1);
+    --highlight: hsla(55, 100%, 78%, 0.7);
   }
 }
 
@@ -38,7 +58,7 @@ body {
   font-family: Luminari, Times, serif;
 }
 
-input:not([type="checkbox"]), select {
+input:not([type="checkbox"], [type="radio"]), select {
   font-family: inherit;
   font-size: inherit;
   border-radius: 0;
@@ -50,6 +70,10 @@ input:not([type="checkbox"]), select {
 
 input[type="checkbox"] {
   accent-color: var(--bgcolor);
+}
+
+input[type="file"] {
+  padding: 0;
 }
 
 input[type="checkbox"].highlight-toggle {
@@ -72,6 +96,16 @@ output {
   font-size: inherit;
   height: 1em;
 }
+
+[inert] {
+  opacity: .2;
+  pointer-events: none;
+}
+
+.app:has(> [inert]) {
+  overflow: hidden;
+}
+
 .sr-only {
   border: 0 !important;
   clip-path: inset(50%) !important;
@@ -92,8 +126,17 @@ output {
   text-align: center;
 }
 
+.notice {
+  font-style: italic;
+  font-size: .9em;
+}
+
 .error {
   color: red;
+}
+
+.success {
+  color: green;
 }
 
 #sprite {
@@ -113,6 +156,7 @@ output {
 }
 
 .tabs {
+  width: 100%;
   background-color: var(--bgcolor);
   border-radius: .25rem;
   display: flex;
@@ -296,10 +340,7 @@ output {
 }
 
 @media (max-width: 25em) {
-  .first {
-    display: block;
-  }
-  .second {
+  .first, .second, .info {
     display: block;
   }
 }
@@ -319,6 +360,7 @@ legend {
 .fake-legend, legend {
   position: sticky;
   top: 0;
+  z-index: 1;
   background-color: var(--bgcolor);
   width: 100%;
   text-align: center;
@@ -341,13 +383,13 @@ legend {
   white-space: nowrap;
 }
 
-input:not([type="checkbox"]), output {
+input:not([type="checkbox"], [type="radio"]), output {
   width: 100%;
   border: none;
   padding-block: 0;
   background-color: transparent;
 }
-:is(input:not([type="checkbox"]), select, [contenteditable]):is(:focus, :focus-visible) {
+:is(input:not([type="checkbox"], [type="radio"]), select, [contenteditable]):is(:focus, :focus-visible) {
   outline: 0;
   background-color: hsla(0, 0%, 70%, .3);
 }
@@ -928,3 +970,71 @@ table.layout-fixed {
   font-size: .8em;
   text-align: center;
 }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 15% 25%;
+  background-color: var(--bgcolor);
+  box-shadow: 0 0 5px 1px var(--contrast);
+  border-radius: .5rem;
+}
+
+.modal.open {
+  display: block;
+}
+
+.settings {
+  height: 100%;
+  box-sizing: border-box;
+  padding-inline: 1rem;
+}
+.settings > div {
+  font-size: .8em;
+}
+
+.button-modal {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: 0;
+}
+
+.button-modal:is(:hover, :focus) {
+  background-color: var(--lightgrey);
+}
+
+.button-modal svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.close-modal svg {
+  color: var(--contrast);
+}
+.open-modal svg {
+  fill: var(--contrast);
+}
+
+.close-modal {
+  top: .25rem;
+  right: .25rem;
+  padding: 0;
+  border-radius: 1rem;
+}
+
+.open-modal {
+  top: 0;
+  right: 0;
+  padding: .25rem;
+  background-color: var(--bgcolor);
+  border-left: 1px solid var(--contrast);
+  border-bottom: 1px solid var(--contrast);
+  border-bottom-left-radius: .5rem;
+}
+
+.data-button {
+  margin-block: .5rem;
+}
+
