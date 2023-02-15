@@ -43,8 +43,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Event Listeners
   simpleInputs.forEach(input => {
     input.addEventListener('change', handleSimpleInput);
-  });
-  simpleInputs.forEach(input => {
     input.addEventListener('input', handleSimpleInput);
   });
   additionInputs.forEach(input => {
@@ -159,17 +157,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
           if (input.value === item) {
             input.checked = true;
           };
+        } else if (input.type === 'checkbox' && item === "true") {
+          input.checked = true;
         } else {
           input.value = item ?? null;
         }
+
+        // Other context adjustments
         if (item && input.type === 'hidden') {
           input.previousElementSibling.textContent = item;
         }
         if (item && input.tagName === 'SELECT') {
           input.dispatchEvent(new Event('change', { 'bubbles': true }));
-        }
-        if (item && item === "true" && input.type === 'checkbox') {
-          input.checked = true;
         }
       });
 
@@ -208,8 +207,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function handleSimpleInput(event) {
     if (event.target.type === "checkbox") {
       localStorage.setItem(event.target.name, event.target.checked);
-    } else if (event.target.type === "radio") {
-      localStorage.setItem(event.target.name, event.target.value);
     } else {
       localStorage.setItem(event.target.name, event.target.value);
     }
@@ -232,10 +229,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Store custom skill base characteristic and update related output
   function handleCharacSelect(event) {
-    const output = document.getElementById(event.target.dataset.input);
-    output.setAttribute('for', `${event.target.value}-i ${event.target.value}-a`);
-    updateOutputs();
-    localStorage.setItem(event.target.name, event.target.value);
+    const outputs = event.target.closest('tr').querySelectorAll('output');
+    if (!event.target.value) {
+      outputs.forEach(output => (output.value = ''));
+      return;
+    }
+    handleSimpleInput(event);
+    outputs[0].setAttribute('for', `${event.target.value}-i ${event.target.value}-a`);
+    updateOutputs(outputs);
   }
 
   // Store custom data and add new blank row
@@ -338,7 +339,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     selects.forEach(input => {
       input.name = input.name + n;
       input.id = input.id + n;
-      input.dataset.input = input.dataset.input + n;
     });
 
     labels.forEach(label => {
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Update outputs from related inputs value
   function updateOutputs(outputs) {
     if (outputs === undefined) {
-      outputs = document.querySelectorAll('output:not(.bonus, .hidden, encumbrance-total)');
+      outputs = document.querySelectorAll('output:not(.bonus, .hidden, .encumbrance-total)');
     }
     outputs.forEach(output => {
       let current = 0;
