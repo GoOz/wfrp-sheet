@@ -141,10 +141,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const tbody = custom.querySelector('tbody');
         const type = custom.id;
         let i = 1;
-        while (
-          localStorage.getItem(`${type}-name-${i}`) !== null &&
-          localStorage.getItem(`${type}-name-${i}`) !== ''
-        ) {
+        while (localStorage.getItem(`${type}-name-${i}`)) {
           addNewRow(tbody, i);
           i++
         }
@@ -156,8 +153,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Fill every inputs in the page
       const inputs = document.querySelectorAll('input, select');
       await inputs.forEach(input => {
-        const identifier = input.type === 'radio' ? input.name : input.id;
-        const item = localStorage.getItem(identifier);
+        const item = localStorage.getItem(input.name);
 
         if (input.type === 'radio') {
           if (input.value === item) {
@@ -211,11 +207,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Store data from simple inputs
   function handleSimpleInput(event) {
     if (event.target.type === "checkbox") {
-      localStorage.setItem(event.target.id, event.target.checked);
+      localStorage.setItem(event.target.name, event.target.checked);
     } else if (event.target.type === "radio") {
       localStorage.setItem(event.target.name, event.target.value);
     } else {
-      localStorage.setItem(event.target.id, event.target.value);
+      localStorage.setItem(event.target.name, event.target.value);
     }
   }
 
@@ -231,7 +227,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function handleContentEditable(event) {
     const input = event.target.nextElementSibling;
     input.value = event.target.textContent;
-    localStorage.setItem(input.id, input.value);
+    localStorage.setItem(input.name, input.value);
   }
 
   // Store custom skill base characteristic and update related output
@@ -239,7 +235,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const output = document.getElementById(event.target.dataset.input);
     output.setAttribute('for', `${event.target.value}-i ${event.target.value}-a`);
     updateOutputs();
-    localStorage.setItem(event.target.id, event.target.value);
+    localStorage.setItem(event.target.name, event.target.value);
   }
 
   // Store custom data and add new blank row
