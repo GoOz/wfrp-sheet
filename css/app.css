@@ -8,6 +8,7 @@
     --dropdown: url('../img/dropdown-light.svg');
     --hover: hsla(0, 0%, 0%, .1);
     --highlight: hsla(55, 100%, 78%, 0.7);
+    color-scheme: light;
   }
   .dark {
     --grey: #242424;
@@ -17,6 +18,7 @@
     --dropdown: url('../img/dropdown-dark.svg');
     --hover: hsla(100, 100%, 100%, .2);
     --highlight: hsla(55, 100%, 19%, 0.7);
+    color-scheme: dark;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -28,6 +30,7 @@
     --dropdown: url('../img/dropdown-dark.svg');
     --hover: hsla(100, 100%, 100%, .2);
     --highlight: hsla(55, 100%, 19%, 0.7);
+    color-scheme: dark;
   }
   .light {
     --grey: #b7b7b7;
@@ -37,6 +40,7 @@
     --dropdown: url('../img/dropdown-light.svg');
     --hover: hsla(0, 0%, 0%, .1);
     --highlight: hsla(55, 100%, 78%, 0.7);
+    color-scheme: light;
   }
 }
 
@@ -140,7 +144,7 @@ input:is([type="text"], [type="number"]), output {
   background-color: transparent;
 }
 
-:is(input[type="text"], input[type="number"], select, [contenteditable]):is(:focus, :focus-visible) {
+:is(input[type="text"], input[type="number"], [contenteditable]):is(:focus, :focus-visible) {
   outline: 0;
   background-color: hsla(0, 0%, 70%, .3);
 }
@@ -172,6 +176,12 @@ select {
   border: 0;
   background-color: transparent;
   text-align: center;
+  border-radius: .15em;
+}
+select:focus {
+  outline: max(2px, 0.15em) solid var(--lightgrey);
+  /* Fix for windows */
+  background-color: revert;
 }
 
 input:is([type="checkbox"],[type="radio"]) {
