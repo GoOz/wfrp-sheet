@@ -999,6 +999,9 @@ table.layout-fixed {
   box-sizing: border-box;
   padding-inline: 1rem;
 }
+.settings legend {
+   margin-block-end: 1.5rem;
+ }
 .settings > div {
   font-size: .8em;
 }
@@ -1051,7 +1054,7 @@ table.layout-fixed {
   margin-block: .5rem;
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait), (max-width: 64em) {
   .first {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr 1fr 1fr 1fr;
