@@ -253,7 +253,7 @@ output {
   height: 1em;
 }
 
-button {
+button, .button, input[type="file"]::file-selector-button {
   display: inline-block;
   padding: .5rem;
   text-decoration: none;
@@ -264,7 +264,8 @@ button {
   background-color: var(--lightgrey);
 }
 
-button:is(:hover, :focus, :active) {
+:is(button,.button):is(:hover, :focus, :active),
+input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
   background-color: var(--grey);
 }
 
@@ -762,10 +763,10 @@ table.layout-fixed {
   content: '';
   position: absolute;
   inset: .5rem;
-  background-image: url('../img/silhouette.png');
+  background-image: url('../img/silhouette.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: 55% center;
   opacity: .3;
   z-index: 0;
 }
@@ -968,6 +969,7 @@ table.layout-fixed {
   align-items: stretch;
   border: 1px solid var(--contrast);
   border-top: 0;
+  z-index: 1;
 }
 .spells-wrapper label {
   font-size: .8em;

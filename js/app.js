@@ -1,26 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   setTheme();
-  const encumbranceMessage = [
-    [
-      "Pas de pénalité"
-    ],
-    [
-      "Surchargé Niv. 1",
-      "-1 mouvement (Min: 3)",
-      "-10 en agilité",
-      "+1 fatigue du voyage"
-    ],
-    [
-      "Surchargé Niv. 2",
-      "-2 mouvement (Min: 2)",
-      "-20 en agilité",
-      "+2 fatigue du voyage"
-    ],
-    [
-      "Surchargé Niv. 3",
-      "Vous ne pouvez plus vous déplacer"
-    ]
-  ]
 
   checkStorage();
 
@@ -149,7 +128,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       })
 
       // Fill every inputs in the page
-      const inputs = document.querySelectorAll('input, select');
+      const inputs = document.querySelectorAll('.page input, .page select, #theme input');
       await inputs.forEach(input => {
         const item = localStorage.getItem(input.name);
 
@@ -290,7 +269,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const weapons = Number(document.getElementById('encumbrance-weapons-total').value);
     const max = Number(document.getElementById('encumbrance-max').value);
     const total = document.getElementById('encumbrance-total');
-    const messageBox = document.getElementById('encumbrance-state');
+    const msgs = document.querySelectorAll('.encumbrance-state-penalty');
 
     total.value = armour + trappings + weapons;
 
@@ -308,12 +287,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       messageType = 3;
     }
 
-    messageBox.querySelector('p').textContent = encumbranceMessage[messageType][0];
-    let content = '';
-    for (let i = 1; i < encumbranceMessage[messageType].length; i++) {
-      content += `<li>${encumbranceMessage[messageType][i]}</li>`
-    }
-    messageBox.querySelector('ul').innerHTML = content;
+    msgs.forEach((msg, index) => {
+      if(messageType === index) {
+        msg.removeAttribute('hidden');
+      } else {
+        msg.setAttribute('hidden', 'true');
+      }
+    })
   }
 
   // Add new blank talent row
@@ -458,29 +438,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   async function importData() {
     const fileInput = document.getElementById('import-db');
+    const msgs = document.querySelectorAll('.error, .success');
     const errorMessage = document.getElementById('import-db-error');
+    const errorMessageEmpty = document.getElementById('import-db-error-empty');
+    const errorMessageFile = document.getElementById('import-db-error-file');
     const successMessage = document.getElementById('import-db-success');
     const selectedFile = fileInput.files[0] ?? undefined;
 
+    // Reset current message displayed
+    msgs.forEach(msg => msg.setAttribute('hidden', 'true'));
+
     if (!selectedFile) {
-      errorMessage.textContent = "Aucun fichier selectionné."
+      errorMessageEmpty.removeAttribute('hidden');
     } else if (selectedFile.type !== "application/json") {
       fileInput.value = '';
-      errorMessage.textContent = "Le fichier doit être un fichier json."
+      errorMessageFile.removeAttribute('hidden');
     } else {
       const raw = await selectedFile.text();
       try {
         data = JSON.parse(raw);
       } catch(e) {
         console.error(e);
-        errorMessage.textContent = "Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier json provenant de l'app et, le cas échéant, contactez l'administrateur."
+        errorMessage.removeAttribute('hidden');
       }
       for (const key in data) {
         localStorage.setItem(key, data[key]);
       }
       fillFromStorage();
       setTheme();
-      successMessage.textContent = "Données importées. 🎉"
+      successMessage.removeAttribute('hidden');
     }
   }
 });
