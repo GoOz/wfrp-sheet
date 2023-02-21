@@ -1,11 +1,11 @@
 module.exports = {
   title: {
     'fr': 'Feuille de personnage Warhammer Fantasy Role Play',
-    'en': 'Warhammer Fantasy Role Play\'s character sheet'
+    'en': 'Warhammer Fantasy Role Play&apos;s character sheet'
   },
   desc: {
     'fr': 'Un outil en ligne pour gérer votre fiche de personnage pour le jeu de rôle Warhammer Fantasy Role Play',
-    'en': 'An online tool to help you manage your Warhammer Fantasy Role Play game\'s character sheet'
+    'en': 'An online tool to help you manage your Warhammer Fantasy Role Play game&apos;s character sheet'
   },
   h1: {
     'fr': 'Feuille de personnage',
@@ -14,7 +14,7 @@ module.exports = {
   info: {
     title: {
       'fr': 'Informations du personnage',
-      'en': 'Character\'s personal informations'
+      'en': 'Character&apos;s personal informations'
     },
     name: {
       'fr': 'Nom',
@@ -395,7 +395,7 @@ module.exports = {
       'en': 'Leadership'
     },
     drive: {
-      'fr': 'Conduite d\'attelage',
+      'fr': 'Conduite d&apos;attelage',
       'en': 'Drive'
     },
     meleeBasic: {
@@ -463,7 +463,7 @@ module.exports = {
       'en': 'Endurance'
     },
     consumeAlcohol: {
-      'fr': 'Résistance à l\'alcool',
+      'fr': 'Résistance à l&apos;alcool',
       'en': 'Consume Alcohol'
     },
     bribery: {
@@ -559,7 +559,7 @@ module.exports = {
       'en': 'Enc'
     },
     points: {
-      'fr': 'Points d\'armure',
+      'fr': 'Points d&apos;armure',
       'en': 'Armour Points'
     },
     pointsAbbr: {
@@ -577,7 +577,7 @@ module.exports = {
   },
   armourPoints: {
     title: {
-      'fr': 'Points d\'armure (PA)',
+      'fr': 'Points d&apos;armure (PA)',
       'en': 'Armour Points (AP)'
     },
     head: {
@@ -623,7 +623,7 @@ module.exports = {
       'en': 'SB'
     },
     toughnessBonus: {
-      'fr': 'Bonus de d\'Endurance fois deux',
+      'fr': 'Bonus de d&apos;Endurance fois deux',
       'en': 'Toughness Bonus times two'
     },
     toughnessBonusAbbr: {
@@ -751,7 +751,7 @@ module.exports = {
       },
       p1: {
         'fr': 'Vous ne pouvez plus vous déplacer',
-        'en': 'You\'re not moving'
+        'en': 'You&apos;re not moving'
       }
     }
   },
@@ -769,7 +769,7 @@ module.exports = {
       'en': 'D'
     },
     silver: {
-      'fr': 'Pistoles d\'argent',
+      'fr': 'Pistoles d&apos;argent',
       'en': 'Silver Schilings'
     },
     silverAbbr: {
@@ -777,7 +777,7 @@ module.exports = {
       'en': 'SS'
     },
     gold: {
-      'fr': 'Couronnes d\'or',
+      'fr': 'Couronnes d&apos;or',
       'en': 'Gold Crowns'
     },
     goldAbbr: {
@@ -861,7 +861,7 @@ module.exports = {
       'en': 'Name'
     },
     cn: {
-      'fr': 'Niveau d\'incantation',
+      'fr': 'Niveau d&apos;incantation',
       'en': 'Cast Number'
     },
     cnAbbr: {
@@ -920,8 +920,8 @@ module.exports = {
         'en': 'Auto'
       },
       notice: {
-        'fr': 'Le choix "auto" s\'affichera selon la préférence paramétrée dans votre système d\'exploitation.',
-        'en': 'Auto option will rely on your operating system\'s settings.'
+        'fr': 'Le choix "auto" s&apos;affichera selon la préférence paramétrée dans votre système d&apos;exploitation.',
+        'en': 'Auto option will rely on your operating system&apos;s settings.'
       }
     },
     export: {
@@ -934,7 +934,7 @@ module.exports = {
         'en': 'Download my data'
       },
       notice: {
-        'fr': 'Le fichier d\'export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.',
+        'fr': 'Le fichier d&apos;export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.',
         'en': 'The export file will have a <strong>.json</strong> format.<br>Local data will not be deleted.'
       }
     },
@@ -964,7 +964,7 @@ module.exports = {
         'en': 'The data file must be a JSON file'
       },
       error: {
-        'fr': 'Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l\'app et, le cas échéant, contactez l\'administrateur.',
+        'fr': 'Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.',
         'en': 'An error occurred. Check that you have provided a JSON file from the app and, if so, contact the admin.'
       }
     }
