@@ -5,7 +5,7 @@ module.exports = {
   },
   desc: {
     'fr': 'Un outil en ligne pour gérer votre fiche de personnage pour le jeu de rôle Warhammer Fantasy Role Play',
-    'en': 'An online tool to help you manage your Warhammer Fantasy Role Play'
+    'en': 'An online tool to help you manage your Warhammer Fantasy Role Play game\'s character sheet'
   },
   h1: {
     'fr': 'Feuille de personnage',
