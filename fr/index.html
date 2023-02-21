@@ -14,7 +14,7 @@
   <meta property="og:title" content="Feuille de personnage Warhammer Fantasy Role Play" />
   <meta property="og:description" content="An online tool to help you manage your Warhammer Fantasy Role Play" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="android-chrome-192x192.png" />
+  <meta property="og:image" content="https://gooz.github.io/wfrp-sheet/android-chrome-192x192.png" />
   <meta property="og:url" content="https://gooz.github.io/wfrp-sheet/" />
   <link rel="stylesheet" href="../css/app.css">
 </head>
@@ -506,14 +506,14 @@
                        </label>
                       </div>
                       <div class="hl-wrapper-name">
-                        Conduite d'attelage
+                        Conduite d&apos;attelage
                       </div>
                     </div>
                   </td>
                   <td><abbr title="Agilité">Ag</abbr></td>
                   <td><output id="drive-current" name="drive-current" for="ag-i ag-a"></output></td>
                   <td>
-                    <label class="sr-only" for="drive-aug">Conduite d'attelage Augmentation</label>
+                    <label class="sr-only" for="drive-aug">Conduite d&apos;attelage Augmentation</label>
                     <input type="number" name="drive-aug" id="drive-aug"></td>
                   <td><output for="drive-current drive-aug"></output></td>
                 </tr>
@@ -953,14 +953,14 @@
                        </label>
                       </div>
                       <div class="hl-wrapper-name">
-                        Résistance à l'alcool
+                        Résistance à l&apos;alcool
                       </div>
                     </div>
                   </td>
                   <td><abbr title="Endurance">E</abbr></td>
                   <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="t-i t-a"></output></td>
                   <td>
-                    <label class="sr-only" for="consume-alcohol-aug">Résistance à l'alcool Augmentation</label>
+                    <label class="sr-only" for="consume-alcohol-aug">Résistance à l&apos;alcool Augmentation</label>
                     <input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
                   <td><output for="consume-alcohol-current consume-alcohol-aug"></output></td>
                 </tr>
@@ -1248,7 +1248,7 @@
             </th>
             <th scope="col" class="narrow">
               <span id="armour-ap-label">
-                <abbr title="Points d'armure">PA</abbr>
+                <abbr title="Points d&apos;armure">PA</abbr>
               </span>
             </th>
             <th scope="col">
@@ -1302,8 +1302,8 @@
         <output class="hidden" id="encumbrance-armour-total"></output>
       </fieldset>
       <fieldset class="armour-points simple">
-        <legend class="sr-only">Points d'armure (PA)</legend>
-        <div class="fake-legend" aria-hidden>Points d'armure (PA)</div>
+        <legend class="sr-only">Points d&apos;armure (PA)</legend>
+        <div class="fake-legend" aria-hidden>Points d&apos;armure (PA)</div>
         <div class="armour-points-box">
           <div class="armour-points-stat">
             <label for="ap-head">Tête</label>
@@ -1359,7 +1359,7 @@
               </tr>
               <tr>
                 <th scope="row" class="narrow">
-                  <abbr title="Bonus de d'Endurance fois deux">BEx2</abbr>
+                  <abbr title="Bonus de d&apos;Endurance fois deux">BEx2</abbr>
                 </th>
                 <td>
                   <output for="bonus-t" id="toughness-bonus" name="toughness-bonus">
@@ -1516,10 +1516,10 @@
                 <abbr title="Sous de cuivre">sc</abbr>
               </th>
               <th scope="col" id="silver-label">
-                <abbr title="Pistoles d'argent">/-</abbr>
+                <abbr title="Pistoles d&apos;argent">/-</abbr>
               </th>
               <th scope="col" id="gold-label">
-                <abbr title="Couronnes d'or">CO</abbr>
+                <abbr title="Couronnes d&apos;or">CO</abbr>
               </th>
             </tr>
           </thead>
@@ -1662,7 +1662,7 @@
             </th>
             <th scope="col" class="narrow">
               <span id="spells-cn-label">
-                <abbr title="Niveau d'incantation">NI</abbr>
+                <abbr title="Niveau d&apos;incantation">NI</abbr>
               </span>
             </th>
             <th scope="col">
@@ -1743,13 +1743,13 @@
           <label for="color-scheme-2">Foncé</label>
           <input type="radio" name="color-scheme" id="color-scheme-3" value="auto" checked>
           <label for="color-scheme-3">Auto</label>
-          <p class="notice">Le choix "auto" s'affichera selon la préférence paramétrée dans votre système d'exploitation.</p>
+          <p class="notice">Le choix "auto" s&apos;affichera selon la préférence paramétrée dans votre système d&apos;exploitation.</p>
         </div>
         <hr>
         <div>
           <h2>Exporter mes données locales</h2>
           <button type="button" class="data-button" id="export-button">Télécharger mes données</button>
-          <p class="notice">Le fichier d'export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.</p>
+          <p class="notice">Le fichier d&apos;export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.</p>
         </div>
         <hr>
         <div>
@@ -1758,7 +1758,7 @@
           <button type="button" class="data-button" id="import-button">Envoyer</button>
           <p hidden class="error" id="import-db-error-empty">Aucun fichier selectionné.</p>
           <p hidden class="error" id="import-db-error-file">Le fichier doit être un fichier JSON.</p>
-          <p hidden class="error" id="import-db-error">Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l'app et, le cas échéant, contactez l'administrateur.</p>
+          <p hidden class="error" id="import-db-error">Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.</p>
           <p hidden class="success" id="import-db-success">Données importées. 🎉</p>
           <p class="notice">⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.</p>
         </div>
