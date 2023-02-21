@@ -1,0 +1,13 @@
+{
+  "name": "wfrp-sheet",
+  "version": "1.0.0-alpha",
+  "scripts": {
+    "build": "npx eleventy",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "eleventy-plugin-i18n": "^0.1.3"
+  }
+}
