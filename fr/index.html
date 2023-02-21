@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feuille de personnage Warhammer Fantasy Role Play</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#b7b7b7">
+  <meta name="theme-color" content="#b7b7b7">
+  <meta property="og:title" content="Feuille de personnage Warhammer Fantasy Role Play" />
+  <meta property="og:description" content="An online tool to help you manage your Warhammer Fantasy Role Play" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="android-chrome-192x192.png" />
+  <meta property="og:url" content="https://gooz.github.io/wfrp-sheet/" />
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <svg id="sprite">
+    <symbol id="highlight-inactive" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M12,18.5015 C11.4471,18.5015 10.9989,18.9497 10.9989,19.5026 C10.9989,20.0555 11.4471,20.5037 12,20.5037 C12.5529,20.5037 13.0011,20.0555 13.0011,19.5026 C13.0011,18.9497 12.5529,18.5015 12,18.5015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z M11.999,3.50244 C10.6871,3.50244 9.62366,4.56593 9.62366,5.87781 C9.62366,8.43944 10.5512,11.9861 11.0989,13.8473 C11.2125,14.2332 11.573,14.5039 12.0006,14.5039 C12.4275,14.5039 12.7869,14.2344 12.9006,13.8501 L13.0583294,13.3056653 C13.6088628,11.3652034 14.3744,8.23351909 14.3744,5.87781 C14.3744,4.56593 13.3109,3.50244 11.999,3.50244 Z"></path>
+    </symbol>
+    <symbol id="highlight-active" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z"></path>
+    </symbol>
+  </svg>
+  <h1 class="sr-only">Feuille de personnage</h1>
+  <form class="app" id="app-form" action="#" method="POST">
+    <button type="button" class="button-modal open-modal" id="open-modal" aria-label="Ouvrir les paramètres">
+      <svg fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4,13.743l-1,.579a1,1,0,0,0-.366,1.366l1.488,2.578a1,1,0,0,0,1.366.366L6.5,18.05a1.987,1.987,0,0,1,1.986,0l.02.011a1.989,1.989,0,0,1,1,1.724V21a1,1,0,0,0,1,1h3a1,1,0,0,0,1-1V19.782a1.985,1.985,0,0,1,.995-1.721l.021-.012a1.987,1.987,0,0,1,1.986,0l1.008.582a1,1,0,0,0,1.366-.366l1.488-2.578A1,1,0,0,0,21,14.322l-1-.579a1.994,1.994,0,0,1-1-1.733v-.021a1.991,1.991,0,0,1,1-1.732l1-.579a1,1,0,0,0,.366-1.366L19.876,5.734a1,1,0,0,0-1.366-.366L17.5,5.95a1.987,1.987,0,0,1-1.986,0L15.5,5.94a1.989,1.989,0,0,1-1-1.724V3a1,1,0,0,0-1-1h-3a1,1,0,0,0-1,1V4.294A1.856,1.856,0,0,1,8.57,5.9l-.153.088a1.855,1.855,0,0,1-1.853,0L5.49,5.368a1,1,0,0,0-1.366.366L2.636,8.312A1,1,0,0,0,3,9.678l1,.579A1.994,1.994,0,0,1,5,11.99v.021A1.991,1.991,0,0,1,4,13.743ZM12,9a3,3,0,1,1-3,3A3,3,0,0,1,12,9Z"/>
+      </svg>
+    </button>
+    <div class="page first">
+      <fieldset class="info simple">
+        <legend class="sr-only">Informations du personnage</legend>
+        <div class="name field">
+          <label id="name-label" for="name">Nom</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="species field">
+          <label id="species-label" for="species">Race</label>
+          <select id="species" name="species">
+            <option value="">-</option>
+            <option value="human">Humain</option>
+            <option value="halfling">Halfling</option>
+            <option value="dwarf">Nain</option>
+            <option value="high elf">Haut elfe</option>
+            <option value="wood elf">Elfe sylvain</option>
+          </select>
+        </div>
+        <div class="class field">
+          <label id="class-label" for="class">Classe</label>
+          <input type="text" id="class" name="class" />
+        </div>
+        <div class="career field">
+          <label id="career-label" for="career">Carrière</label>
+          <input type="text" id="career" name="career" />
+        </div>
+        <div class="career-tier field">
+          <label id="career-tier-label" for="career-tier">Niveau de carrière</label>
+          <input type="text" id="career-tier" name="career-tier" />
+        </div>
+        <div class="career-path field">
+          <label id="career-path-label" for="career-path">Schémar de carrière</label>
+          <input type="text" id="career-path" name="career-path" />
+        </div>
+        <div class="status field">
+          <label id="status-label" for="status">Statut</label>
+          <input type="text" id="status" name="status" />
+        </div>
+        <div class="age field">
+          <label id="age-label" for="age">Âge</label>
+          <input type="text" id="age" name="age" />
+        </div>
+        <div class="height field">
+          <label id="height-label" for="height">Taille</label>
+          <input type="text" id="height" name="height" />
+        </div>
+        <div class="hair field">
+          <label id="hair-label" for="hair">Cheveux</label>
+          <input type="text" id="hair" name="hair" />
+        </div>
+        <div class="eyes field">
+          <label id="eyes-label" for="eyes">Yeux</label>
+          <input type="text" id="eyes" name="eyes" />
+        </div>
+      </fieldset>
+      <fieldset class="charac addition">
+        <legend>Caratéristiques</legend>
+        <table class="left-aligned">
+          <thead>
+            <td></td>
+            <th scolpe="col" id="charac-ws-label">
+              <abbr title="Corps à corps">CC</abbr>
+            </th>
+            <th scolpe="col" id="charac-bs-label">
+              <abbr title="Capacité de tir">CT</abbr>
+            </th>
+            <th scolpe="col" id="charac-s-label">
+              <abbr title="Force">F</abbr>
+            </th>
+            <th scolpe="col" id="charac-t-label">
+              <abbr title="Endurance">E</abbr>
+            </th>
+            <th scolpe="col" id="charac-i-label">
+              <abbr title="Initiative">I</abbr>
+            </th>
+            <th scolpe="col" id="charac-ag-label">
+              <abbr title="Agilité">Ag</abbr>
+            </th>
+            <th scolpe="col" id="charac-dex-label">
+              <abbr title="Dextérité">Dex</abbr>
+            </th>
+            <th scolpe="col" id="charac-int-label">
+              <abbr title="Intelligence">Int</abbr>
+            </th>
+            <th scolpe="col" id="charac-wp-label">
+              <abbr title="Force mentale">FM</abbr>
+            </th>
+            <th scolpe="col" id="charac-fel-label">
+              <abbr title="Social">Soc</abbr>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" id="charac-initial-label">Intiales</th>
+              <td>
+                <input type="number" id="ws-i" name="ws-i" aria-labelledBy="charac-ws-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="bs-i" name="bs-i" aria-labelledBy="charac-bs-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="s-i" name="s-i" aria-labelledBy="charac-s-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="t-i" name="t-i" aria-labelledBy="charac-t-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="i-i" name="i-i" aria-labelledBy="charac-i-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="ag-i" name="ag-i" aria-labelledBy="charac-ag-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="dex-i" name="dex-i" aria-labelledBy="charac-dex-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="int-i" name="int-i" aria-labelledBy="charac-int-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="wp-i" name="wp-i" aria-labelledBy="charac-wp-label charac-initial-label">
+              </td>
+              <td>
+                <input type="number" id="fel-i" name="fel-i" aria-labelledBy="charac-fel-label charac-initial-label">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" id="charac-advances-label">Augmentation</th>
+              <td>
+                <input type="number" id="ws-a" name="ws-a" aria-labelledBy="charac-ws-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="bs-a" name="bs-a" aria-labelledBy="charac-bs-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="s-a" name="s-a" aria-labelledBy="charac-s-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="t-a" name="t-a" aria-labelledBy="charac-t-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="i-a" name="i-a" aria-labelledBy="charac-i-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="ag-a" name="ag-a" aria-labelledBy="charac-ag-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="dex-a" name="dex-a" aria-labelledBy="charac-dex-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="int-a" name="int-a" aria-labelledBy="charac-int-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="wp-a" name="wp-a" aria-labelledBy="charac-wp-label charac-advances-label">
+              </td>
+              <td>
+                <input type="number" id="fel-a" name="fel-a" aria-labelledBy="charac-fel-label charac-advances-label">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Courantes</th>
+              <td><output id="current-ws" name="current-ws" for="ws-i ws-a"></output></td>
+              <td><output id="current-bs" name="current-bs" for="bs-i bs-a"></output></td>
+              <td><output id="current-s" name="current-s" for="s-i s-a"></output></td>
+              <td><output id="current-t" name="current-t" for="t-i t-a"></output></td>
+              <td><output id="current-i" name="current-i" for="i-i i-a"></output></td>
+              <td><output id="current-ag" name="current-ag" for="ag-i ag-a"></output></td>
+              <td><output id="current-dex" name="current-dex" for="dex-i dex-a"></output></td>
+              <td><output id="current-int" name="current-int" for="int-i int-a"></output></td>
+              <td><output id="current-wp" name="current-wp" for="wp-i wp-a"></output></td>
+              <td><output id="current-fel" name="current-fel" for="fel-i fel-a"></output></td>
+            </tr>
+            <tr class="hidden">
+              <th scope="row">Bonus</th>
+              <td><output class="bonus" id="bonus-ws" name="bonus-ws" for="ws-i ws-a"></output></td>
+              <td><output class="bonus" id="bonus-bs" name="bonus-bs" for="bs-i bs-a"></output></td>
+              <td><output class="bonus" id="bonus-s" name="bonus-s" for="s-i s-a"></output></td>
+              <td><output class="bonus" id="bonus-t" name="bonus-t" for="t-i t-a"></output></td>
+              <td><output class="bonus" id="bonus-i" name="bonus-i" for="i-i i-a"></output></td>
+              <td><output class="bonus" id="bonus-ag" name="bonus-ag" for="ag-i ag-a"></output></td>
+              <td><output class="bonus" id="bonus-dex" name="bonus-dex" for="dex-i dex-a"></output></td>
+              <td><output class="bonus" id="bonus-int" name="bonus-int" for="int-i int-a"></output></td>
+              <td><output class="bonus" id="bonus-wp" name="bonus-wp" for="wp-i wp-a"></output></td>
+              <td><output class="bonus" id="bonus-fel" name="bonus-fel" for="fel-i fel-a"></output></td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+      <div class="points">
+        <div class="points-wrapper">
+          <fieldset class="counter simple">
+            <legend>Destin</legend>
+            <table class="left-aligned">
+              <tbody>
+                <tr>
+                  <th scope="row">Destin</th>
+                  <td>
+                    <label class="sr-only" for="fate-current">Points de destin disponibles</label>
+                    <label class="sr-only" for="fate-total">Points de destin total</label>
+                    <input type="number" id="fate-current" name="fate-current">/<input type="number" id="fate-total" name="fate-total"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chance</th>
+                  <td>
+                    <label class="sr-only" for="fortune-current">Points de chance disponibles</label>
+                    <label class="sr-only" for="fortune-total">Points de chance disponibles</label>
+                    <input type="number" id="fortune-current" name="fortune-current">/<input type="number" id="fortune-total" name="fortune-total"></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="counter simple">
+            <legend>Résilience</legend>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col"><abbr title="Résilience">Rés.</abbr></th>
+                  <th scope="col"><abbr title="Détermination">Déter.</abbr></th>
+                  <th scope="col"><abbr title="Motivation">Motiv.</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="sr-only" for="resilience-current">Points de résilience disponibles</label>
+                    <label class="sr-only" for="resilience-total">Points de résilience total</label>
+                    <input type="number" id="resilience-current" name="resilience-current">/<input type="number" id="resilience-total" name="resilience-total"></td>
+                  <td>
+                    <label class="sr-only" for="resolve-current">Points de détermination disponibles</label>
+                    <label class="sr-only" for="resolve-total">Points de détermination total</label>
+                    <input type="number" id="resolve-current" name="resolve-current">/<input type="number" id="resolve-total" name="resolve-total"></td>
+                  <td>
+                    <label class="sr-only" for="motivation">Motivation</label>
+                    <input type="text" id="motivation" name="motivation"></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="addition">
+            <legend>Expérience</legend>
+            <table class="layout-fixed">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <abbr title="Actuelle">Act.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Dépensée">Dép.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Totale">Tot.</abbr>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="sr-only" for="current-xp">Expérience à dépenser</label>
+                    <input type="number" id="current-xp" name="current-xp">
+                  </td>
+                  <td>
+                    <label class="sr-only" for="spent-xp">Expérience dépensée</label>
+                    <input type="number" id="spent-xp" name="spent-xp">
+                  </td>
+                  <td><output id="total-xp" name="total-xp" for="current-xp spent-xp"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+      </div>
+      <fieldset class="movement addition">
+        <legend>Mouvement</legend>
+        <div class="movement-wrapper">
+          <div>
+            <label for="movement">Mouvement</label>
+            <input type="number" name="movement" id="movement">
+          </div>
+          <div>
+            <label for="walk">Marche</label>
+            <output for="movement" id="walk" name="walk">
+          </div>
+          <div>
+            <label for="run">Course</label>
+            <output for="movement" id="run" name="run">
+          </div>
+        </div>
+      </fieldset>
+      <div class="skills">
+        <div class="skills-wrapper">
+          <fieldset class="addition">
+            <legend class="sr-only">Compétences de base</legend>
+            <div class="fake-legend" aria-hidden>Compétences de base</div>
+            <table class="left-aligned">
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th colspan="2" scope="col">
+                    <abbr title="Caractéristique">Carac.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Augmentation">Aug.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Compétence">Comp.</abbr>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="art-hl" id="art-hl" class="sr-only highlight-toggle">
+                        <label for="art-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Art
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Dextérité">Dex</abbr></td>
+                  <td><output name="art-current" for="dex-i dex-a" id="art-current"></output></td>
+                  <td>
+                    <label class="sr-only" for="art-aug">Art Augmentation</label>
+                    <input type="number" name="art-aug" id="art-aug"></td>
+                  <td><output for="art-current art-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="athletics-hl" id="athletics-hl" class="sr-only highlight-toggle">
+                        <label for="athletics-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Athlétisme
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="athletics-current" name="athletics-current" for="ag-i ag-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="athletics-aug">Athlétisme Augmentation</label>
+                    <input type="number" name="athletics-aug" id="athletics-aug"></td>
+                  <td><output for="athletics-current athletics-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="cool-hl" id="cool-hl" class="sr-only highlight-toggle">
+                        <label for="cool-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Calme
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Force mentale">FM</abbr></td>
+                  <td><output id="cool-current" name="cool-current" for="wp-i wp-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="cool-aug">Calme Augmentation</label>
+                    <input type="number" name="cool-aug" id="cool-aug"></td>
+                  <td><output for="cool-current cool-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="charm-hl" id="charm-hl" class="sr-only highlight-toggle">
+                        <label for="charm-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Charme
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="charm-current" name="charm-current" for="fel-i fel-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="charm-aug">Charme Augmentation</label>
+                    <input type="number" name="charm-aug" id="charm-aug"></td>
+                  <td><output for="charm-current charm-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="ride-hl" id="ride-hl" class="sr-only highlight-toggle">
+                        <label for="ride-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Chevaucher
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="ride-current" name="ride-current" for="ag-i ag-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="ride-aug">Chevaucher Augmentation</label>
+                    <input type="number" name="ride-aug" id="ride-aug"></td>
+                  <td><output for="ride-current ride-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="leadership-hl" id="leadership-hl" class="sr-only highlight-toggle">
+                        <label for="leadership-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Commandement
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="leadership-current" name="leadership-current" for="fel-i fel-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="leadership-aug">Commandement Augmentation</label>
+                    <input type="number" name="leadership-aug" id="leadership-aug"></td>
+                  <td><output for="leadership-current leadership-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="drive-hl" id="drive-hl" class="sr-only highlight-toggle">
+                        <label for="drive-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Conduite d'attelage
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="drive-current" name="drive-current" for="ag-i ag-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="drive-aug">Conduite d'attelage Augmentation</label>
+                    <input type="number" name="drive-aug" id="drive-aug"></td>
+                  <td><output for="drive-current drive-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="melee-basic-hl" id="melee-basic-hl" class="sr-only highlight-toggle">
+                        <label for="melee-basic-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Corps à corps (base)
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Corps à corps">CC</abbr></td>
+                  <td><output id="melee-basic-current" name="melee-basic-current" for="ws-i ws-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="melee-basic-aug">Corps à corps (base) Augmentation</label>
+                    <input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
+                  <td><output for="melee-basic-current melee-basic-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="melee-hl" id="melee-hl" class="sr-only highlight-toggle">
+                        <label for="melee-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Corps à corps
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Corps à corps">CC</abbr></td>
+                  <td><output id="melee-current" name="melee-current" for="ws-i ws-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="melee-aug">Corps à corps Augmentation</label>
+                    <input type="number" name="melee-aug" id="melee-aug"></td>
+                  <td><output for="melee-current melee-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="stealth-hl" id="stealth-hl" class="sr-only highlight-toggle">
+                        <label for="stealth-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Discrétion
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="stealth-current" name="stealth-current" for="ag-i ag-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="stealth-aug">Discrétion Augmentation</label>
+                    <input type="number" name="stealth-aug" id="stealth-aug"></td>
+                  <td><output for="stealth-current stealth-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="entertain-hl" id="entertain-hl" class="sr-only highlight-toggle">
+                        <label for="entertain-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Divertissement
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="entertain-current" name="entertain-current" for="fel-i fel-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="entertain-aug">Divertissement Augmentation</label>
+                    <input type="number" name="entertain-aug" id="entertain-aug"></td>
+                  <td><output for="entertain-current entertain-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="charm-animal-hl" id="charm-animal-hl" class="sr-only highlight-toggle">
+                        <label for="charm-animal-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Emprise animaux
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Force mentale">FM</abbr></td>
+                  <td><output id="charm-animal-current" name="charm-animal-current" for="wp-i wp-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="charm-animal-aug">Emprise animaux Augmentation</label>
+                    <input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
+                  <td><output for="charm-animal-current charm-animal-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="climb-hl" id="climb-hl" class="sr-only highlight-toggle">
+                        <label for="climb-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Escalade
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Force">F</abbr></td>
+                  <td><output id="climb-current" name="climb-current" for="s-i s-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="climb-aug">Escalade Augmentation</label>
+                    <input type="number" name="climb-aug" id="climb-aug"></td>
+                  <td><output for="climb-current climb-aug"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="addition">
+            <legend class="sr-only">Compétences de base</legend>
+            <div class="fake-legend" aria-hidden>Compétences de base</div>
+            <table class="left-aligned">
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th colspan="2" scope="col">
+                    <abbr title="Caractéristique">Carac.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Augmentation">Aug.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Compétence">Comp.</abbr>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="dodge-hl" id="dodge-hl" class="sr-only highlight-toggle">
+                        <label for="dodge-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Esquive
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Agilité">Ag</abbr></td>
+                  <td><output id="dodge-current" name="dodge-current" for="ag-i ag-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="dodge-aug">Esquive Augmentation</label>
+                    <input type="number" name="dodge-aug" id="dodge-aug"></td>
+                  <td><output for="dodge-current dodge-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="intimidate-hl" id="intimidate-hl" class="sr-only highlight-toggle">
+                        <label for="intimidate-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Intimidation
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Force">F</abbr></td>
+                  <td><output id="intimidate-current" name="intimidate-current" for="s-i s-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="intimidate-aug">Intimidation Augmentation</label>
+                    <input type="number" name="intimidate-aug" id="intimidate-aug"></td>
+                  <td><output for="intimidate-current intimidate-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="intuition-hl" id="intuition-hl" class="sr-only highlight-toggle">
+                        <label for="intuition-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Intuition
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Initiative">I</abbr></td>
+                  <td><output id="intuition-current" name="intuition-current" for="i-i i-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="intuition-aug">Intuition Augmentation</label>
+                    <input type="number" name="intuition-aug" id="intuition-aug"></td>
+                  <td><output for="intuition-current intuition-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="haggle-hl" id="haggle-hl" class="sr-only highlight-toggle">
+                        <label for="haggle-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Marchandage
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="haggle-current" name="haggle-current" for="fel-i fel-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="haggle-aug">Marchandage Augmentation</label>
+                    <input type="number" name="haggle-aug" id="haggle-aug"></td>
+                  <td><output for="haggle-current haggle-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="navigation-hl" id="navigation-hl" class="sr-only highlight-toggle">
+                        <label for="navigation-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Orientation
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Initiative">I</abbr></td>
+                  <td><output id="navigation-current" name="navigation-current" for="i-i i-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="navigation-aug">Orientation Augmentation</label>
+                    <input type="number" name="navigation-aug" id="navigation-aug"></td>
+                  <td><output for="navigation-current navigation-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="gamble-hl" id="gamble-hl" class="sr-only highlight-toggle">
+                        <label for="gamble-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Pari
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Intelligence">Int</abbr></td>
+                  <td><output id="gamble-current" name="gamble-current" for="int-i int-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="gamble-aug">Pari Augmentation</label>
+                    <input type="number" name="gamble-aug" id="gamble-aug"></td>
+                  <td><output for="gamble-current gamble-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="perception-hl" id="perception-hl" class="sr-only highlight-toggle">
+                        <label for="perception-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Perception
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Initiative">I</abbr></td>
+                  <td><output id="perception-current" name="perception-current" for="i-i i-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="perception-aug">Perception Augmentation</label>
+                    <input type="number" name="perception-aug" id="perception-aug"></td>
+                  <td><output for="perception-current perception-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="gossip-hl" id="gossip-hl" class="sr-only highlight-toggle">
+                        <label for="gossip-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Ragot
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="gossip-current" name="gossip-current" for="fel-i fel-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="gossip-aug">Ragot Augmentation</label>
+                    <input type="number" name="gossip-aug" id="gossip-aug"></td>
+                  <td><output for="gossip-current gossip-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="row-hl" id="row-hl" class="sr-only highlight-toggle">
+                        <label for="row-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Ramer
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Force">F</abbr></td>
+                  <td><output id="row-current" name="row-current" for="s-i s-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="row-aug">Ramer Augmentation</label>
+                    <input type="number" name="row-aug" id="row-aug"></td>
+                  <td><output for="row-current row-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="endurance-hl" id="endurance-hl" class="sr-only highlight-toggle">
+                        <label for="endurance-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Résistance
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Endurance">E</abbr></td>
+                  <td><output id="endurance-current" name="endurance-current" for="t-i t-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="endurance-aug">Résistance Augmentation</label>
+                    <input type="number" name="endurance-aug" id="endurance-aug"></td>
+                  <td><output for="endurance-current endurance-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="consume-alcohol-hl" id="consume-alcohol-hl" class="sr-only highlight-toggle">
+                        <label for="consume-alcohol-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Résistance à l'alcool
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Endurance">E</abbr></td>
+                  <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="t-i t-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="consume-alcohol-aug">Résistance à l'alcool Augmentation</label>
+                    <input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
+                  <td><output for="consume-alcohol-current consume-alcohol-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="bribery-hl" id="bribery-hl" class="sr-only highlight-toggle">
+                        <label for="bribery-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Subordination
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Social">Soc</abbr></td>
+                  <td><output id="bribery-current" name="bribery-current" for="fel-i fel-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="bribery-aug">Subordination Augmentation</label>
+                    <input type="number" name="bribery-aug" id="bribery-aug"></td>
+                  <td><output for="bribery-current bribery-aug"></output></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="outdoor-survival-hl" id="outdoor-survival-hl" class="sr-only highlight-toggle">
+                        <label for="outdoor-survival-hl" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        Survie en extérieur
+                      </div>
+                    </div>
+                  </td>
+                  <td><abbr title="Intelligence">Int</abbr></td>
+                  <td><output id="outdoor-survival-current" name="outdoor-survival-current" for="int-i int-a"></output></td>
+                  <td>
+                    <label class="sr-only" for="outdoor-survival-aug">Survie en extérieur Augmentation</label>
+                    <input type="number" name="outdoor-survival-aug" id="outdoor-survival-aug"></td>
+                  <td><output for="outdoor-survival-current outdoor-survival-aug"></output></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset class="addition custom" id="custom-skill">
+            <legend class="sr-only">Compétences avancées</legend>
+            <div class="fake-legend" aria-hidden>Compétences avancées</div>
+            <table class="left-aligned">
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th colspan="2" scope="col">
+                    <abbr title="Caractéristique">Carac.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Augmentation">Aug.</abbr>
+                  </th>
+                  <th scope="col">
+                    <abbr title="Compétence">Comp.</abbr>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="custom-skill-hl-0" id="custom-skill-hl-0" class="sr-only highlight-toggle">
+                        <label for="custom-skill-hl-0" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
+                        <input type="hidden" name="custom-skill-name-0" id="custom-skill-name-0">
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <label class="sr-only" for="custom-skill-charac-0">Caractéristique de base</label>
+                    <select class="charac-select" name="custom-skill-charac-0" id="custom-skill-charac-0">
+                      <option value="" selected>-</option>
+                      <option value="ws">CC</option>
+                      <option value="bs">CT</option>
+                      <option value="s">F</option>
+                      <option value="t">E</option>
+                      <option value="i">I</option>
+                      <option value="ag">Ag</option>
+                      <option value="dex">Dex</option>
+                      <option value="int">Int</option>
+                      <option value="wp">FM</option>
+                      <option value="fel">Soc</option>
+                    </select>
+                  </td>
+                  <td>
+                    <output id="custom-skill-initial-0" name="custom-skill-initial-0" for=""></output>
+                  </td>
+                  <td>
+                    <label class="sr-only" for="custom-skill-aug-0">Augmentation</label>
+                    <input type="text" name="custom-skill-aug-0" id="custom-skill-aug-0">
+                  </td>
+                  <td><output id="custom-skill-current-0" for="custom-skill-initial-0 custom-skill-aug-0"></output></td>
+                </tr>
+                <template id="custom-skill-row">
+                  <tr>
+                    <td>
+                      <div class="hl-wrapper">
+                      <div class="hl-wrapper-checkbox">
+                        <input type="checkbox" name="custom-skill-hl-" id="custom-skill-hl-" class="sr-only highlight-toggle">
+                        <label for="custom-skill-hl-" title="Surligner cette compétence">
+                          <svg>
+                            <use href="#highlight-inactive"/>
+                            <use href="#highlight-active"/>
+                          </svg>
+                         <span class="sr-only">Surligner cette compétence</span>
+                       </label>
+                      </div>
+                      <div class="hl-wrapper-name">
+                        <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
+                        <input type="hidden" name="custom-skill-name-" id="custom-skill-name-">
+                      </div>
+                    </div>
+                    <td>
+                      <label class="sr-only" for="custom-skill-charac-">Caractéristique de base</label>
+                      <select class="charac-select" name="custom-skill-charac-" id="custom-skill-charac-">
+                        <option value="" selected>-</option>
+                        <option value="ws">CC</option>
+                        <option value="bs">CT</option>
+                        <option value="s">F</option>
+                        <option value="t">E</option>
+                        <option value="i">I</option>
+                        <option value="ag">Ag</option>
+                        <option value="dex">Dex</option>
+                        <option value="int">Int</option>
+                        <option value="wp">FM</option>
+                        <option value="fel">Soc</option>
+                      </select>
+                    </td>
+                    <td><output id="custom-skill-initial-" name="custom-skill-initial-" for=""></output></td>
+                    <td>
+                      <label class="sr-only" for="custom-skill-aug-">Augmentation</label>
+                      <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
+                    <td><output id="custom-skill-current-" for=""></output></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+      </div>
+      <fieldset class="talents simple custom" id="talents">
+        <legend>Talents</legend>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">
+                <span id="talents-name-label">Nom du talent</span>
+              </th>
+              <th scope="col" class="narrow">
+                <abbr id="talents-counter-label" title="Nombre de fois pris">Nbre pris</abbr>
+              </th>
+              <th scope="col">
+                <span id="talents-desc-label">Description</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
+                <input type="hidden" name="talents-name-0" id="talents-name-0">
+              </td>
+              <td>
+                <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-0" id="talents-counter-0">
+              </td>
+              <td>
+                <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
+                <input type="hidden" name="talents-desc-0" id="talents-desc-0">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <template id="talents-row">
+          <tr>
+            <td>
+              <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
+              <input type="hidden" name="talents-name-" id="talents-name-">
+            </td>
+            <td>
+              <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-" id="talents-counter-">
+            </td>
+            <td>
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
+              <input type="hidden" name="talents-desc-" id="talents-desc-">
+            </td>
+          </tr>
+        </template>
+      </fieldset>
+      <fieldset class="ambitions">
+        <legend class="sr-only">Ambitions</legend>
+        <div class="fake-legend" aria-hidden>Ambitions</div>
+        <div class="blocktext-wrapper">
+          <div class="item">
+            <div class="item-label" id="ambitions-short-label">À court terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-short-label"></div>
+              <input type="hidden" name="ambitions-short" id="ambitions-short">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="ambitions-long-label">À long terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-long-label"></div>
+              <input type="hidden" name="ambitions-long" id="ambitions-long">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="party">
+        <legend class="sr-only">Groupe</legend>
+        <div class="fake-legend" aria-hidden>Groupe</div>
+        <div class="blocktext-wrapper">
+          <div class="item">
+            <div class="item-label" id="party-name-label">Nom du groupe</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-labelledBy="party-name-label"></div>
+              <input type="hidden" name="party-name" id="party-name">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="party-short-label">À court terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-short-label"></div>
+              <input type="hidden" name="party-short" id="party-short">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="party-long-label">À long terme</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-long-label"></div>
+              <input type="hidden" name="party-long" id="party-long">
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-label" id="party-members-label">Membres</div>
+            <div class="item-desc">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-members-label"></div>
+              <input type="hidden" name="party-members" id="party-members">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="page second">
+      <fieldset class="armour simple encumbrance-src custom" id="armour">
+        <legend>Armure</legend>
+        <table>
+          <thead>
+            <th scope="col">
+              <span id="armour-name-label">Nom</span>
+            </th>
+            <th scope="col">
+              <span id="armour-location-label">Localisation</span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="armour-encumbrance-label">
+                <abbr title="Encombrement">Enc</abbr>
+              </span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="armour-ap-label">
+                <abbr title="Points d'armure">PA</abbr>
+              </span>
+            </th>
+            <th scope="col">
+              <span id="armour-qualities-label">Atouts/Défauts</span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="armour-worn-label">Porté</span>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="armour-name-0" id="armour-name-0" aria-labelledBy="armour-name-label">
+              </td>
+              <td>
+                <input type="text" name="armour-location-0" id="armour-location-0" aria-labelledBy="armour-location-label">
+              </td>
+              <td>
+                <input type="number" name="armour-encumbrance-0" id="armour-encumbrance-0" aria-labelledBy="armour-encumbrance-label">
+              </td>
+              <td>
+                <input type="number" name="armour-ap-0" id="armour-ap-0" aria-labelledBy="armour-ap-label">
+              </td>
+              <td><input type="text" name="armour-qualities-0" id="armour-qualities-0" aria-labelledBy="armour-qualities-label"></td>
+              <td>
+                <input type="checkbox" name="armour-worn-0" id="armour-worn-0" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <template id="armour-row">
+          <tr>
+            <td>
+              <input type="text" name="armour-name-" id="armour-name-" aria-labelledBy="armour-name-label">
+            </td>
+            <td>
+              <input type="text" name="armour-location-" id="armour-location-" aria-labelledBy="armour-location-label">
+            </td>
+            <td>
+              <input type="number" name="armour-encumbrance-" id="armour-encumbrance-" aria-labelledBy="armour-encumbrance-label">
+            </td>
+            <td>
+              <input type="number" name="armour-ap-" id="armour-ap-" aria-labelledBy="armour-ap-label">
+            </td>
+            <td><input type="text" name="armour-qualities-" id="armour-qualities-" aria-labelledBy="armour-qualities-label"></td>
+            <td>
+              <input type="checkbox" name="armour-worn-" id="armour-worn-" aria-labelledBy="armour-worn-label">
+            </td>
+          </tr>
+        </template>
+        <output class="hidden" id="encumbrance-armour-total"></output>
+      </fieldset>
+      <fieldset class="armour-points simple">
+        <legend class="sr-only">Points d'armure (PA)</legend>
+        <div class="fake-legend" aria-hidden>Points d'armure (PA)</div>
+        <div class="armour-points-box">
+          <div class="armour-points-stat">
+            <label for="ap-head">Tête</label>
+            <input type="number" name="ap-head" id="ap-head" aria-describedBy="ap-head-desc">
+            <span id="ap-head-desc">01-09</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-left-arm">Bras faible</label>
+            <input type="number" name="ap-left-arm" id="ap-left-arm" aria-describedBy="ap-left-arm-desc">
+            <span id="ap-left-arm-desc">10-24</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-right-arm">Bras fort</label>
+            <input type="number" name="ap-right-arm" id="ap-right-arm" aria-describedBy="ap-right-arm-desc">
+            <span id="ap-right-arm-desc">25-44</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-body">Corps</label>
+            <input type="number" name="ap-body" id="ap-body" aria-describedBy="ap-body-desc">
+            <span id="ap-body-desc">45-79</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-left-leg">Jambe gauche</label>
+            <input type="number" name="ap-left-leg" id="ap-left-leg" aria-describedBy="ap-left-leg-desc">
+            <span id="ap-left-leg-desc">80-89</span>
+          </div>
+          <div class="armour-points-stat">
+            <label for="ap-right-leg">Jambe droite</label>
+            <input type="number" name="ap-right-leg" id="ap-right-leg" aria-describedBy="ap-right-leg-desc">
+            <span id="ap-right-leg-desc">90-00</span>
+          </div>
+          <div class="armour-points-stat armour-points-stat--shield">
+            <svg width="800px" height="800px" viewBox="-6 0 32 32" class="shield">
+              <path d="M10.133 2.667l-10.133 1.92c0 0 0 12.16 0 14.347 0 3.467 3.040 7.947 10.133 10.4 7.093-2.453 10.133-6.933 10.133-10.4 0-2.187 0-14.347 0-14.347l-10.133-1.92zM19.2 18.933c0 2.987-2.827 6.987-9.067 9.28-6.24-2.293-9.067-6.293-9.067-9.28v-13.44l9.067-1.76 9.067 1.707v13.493z" fill="currentColor"></path>
+            </svg>
+            <label for="ap-shield">Bouclier</label>
+            <input type="number" name="ap-shield" id="ap-shield" aria-describedBy="ap-shield-desc">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="wounds simple">
+        <legend>Blessures</legend>
+        <div class="wounds-wrapper">
+          <table class="left-aligned wounds-total">
+            <tbody>
+              <tr>
+                <th scope="row" class="narrow">
+                  <abbr title="Bonus de Force">BF</abbr>
+                </th>
+                <td>
+                  <output for="bonus-s" id="strength-bonus" name="strength-bonus">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">
+                  <abbr title="Bonus de d'Endurance fois deux">BEx2</abbr>
+                </th>
+                <td>
+                  <output for="bonus-t" id="toughness-bonus" name="toughness-bonus">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">
+                  <abbr title="Bonus de Force Mentale">BFM</abbr>
+                </th>
+                <td>
+                  <output for="bonus-wp" id="will-power-bonus" name="will-power-bonus">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">Dur à cuire</th>
+                <td>
+                  <label class="sr-only" for="hardy-bonus">Talent Dur à cuire</label>
+                  <input type="checkbox" name="hardy-bonus" id="hardy-bonus" value="hardy bonus">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="narrow">Blessures</th>
+                <td>
+                  <output for="bonus-s toughness-bonus bonus-wp" id="wounds" name="wounds">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="wounds-current simple">
+            <label class="sr-only" for="current-wounds">Points de blessure actuels</label>
+            <input type="text" name="current-wounds" id="current-wounds">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="trappings simple custom encumbrance-src" id="trappings">
+        <legend>Possessions</legend>
+        <table>
+          <thead>
+            <th scope="col">
+              <span id="trappings-name-label">Nom</span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="trappings-encumbrance-label">
+                <abbr title="Encombrement">Enc</abbr>
+              </span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="trappings-worn-label">Porté</span>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div contenteditable role="textbox" aria-labelledby="trappings-name-label"></div>
+                <input type="hidden" name="trappings-name-0" id="trappings-name-0" >
+              </td>
+              <td>
+                <input type="number" name="trappings-encumbrance-0" id="trappings-encumbrance-0" aria-labelledBy="trappings-encumbrance-label">
+              </td>
+              <td>
+                <input type="checkbox" name="trappings-worn-0" id="trappings-worn-0" aria-labelledBy="trappings-worn-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <output class="hidden" id="encumbrance-trappings-total"></output>
+        <template id="trappings-row">
+          <tr>
+            <td>
+              <div contenteditable role="textbox" aria-labelledby="trappings-name-label"></div>
+              <input type="hidden" name="trappings-name-" id="trappings-name-">
+            </td>
+            <td>
+              <input aria-labelledby="trappings-encumbrance-label" type="number" name="trappings-encumbrance-" id="trappings-encumbrance-">
+            </td>
+            <td>
+              <input type="checkbox" name="trappings-worn-" id="trappings-worn-" aria-labelledBy="trappings-worn-label">
+            </td>
+          </tr>
+        </template>
+      </fieldset>
+      <fieldset class="encumbrance addition">
+        <legend>Encombrement</legend>
+        <table class="left-aligned">
+          <tbody>
+            <tr>
+              <th scope="row" class="narrow">Armes</th>
+              <td>
+                <output for="encumbrance-weapons-total" id="encumbrance-weapons" name="encumbrance-weapons"></output>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow">Armures</th>
+              <td>
+                <output for="encumbrance-armour-total" id="encumbrance-armour" name="encumbrance-armour"></output>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow">Possessions</th>
+              <td>
+                <output for="encumbrance-trappings-total" id="encumbrance-trappings" name="encumbrance-trappings"></output>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow" id="encumbrance-max-label">
+                <abbr title="Encombrement maximum">Enc. max</abbr>
+              </th>
+              <td>
+                <input type="number" id="encumbrance-max" name="encumbrance-max" aria-labelledBy="encumbrance-max-label">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="narrow">Total</th>
+              <td>
+                <output class="encumbrance-total" for="" id="encumbrance-total" name="encumbrance-total"></output>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="encumbrance-state" class="encumbrance-state">
+          <div class="encumbrance-state-penalty encumbrance-state-penalty-0">
+            <p>Pas de pénalité</p>
+          </div>
+          <div hidden class="encumbrance-state-penalty encumbrance-state-penalty-1">
+            <p>Surchargé Niv. 1</p>
+            <ul>
+              <li>-1 mouvement (Min: 3)</li>
+              <li>-10 en agilité</li>
+              <li>+1 fatigue du voyage</li>
+            </ul>
+          </div>
+          <div hidden class="encumbrance-state-penalty encumbrance-state-penalty-2">
+            <p>Surchargé Niv. 2</p>
+            <ul>
+              <li>-2 mouvement (Min: 3)</li>
+              <li>-20 en agilité</li>
+              <li>+2 fatigue du voyage</li>
+            </ul>
+          </div>
+          <div hidden class="encumbrance-state-penalty encumbrance-state-penalty-3">
+            <p>Surchargé Niv. 3</p>
+            <ul>
+              <li>Vous ne pouvez plus vous déplacer</li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="wealth simple">
+        <legend>Richesses</legend>
+        <table class="layout-fixed">
+          <thead>
+            <tr>
+              <th scope="col" id="copper-label">
+                <abbr title="Sous de cuivre">sc</abbr>
+              </th>
+              <th scope="col" id="silver-label">
+                <abbr title="Pistoles d'argent">/-</abbr>
+              </th>
+              <th scope="col" id="gold-label">
+                <abbr title="Couronnes d'or">CO</abbr>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="number" id="copper" name="copper" aria-labelledby="copper-label">
+              </td>
+              <td>
+                <input type="number" id="silver" name="silver" aria-labelledby="silver-label">
+              </td>
+              <td>
+                <input type="number" id="gold" name="gold" aria-labelledby="gold-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="change">1CO = 20/- = 240sc</div>
+      </fieldset>
+      <fieldset class="psychology">
+        <legend class="sr-only" id="psychology-label">Psychologie</legend>
+        <div class="fake-legend" aria-hidden>Psychologie</div>
+        <div class="psychology-content">
+          <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
+          <input type="hidden" name="psychology" id="psychology">
+        </div>
+      </fieldset>
+      <fieldset class="corruption simple">
+        <legend class="sr-only">Corruption et mutation</legend>
+        <div class="fake-legend" aria-hidden>Corruption et mutation</div>
+        <div class="corruption-wrapper">
+          <div>
+            <label for="treshold">Seuil</label>
+            <input type="number" name="treshold" id="treshold">
+          </div>
+          <div>
+            <label for="corruption">Points de corruption</label>
+            <input type="number" name="corruption" id="corruption">
+          </div>
+        </div>
+        <div class="corruption-wrapper corruption-mutation">
+          <span id="mutation-label">Mutations</span>
+          <div>
+            <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="mutation-label"></div>
+            <input type="hidden" name="mutation" id="mutation">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="weapons simple encumbrance-src custom" id="weapons">
+        <legend>Armes</legend>
+        <table>
+          <thead>
+            <th scope="col">
+              <span id="weapons-name-label">Nom</span>
+            </th>
+            <th scope="col">
+              <span id="weapons-group-label">Groupe</span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="weapons-encumbrance-label">
+                <abbr title="Encombrement">Enc</abbr>
+              </span>
+            </th>
+            <th scope="col">
+              <span id="weapons-range-label">Portée/Allonge</span>
+            </th>
+            <th scope="col">
+              <span id="weapons-damage-label">Dégâts</span>
+            </th>
+            <th scope="col">
+              <span id="weapons-qualities-label">Atouts/Défauts</span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="weapons-worn-label">Porté</span>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="weapons-name-0" id="weapons-name-0" aria-labelledBy="weapons-name-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-group-0" id="weapons-group-0" aria-labelledBy="weapons-group-label">
+              </td>
+              <td>
+                <input type="number" name="weapons-encumbrance-0" id="weapons-encumbrance-0" aria-labelledBy="weapons-encumbrance-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-range-0" id="weapons-range-0" aria-labelledBy="weapons-range-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-damage-0" id="weapons-damage-0" aria-labelledBy="weapons-damage-label">
+              </td>
+              <td>
+                <input type="text" name="weapons-qualities-0" id="weapons-qualities-0" aria-labelledBy="weapons-qualities-label">
+              </td>
+              <td>
+                <input type="checkbox" name="weapons-worn-0" id="weapons-worn-0" aria-labelledBy="armour-worn-label">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <template id="weapons-row">
+          <tr>
+            <td>
+              <input type="text" name="weapons-name-" id="weapons-name-" aria-labelledBy="weapons-name-label">
+            </td>
+            <td>
+              <input type="text" name="weapons-group-" id="weapons-group-" aria-labelledBy="weapons-group-label">
+            </td>
+            <td>
+              <input type="number" name="weapons-encumbrance-" id="weapons-encumbrance-" aria-labelledBy="weapons-encumbrance-label">
+            </td>
+            <td>
+              <input type="text" name="weapons-range-" id="weapons-range-" aria-labelledBy="weapons-range-label">
+            </td>
+            <td>
+              <input type="text" name="weapons-damage-" id="weapons-damage-" aria-labelledBy="weapons-damage-label">
+            </td>
+            <td>
+              <input type="text" name="weapons-qualities-" id="weapons-qualities-" aria-labelledBy="weapons-qualities-label">
+            </td>
+            <td>
+              <input type="checkbox" name="weapons-worn-" id="weapons-worn-" aria-labelledBy="armour-worn-label">
+            </td>
+          </tr>
+        </template>
+        <output class="hidden" id="encumbrance-weapons-total"></output>
+      </fieldset>
+      <fieldset class="spells simple custom" id="spells">
+        <legend>Sorts et prières</legend>
+        <div class="spells-wrapper">
+          <label for="sin">Péché</label>
+          <input type="number" name="sin" id="sin">
+        </div>
+        <table>
+          <thead>
+            <th scope="col">
+              <span id="spells-name-label">Nom</span>
+            </th>
+            <th scope="col" class="narrow">
+              <span id="spells-cn-label">
+                <abbr title="Niveau d'incantation">NI</abbr>
+              </span>
+            </th>
+            <th scope="col">
+              <span id="spells-range-label">Portée</span>
+            </th>
+            <th scope="col">
+              <span id="spells-target-label">Cible</span>
+            </th>
+            <th scope="col">
+              <span id="spells-duration-label">Durée</span>
+            </th>
+            <th scope="col" class="medium">
+              <span id="spells-effects-label">Effets</span>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="spells-name-0" id="spells-name-0" aria-labelledBy="spells-name-label">
+              </td>
+              <td>
+                <input type="text" name="spells-cn-0" id="spells-cn-0" aria-labelledBy="spells-cn-label">
+              </td>
+              <td>
+                <input type="text" name="spells-range-0" id="spells-range-0" aria-labelledBy="spells-range-label">
+              </td>
+              <td>
+                <input type="text" name="spells-target-0" id="spells-target-0" aria-labelledBy="spells-target-label">
+              </td>
+              <td>
+                <input type="text" name="spells-duration-0" id="spells-duration-0" aria-labelledBy="spells-duration-label">
+              </td>
+              <td>
+                <input type="text" name="spells-effects-0" id="spells-effects-0" aria-labelledBy="spells-effects-label">
+              </td>
+            </tr>
+            <template id="spells-row">
+              <tr>
+                <td>
+                  <input type="text" name="spells-name-" id="spells-name-" aria-labelledBy="spells-name-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-cn-" id="spells-cn-" aria-labelledBy="spells-cn-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-range-" id="spells-range-" aria-labelledBy="spells-range-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-target-" id="spells-target-" aria-labelledBy="spells-target-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-duration-" id="spells-duration-" aria-labelledBy="spells-duration-label">
+                </td>
+                <td>
+                  <input type="text" name="spells-effects-" id="spells-effects-" aria-labelledBy="spells-effects-label">
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+    <div class="modal" id="modal">
+      <button type="button" class="button-modal close-modal" id="close-modal" aria-label="Fermer">
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.16998 14.83L14.83 9.17004" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.83 14.83L9.16998 9.17004" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <fieldset class="settings">
+        <legend>Paramètres</legend>
+        <div id="theme" class="simple theme">
+          <h2>Choisir mon thème</h2>
+          <input type="radio" name="color-scheme" id="color-scheme-1" value="light">
+          <label for="color-scheme-1">Clair</label>
+          <input type="radio" name="color-scheme" id="color-scheme-2" value="dark">
+          <label for="color-scheme-2">Foncé</label>
+          <input type="radio" name="color-scheme" id="color-scheme-3" value="auto" checked>
+          <label for="color-scheme-3">Auto</label>
+          <p class="notice">Le choix "auto" s'affichera selon la préférence paramétrée dans votre système d'exploitation.</p>
+        </div>
+        <hr>
+        <div>
+          <h2>Exporter mes données locales</h2>
+          <button type="button" class="data-button" id="export-button">Télécharger mes données</button>
+          <p class="notice">Le fichier d'export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.</p>
+        </div>
+        <hr>
+        <div>
+          <h2 id="import-db-label">Import mes données</h2>
+          <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
+          <button type="button" class="data-button" id="import-button">Envoyer</button>
+          <p hidden class="error" id="import-db-error-empty">Aucun fichier selectionné.</p>
+          <p hidden class="error" id="import-db-error-file">Le fichier doit être un fichier JSON.</p>
+          <p hidden class="error" id="import-db-error">Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l'app et, le cas échéant, contactez l'administrateur.</p>
+          <p hidden class="success" id="import-db-success">Données importées. 🎉</p>
+          <p class="notice">⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.</p>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+  <script src="../js/app.js"></script>
+</body>
+</html>

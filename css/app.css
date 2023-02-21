@@ -1,0 +1,1139 @@
+/* BASICS */
+@media (prefers-color-scheme: light) {
+  :root {
+    --grey: #b7b7b7;
+    --lightgrey: lightgrey;
+    --bgcolor: white;
+    --contrast: black;
+    --dropdown: url('../img/dropdown-light.svg');
+    --hover: hsla(0, 0%, 0%, .1);
+    --highlight: hsla(55, 100%, 78%, 0.7);
+    color-scheme: light;
+  }
+  .dark {
+    --grey: #242424;
+    --lightgrey: #444;
+    --bgcolor: #171717;
+    --contrast: #C8C8C8;
+    --dropdown: url('../img/dropdown-dark.svg');
+    --hover: hsla(100, 100%, 100%, .2);
+    --highlight: hsla(55, 100%, 19%, 0.7);
+    color-scheme: dark;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grey: #242424;
+    --lightgrey: #444;
+    --bgcolor: #171717;
+    --contrast: #C8C8C8;
+    --dropdown: url('../img/dropdown-dark.svg');
+    --hover: hsla(100, 100%, 100%, .2);
+    --highlight: hsla(55, 100%, 19%, 0.7);
+    color-scheme: dark;
+  }
+  .light {
+    --grey: #b7b7b7;
+    --lightgrey: lightgrey;
+    --bgcolor: white;
+    --contrast: black;
+    --dropdown: url('../img/dropdown-light.svg');
+    --hover: hsla(0, 0%, 0%, .1);
+    --highlight: hsla(55, 100%, 78%, 0.7);
+    color-scheme: light;
+  }
+}
+
+@font-face {
+  font-family: 'Luminari';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Luminari'), url('../fonts/Luminari-Regular.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New roman", serif;
+  background-color: var(--grey);
+  color: var(--contrast);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: Luminari, Times, serif;
+}
+
+hr {
+  position: relative;
+  margin-block: 2rem;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--bgcolor), var(--lightgrey), var(--bgcolor));
+  overflow: visible;
+}
+hr::after {
+  content: '§';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transform-origin: 50% 50%;
+  padding: 1rem;
+  background-color: var(--bgcolor);
+  color: var(--contrast);
+}
+
+[inert] {
+  opacity: .2;
+  pointer-events: none;
+}
+.app:has(> [inert]) {
+  overflow: hidden;
+}
+
+/* FORM ELEMENTS */
+fieldset {
+  margin: 0;
+  padding: 0 .5rem .5rem;
+  border: 0;
+  min-width: 0;
+  overflow: auto;
+}
+
+legend {
+  float: left;
+}
+.fake-legend, legend {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--bgcolor);
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-block-end: .5rem;
+  padding: .5rem 0 0;
+  font-weight: bold;
+  font-family: Luminari, Times, serif;
+}
+:is(.fake-legend, legend)::after {
+  content: '';
+  position: absolute;
+  height: 0.5rem;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-image: linear-gradient(var(--bgcolor), transparent);
+}
+
+.field {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  column-gap: .5rem;
+  padding-inline: .5rem;
+  align-items: center;
+}
+.field label {
+  white-space: nowrap;
+}
+
+input:is([type="text"], [type="number"]), output {
+  width: 100%;
+  border: none;
+  padding-block: 0;
+  background-color: transparent;
+}
+
+:is(input[type="text"], input[type="number"], [contenteditable]):is(:focus, :focus-visible) {
+  outline: 0;
+  background-color: hsla(0, 0%, 70%, .3);
+}
+
+input:invalid {
+  background-color: hsla(0, 100%, 70%, .3);
+}
+
+input:not([type="checkbox"], [type="radio"]), select {
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 0;
+  -webkit-appearance: none;
+  padding-inline: .125rem;
+  background-color: transparent;
+  color: var(--contrast);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  border: 0;
+  background-color: transparent;
+  text-align: center;
+  border-radius: .15em;
+}
+select:focus {
+  outline: max(2px, 0.15em) solid var(--lightgrey);
+  /* Fix for windows */
+  background-color: revert;
+}
+
+input:is([type="checkbox"],[type="radio"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--bgcolor);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: inline-grid;
+  place-content: center;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input:is([type="checkbox"],[type="radio"])::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: center;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--contrast);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="radio"]::before {
+  border-radius: 50%;
+  clip-path: none;
+}
+
+input:is([type="checkbox"],[type="radio"]):checked::before {
+  transform: scale(1);
+}
+
+input:is([type="checkbox"],[type="radio"]):focus {
+  outline: max(2px, 0.15em) solid var(--lightgrey);
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="file"] {
+  display: block;
+  padding: 0;
+}
+
+select {
+  background-image: var(--dropdown);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: .5rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0 .75rem 0 .25rem;
+}
+
+output {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+}
+
+button, .button, input[type="file"]::file-selector-button {
+  display: inline-block;
+  padding: .5rem;
+  text-decoration: none;
+  color: var(--contrast);
+  font-weight: bold;
+  border: 1px solid var(--contrast);
+  border-radius: .25rem;
+  background-color: var(--lightgrey);
+}
+
+:is(button,.button):is(:hover, :focus, :active),
+input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
+  background-color: var(--grey);
+}
+
+/* UTILITY CLASSES */
+.sr-only {
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.notice {
+  font-style: italic;
+  font-size: .9em;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+#sprite {
+  display: none;
+}
+
+/* INDEX PAGE */
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 38rem;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.tabs {
+  width: 100%;
+  background-color: var(--bgcolor);
+  border-radius: .25rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1 0 50%;
+  text-align: center;
+  padding: .75rem 0;
+  color: var(--contrast);
+  text-decoration: none;
+  font-weight: bold;
+}
+.tab:not(.active) {
+  opacity: .5;
+  background-color: var(--lightgrey)
+}
+.tab:not(.active):is(:hover, :focus, :active) {
+  opacity: .8;
+}
+
+.tab-panel {
+  border-top: 1px solid var(--grey);
+  box-sizing: border-box;
+  flex: 1 0 100%;
+  padding: 1rem;
+}
+
+.tab-panel:not(:target) {
+  display: none;
+}
+
+.forkme {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* MAIN LAYOUT */
+.app {
+  width: 100dvw;
+  height: 100dvh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  background-color: var(--contrast);
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
+}
+
+.page > * {
+  background-color: var(--bgcolor);
+}
+
+.first {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr;
+  gap: .125rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "info info info info info info talents talents talents"
+    "charac charac charac points points points talents talents talents"
+    "charac charac charac Mouvement Mouvement Mouvement talents talents talents"
+    "skills skills skills skills skills skills ambitions ambitions ambitions"
+    "skills skills skills skills skills skills party party party"
+    "skills skills skills skills skills skills party party party";
+}
+
+.second {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr .75fr;
+  gap: .125rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "armour armour armour armour armour-points armour-points wounds wounds"
+    "armour armour armour armour armour-points armour-points wounds wounds"
+    "trappings trappings trappings encumbrance armour-points armour-points psychology psychology"
+    "trappings trappings trappings encumbrance wealth wealth corruption corruption"
+    "weapons weapons weapons weapons spells spells spells spells"
+    "weapons weapons weapons weapons spells spells spells spells";
+}
+
+/* TABLES */
+table {
+  border-collapse: collapse;
+  border-style: hidden;
+  border-top: 1px solid var(--contrast);
+  width: 100%;
+}
+
+table tbody tr:hover {
+  background-color: var(--hover);
+}
+
+table .highlighted {
+  background-color: var(--highlight);
+}
+
+table :is(td, th) {
+  border: 1px solid var(--contrast);
+  text-align: center;
+  padding: .25rem .125rem;
+  font-weight: normal;
+  font-size: .8em;
+  height: 1.5em;
+}
+
+table.left-aligned tbody :is(th, td:first-child) {
+  text-align: start;
+  font-size: .7em;
+  white-space: nowrap;
+}
+
+table :is(input:not([type="checkbox"]), output) {
+  width: calc(100% - .25rem);
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+table .medium {
+  width: 35%;
+}
+table .narrow {
+  width: 10%;
+}
+
+table.layout-fixed {
+  table-layout: fixed;
+}
+
+
+/* FIRST PAGE */
+
+/* Info */
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "name name species class"
+    "career career career-tier career-tier"
+    "career-path career-path career-path status"
+    "age height hair eyes";
+  grid-area: info;
+  background-color: var(--contrast);
+  border-top: .5rem solid var(--bgcolor);
+  border-bottom: .5rem solid var(--bgcolor);
+  border-left: 1rem solid var(--bgcolor);
+  border-right: 1rem solid var(--bgcolor);
+  padding: 0;
+  font-size: 0.9em;
+  font-family: Luminari, Times, serif;
+}
+.info > * {
+  background-color: var(--bgcolor);
+}
+.info label {
+  font-weight: bold;
+}
+.eyes { grid-area: eyes; }
+.hair { grid-area: hair; }
+.height { grid-area: height; }
+.age { grid-area: age; }
+.career-path { grid-area: career-path; }
+.status { grid-area: status; }
+.career-tier { grid-area: career-tier; }
+.career { grid-area: career; }
+.species { grid-area: species; }
+.name { grid-area: name; }
+.class { grid-area: class; }
+
+/* Characteristics */
+.charac {
+  grid-area: charac;
+}
+
+/* Points */
+.points { grid-area: points; }
+
+.points-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: var(--contrast);
+  align-items: stretch;
+  gap: .125rem;
+}
+
+.points-wrapper > fieldset {
+  flex: 1 1 50%;
+  min-width: 20%;
+  padding-inline: .125rem;
+  background-color: var(--bgcolor);
+}
+
+.points-wrapper > fieldset:first-child {
+  flex-basis: 20%;
+}
+
+.points-wrapper > fieldset:last-child {
+  flex-basis: 30%;
+}
+
+.points-wrapper input {
+  font-size: .875em;
+}
+
+.counter input[type="number"] {
+  width: 25%;
+  min-width: 0;
+  padding: 0;
+}
+
+/* Movement */
+.movement {
+  grid-area: Mouvement;
+}
+.movement-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid var(--contrast);
+}
+.movement-wrapper > div {
+  flex: 1 1 33%;
+  display: inline-flex;
+  align-items: stretch;
+}
+.movement-wrapper > div:not(:first-child),
+.movement-wrapper > div :is(input, output) {
+  border-left: 1px solid var(--contrast);
+}
+
+.movement-wrapper > div label {
+  padding-inline: .25rem;
+  font-size: .8em;
+  align-self: center;
+}
+
+.movement-wrapper > div :is(input, output) {
+  text-align: center;
+  height: 1em;
+}
+
+/* Skills */
+.skills {
+  grid-area: skills;
+  background-color: var(--contrast);
+}
+.skills-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: .125rem;
+  height: 100%;
+}
+.skills-wrapper > fieldset {
+  background-color: var(--bgcolor);
+  flex: 1 1 33%;
+}
+
+.skills :is(tr:focus-within, tr:hover) .hl-wrapper-checkbox {
+  flex-basis: 1rem;
+  padding-inline-start: .25rem;
+}
+.hl-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.highlight-toggle {
+  margin: 0;
+}
+.hl-wrapper-checkbox {
+  flex: 0 0 0;
+  padding: 0;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+  direction: rtl;
+}
+.hl-wrapper-checkbox svg {
+  width: 1rem;
+  height: 1rem;
+}
+.hl-wrapper-checkbox .highlight-toggle:focus + label {
+  background-color: var(--hover);
+}
+.hl-wrapper-checkbox .highlight-toggle + label {
+  border-radius: .25rem;
+  display: inline-flex;
+  cursor: pointer;
+}
+.hl-wrapper-checkbox .highlight-toggle + label svg :last-child {
+  display: none;
+}
+.hl-wrapper-checkbox .highlight-toggle + label svg :first-child {
+  display: inline-block;
+}
+.hl-wrapper-checkbox .highlight-toggle:checked + label svg :first-child {
+  display: none;
+}
+.hl-wrapper-checkbox .highlight-toggle:checked + label svg :last-child {
+  display: inline-block;
+}
+.hl-wrapper-name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Talents */
+.talents {
+  grid-area: talents;
+}
+.talents fieldset {
+  height: 100%;
+  box-sizing: border-box;
+}
+.talents tbody :is(td:first-child, td:last-child) {
+  text-align: start;
+}
+.talents .narrow {
+  position: relative;
+}
+.talents .narrow::before {
+  position: absolute;
+  content: '';
+  border-left: 1px solid var(--contrast);
+  border-right: 1px solid var(--contrast);
+  height: 600%;
+  top: 0;
+  pointer-events: none;
+}
+
+.talents .narrow::before {
+  left: -1px;
+  right: -1px;
+}
+
+/* Ambitions & party */
+.ambitions {
+  grid-area: ambitions;
+}
+.party {
+  grid-area: party;
+}
+
+.ambitions,
+.party {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+:is(.ambitions,.party) .fake-legend {
+  flex: 0 0 auto;
+}
+
+:is(.ambitions,.party) .blocktext-wrapper {
+  flex: 1 1 100%;
+}
+
+.blocktext-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.item {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid var(--contrast);
+  padding: .5rem;
+  gap: .5rem;
+}
+.item-label {
+  flex: 0 0 20%;
+  font-size: .8em;
+}
+.item-desc {
+  flex: 1 1 100%;
+  font-size: .8em;
+}
+.item-desc div[contenteditable] {
+  height: 100%;
+  overflow: auto;
+}
+
+/* SECOND PAGE */
+
+/* Armour */
+.armour { grid-area: armour; }
+
+/* Armour points */
+.armour-points {
+  grid-area: armour-points;
+  display: flex;
+  flex-direction: column;
+}
+.armour-points .fake-legend {
+  margin: 0;
+  flex: 0 0 auto;
+}
+.armour-points-box {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  row-gap: .25rem;
+  padding-block-start: .5rem;
+  clear: left;
+}
+.armour-points-box::before {
+  content: '';
+  position: absolute;
+  inset: .5rem;
+  background-image: url('../img/silhouette.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 55% center;
+  opacity: .3;
+  z-index: 0;
+}
+.armour-points-stat {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  gap: .25rem;
+}
+.armour-points-stat input {
+  border: 1px solid var(--contrast);
+  width: 1rem;
+  text-align: center;
+}
+.armour-points-stat label {
+  font-weight: bold;
+  font-size: .7em;
+}
+.armour-points-stat span {
+  font-size: .7em;
+}
+.armour-points-stat--shield {
+  flex-basis: 100%;
+  position: relative;
+  top: -.5rem;
+  gap: .5rem;
+  padding-block-start: .25rem;
+}
+.armour-points-stat--shield input {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  background-color: transparent;
+}
+.shield {
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Trappings */
+.trappings { grid-area: trappings; }
+
+.trappings tr > :first-child {
+  text-align: left;
+}
+
+/* Psychology */
+.psychology {
+  grid-area: psychology;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+.psychology .fake-legend {
+  flex: 0 0 auto;
+}
+.psychology-content {
+  clear: left;
+  flex: 1 1 100%;
+}
+.psychology div[contenteditable] {
+  height: 100%;
+  overflow: auto;
+  font-size: .8em;
+}
+
+/* Corruption */
+.corruption {
+  grid-area: corruption;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.corruption > * {
+  flex: 0 0 auto;
+}
+
+.corruption > .corruption-mutation {
+  flex: 1 1 100%;
+  overflow: hidden;
+}
+
+.corruption-wrapper {
+  display: flex;
+  width: 100%;.fake-legend
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid var(--contrast);
+}
+.corruption-wrapper > div {
+  flex: 1 1 50%;
+  display: inline-flex;
+  align-items: stretch;
+}
+.corruption-wrapper > div:not(:first-child),
+.corruption-wrapper input {
+  border-left: 1px solid var(--contrast);
+}
+.corruption-wrapper input {
+  text-align: center;
+}
+.corruption-wrapper :is(label, span) {
+  padding-inline: .25rem;
+  font-size: .8em;
+  align-self: center;
+}
+.corruption-wrapper span {
+  flex: 0 0 auto;
+  align-self: start;
+  padding-block: .125rem;
+}
+.corruption-wrapper [contenteditable] {
+  width: 100%;
+  height: 100%;
+  font-size: .8em;
+  padding: .125rem;
+  overflow: auto;
+}
+
+/* Wealth */
+.wealth { grid-area: wealth; }
+
+.wealth input {
+  font-size: 1.3em;
+}
+
+.wealth .change {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Encumbrance */
+.encumbrance { grid-area: encumbrance; }
+
+.encumbrance-state {
+  padding: .25rem;
+}
+.encumbrance-state p {
+  font-size: .9em;
+  text-align: center;
+  margin: 0 0 .25rem 0;
+}
+.encumbrance-state ul {
+  margin: 0;
+  padding: 0 0 0 .5rem;
+  font-size: .8em;
+}
+
+/* Wounds */
+.wounds { grid-area: wounds; }
+
+.wounds-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: relative;
+}
+
+.wounds-total {
+  flex: 0 0 40%;
+}
+
+.wounds-current {
+  flex: 0 0 60%;
+  border-top: 1px solid var(--contrast);
+  border-left: 1px solid var(--contrast);
+}
+.wounds-current input {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Weapons */
+.weapons { grid-area: weapons; }
+
+/* Spells */
+.spells {
+  position: relative;
+  grid-area: spells;
+}
+
+.spells-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--contrast);
+  border-top: 0;
+  z-index: 1;
+}
+.spells-wrapper label {
+  font-size: .8em;
+  padding: .125rem .25rem;
+  border-right: 1px solid var(--contrast);
+}
+.spells-wrapper input {
+  width: 2rem;
+  font-size: .8em;
+  text-align: center;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 15% 25%;
+  background-color: var(--bgcolor);
+  box-shadow: 0 0 5px 1px var(--contrast);
+  border-radius: .5rem;
+}
+
+.modal.open {
+  display: block;
+}
+
+.settings {
+  height: 100%;
+  box-sizing: border-box;
+  padding-inline: 1rem;
+}
+.settings legend {
+   margin-block-end: 1.5rem;
+ }
+.settings > div {
+  font-size: .8em;
+}
+
+.theme label {
+  padding-inline-end: .5rem;
+}
+
+.button-modal {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: 0;
+}
+
+.button-modal:is(:hover, :focus) {
+  background-color: var(--lightgrey);
+}
+
+.button-modal svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.close-modal svg {
+  color: var(--contrast);
+}
+.open-modal svg {
+  fill: var(--contrast);
+}
+
+.close-modal {
+  top: .25rem;
+  right: .25rem;
+  padding: 0;
+  border-radius: 1rem;
+}
+
+.open-modal {
+  top: 0;
+  right: 0;
+  padding: .25rem;
+  background-color: var(--bgcolor);
+  border-left: 1px solid var(--contrast);
+  border-bottom: 1px solid var(--contrast);
+  border-bottom-left-radius: .5rem;
+}
+
+.data-button {
+  margin-block: .5rem;
+}
+
+@media (orientation: portrait), (max-width: 64em) {
+  .first {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-areas:
+    "info info info info info info"
+    "charac charac charac points points points"
+    "charac charac charac Mouvement Mouvement Mouvement"
+    "skills skills skills skills skills skills"
+    "skills skills skills skills skills skills"
+    "skills skills skills skills skills skills"
+    "talents talents talents ambitions ambitions ambitions"
+    "talents talents talents party party party"
+    "talents talents talents party party party";
+  }
+  .second {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr .75fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "armour armour armour armour armour-points armour-points"
+      "armour armour armour armour armour-points armour-points"
+      "trappings trappings psychology psychology armour-points armour-points"
+      "trappings trappings corruption corruption armour-points armour-points"
+      "trappings trappings wealth encumbrance wounds wounds"
+      "trappings trappings wealth encumbrance wounds wounds"
+      "weapons weapons weapons weapons weapons weapons"
+      "weapons weapons weapons weapons weapons weapons"
+      "spells spells spells spells spells spells"
+      "spells spells spells spells spells spells";
+  }
+}
+
+@media (max-width: 48em) {
+  .page {
+    height: auto;
+    scroll-snap-align: none;
+  }
+  .first {
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-auto-flow: column;
+    grid-template-areas:
+    "info info info"
+    "charac charac charac"
+    "points points points"
+    "Mouvement Mouvement Mouvement"
+    "skills skills skills"
+    "talents talents talents"
+    "ambitions ambitions ambitions"
+    "party party party";
+  }
+  .second {
+    border-top: .125rem solid var(--contrast);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "armour armour armour"
+      "armour-points armour-points armour-points"
+      "trappings trappings trappings"
+      "psychology psychology wealth"
+      "corruption corruption encumbrance"
+      "wounds wounds wounds"
+      "weapons weapons weapons"
+      "spells spells spells";
+  }
+  .skills-wrapper {
+    flex-direction: column;
+  }
+  .modal {
+    inset: 5%;
+  }
+}
+
+@media (max-width: 25em) {
+  .first, .second, .info, .info .field {
+    display: block;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warhammer Fantasy Role Play\'s character sheet</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#b7b7b7">
+  <meta name="theme-color" content="#b7b7b7">
+  <meta property="og:title" content="Warhammer Fantasy Role Play\'s character sheet" />
+  <meta property="og:description" content="An online tool to help you manage your Warhammer Fantasy Role Play" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="android-chrome-192x192.png" />
+  <meta property="og:url" content="https://gooz.github.io/wfrp-sheet/" />
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="wrapper">
+    <img class="logo" src="android-chrome-192x192.png" alt="">
+    <div class="tabs">
+      <a class="tab active" href="#en">🇬🇧 English version</a>
+      <a class="tab" href="#fr"  lang="fr">🇫🇷 Version française</a>
+      <div id="en" class="tab-panel">
+        <h1 class="text-align-center">Welcome</h1>
+        <hr>
+        <h2>App's presentation</h2>
+        <p>This app is an online tool to help you manage your <strong>Warhammer Fantasy Role Play</strong> game's character sheet.</p>
+        <p>No Ads, no tracker and no data storage on a server, whether it's personal data or not.</p>
+        <p>All your data is stored on your localStorage, meaning it stays in your browser's storage, on your computer.</p>
+        <hr>
+        <h2>App's features</h2>
+        <ul>
+          <li>Auto-filling cells</li>
+          <li>Auto-calculated final values (initial + advances)</li>
+          <li>Responsive layout</li>
+          <li>Dark mode</li>
+          <li>Highlight career skills</li>
+          <li>Import/Export data</li>
+          <li>Available in english & french</li>
+        </ul>
+        <hr>
+        <p class="text-align-center"><a class="button" href="en/">See the character sheet</a></p>
+      </div>
+      <div id="fr" class="tab-panel" lang="fr">
+        <h1 class="text-align-center">Bienvenue</h1>
+        <hr>
+        <h2>Présentation de l'application</h2>
+        <p>Cette application est un outil en ligne pour gérer votre fiche de personnage pour le jeu de rôle <strong lang="en">Warhammer Fantasy Role Play</strong>.</p>
+        <p>Elle est garantie sans publicité, sans <span lang="en">tracker</span> et sans stockage sur serveur de données, personnelles ou non.</p>
+        <p>Toute donnée renseignée est stockée en <span lang="en">localStorage</span>, c'est à dire dans le stockage de votre navigateur, sur votre machine.</p>
+        <hr>
+        <h2>Fonctionnaliltés de l'application</h2>
+        <ul>
+          <li>Remplissage automatique de cellules</li>
+          <li>Calculs automatiques des valeurs finales (initiales + augmentations)</li>
+          <li>Mise en page adaptative</li>
+          <li>Thème sombre</li>
+          <li>Surlignage de compétences de carrière</li>
+          <li>Import/Export de données</li>
+          <li>Disponible en français et anglais</li>
+        </ul>
+        <hr>
+        <p class="text-align-center"><a class="button" href="fr/">Voir la fiche de personnage</a></p>
+      </div>
+    </div>
+  </div>
+  <a class="forkme" href="https://github.com/GoOz/wfrp-sheet/"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      window.location.hash = '#en';
+    });
+  </script>
+</body>
+</html>
