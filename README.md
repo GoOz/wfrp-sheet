@@ -1,6 +1,16 @@
 # Warhammer Fantasy RolePlay (4th edition) sheet
 An online tool to help you manage your **Warhammer Fantasy Role Play** game's character sheet
 
+## Screenshots
+
+### Page 1
+![First page of the app](screenshot-page1.png)
+### Page 2
+![Second page of the app](screenshot-page2.png)
+### Settings modal
+![Settings modal of the app](screenshot-settings.png)
+
+[See for yourself](https://gooz.github.io/wfrp-sheet/)
 ## App's presentation
 
 No Ads, no tracker and no data storage on a server, whether it's personal data or not.
@@ -135,3 +145,5 @@ If you want to modify this app for your own copy or to make a pull request later
 5. Profit 🎲
 
 **Pull requests and Issues are obviously welcome.**
+
+[That's cool, now show me what it looks like](https://gooz.github.io/wfrp-sheet/)
