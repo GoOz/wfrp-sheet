@@ -123,8 +123,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
           i++
         }
 
-        // Add a blank row for new addition
-        addNewRow(tbody, i);
+        if (i > 1) {
+          // Add a blank row for new addition
+          addNewRow(tbody, i);
+        }
       })
 
       // Fill every inputs in the page
@@ -136,7 +138,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           if (input.value === item) {
             input.checked = true;
           };
-        } else if (input.type === 'checkbox' && item === "true") {
+        } else if (input.type === 'checkbox' && (item === "true" || item === "on") ) {
           input.checked = true;
         } else {
           input.value = item ?? null;
@@ -245,7 +247,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const output = type.querySelector(`#encumbrance-${type.id}-total`);
 
     let total = 0;
-    for (let i = 0; i < weights.length; i++) {
+    for (let i = 0; i < weights.length - 1; i++) {
       let value = Number(weights[i].value);
       const worn = type.querySelector(`#${type.id}-worn-${i}`).checked;
 
