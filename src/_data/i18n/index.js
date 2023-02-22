@@ -59,7 +59,7 @@ module.exports = {
       'en': 'Career Tier'
     },
     careerPath: {
-      'fr': 'Schémar de carrière',
+      'fr': 'Schéma de carrière',
       'en': 'Career Path'
     },
     status: {
