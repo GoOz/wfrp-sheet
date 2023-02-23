@@ -1,0 +1,33 @@
+{% capture db %}skillsAlpha-{{ locale }}{% endcapture %}
+
+{% assign skills = collections[db] | slice: start, end %}
+{% for skill in skills %}
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="{{ skill.id }}-hl" id="{{ skill.id }}-hl" class="sr-only highlight-toggle">
+          <label for="{{ skill.id }}-hl" title="{{ 'skills.highlight' | i18n }}">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">{{ 'skills.highlight' | i18n }}</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          {{ skill.label[locale] }}
+        </div>
+      </div>
+    </td>
+    <td><abbr title="{{ skill.charac | downcase | characFull | i18n }}">{{ skill.charac | downcase | characAbbr | i18n }}</abbr></td>
+    <td><output id="{{ skill.id }}-current" name="{{ skill.id }}-current" for="{{ skill.charac | downcase }}-i {{ skill.charac | downcase }}-a"></output></td>
+    <td>
+      <label class="sr-only" for="{{ skill.id }}-aug">
+        {{ skill.label[locale] }}
+        {{ 'skills.adv' | i18n }}
+      </label>
+      <input type="number" name="{{ skill.id }}-aug" id="{{ skill.id }}-aug"></td>
+    <td><output for="{{ skill.id }}-current {{ skill.id }}-aug"></output></td>
+  </tr>
+  {% endfor %}

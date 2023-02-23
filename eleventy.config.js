@@ -20,6 +20,33 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy({ "root": "/" });
 
+  eleventyConfig.addFilter("characFull", function(value) {
+    return `charac.${value}.full`
+  });
+  eleventyConfig.addFilter("characAbbr", function(value) {
+    return `charac.${value}.abbr`
+  });
+
+  eleventyConfig.addCollection("skillsAlpha-en", (collectionApi) => {
+    const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
+    arr.sort((a, b) => {
+      const aText = a.label.en.toLowerCase();
+      const bText = b.label.en.toLowerCase();
+      return aText.localeCompare(bText);
+    })
+    return arr
+  });
+
+  eleventyConfig.addCollection("skillsAlpha-fr", (collectionApi) => {
+    const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
+    arr.sort((a, b) => {
+      const aText = a.label.fr.toLowerCase();
+      const bText = b.label.fr.toLowerCase();
+      return aText.localeCompare(bText);
+    })
+    return arr
+  });
+
   return {
     dir: {
       input: "src",
