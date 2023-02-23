@@ -117,15 +117,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       custom.forEach(custom => {
         const tbody = custom.querySelector('tbody');
         const type = custom.id;
-        let i = 1;
+        let i = 0;
         while (localStorage.getItem(`${type}-name-${i}`)) {
-          addNewRow(tbody, i);
+          addNewRow(tbody, i+1);
           i++
-        }
-
-        if (i > 1) {
-          // Add a blank row for new addition
-          addNewRow(tbody, i);
         }
       })
 
@@ -196,6 +191,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Store data from addition inputs and update related outputs
   function handleAdditionInput(event) {
     handleSimpleInput(event);
+    if(event.target.hasAttribute('contenteditable')) {
+      return;
+    }
     const outputs = document.querySelectorAll(`output[for~=${event.target.id}]:not(.bonus)`);
     updateOutputs(outputs);
     updateBonuses();
