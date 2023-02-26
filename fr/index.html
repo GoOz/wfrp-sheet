@@ -323,7 +323,7 @@
       </fieldset>
       <div class="skills">
         <div class="skills-wrapper">
-          <fieldset class="addition">
+          <fieldset class="addition basic">
             <legend class="sr-only">Compétences de base</legend>
             <div class="fake-legend" aria-hidden>Compétences de base</div>
             <table class="left-aligned">
@@ -342,335 +342,392 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="art-hl" id="art-hl" class="sr-only highlight-toggle">
-                        <label for="art-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Art
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Dextérité">Dex</abbr></td>
-                  <td><output name="art-current" for="dex-i dex-a" id="art-current"></output></td>
-                  <td>
-                    <label class="sr-only" for="art-aug">Art Augmentation</label>
-                    <input type="number" name="art-aug" id="art-aug"></td>
-                  <td><output for="art-current art-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="athletics-hl" id="athletics-hl" class="sr-only highlight-toggle">
-                        <label for="athletics-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Athlétisme
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Agilité">Ag</abbr></td>
-                  <td><output id="athletics-current" name="athletics-current" for="ag-i ag-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="athletics-aug">Athlétisme Augmentation</label>
-                    <input type="number" name="athletics-aug" id="athletics-aug"></td>
-                  <td><output for="athletics-current athletics-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="cool-hl" id="cool-hl" class="sr-only highlight-toggle">
-                        <label for="cool-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Calme
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Force mentale">FM</abbr></td>
-                  <td><output id="cool-current" name="cool-current" for="wp-i wp-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="cool-aug">Calme Augmentation</label>
-                    <input type="number" name="cool-aug" id="cool-aug"></td>
-                  <td><output for="cool-current cool-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="charm-hl" id="charm-hl" class="sr-only highlight-toggle">
-                        <label for="charm-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Charme
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="charm-current" name="charm-current" for="fel-i fel-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="charm-aug">Charme Augmentation</label>
-                    <input type="number" name="charm-aug" id="charm-aug"></td>
-                  <td><output for="charm-current charm-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="ride-hl" id="ride-hl" class="sr-only highlight-toggle">
-                        <label for="ride-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Chevaucher
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Agilité">Ag</abbr></td>
-                  <td><output id="ride-current" name="ride-current" for="ag-i ag-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="ride-aug">Chevaucher Augmentation</label>
-                    <input type="number" name="ride-aug" id="ride-aug"></td>
-                  <td><output for="ride-current ride-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="leadership-hl" id="leadership-hl" class="sr-only highlight-toggle">
-                        <label for="leadership-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Commandement
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="leadership-current" name="leadership-current" for="fel-i fel-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="leadership-aug">Commandement Augmentation</label>
-                    <input type="number" name="leadership-aug" id="leadership-aug"></td>
-                  <td><output for="leadership-current leadership-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="drive-hl" id="drive-hl" class="sr-only highlight-toggle">
-                        <label for="drive-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Conduite d&apos;attelage
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Agilité">Ag</abbr></td>
-                  <td><output id="drive-current" name="drive-current" for="ag-i ag-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="drive-aug">Conduite d&apos;attelage Augmentation</label>
-                    <input type="number" name="drive-aug" id="drive-aug"></td>
-                  <td><output for="drive-current drive-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="melee-basic-hl" id="melee-basic-hl" class="sr-only highlight-toggle">
-                        <label for="melee-basic-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Corps à corps (base)
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Corps à corps">CC</abbr></td>
-                  <td><output id="melee-basic-current" name="melee-basic-current" for="ws-i ws-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="melee-basic-aug">Corps à corps (base) Augmentation</label>
-                    <input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
-                  <td><output for="melee-basic-current melee-basic-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="melee-hl" id="melee-hl" class="sr-only highlight-toggle">
-                        <label for="melee-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Corps à corps
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Corps à corps">CC</abbr></td>
-                  <td><output id="melee-current" name="melee-current" for="ws-i ws-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="melee-aug">Corps à corps Augmentation</label>
-                    <input type="number" name="melee-aug" id="melee-aug"></td>
-                  <td><output for="melee-current melee-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="stealth-hl" id="stealth-hl" class="sr-only highlight-toggle">
-                        <label for="stealth-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Discrétion
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Agilité">Ag</abbr></td>
-                  <td><output id="stealth-current" name="stealth-current" for="ag-i ag-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="stealth-aug">Discrétion Augmentation</label>
-                    <input type="number" name="stealth-aug" id="stealth-aug"></td>
-                  <td><output for="stealth-current stealth-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="entertain-hl" id="entertain-hl" class="sr-only highlight-toggle">
-                        <label for="entertain-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Divertissement
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="entertain-current" name="entertain-current" for="fel-i fel-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="entertain-aug">Divertissement Augmentation</label>
-                    <input type="number" name="entertain-aug" id="entertain-aug"></td>
-                  <td><output for="entertain-current entertain-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="charm-animal-hl" id="charm-animal-hl" class="sr-only highlight-toggle">
-                        <label for="charm-animal-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Emprise animaux
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Force mentale">FM</abbr></td>
-                  <td><output id="charm-animal-current" name="charm-animal-current" for="wp-i wp-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="charm-animal-aug">Emprise animaux Augmentation</label>
-                    <input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
-                  <td><output for="charm-animal-current charm-animal-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="climb-hl" id="climb-hl" class="sr-only highlight-toggle">
-                        <label for="climb-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Escalade
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Force">F</abbr></td>
-                  <td><output id="climb-current" name="climb-current" for="s-i s-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="climb-aug">Escalade Augmentation</label>
-                    <input type="number" name="climb-aug" id="climb-aug"></td>
-                  <td><output for="climb-current climb-aug"></output></td>
-                </tr>
+                
+
+
+
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="art-hl" id="art-hl" class="sr-only highlight-toggle">
+          <label for="art-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Art
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Dextérité">Dex</abbr></td>
+    <td><output id="art-current" name="art-current" for="dex-i dex-a"></output></td>
+    <td>
+      <label class="sr-only" for="art-aug">
+        Art
+        Augmentation
+      </label>
+      <input type="number" name="art-aug" id="art-aug"></td>
+    <td><output for="art-current art-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="athletics-hl" id="athletics-hl" class="sr-only highlight-toggle">
+          <label for="athletics-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Athlétisme
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Agilité">Ag</abbr></td>
+    <td><output id="athletics-current" name="athletics-current" for="ag-i ag-a"></output></td>
+    <td>
+      <label class="sr-only" for="athletics-aug">
+        Athlétisme
+        Augmentation
+      </label>
+      <input type="number" name="athletics-aug" id="athletics-aug"></td>
+    <td><output for="athletics-current athletics-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="cool-hl" id="cool-hl" class="sr-only highlight-toggle">
+          <label for="cool-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Calme
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Force mentale">FM</abbr></td>
+    <td><output id="cool-current" name="cool-current" for="wp-i wp-a"></output></td>
+    <td>
+      <label class="sr-only" for="cool-aug">
+        Calme
+        Augmentation
+      </label>
+      <input type="number" name="cool-aug" id="cool-aug"></td>
+    <td><output for="cool-current cool-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="charm-hl" id="charm-hl" class="sr-only highlight-toggle">
+          <label for="charm-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Charme
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Social">Soc</abbr></td>
+    <td><output id="charm-current" name="charm-current" for="fel-i fel-a"></output></td>
+    <td>
+      <label class="sr-only" for="charm-aug">
+        Charme
+        Augmentation
+      </label>
+      <input type="number" name="charm-aug" id="charm-aug"></td>
+    <td><output for="charm-current charm-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="ride-hl" id="ride-hl" class="sr-only highlight-toggle">
+          <label for="ride-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Chevaucher
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Agilité">Ag</abbr></td>
+    <td><output id="ride-current" name="ride-current" for="ag-i ag-a"></output></td>
+    <td>
+      <label class="sr-only" for="ride-aug">
+        Chevaucher
+        Augmentation
+      </label>
+      <input type="number" name="ride-aug" id="ride-aug"></td>
+    <td><output for="ride-current ride-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="leadership-hl" id="leadership-hl" class="sr-only highlight-toggle">
+          <label for="leadership-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Commandement
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Social">Soc</abbr></td>
+    <td><output id="leadership-current" name="leadership-current" for="fel-i fel-a"></output></td>
+    <td>
+      <label class="sr-only" for="leadership-aug">
+        Commandement
+        Augmentation
+      </label>
+      <input type="number" name="leadership-aug" id="leadership-aug"></td>
+    <td><output for="leadership-current leadership-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="drive-hl" id="drive-hl" class="sr-only highlight-toggle">
+          <label for="drive-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Conduite d&apos;attelage
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Agilité">Ag</abbr></td>
+    <td><output id="drive-current" name="drive-current" for="ag-i ag-a"></output></td>
+    <td>
+      <label class="sr-only" for="drive-aug">
+        Conduite d&apos;attelage
+        Augmentation
+      </label>
+      <input type="number" name="drive-aug" id="drive-aug"></td>
+    <td><output for="drive-current drive-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="melee-hl" id="melee-hl" class="sr-only highlight-toggle">
+          <label for="melee-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Corps à corps
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Corps à corps">CC</abbr></td>
+    <td><output id="melee-current" name="melee-current" for="ws-i ws-a"></output></td>
+    <td>
+      <label class="sr-only" for="melee-aug">
+        Corps à corps
+        Augmentation
+      </label>
+      <input type="number" name="melee-aug" id="melee-aug"></td>
+    <td><output for="melee-current melee-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="melee-basic-hl" id="melee-basic-hl" class="sr-only highlight-toggle">
+          <label for="melee-basic-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Corps à corps (base)
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Corps à corps">CC</abbr></td>
+    <td><output id="melee-basic-current" name="melee-basic-current" for="ws-i ws-a"></output></td>
+    <td>
+      <label class="sr-only" for="melee-basic-aug">
+        Corps à corps (base)
+        Augmentation
+      </label>
+      <input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
+    <td><output for="melee-basic-current melee-basic-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="stealth-hl" id="stealth-hl" class="sr-only highlight-toggle">
+          <label for="stealth-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Discrétion
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Agilité">Ag</abbr></td>
+    <td><output id="stealth-current" name="stealth-current" for="ag-i ag-a"></output></td>
+    <td>
+      <label class="sr-only" for="stealth-aug">
+        Discrétion
+        Augmentation
+      </label>
+      <input type="number" name="stealth-aug" id="stealth-aug"></td>
+    <td><output for="stealth-current stealth-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="entertain-hl" id="entertain-hl" class="sr-only highlight-toggle">
+          <label for="entertain-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Divertissement
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Social">Soc</abbr></td>
+    <td><output id="entertain-current" name="entertain-current" for="fel-i fel-a"></output></td>
+    <td>
+      <label class="sr-only" for="entertain-aug">
+        Divertissement
+        Augmentation
+      </label>
+      <input type="number" name="entertain-aug" id="entertain-aug"></td>
+    <td><output for="entertain-current entertain-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="charm-animal-hl" id="charm-animal-hl" class="sr-only highlight-toggle">
+          <label for="charm-animal-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Emprise animaux
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Force mentale">FM</abbr></td>
+    <td><output id="charm-animal-current" name="charm-animal-current" for="wp-i wp-a"></output></td>
+    <td>
+      <label class="sr-only" for="charm-animal-aug">
+        Emprise animaux
+        Augmentation
+      </label>
+      <input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
+    <td><output for="charm-animal-current charm-animal-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="climb-hl" id="climb-hl" class="sr-only highlight-toggle">
+          <label for="climb-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Escalade
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Force">F</abbr></td>
+    <td><output id="climb-current" name="climb-current" for="s-i s-a"></output></td>
+    <td>
+      <label class="sr-only" for="climb-aug">
+        Escalade
+        Augmentation
+      </label>
+      <input type="number" name="climb-aug" id="climb-aug"></td>
+    <td><output for="climb-current climb-aug"></output></td>
+  </tr>
+  
+
               </tbody>
             </table>
           </fieldset>
-          <fieldset class="addition">
+          <fieldset class="addition basic">
             <legend class="sr-only">Compétences de base</legend>
             <div class="fake-legend" aria-hidden>Compétences de base</div>
             <table class="left-aligned">
@@ -689,331 +746,388 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="dodge-hl" id="dodge-hl" class="sr-only highlight-toggle">
-                        <label for="dodge-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Esquive
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Agilité">Ag</abbr></td>
-                  <td><output id="dodge-current" name="dodge-current" for="ag-i ag-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="dodge-aug">Esquive Augmentation</label>
-                    <input type="number" name="dodge-aug" id="dodge-aug"></td>
-                  <td><output for="dodge-current dodge-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="intimidate-hl" id="intimidate-hl" class="sr-only highlight-toggle">
-                        <label for="intimidate-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Intimidation
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Force">F</abbr></td>
-                  <td><output id="intimidate-current" name="intimidate-current" for="s-i s-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="intimidate-aug">Intimidation Augmentation</label>
-                    <input type="number" name="intimidate-aug" id="intimidate-aug"></td>
-                  <td><output for="intimidate-current intimidate-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="intuition-hl" id="intuition-hl" class="sr-only highlight-toggle">
-                        <label for="intuition-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Intuition
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Initiative">I</abbr></td>
-                  <td><output id="intuition-current" name="intuition-current" for="i-i i-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="intuition-aug">Intuition Augmentation</label>
-                    <input type="number" name="intuition-aug" id="intuition-aug"></td>
-                  <td><output for="intuition-current intuition-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="haggle-hl" id="haggle-hl" class="sr-only highlight-toggle">
-                        <label for="haggle-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Marchandage
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="haggle-current" name="haggle-current" for="fel-i fel-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="haggle-aug">Marchandage Augmentation</label>
-                    <input type="number" name="haggle-aug" id="haggle-aug"></td>
-                  <td><output for="haggle-current haggle-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="navigation-hl" id="navigation-hl" class="sr-only highlight-toggle">
-                        <label for="navigation-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Orientation
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Initiative">I</abbr></td>
-                  <td><output id="navigation-current" name="navigation-current" for="i-i i-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="navigation-aug">Orientation Augmentation</label>
-                    <input type="number" name="navigation-aug" id="navigation-aug"></td>
-                  <td><output for="navigation-current navigation-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="gamble-hl" id="gamble-hl" class="sr-only highlight-toggle">
-                        <label for="gamble-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Pari
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Intelligence">Int</abbr></td>
-                  <td><output id="gamble-current" name="gamble-current" for="int-i int-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="gamble-aug">Pari Augmentation</label>
-                    <input type="number" name="gamble-aug" id="gamble-aug"></td>
-                  <td><output for="gamble-current gamble-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="perception-hl" id="perception-hl" class="sr-only highlight-toggle">
-                        <label for="perception-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Perception
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Initiative">I</abbr></td>
-                  <td><output id="perception-current" name="perception-current" for="i-i i-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="perception-aug">Perception Augmentation</label>
-                    <input type="number" name="perception-aug" id="perception-aug"></td>
-                  <td><output for="perception-current perception-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="gossip-hl" id="gossip-hl" class="sr-only highlight-toggle">
-                        <label for="gossip-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Ragot
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="gossip-current" name="gossip-current" for="fel-i fel-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="gossip-aug">Ragot Augmentation</label>
-                    <input type="number" name="gossip-aug" id="gossip-aug"></td>
-                  <td><output for="gossip-current gossip-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="row-hl" id="row-hl" class="sr-only highlight-toggle">
-                        <label for="row-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Ramer
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Force">F</abbr></td>
-                  <td><output id="row-current" name="row-current" for="s-i s-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="row-aug">Ramer Augmentation</label>
-                    <input type="number" name="row-aug" id="row-aug"></td>
-                  <td><output for="row-current row-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="endurance-hl" id="endurance-hl" class="sr-only highlight-toggle">
-                        <label for="endurance-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Résistance
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Endurance">E</abbr></td>
-                  <td><output id="endurance-current" name="endurance-current" for="t-i t-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="endurance-aug">Résistance Augmentation</label>
-                    <input type="number" name="endurance-aug" id="endurance-aug"></td>
-                  <td><output for="endurance-current endurance-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="consume-alcohol-hl" id="consume-alcohol-hl" class="sr-only highlight-toggle">
-                        <label for="consume-alcohol-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Résistance à l&apos;alcool
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Endurance">E</abbr></td>
-                  <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="t-i t-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="consume-alcohol-aug">Résistance à l&apos;alcool Augmentation</label>
-                    <input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
-                  <td><output for="consume-alcohol-current consume-alcohol-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="bribery-hl" id="bribery-hl" class="sr-only highlight-toggle">
-                        <label for="bribery-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Subordination
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Social">Soc</abbr></td>
-                  <td><output id="bribery-current" name="bribery-current" for="fel-i fel-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="bribery-aug">Subordination Augmentation</label>
-                    <input type="number" name="bribery-aug" id="bribery-aug"></td>
-                  <td><output for="bribery-current bribery-aug"></output></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="outdoor-survival-hl" id="outdoor-survival-hl" class="sr-only highlight-toggle">
-                        <label for="outdoor-survival-hl" title="Surligner cette compétence">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">Surligner cette compétence</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        Survie en extérieur
-                      </div>
-                    </div>
-                  </td>
-                  <td><abbr title="Intelligence">Int</abbr></td>
-                  <td><output id="outdoor-survival-current" name="outdoor-survival-current" for="int-i int-a"></output></td>
-                  <td>
-                    <label class="sr-only" for="outdoor-survival-aug">Survie en extérieur Augmentation</label>
-                    <input type="number" name="outdoor-survival-aug" id="outdoor-survival-aug"></td>
-                  <td><output for="outdoor-survival-current outdoor-survival-aug"></output></td>
-                </tr>
+                
+
+
+
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="dodge-hl" id="dodge-hl" class="sr-only highlight-toggle">
+          <label for="dodge-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Esquive
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Agilité">Ag</abbr></td>
+    <td><output id="dodge-current" name="dodge-current" for="ag-i ag-a"></output></td>
+    <td>
+      <label class="sr-only" for="dodge-aug">
+        Esquive
+        Augmentation
+      </label>
+      <input type="number" name="dodge-aug" id="dodge-aug"></td>
+    <td><output for="dodge-current dodge-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="intimidate-hl" id="intimidate-hl" class="sr-only highlight-toggle">
+          <label for="intimidate-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Intimidation
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Force">F</abbr></td>
+    <td><output id="intimidate-current" name="intimidate-current" for="s-i s-a"></output></td>
+    <td>
+      <label class="sr-only" for="intimidate-aug">
+        Intimidation
+        Augmentation
+      </label>
+      <input type="number" name="intimidate-aug" id="intimidate-aug"></td>
+    <td><output for="intimidate-current intimidate-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="intuition-hl" id="intuition-hl" class="sr-only highlight-toggle">
+          <label for="intuition-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Intuition
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Initiative">I</abbr></td>
+    <td><output id="intuition-current" name="intuition-current" for="i-i i-a"></output></td>
+    <td>
+      <label class="sr-only" for="intuition-aug">
+        Intuition
+        Augmentation
+      </label>
+      <input type="number" name="intuition-aug" id="intuition-aug"></td>
+    <td><output for="intuition-current intuition-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="haggle-hl" id="haggle-hl" class="sr-only highlight-toggle">
+          <label for="haggle-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Marchandage
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Social">Soc</abbr></td>
+    <td><output id="haggle-current" name="haggle-current" for="fel-i fel-a"></output></td>
+    <td>
+      <label class="sr-only" for="haggle-aug">
+        Marchandage
+        Augmentation
+      </label>
+      <input type="number" name="haggle-aug" id="haggle-aug"></td>
+    <td><output for="haggle-current haggle-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="navigation-hl" id="navigation-hl" class="sr-only highlight-toggle">
+          <label for="navigation-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Orientation
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Initiative">I</abbr></td>
+    <td><output id="navigation-current" name="navigation-current" for="i-i i-a"></output></td>
+    <td>
+      <label class="sr-only" for="navigation-aug">
+        Orientation
+        Augmentation
+      </label>
+      <input type="number" name="navigation-aug" id="navigation-aug"></td>
+    <td><output for="navigation-current navigation-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="gamble-hl" id="gamble-hl" class="sr-only highlight-toggle">
+          <label for="gamble-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Pari
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Intelligence">Int</abbr></td>
+    <td><output id="gamble-current" name="gamble-current" for="int-i int-a"></output></td>
+    <td>
+      <label class="sr-only" for="gamble-aug">
+        Pari
+        Augmentation
+      </label>
+      <input type="number" name="gamble-aug" id="gamble-aug"></td>
+    <td><output for="gamble-current gamble-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="perception-hl" id="perception-hl" class="sr-only highlight-toggle">
+          <label for="perception-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Perception
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Initiative">I</abbr></td>
+    <td><output id="perception-current" name="perception-current" for="i-i i-a"></output></td>
+    <td>
+      <label class="sr-only" for="perception-aug">
+        Perception
+        Augmentation
+      </label>
+      <input type="number" name="perception-aug" id="perception-aug"></td>
+    <td><output for="perception-current perception-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="gossip-hl" id="gossip-hl" class="sr-only highlight-toggle">
+          <label for="gossip-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Ragot
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Social">Soc</abbr></td>
+    <td><output id="gossip-current" name="gossip-current" for="fel-i fel-a"></output></td>
+    <td>
+      <label class="sr-only" for="gossip-aug">
+        Ragot
+        Augmentation
+      </label>
+      <input type="number" name="gossip-aug" id="gossip-aug"></td>
+    <td><output for="gossip-current gossip-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="row-hl" id="row-hl" class="sr-only highlight-toggle">
+          <label for="row-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Ramer
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Force">F</abbr></td>
+    <td><output id="row-current" name="row-current" for="s-i s-a"></output></td>
+    <td>
+      <label class="sr-only" for="row-aug">
+        Ramer
+        Augmentation
+      </label>
+      <input type="number" name="row-aug" id="row-aug"></td>
+    <td><output for="row-current row-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="endurance-hl" id="endurance-hl" class="sr-only highlight-toggle">
+          <label for="endurance-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Résistance
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Endurance">E</abbr></td>
+    <td><output id="endurance-current" name="endurance-current" for="t-i t-a"></output></td>
+    <td>
+      <label class="sr-only" for="endurance-aug">
+        Résistance
+        Augmentation
+      </label>
+      <input type="number" name="endurance-aug" id="endurance-aug"></td>
+    <td><output for="endurance-current endurance-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="consume-alcohol-hl" id="consume-alcohol-hl" class="sr-only highlight-toggle">
+          <label for="consume-alcohol-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Résistance à l&apos;alcool
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Endurance">E</abbr></td>
+    <td><output id="consume-alcohol-current" name="consume-alcohol-current" for="t-i t-a"></output></td>
+    <td>
+      <label class="sr-only" for="consume-alcohol-aug">
+        Résistance à l&apos;alcool
+        Augmentation
+      </label>
+      <input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
+    <td><output for="consume-alcohol-current consume-alcohol-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="bribery-hl" id="bribery-hl" class="sr-only highlight-toggle">
+          <label for="bribery-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Subordination
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Social">Soc</abbr></td>
+    <td><output id="bribery-current" name="bribery-current" for="fel-i fel-a"></output></td>
+    <td>
+      <label class="sr-only" for="bribery-aug">
+        Subordination
+        Augmentation
+      </label>
+      <input type="number" name="bribery-aug" id="bribery-aug"></td>
+    <td><output for="bribery-current bribery-aug"></output></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <div class="hl-wrapper">
+        <div class="hl-wrapper-checkbox">
+          <input type="checkbox" name="outdoor-survival-hl" id="outdoor-survival-hl" class="sr-only highlight-toggle">
+          <label for="outdoor-survival-hl" title="Surligner cette compétence">
+            <svg>
+              <use href="#highlight-inactive"/>
+              <use href="#highlight-active"/>
+            </svg>
+           <span class="sr-only">Surligner cette compétence</span>
+         </label>
+        </div>
+        <div class="hl-wrapper-name">
+          Survie en extérieur
+        </div>
+      </div>
+    </td>
+    <td><abbr title="Intelligence">Int</abbr></td>
+    <td><output id="outdoor-survival-current" name="outdoor-survival-current" for="int-i int-a"></output></td>
+    <td>
+      <label class="sr-only" for="outdoor-survival-aug">
+        Survie en extérieur
+        Augmentation
+      </label>
+      <input type="number" name="outdoor-survival-aug" id="outdoor-survival-aug"></td>
+    <td><output for="outdoor-survival-current outdoor-survival-aug"></output></td>
+  </tr>
+  
+
               </tbody>
             </table>
           </fieldset>
@@ -1761,6 +1875,12 @@
           <p hidden class="error" id="import-db-error">Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.</p>
           <p hidden class="success" id="import-db-success">Données importées. 🎉</p>
           <p class="notice">⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.</p>
+        </div>
+        <div>
+          <h2>Version</h2>
+          <p>Version actuelle : <strong>1.1.0</strong></p>
+          <p>Cliquez sur le lien dessous pour plus d&apos;informations</p>
+          <p><a class="button" href="https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md">Lire le CHANGELOG.md (en anglais)</a></p>
         </div>
       </fieldset>
     </div>
