@@ -370,110 +370,216 @@ module.exports = {
       'fr': 'Surligner cette compétence',
       'en': 'Highlight this skill'
     },
-    art: {
-      'fr': 'Art',
-      'en': 'Art'
-    },
-    athletics: {
-      'fr': 'Athlétisme',
-      'en': 'Athletics'
-    },
-    cool: {
-      'fr': 'Calme',
-      'en': 'Cool'
-    },
-    charm: {
-      'fr': 'Charme',
-      'en': 'Charm'
-    },
-    ride: {
-      'fr': 'Chevaucher',
-      'en': 'Ride'
-    },
-    leadership: {
-      'fr': 'Commandement',
-      'en': 'Leadership'
-    },
-    drive: {
-      'fr': 'Conduite d&apos;attelage',
-      'en': 'Drive'
-    },
-    meleeBasic: {
-      'fr': 'Corps à corps (base)',
-      'en': 'Melee (Basic)'
-    },
-    melee: {
-      'fr': 'Corps à corps',
-      'en': 'Melee'
-    },
-    stealth: {
-      'fr': 'Discrétion',
-      'en': 'Stealth'
-    },
-    entertain: {
-      'fr': 'Divertissement',
-      'en': 'Entertain'
-    },
-    charmAnimal: {
-      'fr': 'Emprise animaux',
-      'en': 'Charm Animal'
-    },
-    climb: {
-      'fr': 'Escalade',
-      'en': 'Climb'
-    },
-    dodge: {
-      'fr': 'Esquive',
-      'en': 'Dodge'
-    },
-    intimidate: {
-      'fr': 'Intimidation',
-      'en': 'Intimidate'
-    },
-    intuition: {
-      'fr': 'Intuition',
-      'en': 'Intuition'
-    },
-    haggle: {
-      'fr': 'Marchandage',
-      'en': 'Haggle'
-    },
-    navigation: {
-      'fr': 'Orientation',
-      'en': 'Navigation'
-    },
-    gamble: {
-      'fr': 'Pari',
-      'en': 'Gamble'
-    },
-    perception: {
-      'fr': 'Perception',
-      'en': 'Perception'
-    },
-    gossip: {
-      'fr': 'Ragot',
-      'en': 'Gossip'
-    },
-    row: {
-      'fr': 'Ramer',
-      'en': 'Row'
-    },
-    endurance: {
-      'fr': 'Résistance',
-      'en': 'Endurance'
-    },
-    consumeAlcohol: {
-      'fr': 'Résistance à l&apos;alcool',
-      'en': 'Consume Alcohol'
-    },
-    bribery: {
-      'fr': 'Subordination',
-      'en': 'Bribery'
-    },
-    outdoorSurvival: {
-      'fr': 'Survie en extérieur',
-      'en': 'Outdoor Survival'
-    },
+    basic: [
+      {
+        id: 'art',
+        charac: 'Dex',
+        label: {
+          'fr': 'Art',
+          'en': 'Art'
+        }
+      },
+      {
+        id: 'athletics',
+        charac: 'Ag',
+        label: {
+          'fr': 'Athlétisme',
+          'en': 'Athletics'
+        }
+      },
+      {
+        id: 'cool',
+        charac: 'WP',
+        label: {
+          'fr': 'Calme',
+          'en': 'Cool'
+        }
+      },
+      {
+        id: 'charm',
+        charac: 'Fel',
+        label: {
+          'fr': 'Charme',
+          'en': 'Charm'
+        }
+      },
+      {
+        id: "ride",
+        charac: 'Ag',
+        label: {
+          'fr': 'Chevaucher',
+          'en': 'Ride'
+        }
+      },
+      {
+        id: 'leadership',
+        charac: 'Fel',
+        label: {
+          'fr': 'Commandement',
+          'en': 'Leadership'
+        }
+      },
+      {
+        id: 'drive',
+        charac: 'Ag',
+        label: {
+          'fr': 'Conduite d&apos;attelage',
+          'en': 'Drive'
+        }
+      },
+      {
+        id: 'melee-basic',
+        charac: 'WS',
+        label: {
+          'fr': 'Corps à corps (base)',
+          'en': 'Melee (Basic)'
+        }
+      },
+      {
+        id: 'melee',
+        charac: 'WS',
+        label: {
+          'fr': 'Corps à corps',
+          'en': 'Melee'
+        }
+      },
+      {
+        id: 'stealth',
+        charac: 'Ag',
+        label: {
+          'fr': 'Discrétion',
+          'en': 'Stealth'
+        }
+      },
+      {
+        id: 'entertain',
+        charac: 'Fel',
+        label: {
+          'fr': 'Divertissement',
+          'en': 'Entertain'
+        }
+      },
+      {
+        id: 'charm-animal',
+        charac: 'WP',
+        label: {
+          'fr': 'Emprise animaux',
+          'en': 'Charm Animal'
+        }
+      },
+      {
+        id: 'climb',
+        charac: 'S',
+        label: {
+          'fr': 'Escalade',
+          'en': 'Climb'
+        }
+      },
+      {
+        id: 'dodge',
+        charac: 'Ag',
+        label: {
+          'fr': 'Esquive',
+          'en': 'Dodge'
+        }
+      },
+      {
+        id: 'intimidate',
+        charac: 'S',
+        label: {
+          'fr': 'Intimidation',
+          'en': 'Intimidate'
+        }
+      },
+      {
+        id: 'intuition',
+        charac: 'I',
+        label: {
+          'fr': 'Intuition',
+          'en': 'Intuition'
+        }
+      },
+      {
+        id: 'haggle',
+        charac: 'Fel',
+        label: {
+          'fr': 'Marchandage',
+          'en': 'Haggle'
+        }
+      },
+      {
+        id: 'navigation',
+        charac: 'I',
+        label: {
+          'fr': 'Orientation',
+          'en': 'Navigation'
+        }
+      },
+      {
+        id: 'gamble',
+        charac: 'Int',
+        label: {
+          'fr': 'Pari',
+          'en': 'Gamble'
+        }
+      },
+      {
+        id: 'perception',
+        charac: 'I',
+        label: {
+          'fr': 'Perception',
+          'en': 'Perception'
+        }
+      },
+      {
+        id: 'gossip',
+        charac: 'Fel',
+        label: {
+          'fr': 'Ragot',
+          'en': 'Gossip'
+        }
+      },
+      {
+        id: 'row',
+        charac: 'S',
+        label: {
+          'fr': 'Ramer',
+          'en': 'Row'
+        }
+      },
+      {
+        id: 'endurance',
+        charac: 'T',
+        label: {
+          'fr': 'Résistance',
+          'en': 'Endurance'
+        }
+      },
+      {
+        id: 'consume-alcohol',
+        charac: 'T',
+        label: {
+          'fr': 'Résistance à l&apos;alcool',
+          'en': 'Consume Alcohol'
+        }
+      },
+      {
+        id: 'bribery',
+        charac: 'Fel',
+        label: {
+          'fr': 'Subordination',
+          'en': 'Bribery'
+        }
+      },
+      {
+        id: 'outdoor-survival',
+        charac: 'Int',
+        label: {
+          'fr': 'Survie en extérieur',
+          'en': 'Outdoor Survival'
+        }
+      }
+    ],
     basedOnCharac: {
       'fr': 'Caractéristique de base',
       'en': 'Based on characteristic'
@@ -966,6 +1072,24 @@ module.exports = {
       error: {
         'fr': 'Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.',
         'en': 'An error occurred. Check that you have provided a JSON file from the app and, if so, contact the admin.'
+      }
+    },
+    version: {
+      title: {
+        'fr': 'Version',
+        'en': 'Version'
+      },
+      desc: {
+        'fr': 'Version actuelle :',
+        'en': 'Current version:'
+      },
+      more: {
+        'fr': 'Cliquez sur le lien dessous pour plus d&apos;informations',
+        'en': 'Click on the link below for more information'
+      },
+      link: {
+        'fr': 'Lire le CHANGELOG.md (en anglais)',
+        'en': 'Read the CHANGELOG.md'
       }
     }
   }
