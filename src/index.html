@@ -22,8 +22,8 @@
   <div class="wrapper">
     <img class="logo" src="android-chrome-192x192.png" alt="">
     <div class="tabs">
-      <a class="tab active" href="#en">🇬🇧 English version</a>
-      <a class="tab" href="#fr"  lang="fr">🇫🇷 Version française</a>
+      <a class="tab active en" href="#en">English version</a>
+      <a class="tab fr" href="#fr"  lang="fr">Version française</a>
       <div id="en" class="tab-panel">
         <h1 class="text-align-center">Welcome</h1>
         <hr>
@@ -76,6 +76,26 @@
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
       window.location.hash = '#en';
+
+      const tabToggles = document.querySelectorAll('.tab');
+      document.addEventListener('click', handleTabs);
+
+      function handleTabs (event) {
+        if (
+          !Array.from(tabToggles).includes(event.target) ||
+          event.target.classList.contains('active')
+        ) {
+          return false;
+        }
+
+        tabToggles.forEach(tab => {
+          if (tab === event.target) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+      }
     });
   </script>
 </body>

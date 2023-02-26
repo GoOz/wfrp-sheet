@@ -52,27 +52,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Fill the sheet with stored data
   fillFromStorage();
 
-  // Tabs
-  const tabToggles = document.querySelectorAll('.tab');
-  document.addEventListener('click', handleTabs);
-
-  function handleTabs (event) {
-    if (
-      !Array.from(tabToggles).includes(event.target) ||
-      event.target.classList.contains('active')
-    ) {
-      return false;
-    }
-
-    tabToggles.forEach(tab => {
-      if (tab === event.target) {
-        tab.classList.add('active');
-      } else {
-        tab.classList.remove('active');
-      }
-    });
-  }
-
   // Modal
   const modal = document.getElementById('modal');
   const pages = document.querySelectorAll('.page');
