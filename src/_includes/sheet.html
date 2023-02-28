@@ -410,7 +410,7 @@
                   <td>
                     <label class="sr-only" for="custom-skill-charac-0">{{ 'skills.basedOnCharac' | i18n }}</label>
                     <select class="charac-select" name="custom-skill-charac-0" id="custom-skill-charac-0">
-                      <option value="" selected>-</option>
+                      <option value="">-</option>
                       <option value="ws">{{ 'charac.ws.abbr' | i18n }}</option>
                       <option value="bs">{{ 'charac.bs.abbr' | i18n }}</option>
                       <option value="s">{{ 'charac.s.abbr' | i18n }}</option>
@@ -432,50 +432,50 @@
                   </td>
                   <td><output id="custom-skill-current-0" for="custom-skill-initial-0 custom-skill-aug-0"></output></td>
                 </tr>
-                <template id="custom-skill-row">
-                  <tr>
-                    <td>
-                      <div class="hl-wrapper">
-                      <div class="hl-wrapper-checkbox">
-                        <input type="checkbox" name="custom-skill-hl-" id="custom-skill-hl-" class="sr-only highlight-toggle">
-                        <label for="custom-skill-hl-" title="{{ 'skills.highlight' | i18n }}">
-                          <svg>
-                            <use href="#highlight-inactive"/>
-                            <use href="#highlight-active"/>
-                          </svg>
-                         <span class="sr-only">{{ 'skills.highlight' | i18n }}</span>
-                       </label>
-                      </div>
-                      <div class="hl-wrapper-name">
-                        <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
-                        <input type="hidden" name="custom-skill-name-" id="custom-skill-name-">
-                      </div>
-                    </div>
-                    <td>
-                      <label class="sr-only" for="custom-skill-charac-">{{ 'skills.basedOnCharac' | i18n }}</label>
-                      <select class="charac-select" name="custom-skill-charac-" id="custom-skill-charac-">
-                        <option value="" selected>-</option>
-                        <option value="ws">{{ 'charac.ws.abbr' | i18n }}</option>
-                        <option value="bs">{{ 'charac.bs.abbr' | i18n }}</option>
-                        <option value="s">{{ 'charac.s.abbr' | i18n }}</option>
-                        <option value="t">{{ 'charac.t.abbr' | i18n }}</option>
-                        <option value="i">{{ 'charac.i.abbr' | i18n }}</option>
-                        <option value="ag">{{ 'charac.ag.abbr' | i18n }}</option>
-                        <option value="dex">{{ 'charac.dex.abbr' | i18n }}</option>
-                        <option value="int">{{ 'charac.int.abbr' | i18n }}</option>
-                        <option value="wp">{{ 'charac.wp.abbr' | i18n }}</option>
-                        <option value="fel">{{ 'charac.fel.abbr' | i18n }}</option>
-                      </select>
-                    </td>
-                    <td><output id="custom-skill-initial-" name="custom-skill-initial-" for=""></output></td>
-                    <td>
-                      <label class="sr-only" for="custom-skill-aug-">{{ 'skills.adv' | i18n }}</label>
-                      <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
-                    <td><output id="custom-skill-current-" for=""></output></td>
-                  </tr>
-                </template>
               </tbody>
             </table>
+            <template id="custom-skill-row">
+              <tr>
+                <td>
+                  <div class="hl-wrapper">
+                  <div class="hl-wrapper-checkbox">
+                    <input type="checkbox" name="custom-skill-hl-" id="custom-skill-hl-" class="sr-only highlight-toggle">
+                    <label for="custom-skill-hl-" title="{{ 'skills.highlight' | i18n }}">
+                      <svg>
+                        <use href="#highlight-inactive"/>
+                        <use href="#highlight-active"/>
+                      </svg>
+                     <span class="sr-only">{{ 'skills.highlight' | i18n }}</span>
+                   </label>
+                  </div>
+                  <div class="hl-wrapper-name">
+                    <div contenteditable role="textbox" aria-labelledBy="skills-name-label"></div>
+                    <input type="hidden" name="custom-skill-name-" id="custom-skill-name-">
+                  </div>
+                </div>
+                <td>
+                  <label class="sr-only" for="custom-skill-charac-">{{ 'skills.basedOnCharac' | i18n }}</label>
+                  <select class="charac-select" name="custom-skill-charac-" id="custom-skill-charac-">
+                    <option value="">-</option>
+                    <option value="ws">{{ 'charac.ws.abbr' | i18n }}</option>
+                    <option value="bs">{{ 'charac.bs.abbr' | i18n }}</option>
+                    <option value="s">{{ 'charac.s.abbr' | i18n }}</option>
+                    <option value="t">{{ 'charac.t.abbr' | i18n }}</option>
+                    <option value="i">{{ 'charac.i.abbr' | i18n }}</option>
+                    <option value="ag">{{ 'charac.ag.abbr' | i18n }}</option>
+                    <option value="dex">{{ 'charac.dex.abbr' | i18n }}</option>
+                    <option value="int">{{ 'charac.int.abbr' | i18n }}</option>
+                    <option value="wp">{{ 'charac.wp.abbr' | i18n }}</option>
+                    <option value="fel">{{ 'charac.fel.abbr' | i18n }}</option>
+                  </select>
+                </td>
+                <td><output id="custom-skill-initial-" name="custom-skill-initial-" for=""></output></td>
+                <td>
+                  <label class="sr-only" for="custom-skill-aug-">{{ 'skills.adv' | i18n }}</label>
+                  <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
+                <td><output id="custom-skill-current-" for=""></output></td>
+              </tr>
+            </template>
           </fieldset>
         </div>
       </div>

@@ -120,27 +120,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
           input.value = item ?? null;
         }
 
+
         // Other context adjustments
         if (item && input.type === 'hidden') {
           input.previousElementSibling.textContent = item;
         }
-        if (item && input.tagName === 'SELECT') {
-          input.dispatchEvent(new Event('change', { 'bubbles': true }));
+        if (item && input.type !== 'radio') {
+          if (input.tagName === 'SELECT') {
+            input.dispatchEvent(new Event('change', { 'bubbles': true }));
+          } else {
+            input.dispatchEvent(new Event('input', {'bubbles': true}));
+          }
         }
       });
 
       // Once all data is filled, proceed with updating outputs
       updateBonuses();
-      encumbranceSrc.forEach(src => {
-        src.dispatchEvent(new Event('change', {'bubbles': true}));
-      });
       updateOutputs();
-
       updateTitle();
-
-      highlights.forEach(item => {
-        item.dispatchEvent(new Event('input', {'bubbles': true}));
-      });
     }
   }
 
@@ -171,10 +168,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Store data from addition inputs and update related outputs
   function handleAdditionInput(event) {
-    handleSimpleInput(event);
     if(event.target.hasAttribute('contenteditable')) {
       return;
     }
+    handleSimpleInput(event);
     const outputs = document.querySelectorAll(`output[for~=${event.target.id}]:not(.bonus)`);
     updateOutputs(outputs);
     updateBonuses();
