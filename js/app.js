@@ -444,6 +444,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       } catch(e) {
         console.error(e);
         errorMessage.removeAttribute('hidden');
+        return
       }
       for (const key in data) {
         localStorage.setItem(key, data[key]);
