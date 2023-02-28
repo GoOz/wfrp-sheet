@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const bonuses = document.querySelectorAll('output.bonus');
   const customData = document.querySelectorAll('.custom');
   const toggleHardy = document.getElementById('hardy-bonus');
+  const speciesSelect = document.getElementById('species');
   const encumbranceSrc = document.querySelectorAll('.encumbrance-src');
   const encumbranceMax = document.getElementById('encumbrance-max')
   const highlights = document.querySelectorAll('.highlight-toggle')
@@ -36,7 +37,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   customData.forEach(custom => {
     custom.addEventListener('input', handleCustomInput);
   });
-  toggleHardy.addEventListener('change', handleToggleHardy);
+  toggleHardy.addEventListener('change', handleWoundsUpdate);
+  speciesSelect.addEventListener('change', handleWoundsUpdate);
   encumbranceSrc.forEach(item => {
     item.addEventListener('input', handleEncumbrance);
     item.addEventListener('change', handleEncumbrance);
@@ -209,10 +211,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  // Add wounds points if hardy talent is ON
-  function handleToggleHardy() {
-    const wounds = document.getElementById('wounds');
-    updateOutputs([wounds]);
+  // Add wounds points if hardy talent is ON or if species is hafling
+  function handleWoundsUpdate() {
+    const wounds = document.querySelectorAll('.wounds output');
+    updateOutputs(wounds);
   }
 
   // Calculate stuff encumbrance
@@ -352,6 +354,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       for (let i = 0; i < inputs.length; i++) {
         const input = document.getElementById(`${inputs[i]}`);
         const value = input.value !== '' ? parseInt(input.value,10) : 0;
+
         if (output.id === 'walk') {
           current = value * 2;
         } else if (output.id === 'run') {
@@ -361,8 +364,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
       }
 
+      const species = document.getElementById('species');
+
       if (output.id === 'strength-bonus') {
-        const species = document.getElementById('species');
         output.value = species.value !== 'halfling' ? current : 0;
       } else if (output.id === 'toughness-bonus') {
         output.value = current * 2;
@@ -371,6 +375,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
           const toughness = document.getElementById('bonus-t');
           const value = toughness.value !== '' ? parseInt(toughness.value,10) : 0;
           output.value = current + value;
+        } else if (species.value === 'halfling') {
+          const strength = document.getElementById('bonus-s');
+          const value = strength.value !== '' ? parseInt(strength.value,10) : 0;
+          output.value = current - value;
         } else {
           output.value = current;
         }
