@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const bonuses = document.querySelectorAll('output.bonus');
   const customData = document.querySelectorAll('.custom');
   const toggleHardy = document.getElementById('hardy-bonus');
+  const speciesSelect = document.getElementById('species');
   const encumbranceSrc = document.querySelectorAll('.encumbrance-src');
   const encumbranceMax = document.getElementById('encumbrance-max')
   const highlights = document.querySelectorAll('.highlight-toggle')
@@ -36,7 +37,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   customData.forEach(custom => {
     custom.addEventListener('input', handleCustomInput);
   });
-  toggleHardy.addEventListener('change', handleToggleHardy);
+  toggleHardy.addEventListener('change', handleWoundsUpdate);
+  speciesSelect.addEventListener('change', handleWoundsUpdate);
   encumbranceSrc.forEach(item => {
     item.addEventListener('input', handleEncumbrance);
     item.addEventListener('change', handleEncumbrance);
@@ -51,27 +53,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Fill the sheet with stored data
   fillFromStorage();
-
-  // Tabs
-  const tabToggles = document.querySelectorAll('.tab');
-  document.addEventListener('click', handleTabs);
-
-  function handleTabs (event) {
-    if (
-      !Array.from(tabToggles).includes(event.target) ||
-      event.target.classList.contains('active')
-    ) {
-      return false;
-    }
-
-    tabToggles.forEach(tab => {
-      if (tab === event.target) {
-        tab.classList.add('active');
-      } else {
-        tab.classList.remove('active');
-      }
-    });
-  }
 
   // Modal
   const modal = document.getElementById('modal');
@@ -139,27 +120,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
           input.value = item ?? null;
         }
 
+
         // Other context adjustments
         if (item && input.type === 'hidden') {
           input.previousElementSibling.textContent = item;
         }
-        if (item && input.tagName === 'SELECT') {
-          input.dispatchEvent(new Event('change', { 'bubbles': true }));
+        if (item && input.type !== 'radio') {
+          if (input.tagName === 'SELECT') {
+            input.dispatchEvent(new Event('change', { 'bubbles': true }));
+          } else {
+            input.dispatchEvent(new Event('input', {'bubbles': true}));
+          }
         }
       });
 
       // Once all data is filled, proceed with updating outputs
       updateBonuses();
-      encumbranceSrc.forEach(src => {
-        src.dispatchEvent(new Event('change', {'bubbles': true}));
-      });
       updateOutputs();
-
       updateTitle();
-
-      highlights.forEach(item => {
-        item.dispatchEvent(new Event('input', {'bubbles': true}));
-      });
     }
   }
 
@@ -190,10 +168,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Store data from addition inputs and update related outputs
   function handleAdditionInput(event) {
-    handleSimpleInput(event);
     if(event.target.hasAttribute('contenteditable')) {
       return;
     }
+    handleSimpleInput(event);
     const outputs = document.querySelectorAll(`output[for~=${event.target.id}]:not(.bonus)`);
     updateOutputs(outputs);
     updateBonuses();
@@ -230,10 +208,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  // Add wounds points if hardy talent is ON
-  function handleToggleHardy() {
-    const wounds = document.getElementById('wounds');
-    updateOutputs([wounds]);
+  // Add wounds points if hardy talent is ON or if species is hafling
+  function handleWoundsUpdate() {
+    const wounds = document.querySelectorAll('.wounds output');
+    updateOutputs(wounds);
   }
 
   // Calculate stuff encumbrance
@@ -373,6 +351,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       for (let i = 0; i < inputs.length; i++) {
         const input = document.getElementById(`${inputs[i]}`);
         const value = input.value !== '' ? parseInt(input.value,10) : 0;
+
         if (output.id === 'walk') {
           current = value * 2;
         } else if (output.id === 'run') {
@@ -382,8 +361,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
       }
 
+      const species = document.getElementById('species');
+
       if (output.id === 'strength-bonus') {
-        const species = document.getElementById('species');
         output.value = species.value !== 'halfling' ? current : 0;
       } else if (output.id === 'toughness-bonus') {
         output.value = current * 2;
@@ -392,6 +372,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
           const toughness = document.getElementById('bonus-t');
           const value = toughness.value !== '' ? parseInt(toughness.value,10) : 0;
           output.value = current + value;
+        } else if (species.value === 'halfling') {
+          const strength = document.getElementById('bonus-s');
+          const value = strength.value !== '' ? parseInt(strength.value,10) : 0;
+          output.value = current - value;
         } else {
           output.value = current;
         }
@@ -460,6 +444,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       } catch(e) {
         console.error(e);
         errorMessage.removeAttribute('hidden');
+        return
       }
       for (const key in data) {
         localStorage.setItem(key, data[key]);

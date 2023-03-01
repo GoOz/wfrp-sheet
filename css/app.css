@@ -54,12 +54,17 @@
 body {
   margin: 0;
   font-family: Georgia, "Times New roman", serif;
+  line-height: 1.2;
   background-color: var(--grey);
   color: var(--contrast);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: Luminari, Times, serif;
+  font-weight: normal;
+  font-style: normal;
 }
 
 a:not(.button, .tab):is(:link, :visited) {
@@ -92,6 +97,15 @@ hr::after {
   padding: 1rem;
   background-color: var(--bgcolor);
   color: var(--contrast);
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+ul li::marker {
+  content: '➸ ';
 }
 
 [inert] {
@@ -355,6 +369,19 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
 }
 .tab:not(.active):is(:hover, :focus, :active) {
   opacity: .8;
+}
+
+.tab::after {
+  display: inline-block;
+  width: 1.5em;
+  height: 1em;
+  text-align: center;
+}
+.tab.en::after {
+  content:'🇬🇧';
+}
+.tab.fr::after {
+  content:'🇫🇷';
 }
 
 .tab-panel {
