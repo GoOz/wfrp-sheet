@@ -699,23 +699,6 @@ table.layout-fixed {
 .talents tbody :is(td:first-child, td:last-child) {
   text-align: start;
 }
-.talents .narrow {
-  position: relative;
-}
-.talents .narrow::before {
-  position: absolute;
-  content: '';
-  border-left: 1px solid var(--contrast);
-  border-right: 1px solid var(--contrast);
-  height: 600%;
-  top: 0;
-  pointer-events: none;
-}
-
-.talents .narrow::before {
-  left: -1px;
-  right: -1px;
-}
 
 /* Ambitions & party */
 .ambitions {
@@ -899,7 +882,7 @@ table.layout-fixed {
 
 .corruption-wrapper {
   display: flex;
-  width: 100%;.fake-legend
+  width: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
   border-top: 1px solid var(--contrast);
@@ -1095,7 +1078,15 @@ table.layout-fixed {
   margin-block: .5rem;
 }
 
-@media (orientation: portrait), (max-width: 64em) {
+@media (max-width: 64em) {
+  .app {
+    height: auto;
+    scroll-snap-type: none;
+  }
+  .page {
+    height: auto;
+    scroll-snap-align: none;
+  }
   .first {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: .75fr .75fr .5fr 1.5fr .5fr 1fr 1fr 1fr 1fr;
@@ -1112,16 +1103,16 @@ table.layout-fixed {
     "talents talents talents party party party";
   }
   .second {
+    border-top: .125rem solid var(--contrast);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr .75fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr .75fr 1.25fr 1.25fr 1fr 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
     grid-template-areas:
       "armour armour armour armour armour-points armour-points"
       "armour armour armour armour armour-points armour-points"
       "trappings trappings psychology psychology armour-points armour-points"
-      "trappings trappings corruption corruption armour-points armour-points"
-      "trappings trappings wealth encumbrance wounds wounds"
-      "trappings trappings wealth encumbrance wounds wounds"
+      "trappings trappings corruption corruption encumbrance encumbrance"
+      "trappings trappings wealth wealth wounds wounds"
       "weapons weapons weapons weapons weapons weapons"
       "weapons weapons weapons weapons weapons weapons"
       "spells spells spells spells spells spells"
@@ -1130,9 +1121,8 @@ table.layout-fixed {
 }
 
 @media (max-width: 48em) {
-  .page {
-    height: auto;
-    scroll-snap-align: none;
+  .first, .second, .info, .info .field {
+    display: block;
   }
   .first {
     grid-template-columns: 1fr 1fr 1fr ;
@@ -1149,7 +1139,7 @@ table.layout-fixed {
     "party party party";
   }
   .second {
-    border-top: .125rem solid var(--contrast);
+    border: none;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto auto auto auto auto;
     grid-auto-flow: column;
@@ -1163,16 +1153,31 @@ table.layout-fixed {
       "weapons weapons weapons"
       "spells spells spells";
   }
-  .skills-wrapper {
-    flex-direction: column;
+
+  fieldset {
+    border-top: .125rem solid var(--contrast);
+    padding-block-end: 1.5rem;
   }
+
+  .info .field {
+    padding-block: .5rem;
+    border-bottom: 1px solid var(--contrast);
+  }
+  .info .field:last-child {
+    border-bottom: none;
+  }
+  .info select {
+    width: 100%;
+    text-align: left;
+  }
+
+  .skills-wrapper,
+  .points-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
   .modal {
     inset: 5%;
-  }
-}
-
-@media (max-width: 25em) {
-  .first, .second, .info, .info .field {
-    display: block;
   }
 }
