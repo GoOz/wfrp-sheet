@@ -67,14 +67,14 @@ body {
   font-style: normal;
 }
 
-a:not(.button, .tab):is(:link, :visited) {
+a:not(.button, .tab, .forkme):is(:link, :visited) {
   box-shadow: inset 0 0 0 0 var(--contrast);
   color: var(--contrast);
   margin: 0 -.125rem;
   padding: 0 .125rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
-a:not(.button, .tab):is(:hover, :active, :focus) {
+a:not(.button, .tab, .forkme):is(:hover, :active, :focus) {
   box-shadow: inset 30rem 0 0 0 var(--contrast);
   color: var(--bgcolor);
 }
@@ -364,7 +364,7 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
   font-weight: bold;
 }
 .tab:not(.active) {
-  opacity: .5;
+  opacity: .8;
   background-color: var(--lightgrey)
 }
 .tab:not(.active):is(:hover, :focus, :active) {
