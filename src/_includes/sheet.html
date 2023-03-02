@@ -90,8 +90,8 @@
         </div>
       </fieldset>
       <fieldset class="charac addition">
-        <legend>{{ 'charac.title' | i18n }}</legend>
-        <table class="left-aligned">
+        <legend id="charac-title">{{ 'charac.title' | i18n }}</legend>
+        <table class="left-aligned" aria-describedby="charac-title">
           <thead>
             <td></td>
             <th scolpe="col" id="charac-ws-label">
@@ -224,8 +224,8 @@
       <div class="points">
         <div class="points-wrapper">
           <fieldset class="counter simple">
-            <legend>{{ 'points.fate.title' | i18n }}</legend>
-            <table class="left-aligned">
+            <legend id="fate-title">{{ 'points.fate.title' | i18n }}</legend>
+            <table class="left-aligned" aria-describedby="fate-title">
               <tbody>
                 <tr>
                   <th scope="row">{{ 'points.fate.title' | i18n }}</th>
@@ -244,9 +244,9 @@
               </tbody>
             </table>
           </fieldset>
-          <fieldset class="counter simple">
+          <fieldset id="resilience-title" class="counter simple">
             <legend>{{ 'points.resilience.title' | i18n }}</legend>
-            <table>
+            <table aria-describedby="resilience-title">
               <thead>
                 <tr>
                   <th scope="col"><abbr title="{{ 'points.resilience.title' | i18n }}">{{ 'points.resilience.abbr' | i18n }}</abbr></th>
@@ -272,8 +272,8 @@
             </table>
           </fieldset>
           <fieldset class="addition">
-            <legend>{{ 'points.experience.title' | i18n }}</legend>
-            <table class="layout-fixed">
+            <legend id="experience-title">{{ 'points.experience.title' | i18n }}</legend>
+            <table class="layout-fixed" aria-describedby="experience-title">
               <thead>
                 <tr>
                   <th scope="col">
@@ -324,9 +324,9 @@
       <div class="skills">
         <div class="skills-wrapper">
           <fieldset class="addition basic">
-            <legend class="sr-only">{{ 'skills.basicTitle' | i18n }}</legend>
+            <legend id="skills-title" class="sr-only">{{ 'skills.basicTitle' | i18n }}</legend>
             <div class="fake-legend" aria-hidden>{{ 'skills.basicTitle' | i18n }}</div>
-            <table class="left-aligned">
+            <table class="left-aligned" aria-describedby="skills-title">
               <thead>
                 <tr>
                   <th scope="col">{{ 'skills.name' | i18n }}</th>
@@ -349,7 +349,7 @@
           <fieldset class="addition basic">
             <legend class="sr-only">{{ 'skills.basicTitle' | i18n }}</legend>
             <div class="fake-legend" aria-hidden>{{ 'skills.basicTitle' | i18n }}</div>
-            <table class="left-aligned">
+            <table class="left-aligned" aria-describedby="skills-title">
               <thead>
                 <tr>
                   <th scope="col">{{ 'skills.name' | i18n }}</th>
@@ -370,12 +370,12 @@
             </table>
           </fieldset>
           <fieldset class="addition custom" id="custom-skill">
-            <legend class="sr-only">{{ 'skills.customTitle' | i18n }}</legend>
+            <legend id="custom-skill-title" class="sr-only">{{ 'skills.customTitle' | i18n }}</legend>
             <div class="fake-legend" aria-hidden>{{ 'skills.customTitle' | i18n }}</div>
-            <table class="left-aligned">
+            <table class="left-aligned" aria-describedby="custom-skill-title">
               <thead>
                 <tr>
-                  <th scope="col">{{ 'skills.name' | i18n }}</th>
+                  <th scope="col" id="skills-name-label">{{ 'skills.name' | i18n }}</th>
                   <th colspan="2" scope="col">
                     <abbr title="{{ 'skills.charac' | i18n }}">{{ 'skills.characAbbr' | i18n }}</abbr>
                   </th>
@@ -480,8 +480,8 @@
         </div>
       </div>
       <fieldset class="talents simple custom" id="talents">
-        <legend>{{ 'talents.title' | i18n }}</legend>
-        <table>
+        <legend id="talents-title">{{ 'talents.title' | i18n }}</legend>
+        <table aria-describedby="talents-title">
           <thead>
             <tr>
               <th scope="col">
@@ -534,14 +534,14 @@
           <div class="item">
             <div class="item-label" id="ambitions-short-label">{{ 'ambitions.short' | i18n }}</div>
             <div class="item-desc">
-              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-short-label"></div>
+              <div contenteditable tabindex="0" role="textbox" aria-multiline="true" aria-labelledby="ambitions-short-label"></div>
               <input type="hidden" name="ambitions-short" id="ambitions-short">
             </div>
           </div>
           <div class="item">
             <div class="item-label" id="ambitions-long-label">{{ 'ambitions.long' | i18n }}</div>
             <div class="item-desc">
-              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="ambitions-long-label"></div>
+              <div contenteditable tabindex="0" role="textbox" aria-multiline="true" aria-labelledby="ambitions-long-label"></div>
               <input type="hidden" name="ambitions-long" id="ambitions-long">
             </div>
           </div>
@@ -554,28 +554,28 @@
           <div class="item">
             <div class="item-label" id="party-name-label">{{ 'party.name' | i18n }}</div>
             <div class="item-desc">
-              <div contenteditable role="textbox" aria-labelledBy="party-name-label"></div>
+              <div contenteditable tabindex="0" role="textbox" aria-labelledBy="party-name-label"></div>
               <input type="hidden" name="party-name" id="party-name">
             </div>
           </div>
           <div class="item">
             <div class="item-label" id="party-short-label">{{ 'party.short' | i18n }}</div>
             <div class="item-desc">
-              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-short-label"></div>
+              <div contenteditable tabindex="0" role="textbox" aria-multiline="true" aria-labelledBy="party-short-label"></div>
               <input type="hidden" name="party-short" id="party-short">
             </div>
           </div>
           <div class="item">
             <div class="item-label" id="party-long-label">{{ 'party.long' | i18n }}</div>
             <div class="item-desc">
-              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-long-label"></div>
+              <div contenteditable tabindex="0" role="textbox" aria-multiline="true" aria-labelledBy="party-long-label"></div>
               <input type="hidden" name="party-long" id="party-long">
             </div>
           </div>
           <div class="item">
             <div class="item-label" id="party-members-label">{{ 'party.members' | i18n }}</div>
             <div class="item-desc">
-              <div contenteditable role="textbox" aria-multiline="true" aria-labelledBy="party-members-label"></div>
+              <div contenteditable tabindex="0" role="textbox" aria-multiline="true" aria-labelledBy="party-members-label"></div>
               <input type="hidden" name="party-members" id="party-members">
             </div>
           </div>
@@ -584,8 +584,8 @@
     </div>
     <div class="page second">
       <fieldset class="armour simple encumbrance-src custom" id="armour">
-        <legend>{{ 'armour.title' | i18n }}</legend>
-        <table>
+        <legend id="armour-title">{{ 'armour.title' | i18n }}</legend>
+        <table aria-describedby="armour-title">
           <thead>
             <th scope="col">
               <span id="armour-name-label">{{ 'armour.name' | i18n }}</span>
@@ -688,7 +688,7 @@
             <span id="ap-right-leg-desc">90-00</span>
           </div>
           <div class="armour-points-stat armour-points-stat--shield">
-            <svg width="800px" height="800px" viewBox="-6 0 32 32" class="shield">
+            <svg role="presentation" width="800px" height="800px" viewBox="-6 0 32 32" class="shield">
               <path d="M10.133 2.667l-10.133 1.92c0 0 0 12.16 0 14.347 0 3.467 3.040 7.947 10.133 10.4 7.093-2.453 10.133-6.933 10.133-10.4 0-2.187 0-14.347 0-14.347l-10.133-1.92zM19.2 18.933c0 2.987-2.827 6.987-9.067 9.28-6.24-2.293-9.067-6.293-9.067-9.28v-13.44l9.067-1.76 9.067 1.707v13.493z" fill="currentColor"></path>
             </svg>
             <label for="ap-shield">{{ 'armourPoints.shield' | i18n }}</label>
@@ -697,9 +697,9 @@
         </div>
       </fieldset>
       <fieldset class="wounds simple">
-        <legend>{{ 'wounds.title' | i18n }}</legend>
+        <legend id="wounds-title">{{ 'wounds.title' | i18n }}</legend>
         <div class="wounds-wrapper">
-          <table class="left-aligned wounds-total">
+          <table class="left-aligned wounds-total" aria-describedby="wounds-title">
             <tbody>
               <tr>
                 <th scope="row" class="narrow">
@@ -747,8 +747,8 @@
         </div>
       </fieldset>
       <fieldset class="trappings simple custom encumbrance-src" id="trappings">
-        <legend>{{ 'trappings.title' | i18n }}</legend>
-        <table>
+        <legend id="trappings-title">{{ 'trappings.title' | i18n }}</legend>
+        <table aria-describedby="trappings-title">
           <thead>
             <th scope="col">
               <span id="trappings-name-label">{{ 'trappings.name' | i18n }}</span>
@@ -794,8 +794,8 @@
         </template>
       </fieldset>
       <fieldset class="encumbrance addition">
-        <legend>{{ 'encumbrance.title' | i18n }}</legend>
-        <table class="left-aligned">
+        <legend id="encumbrance-title">{{ 'encumbrance.title' | i18n }}</legend>
+        <table class="left-aligned" aria-describedby="encumbrance-title">
           <tbody>
             <tr>
               <th scope="row" class="narrow">{{ 'encumbrance.weapons' | i18n }}</th>
@@ -860,8 +860,8 @@
         </div>
       </fieldset>
       <fieldset class="wealth simple">
-        <legend>{{ 'wealth.title' | i18n }}</legend>
-        <table class="layout-fixed">
+        <legend id="wealth-title">{{ 'wealth.title' | i18n }}</legend>
+        <table class="layout-fixed" aria-describedby="wealth-title">
           <thead>
             <tr>
               <th scope="col" id="copper-label">
@@ -895,7 +895,7 @@
         <legend class="sr-only" id="psychology-label">{{ 'psychology.title' | i18n }}</legend>
         <div class="fake-legend" aria-hidden>{{ 'psychology.title' | i18n }}</div>
         <div class="psychology-content">
-          <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
+          <div contenteditable tabindex="0" role="textbox" aria-multiline="true" aria-labelledby="psychology-label"></div>
           <input type="hidden" name="psychology" id="psychology">
         </div>
       </fieldset>
@@ -921,8 +921,8 @@
         </div>
       </fieldset>
       <fieldset class="weapons simple encumbrance-src custom" id="weapons">
-        <legend>{{ 'weapons.title' | i18n }}</legend>
-        <table>
+        <legend id="weapons-title">{{ 'weapons.title' | i18n }}</legend>
+        <table aria-describedby="weapons-title">
           <thead>
             <th scope="col">
               <span id="weapons-name-label">{{ 'weapons.name' | i18n }}</span>
@@ -1002,12 +1002,12 @@
         <output class="hidden" id="encumbrance-weapons-total"></output>
       </fieldset>
       <fieldset class="spells simple custom" id="spells">
-        <legend>{{ 'spells.title' | i18n }}</legend>
+        <legend id="spells-title">{{ 'spells.title' | i18n }}</legend>
         <div class="spells-wrapper">
           <label for="sin">{{ 'spells.sin' | i18n }}</label>
           <input type="number" name="sin" id="sin">
         </div>
-        <table>
+        <table aria-describedby="spells-title">
           <thead>
             <th scope="col">
               <span id="spells-name-label">{{ 'spells.name' | i18n }}</span>
