@@ -1,4 +1,4 @@
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/GoOz/wfrp-sheet/graphs/commit-activity) [![GitHub license](https://badgen.net/github/license/GoOz/wfrp-sheet)](https://github.com/GoOz/wfrp-sheet/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/release/GoOz/wfrp-sheet.svg)](https://github.com/GoOz/wfrp-sheet/releases/)
+[![GitHub license](https://badgen.net/github/license/GoOz/wfrp-sheet)](https://github.com/GoOz/wfrp-sheet/blob/main/LICENSE) [![GitHub release](https://img.shields.io/github/release/GoOz/wfrp-sheet.svg)](https://github.com/GoOz/wfrp-sheet/releases/) ![Build](https://github.com/gooz/wfrp-sheet/actions/workflows/build.yml/badge.svg) [![Online](https://img.shields.io/badge/Github.io-online-green.svg)](https://gooz.github.io/wfrp-sheet/)
 
 # Warhammer Fantasy RolePlay (4th edition) sheet
 An online tool to help you manage your **Warhammer Fantasy Role Play** game's character sheet
