@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const settingsTheme = document.getElementById('theme')
   const exportButton = document.getElementById('export-button');
   const importButton = document.getElementById('import-button');
+  const removeButtons = document.querySelectorAll('.remove');
 
   // Event Listeners
   simpleInputs.forEach(input => {
@@ -50,6 +51,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   settingsTheme.addEventListener('change', setTheme);
   exportButton.addEventListener('click', exportData);
   importButton.addEventListener('click', importData);
+  removeButtons.forEach(button => {
+    button.addEventListener('click', removeCustomItem);
+  });
 
   // Fill the sheet with stored data
   fillFromStorage();
@@ -98,6 +102,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       custom.forEach(custom => {
         const tbody = custom.querySelector('tbody');
         const type = custom.id;
+
+        // Remove existing rows
+        tbody.replaceChildren();
+        // add default first row
+        addNewRow(tbody, 0);
+
+        // and add new rows from storage
         let i = 0;
         while (localStorage.getItem(`${type}-name-${i}`)) {
           addNewRow(tbody, i+1);
@@ -157,12 +168,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
+  // Add entry to storage
+  function setItem(key, value) {
+    if (value) {
+      localStorage.setItem(key, value);
+    }
+  }
+
+  // Remove entry from storage
+  function removeItem(key) {
+    localStorage.removeItem(key);
+  }
+
   // Store data from simple inputs
   function handleSimpleInput(event) {
     if (event.target.type === "checkbox") {
-      localStorage.setItem(event.target.name, event.target.checked);
+      setItem(event.target.name, event.target.checked);
     } else {
-      localStorage.setItem(event.target.name, event.target.value);
+      setItem(event.target.name, event.target.value);
     }
   }
 
@@ -181,7 +204,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function handleContentEditable(event) {
     const input = event.target.nextElementSibling;
     input.value = event.target.textContent;
-    localStorage.setItem(input.name, input.value);
+    setItem(input.name, input.value);
   }
 
   // Store custom skill base characteristic and update related output
@@ -284,7 +307,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const selects = clone.querySelectorAll('select');
     const contentEditable = clone.querySelectorAll('[contentEditable]');
     const labels = clone.querySelectorAll('label');
-    const highlights = clone.querySelectorAll('.highlight-toggle');
+    const highlight = clone.querySelector('.highlight-toggle');
+    const remove = clone.querySelector('.remove');
 
     inputs.forEach(input => {
       input.name = input.name + n;
@@ -294,9 +318,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
 
-    selects.forEach(input => {
-      input.name = input.name + n;
-      input.id = input.id + n;
+    selects.forEach(select => {
+      select.name = select.name + n;
+      select.id = select.id + n;
     });
 
     labels.forEach(label => {
@@ -312,11 +336,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     contentEditable.forEach(content => {
       content.addEventListener('input', handleContentEditable);
     });
-    highlights.forEach(item => {
-      item.addEventListener('input', toggleHighlight);
-    });
+    if (highlight) {
+      highlight.addEventListener('input', toggleHighlight);
+    };
+    remove.addEventListener('click', removeCustomItem);
 
     parent.appendChild(clone);
+    disableRemoveButton();
   }
 
   // Generate bonuses from final characteristics
@@ -393,6 +419,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
+  function disableRemoveButton() {
+    const buttons = document.querySelectorAll('.remove');
+    buttons.forEach(button => {
+      const row = button.closest('tr');
+      if (row.nextElementSibling === null) {
+        button.disabled = true;
+      } else {
+        button.disabled = false;
+      }
+    })
+  }
+
   function toggleHighlight(event) {
     const parent = event.target.closest('tr');
     const value = event.target.checked;
@@ -402,6 +440,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
       parent.classList.remove('highlighted');
     }
+  }
+
+  // Remove custom item row
+  function removeCustomItem(event) {
+    const tbody = event.target.closest('tbody');
+    const totalRows = tbody.children;
+    const currentRow = event.target.closest('tr');
+    const indexCurrent = Array.from(totalRows).indexOf(currentRow);
+
+    const inputs = currentRow.querySelectorAll('input');
+
+    // Remove all row's entries from localStorage
+    inputs.forEach(input => {
+      removeItem(input.id);
+    });
+
+    // Reindexing others rows after the one being deleted
+    for (let i = indexCurrent + 1; i < totalRows.length - 1; i++) {
+      reindexItem(totalRows[i], i-1);
+    }
+
+    // Remove all rows and add a default first row
+    Array.from(totalRows).forEach(item => item.remove());
+    addNewRow(tbody, 0);
+
+    // Refill them all
+    fillFromStorage();
+  }
+
+  // Reindex item in storage
+  function reindexItem(el, newIndex) {
+    const inputs = el.querySelectorAll('input, select');
+
+    inputs.forEach(input => {
+      const currentKey = input.name;
+      const newKey = currentKey.replace(/-\d+$/, `-${newIndex}`);
+      setItem(newKey, localStorage.getItem(currentKey));
+      removeItem(currentKey);
+    })
   }
 
   function exportData() {

@@ -11,6 +11,16 @@ module.exports = {
     'fr': 'Feuille de personnage',
     'en': 'Character sheet'
   },
+  actions: {
+    title: {
+      'fr': 'Actions',
+      'en': 'Actions'
+    },
+    delete: {
+      'fr': 'Supprimer',
+      'en': 'Delete'
+    }
+  },
   info: {
     title: {
       'fr': 'Informations du personnage',
@@ -189,7 +199,7 @@ module.exports = {
       }
     },
     initial: {
-      'fr': 'Intiales',
+      'fr': 'Initiales',
       'en': 'Initial'
     },
     advances: {

@@ -8,6 +8,8 @@
     --dropdown: url('../img/dropdown-light.svg');
     --hover: hsla(0, 0%, 0%, .1);
     --highlight: hsla(55, 100%, 78%, 0.7);
+    --error: #ff2600;
+    --disabled: #B7B7B7;
     color-scheme: light;
   }
   .dark {
@@ -18,6 +20,8 @@
     --dropdown: url('../img/dropdown-dark.svg');
     --hover: hsla(100, 100%, 100%, .2);
     --highlight: hsla(55, 100%, 19%, 0.7);
+    --error: #ff2600;
+    --disabled: #707070;
     color-scheme: dark;
   }
 }
@@ -30,6 +34,8 @@
     --dropdown: url('../img/dropdown-dark.svg');
     --hover: hsla(100, 100%, 100%, .2);
     --highlight: hsla(55, 100%, 19%, 0.7);
+    --error: #ff2600;
+    --disabled: #707070;
     color-scheme: dark;
   }
   .light {
@@ -40,6 +46,8 @@
     --dropdown: url('../img/dropdown-light.svg');
     --hover: hsla(0, 0%, 0%, .1);
     --highlight: hsla(55, 100%, 78%, 0.7);
+    --error: #ff2600;
+    --disabled: #B7B7B7;
     color-scheme: light;
   }
 }
@@ -114,6 +122,32 @@ ul li::marker {
 }
 .app:has(> [inert]) {
   overflow: hidden;
+}
+
+button.remove {
+  background-color: transparent;
+  padding: .125rem;
+  border: 0;
+  color: var(--contrast);
+  border-radius: 50%;
+}
+button.remove:is(:hover, :active, :focus) {
+  background-color: transparent;
+  color: var(--error);
+}
+button.remove:disabled {
+  color: var(--disabled);
+}
+.svg-actions,
+.remove svg {
+  display: block;
+  fill: none;
+  width: 1rem;
+  height: 1rem;
+}
+
+.svg-actions {
+  display: inline-block;
 }
 
 /* FORM ELEMENTS */
@@ -316,13 +350,17 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
   text-align: center;
 }
 
+.text-align-start {
+  text-align: start;
+}
+
 .notice {
   font-style: italic;
   font-size: .9em;
 }
 
 .error {
-  color: red;
+  color: var(--error);
 }
 
 .success {
@@ -498,6 +536,10 @@ table .medium {
 table .narrow {
   width: 10%;
 }
+table .actions {
+  padding: 0;
+  width: 2rem;
+}
 
 table.layout-fixed {
   table-layout: fixed;
@@ -634,7 +676,11 @@ table.layout-fixed {
 }
 .skills-wrapper > fieldset {
   background-color: var(--bgcolor);
-  flex: 1 1 33%;
+  flex: 1 1 30%;
+}
+
+.skills-wrapper > fieldset.custom {
+  flex-basis: 40%;
 }
 
 .skills :is(tr:focus-within, tr:hover) .hl-wrapper-checkbox {
@@ -695,9 +741,6 @@ table.layout-fixed {
 .talents fieldset {
   height: 100%;
   box-sizing: border-box;
-}
-.talents tbody :is(td:first-child, td:last-child) {
-  text-align: start;
 }
 
 /* Ambitions & party */
@@ -1041,7 +1084,7 @@ table.layout-fixed {
   border: 0;
 }
 
-.button-modal:is(:hover, :focus) {
+.button-modal:is(:hover, :active, :focus) {
   background-color: var(--lightgrey);
 }
 

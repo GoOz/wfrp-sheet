@@ -80,3 +80,52 @@ test('should create advanced skills with values calculated on related charac', a
   await page.locator('#custom-skill-aug-9').fill('5');
   await expect(page.locator('#custom-skill-current-9')).toHaveText('40');
 });
+
+test('should highlight row if option checked', async ({ page }) => {
+  await page.goto('./wfrp-sheet/en/');
+
+  const row = await page.locator('#custom-skill tbody').getByRole('row').nth(0);
+
+  await expect(row).not.toHaveClass('highlighted');
+
+  await row.locator('#custom-skill-hl-0').press('Space');
+
+  await expect(row).toHaveClass('highlighted');
+});
+
+test('should remove and reorder custom skill when one is removed', async ({ page }) => {
+  await page.goto('./wfrp-sheet/en/');
+
+  // Open settings modal
+  await page.getByRole('button', { name: 'Open settings' }).click();
+
+  // Choose a non-json file
+  await page.locator('#import-db').setInputFiles('tests/assets/custom-items.json');
+
+  // Click on Send Button
+  await page.locator('#import-button').click();
+
+  await page.locator('#close-modal').click();
+
+  const tbody = page.locator('#custom-skill tbody');
+  const rows = await tbody.getByRole('row');
+
+  await expect(rows).toHaveCount(4);
+
+  await rows.nth(0).getByRole('button', { name: 'Delete' }).click();
+
+  const newFirstItem = rows.nth(0).getByLabel('Advance', { exact: true });
+
+  await expect(rows).toHaveCount(3);
+  await expect(newFirstItem).toHaveId('custom-skill-aug-0');
+});
+
+test('should have the remove button of the last row disabled', async ({ page }) => {
+  await page.goto('./wfrp-sheet/en/');
+
+  const rows = await page.locator('#custom-skill tbody').getByRole('row');
+
+  const deleteButton = await rows.nth(0).getByRole('button', { name: 'Delete' });
+
+  await expect(deleteButton).toBeDisabled();
+});

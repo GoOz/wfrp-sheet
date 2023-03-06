@@ -110,3 +110,15 @@ test('should update current skill value when advances value is inputted', async 
   await expect(page.locator('#row-final')).toHaveText('45');
   await expect(page.locator('#stealth-final')).toHaveText('45');
 });
+
+test('should highlight row if option checked', async ({ page }) => {
+  await page.goto('./wfrp-sheet/en/');
+
+  const row = await page.locator('.basic').nth(0).getByRole('row').nth(1);
+
+  await expect(row).not.toHaveClass('highlighted');
+
+  await row.locator('#art-hl').press('Space');
+
+  await expect(row).toHaveClass('highlighted');
+});
