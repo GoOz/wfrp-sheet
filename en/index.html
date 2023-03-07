@@ -26,6 +26,14 @@
     <symbol id="highlight-active" viewBox="0 0 24 24">
       <path fill="currentColor" d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z"></path>
     </symbol>
+    <symbol id="trash" viewBox="0 0 24 24">
+      <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="actions" viewBox="0 0 24 24">
+      <path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 12.5523 18.4477 13 19 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
   </svg>
   <h1 class="sr-only">Character sheet</h1>
   <form class="app" id="app-form" action="#" method="POST">
@@ -91,7 +99,7 @@
       </fieldset>
       <fieldset class="charac addition">
         <legend id="charac-title">Characteristics</legend>
-        <table class="left-aligned" aria-describedby="charac-title">
+        <table class="left-aligned" aria-labelledby="charac-title">
           <thead>
             <td></td>
             <th scolpe="col" id="charac-ws-label">
@@ -225,7 +233,7 @@
         <div class="points-wrapper">
           <fieldset class="counter simple">
             <legend id="fate-title">Fate</legend>
-            <table class="left-aligned" aria-describedby="fate-title">
+            <table class="left-aligned" aria-labelledby="fate-title">
               <tbody>
                 <tr>
                   <th scope="row">Fate</th>
@@ -246,7 +254,7 @@
           </fieldset>
           <fieldset id="resilience-title" class="counter simple">
             <legend>Resilience</legend>
-            <table aria-describedby="resilience-title">
+            <table aria-labelledby="resilience-title">
               <thead>
                 <tr>
                   <th scope="col"><abbr title="Resilience">Resi.</abbr></th>
@@ -273,7 +281,7 @@
           </fieldset>
           <fieldset class="addition">
             <legend id="experience-title">Experience</legend>
-            <table class="layout-fixed" aria-describedby="experience-title">
+            <table class="layout-fixed" aria-labelledby="experience-title">
               <thead>
                 <tr>
                   <th scope="col">
@@ -326,7 +334,7 @@
           <fieldset class="addition basic">
             <legend id="skills-title" class="sr-only">Basic skills</legend>
             <div class="fake-legend" aria-hidden>Basic skills</div>
-            <table class="left-aligned" aria-describedby="skills-title">
+            <table class="left-aligned" aria-labelledby="skills-title">
               <thead>
                 <tr>
                   <th scope="col">Name</th>
@@ -730,7 +738,7 @@
           <fieldset class="addition basic">
             <legend class="sr-only">Basic skills</legend>
             <div class="fake-legend" aria-hidden>Basic skills</div>
-            <table class="left-aligned" aria-describedby="skills-title">
+            <table class="left-aligned" aria-labelledby="skills-title">
               <thead>
                 <tr>
                   <th scope="col">Name</th>
@@ -1134,7 +1142,7 @@
           <fieldset class="addition custom" id="custom-skill">
             <legend id="custom-skill-title" class="sr-only">Advanced skills</legend>
             <div class="fake-legend" aria-hidden>Advanced skills</div>
-            <table class="left-aligned" aria-describedby="custom-skill-title">
+            <table class="left-aligned" aria-labelledby="custom-skill-title">
               <thead>
                 <tr>
                   <th scope="col" id="skills-name-label">Name</th>
@@ -1146,6 +1154,12 @@
                   </th>
                   <th scope="col">
                     <abbr title="Skill">Skill</abbr>
+                  </th>
+                  <th scope="col" class="narrow actions">
+                    <span class="sr-only" id="skills-actions-title">Actions</span>
+                    <svg class="svg-actions" role="img" aria-labelledBy="skills-actions-title">
+                      <use href="#actions" />
+                    </svg>
                   </th>
                 </tr>
               </thead>
@@ -1193,6 +1207,13 @@
                     <input type="text" name="custom-skill-aug-0" id="custom-skill-aug-0">
                   </td>
                   <td><output id="custom-skill-current-0" for="custom-skill-initial-0 custom-skill-aug-0"></output></td>
+                  <td class="actions">
+                    <button class="remove" type="button">
+                      <svg role="img" aria-label="Delete">
+                        <use href="#trash" />
+                      </svg>
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -1236,6 +1257,13 @@
                   <label class="sr-only" for="custom-skill-aug-">Advance</label>
                   <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
                 <td><output id="custom-skill-current-" for=""></output></td>
+                <td class="actions">
+                  <button class="remove" type="button">
+                    <svg role="img" aria-label="Delete">
+                      <use href="#trash" />
+                    </svg>
+                  </button>
+                </td>
               </tr>
             </template>
           </fieldset>
@@ -1243,7 +1271,7 @@
       </div>
       <fieldset class="talents simple custom" id="talents">
         <legend id="talents-title">Talents</legend>
-        <table aria-describedby="talents-title">
+        <table aria-labelledby="talents-title">
           <thead>
             <tr>
               <th scope="col">
@@ -1255,36 +1283,56 @@
               <th scope="col">
                 <span id="talents-desc-label">Description</span>
               </th>
+              <th scope="col" class="narrow actions">
+                <span class="sr-only" id="talents-actions-title">Actions</span>
+                <svg class="svg-actions" role="img" aria-labelledBy="talents-actions-title">
+                  <use href="#actions" />
+                </svg>
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td class="text-align-start">
                 <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
                 <input type="hidden" name="talents-name-0" id="talents-name-0">
               </td>
               <td>
                 <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-0" id="talents-counter-0">
               </td>
-              <td>
+              <td class="text-align-start">
                 <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
                 <input type="hidden" name="talents-desc-0" id="talents-desc-0">
+              </td>
+              <td class="actions">
+                <button class="remove" type="button">
+                  <svg role="img" aria-label="Delete">
+                    <use href="#trash" />
+                  </svg>
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
         <template id="talents-row">
           <tr>
-            <td>
+            <td class="text-align-start">
               <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
               <input type="hidden" name="talents-name-" id="talents-name-">
             </td>
             <td>
               <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-" id="talents-counter-">
             </td>
-            <td>
+            <td class="text-align-start">
               <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="talents-desc-label"></div>
               <input type="hidden" name="talents-desc-" id="talents-desc-">
+            </td>
+            <td class="actions">
+              <button class="remove" type="button">
+                <svg role="img" aria-label="Delete">
+                  <use href="#trash" />
+                </svg>
+              </button>
             </td>
           </tr>
         </template>
@@ -1347,7 +1395,7 @@
     <div class="page second">
       <fieldset class="armour simple encumbrance-src custom" id="armour">
         <legend id="armour-title">Armour</legend>
-        <table aria-describedby="armour-title">
+        <table aria-labelledby="armour-title">
           <thead>
             <th scope="col">
               <span id="armour-name-label">Name</span>
@@ -1371,6 +1419,12 @@
             <th scope="col" class="narrow">
               <span id="armour-worn-label">Worn</span>
             </th>
+            <th scope="col" class="narrow actions">
+              <span class="sr-only" id="armour-actions-title">Actions</span>
+              <svg class="svg-actions" role="img" aria-labelledBy="armour-actions-title">
+                <use href="#actions" />
+              </svg>
+            </th>
           </thead>
           <tbody>
             <tr>
@@ -1389,6 +1443,13 @@
               <td><input type="text" name="armour-qualities-0" id="armour-qualities-0" aria-labelledBy="armour-qualities-label"></td>
               <td>
                 <input type="checkbox" name="armour-worn-0" id="armour-worn-0" aria-labelledBy="armour-worn-label">
+              </td>
+              <td class="actions">
+                <button class="remove" type="button">
+                  <svg role="img" aria-label="Delete">
+                    <use href="#trash" />
+                  </svg>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -1410,6 +1471,13 @@
             <td><input type="text" name="armour-qualities-" id="armour-qualities-" aria-labelledBy="armour-qualities-label"></td>
             <td>
               <input type="checkbox" name="armour-worn-" id="armour-worn-" aria-labelledBy="armour-worn-label">
+            </td>
+            <td class="actions">
+              <button class="remove" type="button">
+                <svg role="img" aria-label="Delete">
+                  <use href="#trash" />
+                </svg>
+              </button>
             </td>
           </tr>
         </template>
@@ -1461,7 +1529,7 @@
       <fieldset class="wounds simple">
         <legend id="wounds-title">Wounds</legend>
         <div class="wounds-wrapper">
-          <table class="left-aligned wounds-total" aria-describedby="wounds-title">
+          <table class="left-aligned wounds-total" aria-labelledby="wounds-title">
             <tbody>
               <tr>
                 <th scope="row" class="narrow">
@@ -1510,7 +1578,7 @@
       </fieldset>
       <fieldset class="trappings simple custom encumbrance-src" id="trappings">
         <legend id="trappings-title">Trappings</legend>
-        <table aria-describedby="trappings-title">
+        <table aria-labelledby="trappings-title">
           <thead>
             <th scope="col">
               <span id="trappings-name-label">Name</span>
@@ -1522,6 +1590,12 @@
             </th>
             <th scope="col" class="narrow">
               <span id="trappings-worn-label">Worn</span>
+            </th>
+            <th scope="col" class="narrow actions">
+              <span class="sr-only" id="trappings-actions-title">Actions</span>
+              <svg class="svg-actions" role="img" aria-labelledBy="trappings-actions-title">
+                <use href="#actions" />
+              </svg>
             </th>
           </thead>
           <tbody>
@@ -1535,6 +1609,13 @@
               </td>
               <td>
                 <input type="checkbox" name="trappings-worn-0" id="trappings-worn-0" aria-labelledBy="trappings-worn-label">
+              </td>
+              <td class="actions">
+                <button class="remove" type="button">
+                  <svg role="img" aria-label="Delete">
+                    <use href="#trash" />
+                  </svg>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -1552,12 +1633,19 @@
             <td>
               <input type="checkbox" name="trappings-worn-" id="trappings-worn-" aria-labelledBy="trappings-worn-label">
             </td>
+            <td class="actions">
+              <button class="remove" type="button">
+                <svg role="img" aria-label="Delete">
+                  <use href="#trash" />
+                </svg>
+              </button>
+            </td>
           </tr>
         </template>
       </fieldset>
       <fieldset class="encumbrance addition">
         <legend id="encumbrance-title">Encumbrance</legend>
-        <table class="left-aligned" aria-describedby="encumbrance-title">
+        <table class="left-aligned" aria-labelledby="encumbrance-title">
           <tbody>
             <tr>
               <th scope="row" class="narrow">Weapons</th>
@@ -1623,7 +1711,7 @@
       </fieldset>
       <fieldset class="wealth simple">
         <legend id="wealth-title">Wealth</legend>
-        <table class="layout-fixed" aria-describedby="wealth-title">
+        <table class="layout-fixed" aria-labelledby="wealth-title">
           <thead>
             <tr>
               <th scope="col" id="copper-label">
@@ -1684,7 +1772,7 @@
       </fieldset>
       <fieldset class="weapons simple encumbrance-src custom" id="weapons">
         <legend id="weapons-title">Weapons</legend>
-        <table aria-describedby="weapons-title">
+        <table aria-labelledby="weapons-title">
           <thead>
             <th scope="col">
               <span id="weapons-name-label">Name</span>
@@ -1709,6 +1797,12 @@
             <th scope="col" class="narrow">
               <span id="weapons-worn-label">Worn</span>
             </th>
+            <th scope="col" class="narrow actions">
+              <span class="sr-only" id="weapons-actions-title">Actions</span>
+              <svg class="svg-actions" role="img" aria-labelledBy="weapons-actions-title">
+                <use href="#actions" />
+              </svg>
+            </th>
           </thead>
           <tbody>
             <tr>
@@ -1732,6 +1826,13 @@
               </td>
               <td>
                 <input type="checkbox" name="weapons-worn-0" id="weapons-worn-0" aria-labelledBy="armour-worn-label">
+              </td>
+              <td class="actions">
+                <button class="remove" type="button">
+                  <svg role="img" aria-label="Delete">
+                    <use href="#trash" />
+                  </svg>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -1759,6 +1860,13 @@
             <td>
               <input type="checkbox" name="weapons-worn-" id="weapons-worn-" aria-labelledBy="armour-worn-label">
             </td>
+            <td class="actions">
+              <button class="remove" type="button">
+                <svg role="img" aria-label="Delete">
+                  <use href="#trash" />
+                </svg>
+              </button>
+            </td>
           </tr>
         </template>
         <output class="hidden" id="encumbrance-weapons-total"></output>
@@ -1769,7 +1877,7 @@
           <label for="sin">Sin</label>
           <input type="number" name="sin" id="sin">
         </div>
-        <table aria-describedby="spells-title">
+        <table aria-labelledby="spells-title">
           <thead>
             <th scope="col">
               <span id="spells-name-label">Name</span>
@@ -1791,6 +1899,12 @@
             <th scope="col" class="medium">
               <span id="spells-effects-label">Effect</span>
             </th>
+            <th scope="col" class="narrow actions">
+              <span class="sr-only" id="spells-actions-title">Actions</span>
+              <svg class="svg-actions" role="img" aria-labelledBy="spells-actions-title">
+                <use href="#actions" />
+              </svg>
+            </th>
           </thead>
           <tbody>
             <tr>
@@ -1811,6 +1925,13 @@
               </td>
               <td>
                 <input type="text" name="spells-effects-0" id="spells-effects-0" aria-labelledBy="spells-effects-label">
+              </td>
+              <td class="actions">
+                <button class="remove" type="button">
+                  <svg role="img" aria-label="Delete">
+                    <use href="#trash" />
+                  </svg>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -1834,6 +1955,13 @@
             </td>
             <td>
               <input type="text" name="spells-effects-" id="spells-effects-" aria-labelledBy="spells-effects-label">
+            </td>
+            <td class="actions">
+              <button class="remove" type="button">
+                <svg role="img" aria-label="Delete">
+                  <use href="#trash" />
+                </svg>
+              </button>
             </td>
           </tr>
         </template>
@@ -1878,7 +2006,7 @@
         </div>
         <div>
           <h2>Version</h2>
-          <p>Current version: <strong>1.1.2</strong></p>
+          <p>Current version: <strong>1.2.0</strong></p>
           <p>Click on the link below for more information</p>
           <p><a class="button" href="https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md">Read the CHANGELOG.md</a></p>
         </div>
