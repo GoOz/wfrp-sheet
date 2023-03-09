@@ -209,7 +209,7 @@ input:is([type="text"], [type="number"]), output {
   background-color: hsla(0, 0%, 70%, .3);
 }
 
-input:invalid {
+input[type="number"]:invalid {
   background-color: hsla(0, 100%, 70%, .3);
 }
 
