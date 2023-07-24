@@ -58,6 +58,8 @@
             <option value="dwarf">Dwarf</option>
             <option value="high elf">High Elf</option>
             <option value="wood elf">Wood Elf</option>
+            <option value="ogre">Ogre</option>
+            <option value="gnome">Gnome</option>
           </select>
         </div>
         <div class="class field">
@@ -380,7 +382,7 @@
         Advance
       </label>
       <input type="number" name="art-aug" id="art-aug"></td>
-    <td><output id="art-final" for="art-current art-aug"></output></td>
+    <td><output id="art-final" for="dex-i dex-a art-aug"></output></td>
   </tr>
   
   <tr>
@@ -409,7 +411,7 @@
         Advance
       </label>
       <input type="number" name="athletics-aug" id="athletics-aug"></td>
-    <td><output id="athletics-final" for="athletics-current athletics-aug"></output></td>
+    <td><output id="athletics-final" for="ag-i ag-a athletics-aug"></output></td>
   </tr>
   
   <tr>
@@ -438,7 +440,7 @@
         Advance
       </label>
       <input type="number" name="bribery-aug" id="bribery-aug"></td>
-    <td><output id="bribery-final" for="bribery-current bribery-aug"></output></td>
+    <td><output id="bribery-final" for="fel-i fel-a bribery-aug"></output></td>
   </tr>
   
   <tr>
@@ -467,7 +469,7 @@
         Advance
       </label>
       <input type="number" name="charm-aug" id="charm-aug"></td>
-    <td><output id="charm-final" for="charm-current charm-aug"></output></td>
+    <td><output id="charm-final" for="fel-i fel-a charm-aug"></output></td>
   </tr>
   
   <tr>
@@ -496,7 +498,7 @@
         Advance
       </label>
       <input type="number" name="charm-animal-aug" id="charm-animal-aug"></td>
-    <td><output id="charm-animal-final" for="charm-animal-current charm-animal-aug"></output></td>
+    <td><output id="charm-animal-final" for="wp-i wp-a charm-animal-aug"></output></td>
   </tr>
   
   <tr>
@@ -525,7 +527,7 @@
         Advance
       </label>
       <input type="number" name="climb-aug" id="climb-aug"></td>
-    <td><output id="climb-final" for="climb-current climb-aug"></output></td>
+    <td><output id="climb-final" for="s-i s-a climb-aug"></output></td>
   </tr>
   
   <tr>
@@ -554,7 +556,7 @@
         Advance
       </label>
       <input type="number" name="consume-alcohol-aug" id="consume-alcohol-aug"></td>
-    <td><output id="consume-alcohol-final" for="consume-alcohol-current consume-alcohol-aug"></output></td>
+    <td><output id="consume-alcohol-final" for="t-i t-a consume-alcohol-aug"></output></td>
   </tr>
   
   <tr>
@@ -583,7 +585,7 @@
         Advance
       </label>
       <input type="number" name="cool-aug" id="cool-aug"></td>
-    <td><output id="cool-final" for="cool-current cool-aug"></output></td>
+    <td><output id="cool-final" for="wp-i wp-a cool-aug"></output></td>
   </tr>
   
   <tr>
@@ -612,7 +614,7 @@
         Advance
       </label>
       <input type="number" name="dodge-aug" id="dodge-aug"></td>
-    <td><output id="dodge-final" for="dodge-current dodge-aug"></output></td>
+    <td><output id="dodge-final" for="ag-i ag-a dodge-aug"></output></td>
   </tr>
   
   <tr>
@@ -641,7 +643,7 @@
         Advance
       </label>
       <input type="number" name="drive-aug" id="drive-aug"></td>
-    <td><output id="drive-final" for="drive-current drive-aug"></output></td>
+    <td><output id="drive-final" for="ag-i ag-a drive-aug"></output></td>
   </tr>
   
   <tr>
@@ -670,7 +672,7 @@
         Advance
       </label>
       <input type="number" name="endurance-aug" id="endurance-aug"></td>
-    <td><output id="endurance-final" for="endurance-current endurance-aug"></output></td>
+    <td><output id="endurance-final" for="t-i t-a endurance-aug"></output></td>
   </tr>
   
   <tr>
@@ -699,7 +701,7 @@
         Advance
       </label>
       <input type="number" name="entertain-aug" id="entertain-aug"></td>
-    <td><output id="entertain-final" for="entertain-current entertain-aug"></output></td>
+    <td><output id="entertain-final" for="fel-i fel-a entertain-aug"></output></td>
   </tr>
   
   <tr>
@@ -728,7 +730,7 @@
         Advance
       </label>
       <input type="number" name="gamble-aug" id="gamble-aug"></td>
-    <td><output id="gamble-final" for="gamble-current gamble-aug"></output></td>
+    <td><output id="gamble-final" for="int-i int-a gamble-aug"></output></td>
   </tr>
   
 
@@ -784,7 +786,7 @@
         Advance
       </label>
       <input type="number" name="gossip-aug" id="gossip-aug"></td>
-    <td><output id="gossip-final" for="gossip-current gossip-aug"></output></td>
+    <td><output id="gossip-final" for="fel-i fel-a gossip-aug"></output></td>
   </tr>
   
   <tr>
@@ -813,7 +815,7 @@
         Advance
       </label>
       <input type="number" name="haggle-aug" id="haggle-aug"></td>
-    <td><output id="haggle-final" for="haggle-current haggle-aug"></output></td>
+    <td><output id="haggle-final" for="fel-i fel-a haggle-aug"></output></td>
   </tr>
   
   <tr>
@@ -842,7 +844,7 @@
         Advance
       </label>
       <input type="number" name="intimidate-aug" id="intimidate-aug"></td>
-    <td><output id="intimidate-final" for="intimidate-current intimidate-aug"></output></td>
+    <td><output id="intimidate-final" for="s-i s-a intimidate-aug"></output></td>
   </tr>
   
   <tr>
@@ -871,7 +873,7 @@
         Advance
       </label>
       <input type="number" name="intuition-aug" id="intuition-aug"></td>
-    <td><output id="intuition-final" for="intuition-current intuition-aug"></output></td>
+    <td><output id="intuition-final" for="i-i i-a intuition-aug"></output></td>
   </tr>
   
   <tr>
@@ -900,7 +902,7 @@
         Advance
       </label>
       <input type="number" name="leadership-aug" id="leadership-aug"></td>
-    <td><output id="leadership-final" for="leadership-current leadership-aug"></output></td>
+    <td><output id="leadership-final" for="fel-i fel-a leadership-aug"></output></td>
   </tr>
   
   <tr>
@@ -929,7 +931,7 @@
         Advance
       </label>
       <input type="number" name="melee-aug" id="melee-aug"></td>
-    <td><output id="melee-final" for="melee-current melee-aug"></output></td>
+    <td><output id="melee-final" for="ws-i ws-a melee-aug"></output></td>
   </tr>
   
   <tr>
@@ -958,7 +960,7 @@
         Advance
       </label>
       <input type="number" name="melee-basic-aug" id="melee-basic-aug"></td>
-    <td><output id="melee-basic-final" for="melee-basic-current melee-basic-aug"></output></td>
+    <td><output id="melee-basic-final" for="ws-i ws-a melee-basic-aug"></output></td>
   </tr>
   
   <tr>
@@ -987,7 +989,7 @@
         Advance
       </label>
       <input type="number" name="navigation-aug" id="navigation-aug"></td>
-    <td><output id="navigation-final" for="navigation-current navigation-aug"></output></td>
+    <td><output id="navigation-final" for="i-i i-a navigation-aug"></output></td>
   </tr>
   
   <tr>
@@ -1016,7 +1018,7 @@
         Advance
       </label>
       <input type="number" name="outdoor-survival-aug" id="outdoor-survival-aug"></td>
-    <td><output id="outdoor-survival-final" for="outdoor-survival-current outdoor-survival-aug"></output></td>
+    <td><output id="outdoor-survival-final" for="int-i int-a outdoor-survival-aug"></output></td>
   </tr>
   
   <tr>
@@ -1045,7 +1047,7 @@
         Advance
       </label>
       <input type="number" name="perception-aug" id="perception-aug"></td>
-    <td><output id="perception-final" for="perception-current perception-aug"></output></td>
+    <td><output id="perception-final" for="i-i i-a perception-aug"></output></td>
   </tr>
   
   <tr>
@@ -1074,7 +1076,7 @@
         Advance
       </label>
       <input type="number" name="ride-aug" id="ride-aug"></td>
-    <td><output id="ride-final" for="ride-current ride-aug"></output></td>
+    <td><output id="ride-final" for="ag-i ag-a ride-aug"></output></td>
   </tr>
   
   <tr>
@@ -1103,7 +1105,7 @@
         Advance
       </label>
       <input type="number" name="row-aug" id="row-aug"></td>
-    <td><output id="row-final" for="row-current row-aug"></output></td>
+    <td><output id="row-final" for="s-i s-a row-aug"></output></td>
   </tr>
   
   <tr>
@@ -1132,7 +1134,7 @@
         Advance
       </label>
       <input type="number" name="stealth-aug" id="stealth-aug"></td>
-    <td><output id="stealth-final" for="stealth-current stealth-aug"></output></td>
+    <td><output id="stealth-final" for="ag-i ag-a stealth-aug"></output></td>
   </tr>
   
 
@@ -1204,7 +1206,7 @@
                   </td>
                   <td>
                     <label class="sr-only" for="custom-skill-aug-0">Advance</label>
-                    <input type="text" name="custom-skill-aug-0" id="custom-skill-aug-0">
+                    <input type="number" name="custom-skill-aug-0" id="custom-skill-aug-0">
                   </td>
                   <td><output id="custom-skill-current-0" for="custom-skill-initial-0 custom-skill-aug-0"></output></td>
                   <td class="actions">
@@ -1255,7 +1257,7 @@
                 <td><output id="custom-skill-initial-" name="custom-skill-initial-" for=""></output></td>
                 <td>
                   <label class="sr-only" for="custom-skill-aug-">Advance</label>
-                  <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
+                  <input type="number" name="custom-skill-aug-" id="custom-skill-aug-"></td>
                 <td><output id="custom-skill-current-" for=""></output></td>
                 <td class="actions">
                   <button class="remove" type="button">
@@ -2006,7 +2008,7 @@
         </div>
         <div>
           <h2>Version</h2>
-          <p>Current version: <strong>1.2.1</strong></p>
+          <p>Current version: <strong>1.2.2</strong></p>
           <p>Click on the link below for more information</p>
           <p><a class="button" href="https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md">Read the CHANGELOG.md</a></p>
         </div>
