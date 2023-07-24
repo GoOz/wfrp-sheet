@@ -215,7 +215,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
       return;
     }
     handleSimpleInput(event);
-    outputs[0].setAttribute('for', `${event.target.value}-i ${event.target.value}-a`);
+
+    const initialSource = `${event.target.value}-i ${event.target.value}-a`
+
+    // Set initial output's for attribute
+    outputs[0].setAttribute('for', initialSource);
+
+    // Set final output's for attribute
+    const currentFor = outputs[1].getAttribute('for');
+    outputs[1].setAttribute('for', `${initialSource} ${currentFor}`);
     updateOutputs(outputs);
   }
 
@@ -314,7 +322,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       input.name = input.name + n;
       input.id = input.id + n;
       if (input.tagName === 'OUTPUT' && input.id === `${type}-current-${n}`) {
-        input.htmlFor = `${type}-initial-${n} ${type}-aug-${n}`;
+        input.htmlFor = `${type}-aug-${n}`;
       }
     });
 

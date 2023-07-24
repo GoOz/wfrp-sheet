@@ -54,6 +54,14 @@ module.exports = {
       woodElf: {
         'fr': 'Elfe sylvain',
         'en': 'Wood Elf'
+      },
+      ogre: {
+        'fr': 'Ogre',
+        'en': 'Ogre'
+      },
+      gnome: {
+        'fr': 'Gnome',
+        'en': 'Gnome'
       }
     },
     class: {

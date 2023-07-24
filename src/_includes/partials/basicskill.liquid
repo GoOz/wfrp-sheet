@@ -28,6 +28,6 @@
         {{ 'skills.adv' | i18n }}
       </label>
       <input type="number" name="{{ skill.id }}-aug" id="{{ skill.id }}-aug"></td>
-    <td><output id="{{skill.id}}-final" for="{{ skill.id }}-current {{ skill.id }}-aug"></output></td>
+    <td><output id="{{skill.id}}-final" for="{{ skill.charac | downcase }}-i {{ skill.charac | downcase }}-a {{ skill.id }}-aug"></output></td>
   </tr>
   {% endfor %}

@@ -58,6 +58,8 @@
             <option value="dwarf">{{ 'info.speciesOptions.dwarf' | i18n }}</option>
             <option value="high elf">{{ 'info.speciesOptions.highElf' | i18n }}</option>
             <option value="wood elf">{{ 'info.speciesOptions.woodElf' | i18n }}</option>
+            <option value="ogre">{{ 'info.speciesOptions.ogre' | i18n }}</option>
+            <option value="gnome">{{ 'info.speciesOptions.gnome' | i18n }}</option>
           </select>
         </div>
         <div class="class field">
@@ -442,7 +444,7 @@
                   </td>
                   <td>
                     <label class="sr-only" for="custom-skill-aug-0">{{ 'skills.adv' | i18n }}</label>
-                    <input type="text" name="custom-skill-aug-0" id="custom-skill-aug-0">
+                    <input type="number" name="custom-skill-aug-0" id="custom-skill-aug-0">
                   </td>
                   <td><output id="custom-skill-current-0" for="custom-skill-initial-0 custom-skill-aug-0"></output></td>
                   <td class="actions">
@@ -493,7 +495,7 @@
                 <td><output id="custom-skill-initial-" name="custom-skill-initial-" for=""></output></td>
                 <td>
                   <label class="sr-only" for="custom-skill-aug-">{{ 'skills.adv' | i18n }}</label>
-                  <input type="text" name="custom-skill-aug-" id="custom-skill-aug-"></td>
+                  <input type="number" name="custom-skill-aug-" id="custom-skill-aug-"></td>
                 <td><output id="custom-skill-current-" for=""></output></td>
                 <td class="actions">
                   <button class="remove" type="button">
