@@ -1,1114 +1,1118 @@
 module.exports = {
   title: {
-    'fr': 'Feuille de personnage Warhammer Fantasy Role Play',
-    'en': 'Warhammer Fantasy Role Play&apos;s character sheet'
+    fr: "Feuille de personnage Warhammer Fantasy Role Play",
+    en: "Warhammer Fantasy Role Play&apos;s character sheet",
   },
   desc: {
-    'fr': 'Un outil en ligne pour gérer votre fiche de personnage pour le jeu de rôle Warhammer Fantasy Role Play',
-    'en': 'An online tool to help you manage your Warhammer Fantasy Role Play game&apos;s character sheet'
+    fr: "Un outil en ligne pour gérer votre fiche de personnage pour le jeu de rôle Warhammer Fantasy Role Play",
+    en: "An online tool to help you manage your Warhammer Fantasy Role Play game&apos;s character sheet",
   },
   h1: {
-    'fr': 'Feuille de personnage',
-    'en': 'Character sheet'
+    fr: "Feuille de personnage",
+    en: "Character sheet",
   },
   actions: {
     title: {
-      'fr': 'Actions',
-      'en': 'Actions'
+      fr: "Actions",
+      en: "Actions",
     },
     delete: {
-      'fr': 'Supprimer',
-      'en': 'Delete'
-    }
+      fr: "Supprimer",
+      en: "Delete",
+    },
   },
   info: {
     title: {
-      'fr': 'Informations du personnage',
-      'en': 'Character&apos;s personal informations'
+      fr: "Informations du personnage",
+      en: "Character&apos;s personal informations",
     },
     name: {
-      'fr': 'Nom',
-      'en': 'Name'
+      fr: "Nom",
+      en: "Name",
     },
     species: {
-      'fr': 'Race',
-      'en': 'Species'
+      fr: "Race",
+      en: "Species",
     },
     speciesOptions: {
       human: {
-        'fr': 'Humain',
-        'en': 'Human'
+        fr: "Humain",
+        en: "Human",
       },
       halfling: {
-        'fr': 'Halfling',
-        'en': 'Halfling'
+        fr: "Halfling",
+        en: "Halfling",
       },
       dwarf: {
-        'fr': 'Nain',
-        'en': 'Dwarf'
+        fr: "Nain",
+        en: "Dwarf",
       },
       highElf: {
-        'fr': 'Haut elfe',
-        'en': 'High Elf'
+        fr: "Haut elfe",
+        en: "High Elf",
       },
       woodElf: {
-        'fr': 'Elfe sylvain',
-        'en': 'Wood Elf'
+        fr: "Elfe sylvain",
+        en: "Wood Elf",
       },
       ogre: {
-        'fr': 'Ogre',
-        'en': 'Ogre'
+        fr: "Ogre",
+        en: "Ogre",
       },
       gnome: {
-        'fr': 'Gnome',
-        'en': 'Gnome'
-      }
+        fr: "Gnome",
+        en: "Gnome",
+      },
     },
     class: {
-      'fr': 'Classe',
-      'en': 'Class'
+      fr: "Classe",
+      en: "Class",
     },
     career: {
-      'fr': 'Carrière',
-      'en': 'Career'
+      fr: "Carrière",
+      en: "Career",
     },
     careerTier: {
-      'fr': 'Niveau de carrière',
-      'en': 'Career Tier'
+      fr: "Niveau de carrière",
+      en: "Career Tier",
     },
     careerPath: {
-      'fr': 'Schéma de carrière',
-      'en': 'Career Path'
+      fr: "Schéma de carrière",
+      en: "Career Path",
     },
     status: {
-      'fr': 'Statut',
-      'en': 'Status'
+      fr: "Statut",
+      en: "Status",
     },
     age: {
-      'fr': 'Âge',
-      'en': 'Age'
+      fr: "Âge",
+      en: "Age",
     },
     height: {
-      'fr': 'Taille',
-      'en': 'Height'
+      fr: "Taille",
+      en: "Height",
     },
     hair: {
-      'fr': 'Cheveux',
-      'en': 'Hair'
+      fr: "Cheveux",
+      en: "Hair",
     },
     eyes: {
-      'fr': 'Yeux',
-      'en': 'Eyes'
-    }
+      fr: "Yeux",
+      en: "Eyes",
+    },
   },
   charac: {
     title: {
-      'fr': 'Caratéristiques',
-      'en': 'Characteristics'
+      fr: "Caratéristiques",
+      en: "Characteristics",
+    },
+    highlight: {
+      fr: "Surligner cette caratéristique",
+      en: "Highlight this characteristic",
     },
     ws: {
       full: {
-        'fr': 'Corps à corps',
-        'en': 'Weapon Skill'
+        fr: "Corps à corps",
+        en: "Weapon Skill",
       },
       abbr: {
-        'fr': 'CC',
-        'en': 'WS'
-      }
+        fr: "CC",
+        en: "WS",
+      },
     },
     bs: {
       full: {
-        'fr': 'Capacité de tir',
-        'en': 'Ballistic Skill'
+        fr: "Capacité de tir",
+        en: "Ballistic Skill",
       },
       abbr: {
-        'fr': 'CT',
-        'en': 'BS'
-      }
+        fr: "CT",
+        en: "BS",
+      },
     },
     s: {
       full: {
-        'fr': 'Force',
-        'en': 'Strength'
+        fr: "Force",
+        en: "Strength",
       },
       abbr: {
-        'fr': 'F',
-        'en': 'S'
-      }
+        fr: "F",
+        en: "S",
+      },
     },
     t: {
       full: {
-        'fr': 'Endurance',
-        'en': 'Toughness'
+        fr: "Endurance",
+        en: "Toughness",
       },
       abbr: {
-        'fr': 'E',
-        'en': 'T'
-      }
+        fr: "E",
+        en: "T",
+      },
     },
     i: {
       full: {
-        'fr': 'Initiative',
-        'en': 'Initiative'
+        fr: "Initiative",
+        en: "Initiative",
       },
       abbr: {
-        'fr': 'I',
-        'en': 'I'
-      }
+        fr: "I",
+        en: "I",
+      },
     },
     ag: {
       full: {
-        'fr': 'Agilité',
-        'en': 'Agility'
+        fr: "Agilité",
+        en: "Agility",
       },
       abbr: {
-        'fr': 'Ag',
-        'en': 'Ag'
-      }
+        fr: "Ag",
+        en: "Ag",
+      },
     },
     dex: {
       full: {
-        'fr': 'Dextérité',
-        'en': 'Dexterity'
+        fr: "Dextérité",
+        en: "Dexterity",
       },
       abbr: {
-        'fr': 'Dex',
-        'en': 'Dex'
-      }
+        fr: "Dex",
+        en: "Dex",
+      },
     },
     int: {
       full: {
-        'fr': 'Intelligence',
-        'en': 'Intelligence'
+        fr: "Intelligence",
+        en: "Intelligence",
       },
       abbr: {
-        'fr': 'Int',
-        'en': 'Int'
-      }
+        fr: "Int",
+        en: "Int",
+      },
     },
     wp: {
       full: {
-        'fr': 'Force mentale',
-        'en': 'Will Power'
+        fr: "Force mentale",
+        en: "Will Power",
       },
       abbr: {
-        'fr': 'FM',
-        'en': 'WP'
-      }
+        fr: "FM",
+        en: "WP",
+      },
     },
     fel: {
       full: {
-        'fr': 'Social',
-        'en': 'Fellowship'
+        fr: "Social",
+        en: "Fellowship",
       },
       abbr: {
-        'fr': 'Soc',
-        'en': 'Fel'
-      }
+        fr: "Soc",
+        en: "Fel",
+      },
     },
     initial: {
-      'fr': 'Initiales',
-      'en': 'Initial'
+      fr: "Initiales",
+      en: "Initial",
     },
     advances: {
-      'fr': 'Augmentation',
-      'en': 'Advances'
+      fr: "Augmentation",
+      en: "Advances",
     },
     current: {
-      'fr': 'Courantes',
-      'en': 'Current'
-    }
+      fr: "Courantes",
+      en: "Current",
+    },
   },
   points: {
     fate: {
       title: {
-        'fr': 'Destin',
-        'en': 'Fate'
+        fr: "Destin",
+        en: "Fate",
       },
       availablePoints: {
-        'fr': 'Points de destin disponibles',
-        'en': 'Available fate points'
+        fr: "Points de destin disponibles",
+        en: "Available fate points",
       },
       totalPoints: {
-        'fr': 'Points de destin total',
-        'en': 'Total fate points'
-      }
+        fr: "Points de destin total",
+        en: "Total fate points",
+      },
     },
     fortune: {
       title: {
-        'fr': 'Chance',
-        'en': 'Fortune'
+        fr: "Chance",
+        en: "Fortune",
       },
       availablePoints: {
-        'fr': 'Points de chance disponibles',
-        'en': 'Available fortune points'
+        fr: "Points de chance disponibles",
+        en: "Available fortune points",
       },
       totalPoints: {
-        'fr': 'Points de chance total',
-        'en': 'Total fortune points'
-      }
+        fr: "Points de chance total",
+        en: "Total fortune points",
+      },
     },
     resilience: {
       title: {
-        'fr': 'Résilience',
-        'en': 'Resilience'
+        fr: "Résilience",
+        en: "Resilience",
       },
       abbr: {
-        'fr': 'Rés.',
-        'en': 'Resi.'
+        fr: "Rés.",
+        en: "Resi.",
       },
       availablePoints: {
-        'fr': 'Points de résilience disponibles',
-        'en': 'Available resilience points'
+        fr: "Points de résilience disponibles",
+        en: "Available resilience points",
       },
       totalPoints: {
-        'fr': 'Points de résilience total',
-        'en': 'Total resilience points'
-      }
+        fr: "Points de résilience total",
+        en: "Total resilience points",
+      },
     },
     resolve: {
       title: {
-        'fr': 'Détermination',
-        'en': 'Resolve'
+        fr: "Détermination",
+        en: "Resolve",
       },
       abbr: {
-        'fr': 'Déter.',
-        'en': 'Reso.'
+        fr: "Déter.",
+        en: "Reso.",
       },
       availablePoints: {
-        'fr': 'Points de détermination disponibles',
-        'en': 'Available resolve points'
+        fr: "Points de détermination disponibles",
+        en: "Available resolve points",
       },
       totalPoints: {
-        'fr': 'Points de détermination total',
-        'en': 'Total resolve points'
-      }
+        fr: "Points de détermination total",
+        en: "Total resolve points",
+      },
     },
     motivation: {
       title: {
-        'fr': 'Motivation',
-        'en': 'Motivation'
+        fr: "Motivation",
+        en: "Motivation",
       },
       abbr: {
-        'fr': 'Motiv.',
-        'en': 'Motiv.'
-      }
+        fr: "Motiv.",
+        en: "Motiv.",
+      },
     },
-    experience : {
+    experience: {
       title: {
-        'fr': 'Expérience',
-        'en': 'Experience'
+        fr: "Expérience",
+        en: "Experience",
       },
       current: {
-        'fr': 'Actuelle',
-        'en': 'Current'
+        fr: "Actuelle",
+        en: "Current",
       },
       currentAbbr: {
-        'fr': 'Act.',
-        'en': 'Cur.'
+        fr: "Act.",
+        en: "Cur.",
       },
       currentLabel: {
-        'fr': 'Expérience à dépenser',
-        'en': 'Experience to spend'
+        fr: "Expérience à dépenser",
+        en: "Experience to spend",
       },
       spent: {
-        'fr': 'Dépensée',
-        'en': 'Spent'
+        fr: "Dépensée",
+        en: "Spent",
       },
       spentAbbr: {
-        'fr': 'Dép.',
-        'en': 'Spe.'
+        fr: "Dép.",
+        en: "Spe.",
       },
       spentLabel: {
-        'fr': 'Expérience dépensée',
-        'en': 'Spent experience'
+        fr: "Expérience dépensée",
+        en: "Spent experience",
       },
       total: {
-        'fr': 'Totale',
-        'en': 'Total'
+        fr: "Totale",
+        en: "Total",
       },
       totalAbbr: {
-        'fr': 'Tot.',
-        'en': 'Tot.'
+        fr: "Tot.",
+        en: "Tot.",
       },
-    }
+    },
   },
   movement: {
     title: {
-      'fr': 'Mouvement',
-      'en': 'Movement'
+      fr: "Mouvement",
+      en: "Movement",
     },
     walk: {
-      'fr': 'Marche',
-      'en': 'Walk'
+      fr: "Marche",
+      en: "Walk",
     },
     run: {
-      'fr': 'Course',
-      'en': 'Run'
-    }
+      fr: "Course",
+      en: "Run",
+    },
   },
   skills: {
     basicTitle: {
-      'fr': 'Compétences de base',
-      'en': 'Basic skills'
+      fr: "Compétences de base",
+      en: "Basic skills",
     },
     customTitle: {
-      'fr': 'Compétences avancées',
-      'en': 'Advanced skills'
+      fr: "Compétences avancées",
+      en: "Advanced skills",
     },
     name: {
-      'fr': 'Nom',
-      'en': 'Name'
+      fr: "Nom",
+      en: "Name",
     },
     charac: {
-      'fr': 'Caractéristique',
-      'en': 'Characteristic'
+      fr: "Caractéristique",
+      en: "Characteristic",
     },
     characAbbr: {
-      'fr': 'Carac.',
-      'en': 'Charac.'
+      fr: "Carac.",
+      en: "Charac.",
     },
     adv: {
-      'fr': 'Augmentation',
-      'en': 'Advance'
+      fr: "Augmentation",
+      en: "Advance",
     },
     advAbbr: {
-      'fr': 'Aug.',
-      'en': 'Adv.'
+      fr: "Aug.",
+      en: "Adv.",
     },
     skill: {
-      'fr': 'Compétence',
-      'en': 'Skill'
+      fr: "Compétence",
+      en: "Skill",
     },
     skillAbbr: {
-      'fr': 'Comp.',
-      'en': 'Skill'
+      fr: "Comp.",
+      en: "Skill",
     },
     highlight: {
-      'fr': 'Surligner cette compétence',
-      'en': 'Highlight this skill'
+      fr: "Surligner cette compétence",
+      en: "Highlight this skill",
     },
     basic: [
       {
-        id: 'art',
-        charac: 'Dex',
+        id: "art",
+        charac: "Dex",
         label: {
-          'fr': 'Art',
-          'en': 'Art'
-        }
+          fr: "Art",
+          en: "Art",
+        },
       },
       {
-        id: 'athletics',
-        charac: 'Ag',
+        id: "athletics",
+        charac: "Ag",
         label: {
-          'fr': 'Athlétisme',
-          'en': 'Athletics'
-        }
+          fr: "Athlétisme",
+          en: "Athletics",
+        },
       },
       {
-        id: 'cool',
-        charac: 'WP',
+        id: "cool",
+        charac: "WP",
         label: {
-          'fr': 'Calme',
-          'en': 'Cool'
-        }
+          fr: "Calme",
+          en: "Cool",
+        },
       },
       {
-        id: 'charm',
-        charac: 'Fel',
+        id: "charm",
+        charac: "Fel",
         label: {
-          'fr': 'Charme',
-          'en': 'Charm'
-        }
+          fr: "Charme",
+          en: "Charm",
+        },
       },
       {
         id: "ride",
-        charac: 'Ag',
+        charac: "Ag",
         label: {
-          'fr': 'Chevaucher',
-          'en': 'Ride'
-        }
+          fr: "Chevaucher",
+          en: "Ride",
+        },
       },
       {
-        id: 'leadership',
-        charac: 'Fel',
+        id: "leadership",
+        charac: "Fel",
         label: {
-          'fr': 'Commandement',
-          'en': 'Leadership'
-        }
+          fr: "Commandement",
+          en: "Leadership",
+        },
       },
       {
-        id: 'drive',
-        charac: 'Ag',
+        id: "drive",
+        charac: "Ag",
         label: {
-          'fr': 'Conduite d&apos;attelage',
-          'en': 'Drive'
-        }
+          fr: "Conduite d&apos;attelage",
+          en: "Drive",
+        },
       },
       {
-        id: 'melee-basic',
-        charac: 'WS',
+        id: "melee-basic",
+        charac: "WS",
         label: {
-          'fr': 'Corps à corps (base)',
-          'en': 'Melee (Basic)'
-        }
+          fr: "Corps à corps (base)",
+          en: "Melee (Basic)",
+        },
       },
       {
-        id: 'melee',
-        charac: 'WS',
+        id: "melee",
+        charac: "WS",
         label: {
-          'fr': 'Corps à corps',
-          'en': 'Melee'
-        }
+          fr: "Corps à corps",
+          en: "Melee",
+        },
       },
       {
-        id: 'stealth',
-        charac: 'Ag',
+        id: "stealth",
+        charac: "Ag",
         label: {
-          'fr': 'Discrétion',
-          'en': 'Stealth'
-        }
+          fr: "Discrétion",
+          en: "Stealth",
+        },
       },
       {
-        id: 'entertain',
-        charac: 'Fel',
+        id: "entertain",
+        charac: "Fel",
         label: {
-          'fr': 'Divertissement',
-          'en': 'Entertain'
-        }
+          fr: "Divertissement",
+          en: "Entertain",
+        },
       },
       {
-        id: 'charm-animal',
-        charac: 'WP',
+        id: "charm-animal",
+        charac: "WP",
         label: {
-          'fr': 'Emprise animaux',
-          'en': 'Charm Animal'
-        }
+          fr: "Emprise animaux",
+          en: "Charm Animal",
+        },
       },
       {
-        id: 'climb',
-        charac: 'S',
+        id: "climb",
+        charac: "S",
         label: {
-          'fr': 'Escalade',
-          'en': 'Climb'
-        }
+          fr: "Escalade",
+          en: "Climb",
+        },
       },
       {
-        id: 'dodge',
-        charac: 'Ag',
+        id: "dodge",
+        charac: "Ag",
         label: {
-          'fr': 'Esquive',
-          'en': 'Dodge'
-        }
+          fr: "Esquive",
+          en: "Dodge",
+        },
       },
       {
-        id: 'intimidate',
-        charac: 'S',
+        id: "intimidate",
+        charac: "S",
         label: {
-          'fr': 'Intimidation',
-          'en': 'Intimidate'
-        }
+          fr: "Intimidation",
+          en: "Intimidate",
+        },
       },
       {
-        id: 'intuition',
-        charac: 'I',
+        id: "intuition",
+        charac: "I",
         label: {
-          'fr': 'Intuition',
-          'en': 'Intuition'
-        }
+          fr: "Intuition",
+          en: "Intuition",
+        },
       },
       {
-        id: 'haggle',
-        charac: 'Fel',
+        id: "haggle",
+        charac: "Fel",
         label: {
-          'fr': 'Marchandage',
-          'en': 'Haggle'
-        }
+          fr: "Marchandage",
+          en: "Haggle",
+        },
       },
       {
-        id: 'navigation',
-        charac: 'I',
+        id: "navigation",
+        charac: "I",
         label: {
-          'fr': 'Orientation',
-          'en': 'Navigation'
-        }
+          fr: "Orientation",
+          en: "Navigation",
+        },
       },
       {
-        id: 'gamble',
-        charac: 'Int',
+        id: "gamble",
+        charac: "Int",
         label: {
-          'fr': 'Pari',
-          'en': 'Gamble'
-        }
+          fr: "Pari",
+          en: "Gamble",
+        },
       },
       {
-        id: 'perception',
-        charac: 'I',
+        id: "perception",
+        charac: "I",
         label: {
-          'fr': 'Perception',
-          'en': 'Perception'
-        }
+          fr: "Perception",
+          en: "Perception",
+        },
       },
       {
-        id: 'gossip',
-        charac: 'Fel',
+        id: "gossip",
+        charac: "Fel",
         label: {
-          'fr': 'Ragot',
-          'en': 'Gossip'
-        }
+          fr: "Ragot",
+          en: "Gossip",
+        },
       },
       {
-        id: 'row',
-        charac: 'S',
+        id: "row",
+        charac: "S",
         label: {
-          'fr': 'Ramer',
-          'en': 'Row'
-        }
+          fr: "Ramer",
+          en: "Row",
+        },
       },
       {
-        id: 'endurance',
-        charac: 'T',
+        id: "endurance",
+        charac: "T",
         label: {
-          'fr': 'Résistance',
-          'en': 'Endurance'
-        }
+          fr: "Résistance",
+          en: "Endurance",
+        },
       },
       {
-        id: 'consume-alcohol',
-        charac: 'T',
+        id: "consume-alcohol",
+        charac: "T",
         label: {
-          'fr': 'Résistance à l&apos;alcool',
-          'en': 'Consume Alcohol'
-        }
+          fr: "Résistance à l&apos;alcool",
+          en: "Consume Alcohol",
+        },
       },
       {
-        id: 'bribery',
-        charac: 'Fel',
+        id: "bribery",
+        charac: "Fel",
         label: {
-          'fr': 'Subordination',
-          'en': 'Bribery'
-        }
+          fr: "Subordination",
+          en: "Bribery",
+        },
       },
       {
-        id: 'outdoor-survival',
-        charac: 'Int',
+        id: "outdoor-survival",
+        charac: "Int",
         label: {
-          'fr': 'Survie en extérieur',
-          'en': 'Outdoor Survival'
-        }
-      }
+          fr: "Survie en extérieur",
+          en: "Outdoor Survival",
+        },
+      },
     ],
     basedOnCharac: {
-      'fr': 'Caractéristique de base',
-      'en': 'Based on characteristic'
-    }
+      fr: "Caractéristique de base",
+      en: "Based on characteristic",
+    },
   },
   talents: {
     title: {
-      'fr': 'Talents',
-      'en': 'Talents'
+      fr: "Talents",
+      en: "Talents",
     },
     name: {
-      'fr': 'Nom du talent',
-      'en': 'Talent Name'
+      fr: "Nom du talent",
+      en: "Talent Name",
     },
     taken: {
-      'fr': 'Nombre de fois pris',
-      'en': 'Times Taken'
+      fr: "Nombre de fois pris",
+      en: "Times Taken",
     },
     takenAbbr: {
-      'fr': 'Nbre pris',
-      'en': 'Taken'
+      fr: "Nbre pris",
+      en: "Taken",
     },
     desc: {
-      'fr': 'Description',
-      'en': 'Description'
-    }
+      fr: "Description",
+      en: "Description",
+    },
   },
   ambitions: {
     title: {
-      'fr': 'Ambitions',
-      'en': 'Ambitions'
+      fr: "Ambitions",
+      en: "Ambitions",
     },
     short: {
-      'fr': 'À court terme',
-      'en': 'Short Term'
+      fr: "À court terme",
+      en: "Short Term",
     },
     long: {
-      'fr': 'À long terme',
-      'en': 'Long Term'
-    }
+      fr: "À long terme",
+      en: "Long Term",
+    },
   },
   party: {
     title: {
-      'fr': 'Groupe',
-      'en': 'Party'
+      fr: "Groupe",
+      en: "Party",
     },
     name: {
-      'fr': 'Nom du groupe',
-      'en': 'Party Name'
+      fr: "Nom du groupe",
+      en: "Party Name",
     },
     short: {
-      'fr': 'À court terme',
-      'en': 'Short Term'
+      fr: "À court terme",
+      en: "Short Term",
     },
     long: {
-      'fr': 'À long terme',
-      'en': 'Long Term'
+      fr: "À long terme",
+      en: "Long Term",
     },
     members: {
-      'fr': 'Membres',
-      'en': 'Members'
-    }
+      fr: "Membres",
+      en: "Members",
+    },
   },
   armour: {
     title: {
-      'fr': 'Armure',
-      'en': 'Armour'
+      fr: "Armure",
+      en: "Armour",
     },
     name: {
-      'fr': 'Nom',
-      'en': 'Name'
+      fr: "Nom",
+      en: "Name",
     },
     locations: {
-      'fr': 'Localisation',
-      'en': 'Locations'
+      fr: "Localisation",
+      en: "Locations",
     },
     encumbrance: {
-      'fr': 'Encombrement',
-      'en': 'Encumbrance'
+      fr: "Encombrement",
+      en: "Encumbrance",
     },
     encumbranceAbbr: {
-      'fr': 'Enc',
-      'en': 'Enc'
+      fr: "Enc",
+      en: "Enc",
     },
     points: {
-      'fr': 'Points d&apos;armure',
-      'en': 'Armour Points'
+      fr: "Points d&apos;armure",
+      en: "Armour Points",
     },
     pointsAbbr: {
-      'fr': 'PA',
-      'en': 'AP'
+      fr: "PA",
+      en: "AP",
     },
     qualities: {
-      'fr': 'Atouts/Défauts',
-      'en': 'Qualities'
+      fr: "Atouts/Défauts",
+      en: "Qualities",
     },
     worn: {
-      'fr': 'Porté',
-      'en': 'Worn'
-    }
+      fr: "Porté",
+      en: "Worn",
+    },
   },
   armourPoints: {
     title: {
-      'fr': 'Points d&apos;armure (PA)',
-      'en': 'Armour Points (AP)'
+      fr: "Points d&apos;armure (PA)",
+      en: "Armour Points (AP)",
     },
     head: {
-      'fr': 'Tête',
-      'en': 'Head'
+      fr: "Tête",
+      en: "Head",
     },
     rightArm: {
-      'fr': 'Bras fort',
-      'en': 'Right Arm'
+      fr: "Bras fort",
+      en: "Right Arm",
     },
     leftArm: {
-      'fr': 'Bras faible',
-      'en': 'Left Arm'
+      fr: "Bras faible",
+      en: "Left Arm",
     },
     body: {
-      'fr': 'Corps',
-      'en': 'Body'
+      fr: "Corps",
+      en: "Body",
     },
     rightLeg: {
-      'fr': 'Jambe droite',
-      'en': 'Right Leg'
+      fr: "Jambe droite",
+      en: "Right Leg",
     },
     leftLeg: {
-      'fr': 'Jambe gauche',
-      'en': 'Left Leg'
+      fr: "Jambe gauche",
+      en: "Left Leg",
     },
     shield: {
-      'fr': 'Bouclier',
-      'en': 'Shield'
-    }
+      fr: "Bouclier",
+      en: "Shield",
+    },
   },
-  wounds : {
+  wounds: {
     title: {
-      'fr': 'Blessures',
-      'en': 'Wounds'
+      fr: "Blessures",
+      en: "Wounds",
     },
     strengthBonus: {
-      'fr': 'Bonus de Force',
-      'en': 'Strength Bonus'
+      fr: "Bonus de Force",
+      en: "Strength Bonus",
     },
     strengthBonusAbbr: {
-      'fr': 'BF',
-      'en': 'SB'
+      fr: "BF",
+      en: "SB",
     },
     toughnessBonus: {
-      'fr': 'Bonus de d&apos;Endurance fois deux',
-      'en': 'Toughness Bonus times two'
+      fr: "Bonus de d&apos;Endurance fois deux",
+      en: "Toughness Bonus times two",
     },
     toughnessBonusAbbr: {
-      'fr': 'BEx2',
-      'en': 'TBx2'
+      fr: "BEx2",
+      en: "TBx2",
     },
     willPowerBonus: {
-      'fr': 'Bonus de Force Mentale',
-      'en': 'Will Power Bonus'
+      fr: "Bonus de Force Mentale",
+      en: "Will Power Bonus",
     },
     willPowerBonusAbbr: {
-      'fr': 'BFM',
-      'en': 'WPB'
+      fr: "BFM",
+      en: "WPB",
     },
     hardy: {
-      'fr': 'Dur à cuire',
-      'en': 'Hardy'
+      fr: "Dur à cuire",
+      en: "Hardy",
     },
     hardyLabel: {
-      'fr': 'Talent Dur à cuire',
-      'en': 'Hardy Talent'
+      fr: "Talent Dur à cuire",
+      en: "Hardy Talent",
     },
     current: {
-      'fr': 'Points de blessure actuels',
-      'en': 'Current wounds'
+      fr: "Points de blessure actuels",
+      en: "Current wounds",
     },
   },
   trappings: {
     title: {
-      'fr': 'Possessions',
-      'en': 'Trappings'
+      fr: "Possessions",
+      en: "Trappings",
     },
     name: {
-      'fr': 'Nom',
-      'en': 'Name'
+      fr: "Nom",
+      en: "Name",
     },
     encumbrance: {
-      'fr': 'Encombrement',
-      'en': 'Encumbrance'
+      fr: "Encombrement",
+      en: "Encumbrance",
     },
     encumbranceAbbr: {
-      'fr': 'Enc',
-      'en': 'Enc'
+      fr: "Enc",
+      en: "Enc",
     },
     worn: {
-      'fr': 'Porté',
-      'en': 'Worn'
-    }
+      fr: "Porté",
+      en: "Worn",
+    },
   },
   encumbrance: {
     title: {
-      'fr': 'Encombrement',
-      'en': 'Encumbrance'
+      fr: "Encombrement",
+      en: "Encumbrance",
     },
     weapons: {
-      'fr': 'Armes',
-      'en': 'Weapons'
+      fr: "Armes",
+      en: "Weapons",
     },
     armour: {
-      'fr': 'Armures',
-      'en': 'Armour'
+      fr: "Armures",
+      en: "Armour",
     },
     trappings: {
-      'fr': 'Possessions',
-      'en': 'Trappings'
+      fr: "Possessions",
+      en: "Trappings",
     },
     max: {
-      'fr': 'Encombrement maximum',
-      'en': 'Maximum Encumbrance'
+      fr: "Encombrement maximum",
+      en: "Maximum Encumbrance",
     },
     maxAbbr: {
-      'fr': 'Enc. max',
-      'en': 'Max Enc.'
+      fr: "Enc. max",
+      en: "Max Enc.",
     },
     total: {
-      'fr': 'Total',
-      'en': 'Total'
+      fr: "Total",
+      en: "Total",
     },
     penalty0: {
       title: {
-        'fr': 'Pas de pénalité',
-        'en': 'No penalty'
-      }
+        fr: "Pas de pénalité",
+        en: "No penalty",
+      },
     },
     penalty1: {
       title: {
-        'fr': 'Surchargé Niv. 1',
-        'en': 'Overburdened Lvl 1'
+        fr: "Surchargé Niv. 1",
+        en: "Overburdened Lvl 1",
       },
       p1: {
-        'fr': '-1 mouvement (Min: 3)',
-        'en': '-1 Movement (Min: 3)'
+        fr: "-1 mouvement (Min: 3)",
+        en: "-1 Movement (Min: 3)",
       },
       p2: {
-        'fr': '-10 en agilité',
-        'en': '-10 Agility'
+        fr: "-10 en agilité",
+        en: "-10 Agility",
       },
       p3: {
-        'fr': '+1 fatigue du voyage',
-        'en': '+1 Travel Fatigue'
-      }
+        fr: "+1 fatigue du voyage",
+        en: "+1 Travel Fatigue",
+      },
     },
     penalty2: {
       title: {
-        'fr': 'Surchargé Niv. 2',
-        'en': 'Overburdened Lvl 2'
+        fr: "Surchargé Niv. 2",
+        en: "Overburdened Lvl 2",
       },
       p1: {
-        'fr': '-2 mouvement (Min: 3)',
-        'en': '-2 Movement (Min: 3)'
+        fr: "-2 mouvement (Min: 3)",
+        en: "-2 Movement (Min: 3)",
       },
       p2: {
-        'fr': '-20 en agilité',
-        'en': '-20 Agility'
+        fr: "-20 en agilité",
+        en: "-20 Agility",
       },
       p3: {
-        'fr': '+2 fatigue du voyage',
-        'en': '+2 Travel Fatigue'
-      }
+        fr: "+2 fatigue du voyage",
+        en: "+2 Travel Fatigue",
+      },
     },
     penalty3: {
       title: {
-        'fr': 'Surchargé Niv. 3',
-        'en': 'Overburdened Lvl 3'
+        fr: "Surchargé Niv. 3",
+        en: "Overburdened Lvl 3",
       },
       p1: {
-        'fr': 'Vous ne pouvez plus vous déplacer',
-        'en': 'You&apos;re not moving'
-      }
-    }
+        fr: "Vous ne pouvez plus vous déplacer",
+        en: "You&apos;re not moving",
+      },
+    },
   },
   wealth: {
-    title :{
-      'fr': 'Richesses',
-      'en': 'Wealth'
+    title: {
+      fr: "Richesses",
+      en: "Wealth",
     },
     copper: {
-      'fr': 'Sous de cuivre',
-      'en': 'Brass Pennies'
+      fr: "Sous de cuivre",
+      en: "Brass Pennies",
     },
     copperAbbr: {
-      'fr': 'sc',
-      'en': 'D'
+      fr: "sc",
+      en: "D",
     },
     silver: {
-      'fr': 'Pistoles d&apos;argent',
-      'en': 'Silver Schilings'
+      fr: "Pistoles d&apos;argent",
+      en: "Silver Schilings",
     },
     silverAbbr: {
-      'fr': '/-',
-      'en': 'SS'
+      fr: "/-",
+      en: "SS",
     },
     gold: {
-      'fr': 'Couronnes d&apos;or',
-      'en': 'Gold Crowns'
+      fr: "Couronnes d&apos;or",
+      en: "Gold Crowns",
     },
     goldAbbr: {
-      'fr': 'CO',
-      'en': 'GC'
+      fr: "CO",
+      en: "GC",
     },
     change: {
-      'fr': '1CO = 20/- = 240sc',
-      'en': '1GC = 20SS = 240D'
-    }
+      fr: "1CO = 20/- = 240sc",
+      en: "1GC = 20SS = 240D",
+    },
   },
   psychology: {
     title: {
-      'fr': 'Psychologie',
-      'en': 'Psychology'
-    }
+      fr: "Psychologie",
+      en: "Psychology",
+    },
   },
   corruption: {
     title: {
-      'fr': 'Corruption et mutation',
-      'en': 'Corruption & mutation'
+      fr: "Corruption et mutation",
+      en: "Corruption & mutation",
     },
     threshold: {
-      'fr': 'Seuil',
-      'en': 'Threshold'
+      fr: "Seuil",
+      en: "Threshold",
     },
     points: {
-      'fr': 'Points de corruption',
-      'en': 'Current Corruption'
+      fr: "Points de corruption",
+      en: "Current Corruption",
     },
     mutations: {
-      'fr': 'Mutations',
-      'en': 'Mutations'
-    }
+      fr: "Mutations",
+      en: "Mutations",
+    },
   },
   weapons: {
     title: {
-      'fr': 'Armes',
-      'en': 'Weapons'
+      fr: "Armes",
+      en: "Weapons",
     },
     name: {
-      'fr': 'Nom',
-      'en': 'Name'
+      fr: "Nom",
+      en: "Name",
     },
     group: {
-      'fr': 'Groupe',
-      'en': 'Group'
+      fr: "Groupe",
+      en: "Group",
     },
     encumbrance: {
-      'fr': 'Encombrement',
-      'en': 'Encumbrance'
+      fr: "Encombrement",
+      en: "Encumbrance",
     },
     encumbranceAbbr: {
-      'fr': 'Enc',
-      'en': 'Enc'
+      fr: "Enc",
+      en: "Enc",
     },
     range: {
-      'fr': 'Portée/Allonge',
-      'en': 'Range/Reach'
+      fr: "Portée/Allonge",
+      en: "Range/Reach",
     },
     damage: {
-      'fr': 'Dégâts',
-      'en': 'Damage'
+      fr: "Dégâts",
+      en: "Damage",
     },
     qualities: {
-      'fr': 'Atouts/Défauts',
-      'en': 'Qualities'
+      fr: "Atouts/Défauts",
+      en: "Qualities",
     },
     worn: {
-      'fr': 'Porté',
-      'en': 'Worn'
-    }
+      fr: "Porté",
+      en: "Worn",
+    },
   },
   spells: {
     title: {
-      'fr': 'Sorts et prières',
-      'en': 'Spells & Prayers'
+      fr: "Sorts et prières",
+      en: "Spells & Prayers",
     },
     name: {
-      'fr': 'Nom',
-      'en': 'Name'
+      fr: "Nom",
+      en: "Name",
     },
     cn: {
-      'fr': 'Niveau d&apos;incantation',
-      'en': 'Cast Number'
+      fr: "Niveau d&apos;incantation",
+      en: "Cast Number",
     },
     cnAbbr: {
-      'fr': 'NI',
-      'en': 'CN'
+      fr: "NI",
+      en: "CN",
     },
     range: {
-      'fr': 'Portée',
-      'en': 'Range'
+      fr: "Portée",
+      en: "Range",
     },
     target: {
-      'fr': 'Cible',
-      'en': 'Target'
+      fr: "Cible",
+      en: "Target",
     },
     duration: {
-      'fr': 'Durée',
-      'en': 'Duration'
+      fr: "Durée",
+      en: "Duration",
     },
     effects: {
-      'fr': 'Effets',
-      'en': 'Effect'
+      fr: "Effets",
+      en: "Effect",
     },
     sin: {
-      'fr': 'Péché',
-      'en': 'Sin'
-    }
+      fr: "Péché",
+      en: "Sin",
+    },
   },
   settings: {
     title: {
-      'fr': 'Paramètres',
-      'en': 'Settings'
+      fr: "Paramètres",
+      en: "Settings",
     },
     close: {
-      'fr': 'Fermer',
-      'en': 'Close'
+      fr: "Fermer",
+      en: "Close",
     },
     open: {
-      'fr': 'Ouvrir les paramètres',
-      'en': 'Open settings'
+      fr: "Ouvrir les paramètres",
+      en: "Open settings",
     },
     theme: {
       title: {
-        'fr': 'Choisir mon thème',
-        'en': 'Choose my theme'
+        fr: "Choisir mon thème",
+        en: "Choose my theme",
       },
       light: {
-        'fr': 'Clair',
-        'en': 'Light'
+        fr: "Clair",
+        en: "Light",
       },
       dark: {
-        'fr': 'Foncé',
-        'en': 'Dark'
+        fr: "Foncé",
+        en: "Dark",
       },
       auto: {
-        'fr': 'Auto',
-        'en': 'Auto'
+        fr: "Auto",
+        en: "Auto",
       },
       notice: {
-        'fr': 'Le choix "auto" s&apos;affichera selon la préférence paramétrée dans votre système d&apos;exploitation.',
-        'en': 'Auto option will rely on your operating system&apos;s settings.'
-      }
+        fr: 'Le choix "auto" s&apos;affichera selon la préférence paramétrée dans votre système d&apos;exploitation.',
+        en: "Auto option will rely on your operating system&apos;s settings.",
+      },
     },
     export: {
       title: {
-        'fr': 'Exporter mes données locales',
-        'en': 'Export my local data'
+        fr: "Exporter mes données locales",
+        en: "Export my local data",
       },
       button: {
-        'fr': 'Télécharger mes données',
-        'en': 'Download my data'
+        fr: "Télécharger mes données",
+        en: "Download my data",
       },
       notice: {
-        'fr': 'Le fichier d&apos;export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.',
-        'en': 'The export file will have a <strong>.json</strong> format.<br>Local data will not be deleted.'
-      }
+        fr: "Le fichier d&apos;export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.",
+        en: "The export file will have a <strong>.json</strong> format.<br>Local data will not be deleted.",
+      },
     },
     import: {
       title: {
-        'fr': 'Import mes données',
-        'en': 'Import my data'
+        fr: "Import mes données",
+        en: "Import my data",
       },
       button: {
-        'fr': 'Envoyer',
-        'en': 'Send'
+        fr: "Envoyer",
+        en: "Send",
       },
       notice: {
-        'fr': '⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.',
-        'en': '⚠️ Importing data will overwrite any already existing local data.'
+        fr: "⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.",
+        en: "⚠️ Importing data will overwrite any already existing local data.",
       },
       success: {
-        'fr': 'Données importées. 🎉',
-        'en': 'Data imported. 🎉'
+        fr: "Données importées. 🎉",
+        en: "Data imported. 🎉",
       },
       errorEmpty: {
-        'fr': 'Aucun fichier selectionné.',
-        'en': 'No file selected'
+        fr: "Aucun fichier selectionné.",
+        en: "No file selected",
       },
       errorFile: {
-        'fr': 'Le fichier doit être un fichier JSON.',
-        'en': 'The data file must be a JSON file'
+        fr: "Le fichier doit être un fichier JSON.",
+        en: "The data file must be a JSON file",
       },
       error: {
-        'fr': 'Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.',
-        'en': 'An error occurred. Check that you have provided a JSON file from the app and, if so, contact the admin.'
-      }
+        fr: "Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.",
+        en: "An error occurred. Check that you have provided a JSON file from the app and, if so, contact the admin.",
+      },
     },
     version: {
       title: {
-        'fr': 'Version',
-        'en': 'Version'
+        fr: "Version",
+        en: "Version",
       },
       desc: {
-        'fr': 'Version actuelle :',
-        'en': 'Current version:'
+        fr: "Version actuelle :",
+        en: "Current version:",
       },
       more: {
-        'fr': 'Cliquez sur le lien dessous pour plus d&apos;informations',
-        'en': 'Click on the link below for more information'
+        fr: "Cliquez sur le lien dessous pour plus d&apos;informations",
+        en: "Click on the link below for more information",
       },
       link: {
-        'fr': 'Lire le CHANGELOG.md (en anglais)',
-        'en': 'Read the CHANGELOG.md'
-      }
-    }
-  }
+        fr: "Lire le CHANGELOG.md (en anglais)",
+        en: "Read the CHANGELOG.md",
+      },
+    },
+  },
 };
