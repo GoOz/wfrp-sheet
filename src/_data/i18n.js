@@ -1000,7 +1000,7 @@ module.exports = {
       title: {
         fr: "Pas de pénalité",
         en: "No penalty",
-        ru: "Нет пенальти",
+        ru: "Без штрафов",
       },
     },
     penalty1: {
@@ -1329,7 +1329,7 @@ module.exports = {
         ru: "Версия",
       },
       desc: {
-        fr: "Version actuelle:",
+        fr: "Version actuelle :",
         en: "Current version:",
         ru: "Текущая версия:",
       },
