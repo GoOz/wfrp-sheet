@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   checkStorage();
 
   // Collections
-  const form = document.getElementById("app-form");
   const simpleInputs = document.querySelectorAll(".simple");
   const additionInputs = document.querySelectorAll(".addition");
   const contentEditable = document.querySelectorAll("[contenteditable]");
@@ -523,18 +522,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   function exportData() {
-    const formData = new FormData(form);
-    const json = Object.fromEntries(formData);
-    const jsonString = JSON.stringify(json);
+    const data = JSON.stringify(localStorage);
     const today = new Date();
     const date = `${today.getFullYear()}-${
       today.getMonth() + 1
     }-${today.getDate()}`;
-    const name = json.name.split(" ").join("_");
+    const name = localStorage.name ? localStorage.name.split(" ").join("_") :
+      "unknown_character";
     const link = document.createElement("a");
 
     link.href = URL.createObjectURL(
-      new Blob([jsonString], { type: "application/json" })
+      new Blob([data], { type: "application/json" })
     );
     link.download = `${name}_${date}_backup.json`;
     link.click();
