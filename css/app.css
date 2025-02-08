@@ -407,7 +407,7 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
 }
 
 .tab {
-  flex: 1 0 50%;
+  flex: 1 0 auto;
   text-align: center;
   padding: 0.75rem 0;
   color: var(--contrast);
@@ -433,6 +433,9 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
 }
 .tab.fr::after {
   content: "🇫🇷";
+}
+.tab.ru::after {
+  content: "🇷🇺";
 }
 
 .tab-panel {

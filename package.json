@@ -1,6 +1,6 @@
 {
   "name": "wfrp-sheet",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "scripts": {
     "build": "npx eleventy",
     "serve": "npx eleventy --serve",

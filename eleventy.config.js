@@ -47,6 +47,16 @@ module.exports = function(eleventyConfig) {
     return arr
   });
 
+  eleventyConfig.addCollection("skillsAlpha-ru", (collectionApi) => {
+    const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
+    arr.sort((a, b) => {
+      const aText = a.label.ru.toLowerCase();
+      const bText = b.label.ru.toLowerCase();
+      return aText.localeCompare(bText);
+    });
+    return arr;
+  });
+
   return {
     dir: {
       input: "src",
