@@ -180,9 +180,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (typeof value === "boolean") {
       value = value.toString();
     }
-    if (value) {
-      localStorage.setItem(key, value);
-    }
+    localStorage.setItem(key, value);
   }
 
   // Remove entry from storage
@@ -489,7 +487,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const currentRow = event.target.closest("tr");
     const indexCurrent = Array.from(totalRows).indexOf(currentRow);
 
-    const inputs = currentRow.querySelectorAll("input");
+    const inputs = currentRow.querySelectorAll("input, select");
 
     // Remove all row's entries from localStorage
     inputs.forEach((input) => {
