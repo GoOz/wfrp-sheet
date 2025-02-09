@@ -1409,8 +1409,22 @@
           <tbody>
             <tr>
               <td class="text-align-start">
-                <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
-                <input type="hidden" name="talents-name-0" id="talents-name-0">
+                <div class="hl-wrapper">
+                  <div class="hl-wrapper-checkbox">
+                    <input type="checkbox" name="talents-hl-0" id="talents-hl-0" class="sr-only highlight-toggle">
+                    <label for="talents-hl-0" title="Highlight this skill">
+                      <svg>
+                        <use href="#highlight-inactive"/>
+                        <use href="#highlight-active"/>
+                      </svg>
+                    <span class="sr-only">Highlight this talent</span>
+                  </label>
+                  </div>
+                  <div class="hl-wrapper-name">
+                    <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
+                    <input type="hidden" name="talents-name-0" id="talents-name-0">
+                  </div>
+                </div>
               </td>
               <td>
                 <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-0" id="talents-counter-0">
@@ -1432,8 +1446,22 @@
         <template id="talents-row">
           <tr>
             <td class="text-align-start">
-              <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
-              <input type="hidden" name="talents-name-" id="talents-name-">
+              <div class="hl-wrapper">
+                <div class="hl-wrapper-checkbox">
+                  <input type="checkbox" name="talents-hl-" id="talents-hl-" class="sr-only highlight-toggle">
+                  <label for="talents-hl-" title="Highlight this talent">
+                    <svg>
+                      <use href="#highlight-inactive"/>
+                      <use href="#highlight-active"/>
+                    </svg>
+                  <span class="sr-only">Highlight this talent</span>
+                </label>
+                </div>
+                <div class="hl-wrapper-name">
+                  <div contenteditable role="textbox" aria-labelledby="talents-name-label"></div>
+                  <input type="hidden" name="talents-name-" id="talents-name-">
+                </div>
+              </div>
             </td>
             <td>
               <input aria-labelledby="talents-counter-label" type="number" name="talents-counter-" id="talents-counter-">

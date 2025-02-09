@@ -731,7 +731,7 @@ table.layout-fixed {
   flex-basis: 40%;
 }
 
-.skills :is(tr:focus-within, tr:hover) .hl-wrapper-checkbox {
+:is(.skills, .talents) :is(tr:focus-within, tr:hover) .hl-wrapper-checkbox {
   flex-basis: 1rem;
   padding-inline-start: 0.25rem;
 }
