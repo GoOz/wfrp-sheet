@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2025-02-09
 
+### Add
+
+- Highlights on talents
+
 ### Chore
 
 - Upgrade dependencies (11ty, Playwright, etc)
 - Fix vulnerabilities
+- Refaactor skill collection by locale
 
 ## [1.4.1] - 2025-02-08
 

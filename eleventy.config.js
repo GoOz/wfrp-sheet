@@ -2,6 +2,19 @@ import { EleventyI18nPlugin } from "@11ty/eleventy";
 import i18n from 'eleventy-plugin-i18n';
 import translations from './src/_data/i18n.js';
 
+const geti18nCollection = (config, options) => {
+  options.locale.forEach((locale) => {
+    config.addCollection(locale, (collectionApi) => {
+      const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
+      arr.sort((a, b) => {
+        const aText = a.label[locale].toLowerCase();
+        const bText = b.label[locale].toLowerCase();
+        return aText.localeCompare(bText);
+      });
+      return arr;
+    });
+  });
+};
 
 export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
@@ -13,6 +26,9 @@ export default async function (eleventyConfig) {
       en: "fr",
       ru: "en"
     },
+  });
+  eleventyConfig.addPlugin(geti18nCollection, {
+    locale: ["en", "fr", "ru"],
   });
 
   eleventyConfig.addPassthroughCopy("img");
@@ -26,36 +42,6 @@ export default async function (eleventyConfig) {
   });
   eleventyConfig.addFilter("characAbbr", function (value) {
     return `charac.${value}.abbr`;
-  });
-
-  eleventyConfig.addCollection("skillsAlpha-en", (collectionApi) => {
-    const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
-    arr.sort((a, b) => {
-      const aText = a.label.en.toLowerCase();
-      const bText = b.label.en.toLowerCase();
-      return aText.localeCompare(bText);
-    });
-    return arr;
-  });
-
-  eleventyConfig.addCollection("skillsAlpha-fr", (collectionApi) => {
-    const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
-    arr.sort((a, b) => {
-      const aText = a.label.fr.toLowerCase();
-      const bText = b.label.fr.toLowerCase();
-      return aText.localeCompare(bText);
-    });
-    return arr;
-  });
-
-  eleventyConfig.addCollection("skillsAlpha-ru", (collectionApi) => {
-    const arr = Array.from(collectionApi.items[0].data.i18n.skills.basic);
-    arr.sort((a, b) => {
-      const aText = a.label.ru.toLowerCase();
-      const bText = b.label.ru.toLowerCase();
-      return aText.localeCompare(bText);
-    });
-    return arr;
   });
 
   return {

@@ -1,4 +1,4 @@
-{% capture db %}skillsAlpha-{{ locale }}{% endcapture %}
+{% capture db %}{{ locale }}{% endcapture %}
 
 {% assign skills = collections[db] | slice: start, end %}
 {% for skill in skills %}
