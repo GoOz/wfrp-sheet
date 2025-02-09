@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should change the color scheme theme', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -23,7 +23,7 @@ test('should change the color scheme theme', async ({ page }) => {
 });
 
 test('should download exported data', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -35,7 +35,7 @@ test('should download exported data', async ({ page }) => {
 });
 
 test('should not import data if input file is empty', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -48,7 +48,7 @@ test('should not import data if input file is empty', async ({ page }) => {
 });
 
 test('should not import data if inputted file is not a json file', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -64,7 +64,7 @@ test('should not import data if inputted file is not a json file', async ({ page
 });
 
 test('should not import data if inputted file is not a parsable json file', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -80,7 +80,7 @@ test('should not import data if inputted file is not a parsable json file', asyn
 });
 
 test('should import data if inputted file is a parsable json file', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -96,7 +96,7 @@ test('should import data if inputted file is a parsable json file', async ({ pag
 });
 
 test('should link to changelog', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();

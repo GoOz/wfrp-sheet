@@ -143,7 +143,7 @@ If you want to modify this app for your own copy or to make a pull request later
 1. Clone, fork or download the repo or whatever
 2. Run `npm ci` to download & install dependencies. This app runs on [11ty](https://www.11ty.dev/) and some plugins but that's pretty much it.
 3. Do your thing.
-4. Run `npm run serve` to start the local server and see your changes in your browser
+4. Run `npm run start` to start the local server and see your changes in your browser
 5. Profit 🎲
 
 **Pull requests and Issues are obviously welcome.**

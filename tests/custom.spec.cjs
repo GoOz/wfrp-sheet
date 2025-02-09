@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should add new row when value is inputted in the last row in Custom Skills', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const tbody = await page.locator('#custom-skill tbody');
 
@@ -20,7 +20,7 @@ test('should add new row when value is inputted in the last row in Custom Skills
 });
 
 test('should add new row when value is inputted in the last row in Talents', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const tbody = await page.locator('#talents tbody');
 
@@ -38,7 +38,7 @@ test('should add new row when value is inputted in the last row in Talents', asy
 });
 
 test('should add new row when value is inputted in the last row in Armour', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const tbody = await page.locator('#armour tbody');
 
@@ -56,7 +56,7 @@ test('should add new row when value is inputted in the last row in Armour', asyn
 });
 
 test('should add new row when value is inputted in the last row in Trappings', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const tbody = await page.locator('#trappings tbody');
 
@@ -74,7 +74,7 @@ test('should add new row when value is inputted in the last row in Trappings', a
 });
 
 test('should add new row when value is inputted in the last row in Weapons', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const tbody = await page.locator('#weapons tbody');
 
@@ -92,7 +92,7 @@ test('should add new row when value is inputted in the last row in Weapons', asy
 });
 
 test('should add new row when value is inputted in the last row in Spells', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const tbody = await page.locator('#spells tbody');
 
