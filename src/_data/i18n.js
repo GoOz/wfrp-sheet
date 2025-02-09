@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: {
     fr: "Feuille de personnage Warhammer Fantasy Role Play",
     en: "Warhammer Fantasy Role Play&apos;s character sheet",

@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('total should be updated with current & spent values', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const current = await page.locator('#current-xp');
   const spent = await page.locator('#spent-xp');

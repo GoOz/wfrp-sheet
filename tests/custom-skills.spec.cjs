@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should create advanced skills with values calculated on related charac', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Fill Charac values
   await page.locator('#ws-i').fill('35');
@@ -82,7 +82,7 @@ test('should create advanced skills with values calculated on related charac', a
 });
 
 test('should highlight row if option checked', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const row = await page.locator('#custom-skill tbody').getByRole('row').nth(0);
 
@@ -94,7 +94,7 @@ test('should highlight row if option checked', async ({ page }) => {
 });
 
 test('should remove and reorder custom skill when one is removed', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -121,7 +121,7 @@ test('should remove and reorder custom skill when one is removed', async ({ page
 });
 
 test('should have the remove button of the last row disabled', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const rows = await page.locator('#custom-skill tbody').getByRole('row');
 

@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should update total encumbrance with armour, weapons & trappings values', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Fill stuff with weight in armour
   await page.locator('#armour-encumbrance-0').fill('2');
@@ -23,7 +23,7 @@ test('should update total encumbrance with armour, weapons & trappings values', 
 });
 
 test('should lighten total encumbrance when stuff are worn', async ({ page, context }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Fill stuff with weight in armour
   // Workaround to avoid persistent storage permissions popup on Firefox
@@ -63,7 +63,7 @@ test('should lighten total encumbrance when stuff are worn', async ({ page, cont
 });
 
 test('should display overburned message if total encumbrance is greater than max encumbrance', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   // Fill stuff with weight in armour
   await page.locator('#encumbrance-max').fill('2');

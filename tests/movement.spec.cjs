@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should update walk & run values when movement value is inputted', async ({ page }) => {
-  await page.goto('./wfrp-sheet/en/');
+  await page.goto('http://localhost:8080/wfrp-sheet/en/');
 
   const movement = await page.locator('#movement');
   const walk = await page.locator('#walk');
