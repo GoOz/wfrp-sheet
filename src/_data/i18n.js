@@ -747,6 +747,11 @@ module.exports = {
       en: "Description",
       ru: "Описание",
     },
+    highlight: {
+      fr: "Surligner ce talent",
+      en: "Highlight this talent",
+      ru: "Подсветить Таланты",
+    },
   },
   ambitions: {
     title: {
