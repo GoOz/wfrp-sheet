@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should update wounds values according to charac values', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill Charac values
   await page.locator('#s-i').fill('35');
@@ -16,7 +16,7 @@ test('should update wounds values according to charac values', async ({ page }) 
 });
 
 test('should update wounds values according to charac values with Hardy talent bought', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill Charac values
   await page.locator('#s-i').fill('35');
@@ -31,7 +31,7 @@ test('should update wounds values according to charac values with Hardy talent b
 });
 
 test('should update wounds values if species chosen is halfling', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill Charac value
   await page.locator('#s-i').fill('35');

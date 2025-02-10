@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should update current skill value when advances value is inputted', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill Charac values
   await page.locator('#ws-i').fill('35');
@@ -112,7 +112,7 @@ test('should update current skill value when advances value is inputted', async 
 });
 
 test('should highlight row if option checked', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   const row = await page.locator('.basic').nth(0).getByRole('row').nth(1);
 

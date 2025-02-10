@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should remove and reorder armour when one is removed', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
@@ -33,7 +33,7 @@ test('should remove and reorder armour when one is removed', async ({ page }) =>
 });
 
 test('should have the remove button of the last row disabled', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   const rows = await page.locator('#armour tbody').getByRole('row');
 

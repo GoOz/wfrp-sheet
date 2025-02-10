@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('updates Weapon Skill charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#ws-i').fill('35');
@@ -20,7 +20,7 @@ test('updates Weapon Skill charac outputs', async ({ page }) => {
 });
 
 test('updates Ballistic Skill charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#bs-i').fill('35');
@@ -34,7 +34,7 @@ test('updates Ballistic Skill charac outputs', async ({ page }) => {
 });
 
 test('updates Strength charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#s-i').fill('35');
@@ -53,7 +53,7 @@ test('updates Strength charac outputs', async ({ page }) => {
 });
 
 test('updates Toughness charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#t-i').fill('35');
@@ -71,7 +71,7 @@ test('updates Toughness charac outputs', async ({ page }) => {
 });
 
 test('updates Initiative charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#i-i').fill('35');
@@ -90,7 +90,7 @@ test('updates Initiative charac outputs', async ({ page }) => {
 });
 
 test('updates Agility charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#ag-i').fill('35');
@@ -111,7 +111,7 @@ test('updates Agility charac outputs', async ({ page }) => {
 });
 
 test('updates Dexterity charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#dex-i').fill('35');
@@ -128,7 +128,7 @@ test('updates Dexterity charac outputs', async ({ page }) => {
 });
 
 test('updates Intelligence charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#int-i').fill('35');
@@ -146,7 +146,7 @@ test('updates Intelligence charac outputs', async ({ page }) => {
 });
 
 test('updates Will Power charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#wp-i').fill('35');
@@ -164,7 +164,7 @@ test('updates Will Power charac outputs', async ({ page }) => {
 });
 
 test('updates Fellowship charac outputs', async ({ page }) => {
-  await page.goto('http://localhost:8080/wfrp-sheet/en/');
+  await page.goto('./wfrp-sheet/en/');
 
   // Fill charac initial value
   await page.locator('#fel-i').fill('35');
