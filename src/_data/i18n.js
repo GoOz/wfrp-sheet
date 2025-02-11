@@ -750,7 +750,7 @@ export default {
     highlight: {
       fr: "Surligner ce talent",
       en: "Highlight this talent",
-      ru: "Подсветить Таланты",
+      ru: "Подсветить талант",
     },
   },
   ambitions: {
