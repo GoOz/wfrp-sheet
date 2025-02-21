@@ -657,7 +657,7 @@ export default {
         label: {
           fr: "Perception",
           en: "Perception",
-          ru: "Интуиция",
+          ru: "Наблюдательность",
         },
       },
       {
