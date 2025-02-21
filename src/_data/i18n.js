@@ -549,7 +549,7 @@ export default {
         label: {
           fr: "Corps à corps (base)",
           en: "Melee (Basic)",
-          ru: "Рукопашный бой (основное)",
+          ru: "Рукопашный бой (осн.)",
         },
       },
       {
