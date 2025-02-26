@@ -26,7 +26,7 @@ It comes with several features to make your life easier.
   - Auto-calculated final values (initial + advances)
   - Responsive layout
   - Dark mode
-  - Highlight career skills
+  - Highlight for characteristics, career skills and talents
   - Import/Export data
   - Internationalisation (i18n)
 
@@ -78,7 +78,7 @@ It comes with several features to make your life easier.
 #### Encumbrance section
 - *Weapons*, *armour* & *trappings* fields will automatically reflect the total weight for their respective type, meaning it will add up the weight of all its registered items and put the total in its field.
 - Every item in the **weapons**, **armour** & **trappings** sections with the *worn* property checked will see its weight reduced by 1 which will affect the total just as specified above.
-- *Maximum encumbrance* field is open but is is **numbers only**.
+- *Maximum encumbrance* field is open because some talents may change the way it works but it is **numbers only**.
 - *Total* field is auto-calculated. If the total of *Weapons*, *armour* & *trappings* values is strictly greater than the *maximum encumbrance* value then you’ll be notified that you reached the state of **overburdened**.
 
 #### Armour points section
@@ -128,14 +128,14 @@ Just below that button, you’ll see the mean to upload your saved data.
 
 Any lost data will be lost forever, it’s your responsability.
 
-### Highlight skills
-By hovering a row or focusing in a field in a row on a skill table you’ll see an important (!) icon button appear. By clicking this button you’ll highlight this skill so you can know right away which skill depends on your career and should be increased to evolve in your career path.
+### Highlight
+By hovering a row or focusing in a field in a row on a skill or talent table, or by hovering a characteristics, you’ll see an important (!) icon button appear. By clicking this button you’ll highlight this skill/talent/characteristic so you can know right away what depends on your career and should be increased to evolve in your career path.
 Clicking this button on an already highlighted skill will remove the highlight.
 
 ### i18n
-There's no plan for adding other languages than english and french mostly because those are the only two I can read and write well enough.
+Personally I don't plan to add other languages than english and french mostly because these are the only two I can read and write well enough.
 
-That being said, if needed and if provided by a Pull Request, I could add new languages without a problem, the translation system is here and waiting new ones.
+That being said, if needed and if provided by a Pull Request, I could add new languages without a problem, the translation system is here and waiting for new ones. Like the Russian language recently added by [starp0m](https://github.com/starp0m).
 
 ## For Developers
 If you want to modify this app for your own copy or to make a pull request later you'll mostly need Node.js and a code editor.
