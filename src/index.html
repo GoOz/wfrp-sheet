@@ -65,7 +65,7 @@
           <li>Thème sombre</li>
           <li>Surlignage de compétences de carrière</li>
           <li>Import/Export de données</li>
-          <li>Disponible en français, anglais et russe< /li>
+          <li>Disponible en français, anglais et russe</li>
         </ul>
         <p>Lire le fichier <a href="https://github.com/GoOz/wfrp-sheet/blob/main/README.md">README de l'application</a> pour plus de détails</p>
         <hr>
@@ -99,10 +99,19 @@
   <a class="forkme" href="https://github.com/GoOz/wfrp-sheet/"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" title="Fork me on GitHub" data-recalc-dims="1"></a>
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-      window.location.hash = '#en';
-
       const tabToggles = document.querySelectorAll('.tab');
-      document.addEventListener('click', handleTabs);
+
+      function handleHash () {
+        if (!window.location.hash) {
+          window.location.hash = '#en'
+        } else {
+          console.log('kikoo');
+          const currentTab = document.querySelector('.tab.active')
+          const newTab = document.querySelector(`.tab[href="${window.location.hash}"]`)
+          currentTab.classList.remove('active')
+          newTab.classList.add('active')
+        }
+      }
 
       function handleTabs (event) {
         if (
@@ -120,6 +129,11 @@
           }
         });
       }
+
+      handleHash()
+
+      window.addEventListener('hashchange', handleHash);
+      document.addEventListener('click', handleTabs);
     });
   </script>
 </body>
