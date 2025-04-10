@@ -56,7 +56,7 @@ test('link to character sheet in french', async ({ page }) => {
 test('link to character sheet in russian', async ({ page }) => {
   await page.goto('./wfrp-sheet/');
 
-  // Click on the french tab
+  // Click on the russian tab
   const tab = await page.getByRole("link", { name: "Русская версия" });
   await tab.click();
 
@@ -64,12 +64,33 @@ test('link to character sheet in russian', async ({ page }) => {
 
   // Expects the tab to be active now
   await expect(tab).toHaveClass(/active/);
-  // Home in french
+  // Home in russian
   await expect(page.locator('.wrapper')).toHaveScreenshot('home-ru.png', {fullPage: true});
 
-  // Click the french sheet link.
+  // Click the russian sheet link.
   await page.getByRole("link", { name: "Перейти к листу персонажа" }).click();
 
-  // Expects the URL to contain /fr/.
+  // Expects the URL to contain /ru/.
   await expect(page).toHaveURL('./wfrp-sheet/ru/');
+});
+
+test('link to character sheet in polish', async ({ page }) => {
+  await page.goto('./wfrp-sheet/');
+
+  // Click on the polish tab
+  const tab = await page.getByRole("link", { name: "Wersja polska" });
+  await tab.click();
+
+  await page.evaluate(() => document.fonts.ready);
+
+  // Expects the tab to be active now
+  await expect(tab).toHaveClass(/active/);
+  // Home in polish
+  await expect(page.locator('.wrapper')).toHaveScreenshot('home-pl.png', {fullPage: true});
+
+  // Click the polish sheet link.
+  await page.getByRole("link", { name: "Otwórz kartę postaci" }).click();
+
+  // Expects the URL to contain /pl/.
+  await expect(page).toHaveURL('./wfrp-sheet/pl/');
 });

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2025-04-10
+
+### Added
+
+- Support of Polish language
+
 ## [2.0.0] - 2025-02-09
 
 ### Add
@@ -15,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Upgrade dependencies (11ty, Playwright, etc)
 - Fix vulnerabilities
-- Refaactor skill collection by locale
+- Refactor skill collection by locale
 
 ## [1.4.1] - 2025-02-08
 
