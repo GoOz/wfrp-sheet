@@ -133,9 +133,10 @@ By hovering a row or focusing in a field in a row on a skill or talent table, or
 Clicking this button on an already highlighted skill will remove the highlight.
 
 ### i18n
-Personally I don't plan to add other languages than english and french mostly because these are the only two I can read and write well enough.
+I personally only support english and french mostly because these are the only two languages I can read and write well enough.
 
-That being said, if needed and if provided by a Pull Request, I could add new languages without a problem, the translation system is here and waiting for new ones. Like the Russian language recently added by [starp0m](https://github.com/starp0m).
+That being said, if needed and if provided by a pull request, I can add new languages easily, the translation system is here and waiting for new ones.  
+For example, the russian and polish localizations were added by contributors.
 
 ## For Developers
 If you want to modify this app for your own copy or to make a pull request later you'll mostly need Node.js and a code editor.
