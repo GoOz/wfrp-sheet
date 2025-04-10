@@ -437,6 +437,9 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
 .tab.ru::after {
   content: "🇷🇺";
 }
+.tab.pl::after {
+  content: "🇵🇱";
+}
 
 .tab-panel {
   border-top: 1px solid var(--grey);
