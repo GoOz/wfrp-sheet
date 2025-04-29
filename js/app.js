@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Store custom skill base characteristic and update related output
   function handleCharacSelect(event) {
     const outputs = event.target.closest("tr").querySelectorAll("output");
+    const rowId = event.target.id.slice(-1)
     if (!event.target.value) {
       outputs.forEach((output) => (output.value = ""));
       return;
@@ -232,8 +233,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     outputs[0].setAttribute("for", initialSource);
 
     // Set final output's for attribute
-    const currentFor = outputs[1].getAttribute("for");
-    outputs[1].setAttribute("for", `${initialSource} ${currentFor}`);
+    outputs[1].setAttribute("for", `${initialSource} custom-skill-aug-${rowId}`);
     updateOutputs(outputs);
   }
 
