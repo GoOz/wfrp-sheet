@@ -24,10 +24,10 @@ test('should update wounds values according to charac values with Hardy talent b
   await page.locator('#wp-i').fill('35');
 
   // Check Hardy talent's bonus
-  await page.locator('#hardy-bonus').check();
+  await page.locator('#hardy-bonus').fill('2');
 
   // Toughness bonus should be added
-  await expect(page.locator('#wounds')).toHaveText('15');
+  await expect(page.locator('#wounds')).toHaveText('18');
 });
 
 test('should update wounds values if species chosen is halfling', async ({ page }) => {

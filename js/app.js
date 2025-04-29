@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const characSelects = document.querySelectorAll(".charac-select");
   const bonuses = document.querySelectorAll("output.bonus");
   const customData = document.querySelectorAll(".custom");
-  const toggleHardy = document.getElementById("hardy-bonus");
+  const hardyTalent = document.getElementById("hardy-bonus");
   const speciesSelect = document.getElementById("species");
   const encumbranceSrc = document.querySelectorAll(".encumbrance-src");
   const encumbranceMax = document.getElementById("encumbrance-max");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   customData.forEach((custom) => {
     custom.addEventListener("input", handleCustomInput);
   });
-  toggleHardy.addEventListener("change", handleWoundsUpdate);
+  hardyTalent.addEventListener("input", handleWoundsUpdate);
   speciesSelect.addEventListener("change", handleWoundsUpdate);
   encumbranceSrc.forEach((item) => {
     item.addEventListener("input", handleEncumbrance);
@@ -423,10 +423,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       } else if (output.id === "toughness-bonus") {
         output.value = current * 2;
       } else if (output.id === "wounds") {
-        if (toggleHardy.checked) {
+        if (hardyTalent.value) {
           const toughness = document.getElementById("bonus-t");
-          const value =
-            toughness.value !== "" ? parseInt(toughness.value, 10) : 0;
+          const value = toughness.value !== "" ? parseInt(toughness.value, 10) * hardyTalent.value : 0;
           output.value = current + value;
         } else if (species.value === "halfling") {
           const strength = document.getElementById("bonus-s");
