@@ -1268,10 +1268,10 @@
                 <abbr title="{{ 'spells.cn' | i18n }}">{{ 'spells.cnAbbr' | i18n }}</abbr>
               </span>
             </th>
-            <th scope="col">
+            <th scope="col" class="narrow">
               <span id="spells-range-label">{{ 'spells.range' | i18n }}</span>
             </th>
-            <th scope="col">
+            <th scope="col" class="narrow">
               <span id="spells-target-label">{{ 'spells.target' | i18n }}</span>
             </th>
             <th scope="col">
@@ -1304,8 +1304,9 @@
               <td>
                 <input type="text" name="spells-duration-0" id="spells-duration-0" aria-labelledBy="spells-duration-label">
               </td>
-              <td>
-                <input type="text" name="spells-effects-0" id="spells-effects-0" aria-labelledBy="spells-effects-label">
+              <td class="text-align-start">
+                <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="spells-effects-label"></div>
+                <input type="hidden" name="spells-effects-0" id="spells-effects-0">
               </td>
               <td class="actions">
                 <button class="remove" type="button">
@@ -1334,8 +1335,9 @@
             <td>
               <input type="text" name="spells-duration-" id="spells-duration-" aria-labelledBy="spells-duration-label">
             </td>
-            <td>
-              <input type="text" name="spells-effects-" id="spells-effects-" aria-labelledBy="spells-effects-label">
+            <td class="text-align-start">
+              <div contenteditable role="textbox" aria-multiline="true" aria-labelledby="spells-effects-label"></div>
+              <input type="hidden" name="spells-effects-" id="spells-effects-">
             </td>
             <td class="actions">
               <button class="remove" type="button">
