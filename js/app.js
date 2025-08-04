@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Store custom skill base characteristic and update related output
   function handleCharacSelect(event) {
     const outputs = event.target.closest("tr").querySelectorAll("output");
-    const rowId = event.target.id.slice(-1)
+    const rowId = event.target.closest("tr").dataset.number;
     if (!event.target.value) {
       outputs.forEach((output) => (output.value = ""));
       return;
@@ -330,12 +330,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const template = document.getElementById(`${type}-row`);
     const clone = template.content.cloneNode(true);
 
+    const row = clone.querySelector("tr");
     const inputs = clone.querySelectorAll("input, output");
     const selects = clone.querySelectorAll("select");
     const contentEditable = clone.querySelectorAll("[contentEditable]");
     const labels = clone.querySelectorAll("label");
     const highlight = clone.querySelector(".highlight-toggle");
     const remove = clone.querySelector(".remove");
+
+    row.dataset.number = n
 
     inputs.forEach((input) => {
       input.name = input.name + n;
