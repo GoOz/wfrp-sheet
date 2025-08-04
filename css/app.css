@@ -1193,6 +1193,15 @@ table.layout-fixed {
   margin-block: 0.5rem;
 }
 
+.settings-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.settings-data > div {
+  flex: 1 1 45%;
+}
+
 @media (max-width: 64em) {
   .app {
     height: auto;

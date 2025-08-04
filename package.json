@@ -1,6 +1,6 @@
 {
   "name": "wfrp-sheet",
-  "version": "2.1.1",
+  "version": "2.3.0",
   "description": "Online character sheet for Warhammer Fantasy Role Play TTRPG",
   "type": "module",
   "repository": {
