@@ -85,7 +85,7 @@ test('should import data if inputted file is a parsable json file', async ({ pag
   // Open settings modal
   await page.getByRole('button', { name: 'Open settings' }).click();
 
-  // Choose a non-json file
+  // Choose a json file
   await page.locator('#import-db').setInputFiles('tests/assets/right-data.json');
 
   // Click on Send Button
@@ -104,4 +104,36 @@ test('should link to changelog', async ({ page }) => {
   await page.getByRole('link', { name: 'Read the CHANGELOG.md' }).click();
 
   await expect(page).toHaveURL('https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md');
+});
+
+test('should clear all data except color-scheme', async ({ page }) => {
+  await page.goto("./wfrp-sheet/en/");
+
+  // Open settings modal
+  await page.getByRole("button", { name: "Open settings" }).click();
+
+  // Set localStorage
+  await page.evaluate(() => {
+    localStorage.setItem("color-scheme", "dark");
+    localStorage.setItem("name", "Helga");
+  });
+
+  // Check stored values
+  const basetheme = await page.evaluate(() =>
+    localStorage.getItem("color-scheme")
+  );
+  const basename = await page.evaluate(() => localStorage.getItem("name"));
+  expect(basetheme).toBe("dark");
+  expect(basename).toBe("Helga");
+
+  // Click on Clear button
+  await page.locator("#clear-button").click();
+
+  // Check new cleared values
+  const cleartheme = await page.evaluate(() =>
+    localStorage.getItem("color-scheme")
+  );
+  const clearname = await page.evaluate(() => localStorage.getItem("name"));
+  expect(cleartheme).toBe("dark");
+  expect(clearname).toBeNull();
 });

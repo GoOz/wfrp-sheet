@@ -1371,22 +1371,30 @@
           <p class="notice">{{ 'settings.theme.notice' | i18n }}</p>
         </div>
         <hr>
-        <div>
-          <h2>{{ 'settings.export.title' | i18n }}</h2>
-          <button type="button" class="data-button" id="export-button">{{ 'settings.export.button' | i18n }}</button>
-          <p class="notice">{{ 'settings.export.notice' | i18n }}</p>
+        <h2>{{ 'settings.data.title' | i18n }}</h2>
+        <div class="settings-data">
+          <div>
+            <h3>{{ 'settings.export.title' | i18n }}</h3>
+            <button type="button" class="data-button" id="export-button">{{ 'settings.export.button' | i18n }}</button>
+            <p class="notice">{{ 'settings.export.notice' | i18n }}</p>
+          </div>
+          <div>
+            <h3 id="import-db-label">{{ 'settings.import.title' | i18n }}</h3>
+            <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
+            <button type="button" class="data-button" id="import-button">{{ 'settings.import.button' | i18n }}</button>
+            <p hidden class="error" id="import-db-error-empty">{{ 'settings.import.errorEmpty' | i18n }}</p>
+            <p hidden class="error" id="import-db-error-file">{{ 'settings.import.errorFile' | i18n }}</p>
+            <p hidden class="error" id="import-db-error">{{ 'settings.import.error' | i18n }}</p>
+            <p hidden class="success" id="import-db-success">{{ 'settings.import.success' | i18n }}</p>
+            <p class="notice">{{ 'settings.import.notice' | i18n }}</p>
+          </div>
+          <div>
+            <h3>{{ 'settings.clear.title' | i18n }}</h3>
+            <button type="button" class="data-button" id="clear-button">{{ 'settings.clear.button' | i18n }}</button>
+            <p class="notice">{{ 'settings.clear.notice' | i18n }}</p>
+          </div>
         </div>
         <hr>
-        <div>
-          <h2 id="import-db-label">{{ 'settings.import.title' | i18n }}</h2>
-          <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
-          <button type="button" class="data-button" id="import-button">{{ 'settings.import.button' | i18n }}</button>
-          <p hidden class="error" id="import-db-error-empty">{{ 'settings.import.errorEmpty' | i18n }}</p>
-          <p hidden class="error" id="import-db-error-file">{{ 'settings.import.errorFile' | i18n }}</p>
-          <p hidden class="error" id="import-db-error">{{ 'settings.import.error' | i18n }}</p>
-          <p hidden class="success" id="import-db-success">{{ 'settings.import.success' | i18n }}</p>
-          <p class="notice">{{ 'settings.import.notice' | i18n }}</p>
-        </div>
         <div>
           <h2>{{ 'settings.version.title' | i18n }}</h2>
           <p>{{ 'settings.version.desc' | i18n }} <strong>{{pkg.version}}</strong></p>

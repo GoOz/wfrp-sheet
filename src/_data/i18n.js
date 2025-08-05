@@ -1490,6 +1490,14 @@ export default {
         pl: "Opcja 'auto' jest zależna od ustawienia w systemie operacyjnym.",
       },
     },
+    data: {
+      title: {
+        fr: "Gestion des données",
+        en: "Data management",
+        ru: "Управление данными",
+        pl: "Zarządzanie danymi",
+      },
+    },
     export: {
       title: {
         fr: "Exporter mes données locales",
@@ -1508,6 +1516,26 @@ export default {
         en: "The export file will have a <strong>.json</strong> format.<br>Local data will not be deleted.",
         ru: "Данные будут сохранены в формате <strong>.json</strong>.<br>Локальные даные не будут удалены.",
         pl: "Eksportujesz dane do formatu <strong>.json</strong>. Dane nie zostaną usunięte z przeglądarki.",
+      },
+    },
+    clear: {
+      title: {
+        fr: "Supprimer mes données locales",
+        en: "Clear my local data",
+        ru: "Очистить мои локальные данные",
+        pl: "Wyczyść moje lokalne dane",
+      },
+      button: {
+        fr: "Supprimer",
+        en: "Clear",
+        ru: "Удалить",
+        pl: "Usuń",
+      },
+      notice: {
+        fr: "⚠️ Cette action est irréversible. Pensez à faire une sauvegarde avant !",
+        en: "⚠️ This action cannot be undone. Do a backup first!",
+        ru: "⚠️ Это действие не может быть отменено. Сначала сделайте резервную копию!",
+        pl: "⚠️ Tego działania nie można cofnąć. Najpierw zrób kopię zapasową!",
       },
     },
     import: {
