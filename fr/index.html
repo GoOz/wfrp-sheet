@@ -2133,25 +2133,33 @@
           <p class="notice">Le choix "auto" s&apos;affichera selon la préférence paramétrée dans votre système d&apos;exploitation.</p>
         </div>
         <hr>
-        <div>
-          <h2>Exporter mes données locales</h2>
-          <button type="button" class="data-button" id="export-button">Télécharger mes données</button>
-          <p class="notice">Le fichier d&apos;export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.</p>
+        <h2>Gestion des données</h2>
+        <div class="settings-data">
+          <div>
+            <h3>Exporter mes données locales</h3>
+            <button type="button" class="data-button" id="export-button">Télécharger mes données</button>
+            <p class="notice">Le fichier d&apos;export sera au format <strong>.json</strong>.<br>Les données locales ne seront pas supprimées.</p>
+          </div>
+          <div>
+            <h3 id="import-db-label">Import mes données</h3>
+            <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
+            <button type="button" class="data-button" id="import-button">Envoyer</button>
+            <p hidden class="error" id="import-db-error-empty">Aucun fichier selectionné.</p>
+            <p hidden class="error" id="import-db-error-file">Le fichier doit être un fichier JSON.</p>
+            <p hidden class="error" id="import-db-error">Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.</p>
+            <p hidden class="success" id="import-db-success">Données importées. 🎉</p>
+            <p class="notice">⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.</p>
+          </div>
+          <div>
+            <h3>Supprimer mes données locales</h3>
+            <button type="button" class="data-button" id="clear-button">Supprimer</button>
+            <p class="notice">⚠️ Cette action est irréversible. Pensez à faire une sauvegarde avant !</p>
+          </div>
         </div>
         <hr>
         <div>
-          <h2 id="import-db-label">Import mes données</h2>
-          <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
-          <button type="button" class="data-button" id="import-button">Envoyer</button>
-          <p hidden class="error" id="import-db-error-empty">Aucun fichier selectionné.</p>
-          <p hidden class="error" id="import-db-error-file">Le fichier doit être un fichier JSON.</p>
-          <p hidden class="error" id="import-db-error">Une erreur est survenue. Vérifiez que vous avez bien fourni un fichier JSON provenant de l&apos;app et, le cas échéant, contactez l&apos;administrateur.</p>
-          <p hidden class="success" id="import-db-success">Données importées. 🎉</p>
-          <p class="notice">⚠️ Importer des données écrasera toute donnée actuellement enregistrée localement.</p>
-        </div>
-        <div>
           <h2>Version</h2>
-          <p>Version actuelle : <strong>2.1.1</strong></p>
+          <p>Version actuelle : <strong>2.3.0</strong></p>
           <p>Cliquez sur le lien dessous pour plus d&apos;informations</p>
           <p><a class="button" href="https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md">Lire le CHANGELOG.md (en anglais)</a></p>
         </div>

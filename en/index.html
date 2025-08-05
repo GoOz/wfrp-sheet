@@ -2133,25 +2133,33 @@
           <p class="notice">Auto option will rely on your operating system&apos;s settings.</p>
         </div>
         <hr>
-        <div>
-          <h2>Export my local data</h2>
-          <button type="button" class="data-button" id="export-button">Download my data</button>
-          <p class="notice">The export file will have a <strong>.json</strong> format.<br>Local data will not be deleted.</p>
+        <h2>Data management</h2>
+        <div class="settings-data">
+          <div>
+            <h3>Export my local data</h3>
+            <button type="button" class="data-button" id="export-button">Download my data</button>
+            <p class="notice">The export file will have a <strong>.json</strong> format.<br>Local data will not be deleted.</p>
+          </div>
+          <div>
+            <h3 id="import-db-label">Import my data</h3>
+            <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
+            <button type="button" class="data-button" id="import-button">Send</button>
+            <p hidden class="error" id="import-db-error-empty">No file selected</p>
+            <p hidden class="error" id="import-db-error-file">The data file must be a JSON file</p>
+            <p hidden class="error" id="import-db-error">An error occurred. Check that you have provided a JSON file from the app and, if so, contact the admin.</p>
+            <p hidden class="success" id="import-db-success">Data imported. 🎉</p>
+            <p class="notice">⚠️ Importing data will overwrite any already existing local data.</p>
+          </div>
+          <div>
+            <h3>Clear my local data</h3>
+            <button type="button" class="data-button" id="clear-button">Clear</button>
+            <p class="notice">⚠️ This action cannot be undone. Do a backup first!</p>
+          </div>
         </div>
         <hr>
         <div>
-          <h2 id="import-db-label">Import my data</h2>
-          <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
-          <button type="button" class="data-button" id="import-button">Send</button>
-          <p hidden class="error" id="import-db-error-empty">No file selected</p>
-          <p hidden class="error" id="import-db-error-file">The data file must be a JSON file</p>
-          <p hidden class="error" id="import-db-error">An error occurred. Check that you have provided a JSON file from the app and, if so, contact the admin.</p>
-          <p hidden class="success" id="import-db-success">Data imported. 🎉</p>
-          <p class="notice">⚠️ Importing data will overwrite any already existing local data.</p>
-        </div>
-        <div>
           <h2>Version</h2>
-          <p>Current version: <strong>2.1.1</strong></p>
+          <p>Current version: <strong>2.3.0</strong></p>
           <p>Click on the link below for more information</p>
           <p><a class="button" href="https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md">Read the CHANGELOG.md</a></p>
         </div>

@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const encumbranceMax = document.getElementById("encumbrance-max");
   const highlights = document.querySelectorAll(".highlight-toggle");
   const settingsTheme = document.getElementById("theme");
+  const clearButton = document.getElementById("clear-button");
   const exportButton = document.getElementById("export-button");
   const importButton = document.getElementById("import-button");
   const removeButtons = document.querySelectorAll(".remove");
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     item.addEventListener("input", toggleHighlight);
   });
   settingsTheme.addEventListener("change", setTheme);
+  clearButton.addEventListener("click", clearData);
   exportButton.addEventListener("click", exportData);
   importButton.addEventListener("click", importData);
   removeButtons.forEach((button) => {
@@ -519,6 +521,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
       setItem(newKey, localStorage.getItem(currentKey));
       removeItem(currentKey);
     });
+  }
+
+  function clearData() {
+    const theme = localStorage.getItem("color-scheme") ?? "";
+    localStorage.clear()
+    localStorage.setItem('color-scheme', theme);
+    fillFromStorage();
   }
 
   function exportData() {

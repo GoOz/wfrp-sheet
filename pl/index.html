@@ -2133,25 +2133,33 @@
           <p class="notice">Opcja 'auto' jest zależna od ustawienia w systemie operacyjnym.</p>
         </div>
         <hr>
-        <div>
-          <h2>Eksportuj dane</h2>
-          <button type="button" class="data-button" id="export-button">Pobierz dane</button>
-          <p class="notice">Eksportujesz dane do formatu <strong>.json</strong>. Dane nie zostaną usunięte z przeglądarki.</p>
+        <h2>Zarządzanie danymi</h2>
+        <div class="settings-data">
+          <div>
+            <h3>Eksportuj dane</h3>
+            <button type="button" class="data-button" id="export-button">Pobierz dane</button>
+            <p class="notice">Eksportujesz dane do formatu <strong>.json</strong>. Dane nie zostaną usunięte z przeglądarki.</p>
+          </div>
+          <div>
+            <h3 id="import-db-label">Importuj dane</h3>
+            <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
+            <button type="button" class="data-button" id="import-button">Wyślij</button>
+            <p hidden class="error" id="import-db-error-empty">Nie wybrano żadnego pliku</p>
+            <p hidden class="error" id="import-db-error-file">Plik danych musi być w formacie JSON.</p>
+            <p hidden class="error" id="import-db-error">Wystąpił błąd. Sprawdź, czy wybrałeś plik eksportowany z aplikacji. Jeżeli tak, skontaktuj się z administratorem.</p>
+            <p hidden class="success" id="import-db-success">Dane zaimportowane. 🎉</p>
+            <p class="notice">⚠️ Importowanie danych nadpisze obecnie zapisane dane w przeglądarce.</p>
+          </div>
+          <div>
+            <h3>Wyczyść moje lokalne dane</h3>
+            <button type="button" class="data-button" id="clear-button">Usuń</button>
+            <p class="notice">⚠️ Tego działania nie można cofnąć. Najpierw zrób kopię zapasową!</p>
+          </div>
         </div>
         <hr>
         <div>
-          <h2 id="import-db-label">Importuj dane</h2>
-          <input type="file" name="import-db" id="import-db" aria-labelledBy="import-db-label">
-          <button type="button" class="data-button" id="import-button">Wyślij</button>
-          <p hidden class="error" id="import-db-error-empty">Nie wybrano żadnego pliku</p>
-          <p hidden class="error" id="import-db-error-file">Plik danych musi być w formacie JSON.</p>
-          <p hidden class="error" id="import-db-error">Wystąpił błąd. Sprawdź, czy wybrałeś plik eksportowany z aplikacji. Jeżeli tak, skontaktuj się z administratorem.</p>
-          <p hidden class="success" id="import-db-success">Dane zaimportowane. 🎉</p>
-          <p class="notice">⚠️ Importowanie danych nadpisze obecnie zapisane dane w przeglądarce.</p>
-        </div>
-        <div>
           <h2>Wersja</h2>
-          <p>Aktualna wersja: <strong>2.1.1</strong></p>
+          <p>Aktualna wersja: <strong>2.3.0</strong></p>
           <p>Kliknij w poniższy link po więcej informacji</p>
           <p><a class="button" href="https://github.com/GoOz/wfrp-sheet/blob/main/CHANGELOG.md">Przeczytaj plik CHANGELOG.md (po angielsku)</a></p>
         </div>
