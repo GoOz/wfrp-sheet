@@ -25,11 +25,12 @@ export default async function (eleventyConfig) {
     fallbackLocales: {
       en: "fr",
       ru: "en",
-      pl: "pl"
+      pl: "pl",
+      es: "es"
     },
   });
   eleventyConfig.addPlugin(geti18nCollection, {
-    locale: ["en", "fr", "ru", "pl"],
+    locale: ["en", "fr", "ru", "pl", "es"],
   });
 
   eleventyConfig.addPassthroughCopy("img");
