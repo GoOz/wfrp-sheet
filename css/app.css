@@ -440,7 +440,7 @@ input[type="file"]:is(:hover, :focus, :active)::file-selector-button {
 .tab.pl::after {
   content: "🇵🇱";
 }
-.tab.pl::after {
+.tab.es::after {
   content: "🇪🇸";
 }
 
