@@ -30,7 +30,7 @@ export default async function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(geti18nCollection, {
-    locale: ["en", "fr", "ru", "pl", "es"],
+    locale: ["en", "fr", "ru", "pl", "es", "it"],
   });
 
   eleventyConfig.addPassthroughCopy("img");
