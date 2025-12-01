@@ -114,6 +114,31 @@ test("link to character sheet in spanish", async ({ page }) => {
   // Click the polish sheet link.
   await page.getByRole("link", { name: "Ver Hoja de personaje" }).click();
 
-  // Expects the URL to contain /pl/.
+  // Expects the URL to contain /es/.
   await expect(page).toHaveURL("./wfrp-sheet/es/");
+});
+
+test("link to character sheet in italian", async ({ page }) => {
+  await page.goto("./wfrp-sheet/");
+
+  // Click on the polish tab
+  const tab = await page.getByRole("link", { name: "Versione italiana" });
+  await tab.click();
+
+  await page.evaluate(() => document.fonts.ready);
+
+  // Expects the tab to be active now
+  await expect(tab).toHaveClass(/active/);
+  // Home in polish
+  await expect(page.locator(".wrapper")).toHaveScreenshot("home-it.png", {
+    fullPage: true,
+  });
+
+  // Click the polish sheet link.
+  await page
+    .getByRole("link", { name: "Vedi la scheda del personaggio" })
+    .click();
+
+  // Expects the URL to contain /it/.
+  await expect(page).toHaveURL("./wfrp-sheet/it/");
 });
